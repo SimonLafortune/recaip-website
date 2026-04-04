@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recaip - About</title>
+  <meta name="description" content="Recaip automates release communication for software teams. Built by Simon Lafortune, a product director in Quebec, Canada." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#e6f5f2', 100: '#ccebe5', 200: '#99d7cb', 300: '#6bbfae',
+              400: '#4da895', 500: '#3d8b80', 600: '#2d6b63', 700: '#1f524c',
+              800: '#163d38', 900: '#0e2a26',
+            },
+            surface: {
+              0: '#0b1a18', 1: '#0f2420', 2: '#142e2a', 3: '#1a3935', 4: '#21453f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <svg class="hidden">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="font-sans text-white/50 antialiased">
+<div class="page-wrapper">
+
+  <!-- Fixed nav bar -->
+  <nav class="nav-fixed">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center"><img src="logo.svg" alt="recaip" class="h-7" /></a>
+      <div class="flex items-center gap-6">
+        <a href="/features.html" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
+        <a href="/pricing.html" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+        <a href="/about.html" class="text-white/90 text-sm font-medium">About</a>
+        <a href="/app" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page hero -->
+  <section class="page-hero text-center px-6">
+    <div class="max-w-4xl mx-auto animate-in">
+      <h1 class="text-4xl sm:text-5xl font-semibold gradient-text mb-4">About Recaip</h1>
+      <p class="text-lg sm:text-xl text-white/40 max-w-2xl mx-auto">Automated release communication for teams that ship fast.</p>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-6xl mx-auto"></div>
+
+  <!-- Why Recaip exists -->
+  <section class="py-20 px-6 relative overflow-hidden">
+    <div class="ambient-glow w-[400px] h-[400px] bg-brand-500/8 top-0 -right-40"></div>
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-white text-center mb-12 reveal">Why Recaip exists</h2>
+      <div class="glass-card-bright p-8 sm:p-12 max-w-3xl mx-auto reveal reveal-delay-1">
+        <p class="text-white/50 text-base sm:text-lg leading-relaxed mb-6">
+          Most software teams ship code every day. But the people who use that software rarely find out what changed. Changelogs get skipped. Release notes get written weeks late, if at all. Support teams discover breaking changes from customer tickets.
+        </p>
+        <p class="text-white/50 text-base sm:text-lg leading-relaxed mb-6">
+          This is not a tooling problem. It is an ownership problem. Writing release notes falls between roles. Developers focus on code. Product managers focus on roadmaps. Marketing focuses on campaigns. Nobody owns the gap between "code merged" and "user informed."
+        </p>
+        <p class="text-white/50 text-base sm:text-lg leading-relaxed">
+          Recaip fills that gap. It connects to your dev tools, reads what you shipped, and writes the recap automatically. Every PR becomes a changelog entry, a social post, an email draft, and a stakeholder update. No manual work required.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-6xl mx-auto"></div>
+
+  <!-- How it started -->
+  <section class="py-20 px-6 relative overflow-hidden">
+    <div class="ambient-glow w-[350px] h-[350px] bg-brand-400/8 bottom-0 -left-32"></div>
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-white text-center mb-12 reveal">Built by a product leader who got tired of writing changelogs</h2>
+      <div class="glass-card p-8 sm:p-12 max-w-3xl mx-auto reveal reveal-delay-1">
+        <p class="text-white/50 text-base sm:text-lg leading-relaxed mb-6">
+          Recaip is built by Simon Lafortune, a product director based in Quebec, Canada. After years of managing product teams at SaaS companies, Simon noticed the same pattern: teams ship great work, but nobody communicates it to users.
+        </p>
+        <p class="text-white/50 text-base sm:text-lg leading-relaxed mb-6">
+          The idea started as a side project in early 2025. Simon built the first version using Claude Code, shipping the MVP in weeks. Recaip is now dogfooding with its own repository, generating its own changelog from its own PRs.
+        </p>
+        <p class="text-white/50 text-base sm:text-lg leading-relaxed">
+          Recaip is an independent, bootstrapped product. No VC funding. No team of 50. Just one builder solving a real problem.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-6xl mx-auto"></div>
+
+  <!-- What we believe -->
+  <section class="py-20 px-6 relative overflow-hidden">
+    <div class="ambient-glow w-[500px] h-[500px] bg-brand-500/6 top-20 left-1/2 -translate-x-1/2"></div>
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-white text-center mb-12 reveal">What we believe</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+        <div class="glass-card p-8 reveal reveal-delay-1">
+          <h3 class="text-lg font-semibold text-white mb-3">Ship, then communicate</h3>
+          <p class="text-white/50 text-sm leading-relaxed">
+            Shipping code is only half the job. If users do not know about it, the work is wasted. Recaip makes communication automatic so you can focus on building.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 reveal reveal-delay-2">
+          <h3 class="text-lg font-semibold text-white mb-3">Approve first, automate later</h3>
+          <p class="text-white/50 text-sm leading-relaxed">
+            Trust is earned. Every channel starts in manual review mode. You flip to autopilot only when you are ready. No surprises.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 reveal reveal-delay-3">
+          <h3 class="text-lg font-semibold text-white mb-3">Per product, not per seat</h3>
+          <p class="text-white/50 text-sm leading-relaxed">
+            Pricing should reflect value delivered, not headcount. One price per product, unlimited team members.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 reveal reveal-delay-4">
+          <h3 class="text-lg font-semibold text-white mb-3">AI as a teammate, not a toy</h3>
+          <p class="text-white/50 text-sm leading-relaxed">
+            Recaip is not a chatbot you prompt. It is an autonomous agent that runs in the background, reads your code, and does its job without being asked.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-6xl mx-auto"></div>
+
+  <!-- Built with -->
+  <section class="py-20 px-6 relative">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-white mb-12 reveal">Built with</h2>
+      <div class="flex flex-wrap items-center justify-center gap-3 reveal reveal-delay-1">
+        <span class="glass-pill px-5 py-2.5 rounded-full text-sm text-white/40 border border-white/8 bg-white/[0.04]">Next.js</span>
+        <span class="glass-pill px-5 py-2.5 rounded-full text-sm text-white/40 border border-white/8 bg-white/[0.04]">Supabase</span>
+        <span class="glass-pill px-5 py-2.5 rounded-full text-sm text-white/40 border border-white/8 bg-white/[0.04]">Claude API</span>
+        <span class="glass-pill px-5 py-2.5 rounded-full text-sm text-white/40 border border-white/8 bg-white/[0.04]">Vercel</span>
+        <span class="glass-pill px-5 py-2.5 rounded-full text-sm text-white/40 border border-white/8 bg-white/[0.04]">Tailwind CSS</span>
+        <span class="glass-pill px-5 py-2.5 rounded-full text-sm text-white/40 border border-white/8 bg-white/[0.04]">GitHub API</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-6xl mx-auto"></div>
+
+  <!-- CTA -->
+  <section class="py-24 px-6 relative overflow-hidden">
+    <div class="ambient-glow w-[600px] h-[600px] bg-brand-500/8 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="max-w-6xl mx-auto text-center relative z-10">
+      <div class="reveal">
+        <h2 class="text-3xl sm:text-4xl font-semibold text-white mb-4">See Recaip in action.</h2>
+        <p class="text-white/40 text-lg max-w-xl mx-auto mb-10">
+          Connect your GitHub repo. Get your first AI-generated recap on your next merge.
+        </p>
+        <a href="/app" class="btn-primary glow-pulse h-14 px-10 rounded-xl text-white font-semibold text-base inline-flex items-center justify-center">
+          Get started free
+        </a>
+        <p class="text-white/30 text-sm mt-5">Free forever for 1 product. No credit card required.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6">
+    <div class="section-divider mb-8"></div>
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/"><img src="logo.svg" alt="recaip" class="h-5 opacity-40" /></a>
+      <div class="flex items-center gap-6 text-sm text-white/30">
+        <a href="/features.html" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing.html" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/about.html" class="hover:text-white/50 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-white/30">
+        <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Scroll reveal observer -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .section-divider').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

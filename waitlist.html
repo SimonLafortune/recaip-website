@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recaip — Your users don't know what you shipped. Fix that.</title>
+  <meta name="description" content="Recaip connects to your GitHub, Linear, and Jira. Every time you ship, it writes the recap — changelog, announcement, social post, status update. Automatically." />
+  <meta property="og:title" content="Recaip — Ship it. Recaip it." />
+  <meta property="og:description" content="AI-generated release notes, changelogs, and product updates from your dev tools. Stop writing. Start shipping." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://recaip.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#e6f5f2',
+              100: '#ccebe5',
+              200: '#99d7cb',
+              300: '#6bbfae',
+              400: '#4da895',
+              500: '#3d8b80',
+              600: '#2d6b63',
+              700: '#1f524c',
+              800: '#163d38',
+              900: '#0e2a26',
+            },
+            surface: {
+              0: '#0b1a18',
+              1: '#0f2420',
+              2: '#142e2a',
+              3: '#1a3935',
+              4: '#21453f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0b1a18; }
+
+    /* Fullscreen hero */
+    .hero-fullscreen {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      background-image: url('hero-bg.png');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.2) 40%,
+        rgba(0, 0, 0, 0.1) 60%,
+        rgba(0, 0, 0, 0.25) 100%
+      );
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #6bbfae 0%, #99d7cb 40%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .card-hover {
+      transition: all 0.2s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-2px);
+      border-color: rgba(77, 168, 149, 0.4);
+      box-shadow: 0 0 30px rgba(61, 139, 128, 0.1);
+    }
+    .feature-icon {
+      background: linear-gradient(135deg, rgba(61, 139, 128, 0.15) 0%, rgba(77, 168, 149, 0.1) 100%);
+    }
+    .input-glow:focus {
+      box-shadow: 0 0 0 2px rgba(61, 139, 128, 0.3);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #3d8b80 0%, #2d6b63 100%);
+      transition: all 0.2s ease;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #4da895 0%, #3d8b80 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(61, 139, 128, 0.3);
+    }
+    .btn-glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.2s ease;
+    }
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+    .code-block {
+      background: linear-gradient(135deg, #18181b 0%, #1e1e22 100%);
+    }
+    .hero-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(61, 139, 128, 0.12) 0%, transparent 70%);
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in { animation: fadeInUp 0.7s ease forwards; }
+    .animate-delay-1 { animation-delay: 0.15s; opacity: 0; }
+    .animate-delay-2 { animation-delay: 0.3s; opacity: 0; }
+    .animate-delay-3 { animation-delay: 0.45s; opacity: 0; }
+  </style>
+</head>
+<body class="font-sans text-zinc-300 antialiased">
+
+  <!-- ============================================ -->
+  <!-- HERO — Fullscreen image, minimal overlay     -->
+  <!-- ============================================ -->
+  <section class="hero-fullscreen">
+    <div class="hero-overlay"></div>
+
+    <!-- Top bar: logo left, CTA right -->
+    <div class="absolute top-0 left-0 right-0 z-20 px-6 sm:px-10 py-6 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="logo.svg" alt="recaip" class="h-7 sm:h-8" />
+      </div>
+
+      <!-- Top-right CTA -->
+      <a href="#waitlist" class="btn-glass px-5 py-2.5 rounded-lg text-white text-sm font-medium">
+        Join the waitlist
+      </a>
+    </div>
+
+    <!-- Bottom-left: headline + waitlist form -->
+    <div class="absolute bottom-0 left-0 right-0 z-20 px-6 sm:px-10 pb-10 sm:pb-14">
+      <div class="max-w-2xl">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-white leading-[1.15] tracking-tight mb-3 animate-in">
+          Your users always know what you shipped, on&nbsp;autopilot.
+        </h1>
+        <p class="text-base sm:text-lg text-white/70 mb-6 max-w-lg leading-relaxed animate-in animate-delay-1">
+          Recaip reads your GitHub, Linear, or Jira activity, writes beautiful release notes, and pushes them everywhere your users need them.
+        </p>
+
+        <!-- Waitlist form -->
+        <form id="waitlist-form" class="flex flex-col sm:flex-row gap-3 max-w-md animate-in animate-delay-2">
+          <input
+            type="email"
+            id="email-input"
+            placeholder="you@company.com"
+            required
+            class="flex-1 h-12 px-4 rounded-lg bg-black/40 backdrop-blur-md border border-white/15 text-white placeholder-white/40 font-mono text-sm focus:outline-none input-glow transition-all"
+          />
+          <button type="submit" id="submit-btn" class="btn-primary h-12 px-6 rounded-lg text-white font-semibold text-sm whitespace-nowrap cursor-pointer">
+            Join the waitlist
+          </button>
+        </form>
+        <p id="form-message" class="text-sm text-white/40 mt-3 animate-in animate-delay-3">Free during beta. No credit card required.</p>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-6 right-6 sm:right-10 z-20 animate-in animate-delay-3">
+      <a href="#how-it-works" class="flex flex-col items-center gap-1 text-white/30 hover:text-white/60 transition-colors">
+        <span class="text-[10px] uppercase tracking-widest font-medium">Scroll</span>
+        <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- INTEGRATIONS — white, first after hero       -->
+  <!-- ============================================ -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-3">Connects to your entire dev stack</h2>
+      <p class="text-gray-500 mb-14 max-w-lg mx-auto">One product, multiple sources. Recaip pulls from everything and writes one unified recap.</p>
+
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 sm:gap-8 mb-6">
+        <div class="flex flex-col items-center gap-2.5">
+          <svg class="w-9 h-9 text-gray-800" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span class="text-xs text-gray-600 font-medium">GitHub</span>
+        </div>
+        <div class="flex flex-col items-center gap-2.5">
+          <svg class="w-9 h-9 text-gray-800" viewBox="0 0 24 24" fill="currentColor"><path d="M2.886 10.34a10.14 10.14 0 0 0-.525 2.163l9.136 9.136a10.14 10.14 0 0 0 2.163-.525L2.886 10.34zm-.81 3.477a10.14 10.14 0 0 0 .284 1.708l8.575 8.575a10.14 10.14 0 0 0 1.708.284L2.076 13.817zm1.335 3.07a10.16 10.16 0 0 0 3.702 3.702l-3.702-3.702zm12.048-14.1a10.14 10.14 0 0 0-2.163.526l10.774 10.774a10.14 10.14 0 0 0 .525-2.163L15.459 2.787zm2.687-.525a10.14 10.14 0 0 0-1.708-.284l10.566 10.566a10.14 10.14 0 0 0-.284-1.708L18.146 2.262zm1.335 3.07a10.16 10.16 0 0 0-3.702-3.702l3.702 3.702zM2.34 7.674l13.986 13.986a10.12 10.12 0 0 0 1.772-.937L3.277 5.902a10.12 10.12 0 0 0-.937 1.772zm1.607-2.88L18.206 19.053a10.12 10.12 0 0 0 1.282-1.282L4.229 3.512a10.12 10.12 0 0 0-1.282 1.282zm2.88-1.607L21.086 17.446a10.12 10.12 0 0 0 .937-1.772L7.674 2.34a10.12 10.12 0 0 0-1.847.847z"/></svg>
+          <span class="text-xs text-gray-600 font-medium">Linear</span>
+        </div>
+        <div class="flex flex-col items-center gap-2.5">
+          <svg class="w-9 h-9 text-gray-800" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 11.513H0a5.218 5.218 0 005.232 5.215h2.13v2.057A5.215 5.215 0 0012.575 24V12.518a1.005 1.005 0 00-1.005-1.005zm5.723-5.756H5.736a5.215 5.215 0 005.215 5.214h2.129v2.058a5.218 5.218 0 005.215 5.214V6.758a1.001 1.001 0 00-1.001-1.001zM23.013 0H11.455a5.215 5.215 0 005.215 5.215h2.129v2.057A5.215 5.215 0 0024.013 12.487V1.005A1.005 1.005 0 0023.013 0z"/></svg>
+          <span class="text-xs text-gray-600 font-medium">Jira</span>
+        </div>
+        <div class="flex flex-col items-center gap-2.5">
+          <svg class="w-9 h-9 text-gray-800" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+          <span class="text-xs text-gray-600 font-medium">Slack</span>
+        </div>
+        <div class="flex flex-col items-center gap-2.5">
+          <div class="w-9 h-9 rounded flex items-center justify-center"><svg class="w-9 h-9 text-gray-800" viewBox="0 0 24 24" fill="currentColor"><path d="M22.951 7.553v-.027L15.271.212a.726.726 0 00-1.024 0l-1.972 1.972 2.5 2.5a.862.862 0 011.091 1.099l2.409 2.409a.863.863 0 11-.517.496l-2.251-2.251v5.925a.863.863 0 11-.711-.014V6.322a.863.863 0 01-.468-1.131l-2.464-2.464-6.506 6.506a.726.726 0 000 1.025l7.68 7.68a.726.726 0 001.024 0l7.644-7.644a.726.726 0 000-1.025zM7.2 16.339l-5.863-5.863a.726.726 0 010-1.025L7.71 3.088l2.492 2.492-5.37 5.37a.726.726 0 000 1.024l4.86 4.86z"/></svg></div>
+          <span class="text-xs text-gray-600 font-medium">GitLab</span>
+        </div>
+        <div class="flex flex-col items-center gap-2.5">
+          <div class="w-9 h-9 rounded flex items-center justify-center"><svg class="w-9 h-9 text-gray-800" viewBox="0 0 24 24" fill="currentColor"><path d="M4.5 2.5C4.5 1.12 5.62 0 7 0h10c1.38 0 2.5 1.12 2.5 2.5v19c0 1.38-1.12 2.5-2.5 2.5H7c-1.38 0-2.5-1.12-2.5-2.5v-19zM7 1.5c-.55 0-1 .45-1 1v19c0 .55.45 1 1 1h10c.55 0 1-.45 1-1v-19c0-.55-.45-1-1-1H7zm1.75 2h6.5c.41 0 .75.34.75.75s-.34.75-.75.75h-6.5C8.34 5 8 4.66 8 4.25s.34-.75.75-.75zm0 3h6.5c.41 0 .75.34.75.75s-.34.75-.75.75h-6.5C8.34 8 8 7.66 8 7.25s.34-.75.75-.75zm0 3h3.5c.41 0 .75.34.75.75s-.34.75-.75.75h-3.5c-.41 0-.75-.34-.75-.75s.34-.75.75-.75z"/></svg></div>
+          <span class="text-xs text-gray-600 font-medium">Notion</span>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 mt-6">
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-xs text-gray-500 font-medium">Statuspal</span>
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-xs text-gray-500 font-medium">Betterstack</span>
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-xs text-gray-500 font-medium">Instatus</span>
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-xs text-gray-500 font-medium">Azure DevOps</span>
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-xs text-gray-500 font-medium">Shortcut</span>
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-xs text-gray-400 font-medium">+ more coming</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- PAIN POINTS — dark teal                      -->
+  <!-- ============================================ -->
+  <section class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="font-mono text-xs text-brand-400 text-center uppercase tracking-widest mb-4">The problem</p>
+      <h2 class="text-3xl font-bold text-white text-center mb-4">You ship every day.<br/>Your users have no idea.</h2>
+      <p class="text-zinc-500 text-center mb-16 max-w-xl mx-auto">60% of users never discover new features. Release notes fall between roles. Nobody owns it. Recaip does.</p>
+
+      <div class="space-y-6">
+        <!-- Pain 1 -->
+        <div class="rounded-xl bg-surface-1 border border-surface-4 p-6 md:p-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-6">
+            <div class="md:w-1/2">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                <span class="font-mono text-xs text-red-400/80 uppercase tracking-wider">The awareness gap</span>
+              </div>
+              <h3 class="text-lg font-semibold text-white mb-2">"I shipped 40 features. My customers know about 3."</h3>
+              <p class="text-sm text-zinc-500 leading-relaxed">You invest weeks building features. But if nobody knows they exist, the ROI is cut in half. Support fields "where's my feature?" tickets for things you already shipped. Users churn over problems you already solved.</p>
+            </div>
+            <div class="md:w-1/2 rounded-lg bg-surface-2 border border-surface-4 p-5">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-2 h-2 rounded-full bg-brand-400"></div>
+                <span class="font-mono text-xs text-brand-400 uppercase tracking-wider">Recaip fixes this</span>
+              </div>
+              <p class="text-sm text-zinc-400 leading-relaxed">Every merged PR automatically becomes a changelog entry, social post, email draft, and in-app announcement. Your users always know what you shipped &mdash; without you lifting a finger.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pain 2 -->
+        <div class="rounded-xl bg-surface-1 border border-surface-4 p-6 md:p-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-6">
+            <div class="md:w-1/2">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                <span class="font-mono text-xs text-red-400/80 uppercase tracking-wider">The tedium tax</span>
+              </div>
+              <h3 class="text-lg font-semibold text-white mb-2">"Changelogs are always last on my list."</h3>
+              <p class="text-sm text-zinc-500 leading-relaxed">Go back through PRs. Skim commits. Understand intent. Decide what matters. Rewrite for a non-technical audience. Every. Single. Release. Most teams just skip it. 11% of dev work hours go to documentation nobody wants to write.</p>
+            </div>
+            <div class="md:w-1/2 rounded-lg bg-surface-2 border border-surface-4 p-5">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-2 h-2 rounded-full bg-brand-400"></div>
+                <span class="font-mono text-xs text-brand-400 uppercase tracking-wider">Recaip fixes this</span>
+              </div>
+              <p class="text-sm text-zinc-400 leading-relaxed">You don't write anything. Recaip reads your code diffs, PR descriptions, and linked tickets, then writes publish-ready recaps automatically. Start by reviewing drafts. Once you trust it, let it run on autopilot.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pain 3 -->
+        <div class="rounded-xl bg-surface-1 border border-surface-4 p-6 md:p-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-6">
+            <div class="md:w-1/2">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                <span class="font-mono text-xs text-red-400/80 uppercase tracking-wider">The ownership vacuum</span>
+              </div>
+              <h3 class="text-lg font-semibold text-white mb-2">"Release notes fall between roles. No one owns it."</h3>
+              <p class="text-sm text-zinc-500 leading-relaxed">It's not the dev's job. Not the PM's job (if there even is one). Not marketing's job. So nobody does it. Support discovers breaking changes through customer tickets. Engineering ships meaningful work that goes unacknowledged.</p>
+            </div>
+            <div class="md:w-1/2 rounded-lg bg-surface-2 border border-surface-4 p-5">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-2 h-2 rounded-full bg-brand-400"></div>
+                <span class="font-mono text-xs text-brand-400 uppercase tracking-wider">Recaip fixes this</span>
+              </div>
+              <p class="text-sm text-zinc-400 leading-relaxed">Recaip is the team member that owns release comms. It drafts without being asked, flags breaking changes, and sends a weekly stakeholder digest to your CEO, investors, and support team. The role is filled &mdash; permanently.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- HOW IT WORKS — white                         -->
+  <!-- ============================================ -->
+  <section id="how-it-works" class="py-24 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-4">How it works</h2>
+      <p class="text-gray-500 text-center mb-16">Connect once. Ship forever. Recaip handles the rest &mdash; autonomously.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-14 h-14 rounded-2xl bg-brand-50 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+          </div>
+          <div class="font-mono text-xs text-brand-500 mb-2">01</div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Connect your repo</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Sign in with GitHub. Select your repo. Recaip installs a webhook automatically. Done in 2 minutes.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-14 h-14 rounded-2xl bg-brand-50 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          </div>
+          <div class="font-mono text-xs text-brand-500 mb-2">02</div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Ship your code</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Merge a PR at 3am. Recaip wakes up, reads the diff, and writes the recap. You don't do anything.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-14 h-14 rounded-2xl bg-brand-50 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="font-mono text-xs text-brand-500 mb-2">03</div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Approve or let it run</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Review drafts at first. Once you trust it, flip channels to auto-publish. Recaip runs on autopilot &mdash; you just ship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- BEFORE / AFTER — dark section                -->
+  <!-- ============================================ -->
+  <section class="py-24 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-white text-center mb-4">From raw PR to polished recap</h2>
+      <p class="text-zinc-500 text-center mb-12">In seconds, not hours. You don't write a word.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="rounded-xl border border-surface-4 bg-surface-1 p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-3 h-3 rounded-full bg-red-400/60"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-400/60"></div>
+            <div class="w-3 h-3 rounded-full bg-green-400/60"></div>
+            <span class="text-xs text-zinc-600 font-mono ml-2">pull_request.merged</span>
+          </div>
+          <pre class="font-mono text-xs text-zinc-500 leading-relaxed overflow-x-auto"><code><span class="text-zinc-600"># PR #247</span>
+<span class="text-zinc-400">fix: update stripe webhook</span>
+<span class="text-zinc-400">handler to retry on 5xx</span>
+<span class="text-zinc-400">+ add idempotency key check</span>
+<span class="text-zinc-400">+ update error logging format</span>
+<span class="text-zinc-600">
+3 files changed, 47 insertions</span></code></pre>
+        </div>
+        <div class="rounded-xl border-2 border-brand-400/40 bg-surface-2 p-5 relative">
+          <div class="absolute -top-2.5 left-4 px-2 py-0.5 bg-brand-500 text-white text-[10px] font-mono uppercase tracking-wider">Recaip output</div>
+          <div class="space-y-4 mt-2">
+            <div>
+              <p class="text-[10px] uppercase tracking-wider text-brand-400 font-mono mb-1">Changelog</p>
+              <p class="text-sm text-zinc-300 leading-relaxed">Payment processing is now more reliable. Failed webhook deliveries will automatically retry, and duplicate payments are prevented.</p>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-wider text-brand-400 font-mono mb-1">Social Post</p>
+              <p class="text-sm text-zinc-400 leading-relaxed">Shipped: payment webhooks now auto-retry on failures. No more missed events. #buildinpublic</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- OUTPUT FORMATS — white                       -->
+  <!-- ============================================ -->
+  <section class="py-24 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-4">One event. Every format.</h2>
+      <p class="text-gray-500 text-center mb-16 max-w-xl mx-auto">You ship once. Recaip writes the recap for every audience.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="card-hover rounded-xl border border-gray-200 bg-gray-50 p-6">
+          <div class="w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="text-gray-900 font-semibold mb-1">Changelog page</h3>
+          <p class="text-sm text-gray-500">Beautiful hosted changelog at recaip.com/you. Auto-updated on every release.</p>
+        </div>
+
+        <div class="card-hover rounded-xl border border-gray-200 bg-gray-50 p-6">
+          <div class="w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+          </div>
+          <h3 class="text-gray-900 font-semibold mb-1">In-app announcement</h3>
+          <p class="text-sm text-gray-500">Short, action-oriented banner copy. Ready to paste into your app.</p>
+        </div>
+
+        <div class="card-hover rounded-xl border border-gray-200 bg-gray-50 p-6">
+          <div class="w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-gray-900 font-semibold mb-1">Email draft</h3>
+          <p class="text-sm text-gray-500">User-facing email template. Copy into your email tool and send.</p>
+        </div>
+
+        <div class="card-hover rounded-xl border border-gray-200 bg-gray-50 p-6">
+          <div class="w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
+          </div>
+          <h3 class="text-gray-900 font-semibold mb-1">Social post</h3>
+          <p class="text-sm text-gray-500">LinkedIn & X-ready post. Build in public with one click.</p>
+        </div>
+
+        <div class="card-hover rounded-xl border border-gray-200 bg-gray-50 p-6">
+          <div class="w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="text-gray-900 font-semibold mb-1">Stakeholder digest</h3>
+          <p class="text-sm text-gray-500">Weekly summary of everything shipped. Send it to your CEO or investors.</p>
+        </div>
+
+        <div class="card-hover rounded-xl border border-gray-200 bg-gray-50 p-6">
+          <div class="w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="text-gray-900 font-semibold mb-1">Status page update</h3>
+          <p class="text-sm text-gray-500">Maintenance and incident updates for Statuspal, Betterstack, or Instatus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FEATURES — dark teal (body default)           -->
+  <!-- ============================================ -->
+  <section class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-white text-center mb-4">Not a tool. An autonomous agent.</h2>
+      <p class="text-zinc-500 text-center mb-16 max-w-xl mx-auto">Other tools help you write changelogs faster. Recaip writes them for you &mdash; without you being involved at all.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+        <div class="flex gap-4">
+          <div class="w-1 rounded-full bg-brand-500/30 shrink-0"></div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Diff-aware AI generation</h3>
+            <p class="text-sm text-zinc-500">Recaip reads actual code diffs, PR descriptions, and linked tickets. Not just commit messages &mdash; it understands what you built and why.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-1 rounded-full bg-brand-500/30 shrink-0"></div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Multi-format from one event</h3>
+            <p class="text-sm text-zinc-500">One merge &rarr; changelog entry, in-app banner, email draft, social post, stakeholder digest. Each tailored for its audience. Automatically.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-1 rounded-full bg-brand-500/30 shrink-0"></div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Trust ladder: approve &rarr; autopilot</h3>
+            <p class="text-sm text-zinc-500">Start by reviewing every draft. As Recaip learns your voice, flip channels to auto-publish one by one. Low-stakes channels first, full autopilot eventually.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-1 rounded-full bg-brand-500/30 shrink-0"></div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Breaking change detection</h3>
+            <p class="text-sm text-zinc-500">AI flags PRs that look like breaking changes and auto-adds a warning to the draft. Your support team knows before users complain.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-1 rounded-full bg-brand-500/30 shrink-0"></div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Weekly stakeholder digest</h3>
+            <p class="text-sm text-zinc-500">Every Friday, Recaip auto-assembles a summary of everything shipped that week and sends it to your CEO, investors, or support lead.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-1 rounded-full bg-brand-500/30 shrink-0"></div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Learns your tone over time</h3>
+            <p class="text-sm text-zinc-500">Every edit you make teaches Recaip your voice. Customer-friendly, technical, executive &mdash; it adapts until drafts need zero edits.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-1 rounded-full bg-brand-500/30 shrink-0"></div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Batch catch-up mode</h3>
+            <p class="text-sm text-zinc-500">Missed a month of updates? Recaip scans all merged PRs since your last recap and generates a catch-up digest in one click.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-1 rounded-full bg-brand-500/30 shrink-0"></div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Zero setup, 2 minutes to first draft</h3>
+            <p class="text-sm text-zinc-500">Sign in with GitHub. Select your repo. Recaip installs a webhook and starts drafting. No config, no templates, no onboarding flow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- PRICING — light section                      -->
+  <!-- ============================================ -->
+  <section class="py-24 px-6 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-4">Simple pricing</h2>
+      <p class="text-gray-500 text-center mb-16">Per product, not per user. No surprises.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="rounded-xl border border-gray-200 bg-white p-6">
+          <h3 class="text-gray-900 font-semibold mb-1">Free</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-3xl font-bold text-gray-900">$0</span>
+          </div>
+          <ul class="space-y-2.5 text-sm text-gray-500">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-gray-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              1 product
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-gray-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Changelog page
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-gray-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Approve mode
+            </li>
+          </ul>
+        </div>
+
+        <div class="rounded-xl border border-gray-200 bg-white p-6">
+          <h3 class="text-gray-900 font-semibold mb-1">Starter</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-3xl font-bold text-gray-900">$19</span>
+            <span class="text-sm text-gray-500">/product/mo</span>
+          </div>
+          <ul class="space-y-2.5 text-sm text-gray-500">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-brand-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              All output formats
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-brand-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              All integrations
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-brand-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              No Recaip branding
+            </li>
+          </ul>
+        </div>
+
+        <div class="rounded-xl border-2 border-brand-500/50 bg-brand-50 p-6 relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-brand-500 text-white text-xs font-semibold">Popular</div>
+          <h3 class="text-gray-900 font-semibold mb-1">Pro</h3>
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-3xl font-bold text-gray-900">$29</span>
+            <span class="text-sm text-gray-500">/product/mo</span>
+          </div>
+          <ul class="space-y-2.5 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Everything in Starter
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Auto-publish mode
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Slack delivery
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Weekly stakeholder digest
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Status page integrations
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Custom domain
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FINAL CTA                                    -->
+  <!-- ============================================ -->
+  <section id="waitlist" class="py-24 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Stop writing changelogs.<br/><span class="gradient-text">Start shipping.</span></h2>
+      <p class="text-zinc-400 mb-10">Join the waitlist and be the first to try Recaip when we launch.</p>
+
+      <form id="waitlist-form-bottom" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
+        <input
+          type="email"
+          id="email-input-bottom"
+          placeholder="you@company.com"
+          required
+          class="flex-1 h-12 px-4 rounded-lg bg-surface-2 border border-surface-4 text-white placeholder-zinc-500 font-mono text-sm focus:outline-none input-glow transition-all"
+        />
+        <button type="submit" id="submit-btn-bottom" class="btn-primary h-12 px-6 rounded-lg text-white font-semibold text-sm whitespace-nowrap cursor-pointer">
+          Join the waitlist
+        </button>
+      </form>
+      <p id="form-message-bottom" class="text-sm text-zinc-500">Free during beta. No credit card required.</p>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FOOTER                                       -->
+  <!-- ============================================ -->
+  <footer class="py-8 px-6 border-t border-surface-4/30">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center">
+        <img src="logo.svg" alt="recaip" class="h-5 opacity-50" />
+      </div>
+      <div class="flex items-center gap-6 text-sm text-zinc-600">
+        <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-zinc-400 hover:text-white transition-colors">Simon Lafortune</a></span>
+        <span class="text-zinc-800">&middot;</span>
+        <span>Ship it. Recaip it.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================ -->
+  <!-- WAITLIST JS                                  -->
+  <!-- ============================================ -->
+  <script>
+    const SUPABASE_URL = 'YOUR_SUPABASE_URL';
+    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+
+    async function handleSubmit(e, formId) {
+      e.preventDefault();
+      const isBottom = formId === 'bottom';
+      const emailInput = document.getElementById(isBottom ? 'email-input-bottom' : 'email-input');
+      const submitBtn = document.getElementById(isBottom ? 'submit-btn-bottom' : 'submit-btn');
+      const message = document.getElementById(isBottom ? 'form-message-bottom' : 'form-message');
+      const email = emailInput.value.trim();
+      if (!email) return;
+
+      submitBtn.textContent = 'Joining...';
+      submitBtn.disabled = true;
+
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const utmSource = params.get('utm_source') || 'direct';
+
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Prefer': 'return=representation'
+          },
+          body: JSON.stringify({ email, utm_source: utmSource })
+        });
+
+        if (res.ok) {
+          emailInput.value = '';
+          emailInput.style.display = 'none';
+          submitBtn.style.display = 'none';
+          message.innerHTML = '<span class="text-brand-400 font-medium">You\'re in! We\'ll reach out when Recaip is ready.</span>';
+        } else if (res.status === 409) {
+          message.innerHTML = '<span class="text-brand-400">You\'re already on the list!</span>';
+          submitBtn.textContent = 'Join the waitlist';
+          submitBtn.disabled = false;
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        message.innerHTML = '<span class="text-red-400">Something went wrong. Try again.</span>';
+        submitBtn.textContent = 'Join the waitlist';
+        submitBtn.disabled = false;
+      }
+    }
+
+    document.getElementById('waitlist-form').addEventListener('submit', (e) => handleSubmit(e, 'top'));
+    document.getElementById('waitlist-form-bottom').addEventListener('submit', (e) => handleSubmit(e, 'bottom'));
+  </script>
+</body>
+</html>
