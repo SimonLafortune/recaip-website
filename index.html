@@ -142,20 +142,74 @@
       background-clip: text;
     }
 
-    /* Glass card */
+    /* Glass card with animated gradient border */
     .glass-card {
       background: rgba(255, 255, 255, 0.04);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 16px;
-      transition: all 0.3s ease;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 17px;
+      padding: 1px;
+      background: linear-gradient(135deg, transparent 40%, rgba(77, 168, 149, 0.4) 50%, rgba(107, 191, 174, 0.3) 60%, transparent 70%);
+      background-size: 300% 300%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
     }
     .glass-card:hover {
-      border-color: rgba(77, 168, 149, 0.35);
-      box-shadow: 0 0 30px rgba(61, 139, 128, 0.1);
-      transform: translateY(-2px);
+      border-color: rgba(77, 168, 149, 0.25);
+      box-shadow: 0 8px 40px rgba(61, 139, 128, 0.12);
+      transform: translateY(-3px);
     }
+    .glass-card:hover::before {
+      opacity: 1;
+      animation: borderGlow 2s linear infinite;
+    }
+
+    @keyframes borderGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Typewriter animation */
+    .typewriter { overflow: hidden; }
+    .typewriter-line {
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .typewriter-line.typed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Floating hero card */
+    @keyframes heroFloat {
+      0%, 100% { transform: translateY(0) rotate(1deg); }
+      50% { transform: translateY(-8px) rotate(0.5deg); }
+    }
+    .hero-floating-card {
+      animation: heroFloat 4s ease-in-out infinite;
+    }
+
+    /* Price counter */
+    .price-counter { display: inline-block; }
+
+    /* Parallax cards */
+    .parallax-card { will-change: transform; }
 
     /* Brighter glass variant */
     .glass-card-bright {
@@ -164,12 +218,33 @@
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.10);
       border-radius: 16px;
-      transition: all 0.3s ease;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .glass-card-bright::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 17px;
+      padding: 1px;
+      background: linear-gradient(135deg, transparent 40%, rgba(77, 168, 149, 0.4) 50%, rgba(107, 191, 174, 0.3) 60%, transparent 70%);
+      background-size: 300% 300%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
     }
     .glass-card-bright:hover {
-      border-color: rgba(77, 168, 149, 0.35);
-      box-shadow: 0 0 30px rgba(61, 139, 128, 0.1);
-      transform: translateY(-2px);
+      border-color: rgba(77, 168, 149, 0.25);
+      box-shadow: 0 8px 40px rgba(61, 139, 128, 0.12);
+      transform: translateY(-3px);
+    }
+    .glass-card-bright:hover::before {
+      opacity: 1;
+      animation: borderGlow 2s linear infinite;
     }
 
     /* Glowing card (for Pro tier) */
@@ -534,6 +609,22 @@
         </div>
       </div>
 
+      <!-- Floating changelog card — desktop only -->
+      <div class="absolute bottom-24 right-10 lg:right-20 z-20 hidden md:block hero-floating-card animate-in animate-delay-3">
+        <div class="w-72 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl p-4 shadow-2xl">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+            <span class="text-[10px] font-mono text-emerald-400/80 uppercase tracking-wider">Auto-published</span>
+          </div>
+          <p class="text-[13px] text-white/80 font-medium mb-1.5">Dark mode is here</p>
+          <p class="text-[11px] text-white/40 leading-relaxed">You can now switch between light and dark themes in settings. Your preference is saved automatically.</p>
+          <div class="flex items-center gap-3 mt-3 pt-3 border-t border-white/6">
+            <span class="text-[10px] text-white/25 font-mono">2 min ago</span>
+            <span class="text-[10px] text-white/25">via GitHub webhook</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Scroll indicator — desktop only -->
       <div class="absolute bottom-6 right-10 z-20 animate-in animate-delay-3 hidden sm:block">
         <a href="#how-it-works" class="flex flex-col items-center gap-1 text-white/30 hover:text-white/60 transition-colors">
@@ -696,7 +787,7 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="glass-card p-8 text-center reveal reveal-delay-1">
+        <div class="glass-card p-8 text-center reveal reveal-delay-1 parallax-card" data-speed="0.02">
           <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mx-auto mb-5">
             <svg class="w-7 h-7 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
           </div>
@@ -705,7 +796,7 @@
           <p class="text-sm text-white/45 leading-relaxed">Sign in. Connect your repo or project board. Recaip registers a webhook and starts listening. Done in 2 minutes.</p>
         </div>
 
-        <div class="glass-card p-8 text-center reveal reveal-delay-2">
+        <div class="glass-card p-8 text-center reveal reveal-delay-2 parallax-card" data-speed="0.04">
           <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mx-auto mb-5">
             <svg class="w-7 h-7 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
           </div>
@@ -714,7 +805,7 @@
           <p class="text-sm text-white/45 leading-relaxed">Merge a PR at 3am. Close a ticket on Friday. Recaip detects it instantly, reads the context, and drafts every output format. You do nothing.</p>
         </div>
 
-        <div class="glass-card p-8 text-center reveal reveal-delay-3">
+        <div class="glass-card p-8 text-center reveal reveal-delay-3 parallax-card" data-speed="0.02">
           <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mx-auto mb-5">
             <svg class="w-7 h-7 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
@@ -754,16 +845,16 @@
 <span class="text-white/25">
 3 files changed, 47 insertions</span></code></pre>
         </div>
-        <div class="glass-card-glow p-5 relative reveal-right">
+        <div class="glass-card-glow p-5 relative reveal-right" id="typewriter-card">
           <div class="absolute -top-2.5 left-4 px-2.5 py-0.5 bg-brand-500 rounded text-white text-[10px] font-mono uppercase tracking-wider">Recaip output</div>
-          <div class="space-y-4 mt-2">
+          <div class="space-y-4 mt-2 typewriter">
             <div>
-              <p class="text-[10px] uppercase tracking-wider text-brand-400 font-mono mb-1">Changelog</p>
-              <p class="text-sm text-white/60 leading-relaxed">Payment processing is now more reliable. Failed webhook deliveries will automatically retry, and duplicate payments are prevented.</p>
+              <p class="text-[10px] uppercase tracking-wider text-brand-400 font-mono mb-1 typewriter-line" data-delay="0">Changelog</p>
+              <p class="text-sm text-white/60 leading-relaxed typewriter-line" data-delay="200">Payment processing is now more reliable. Failed webhook deliveries will automatically retry, and duplicate payments are prevented.</p>
             </div>
             <div>
-              <p class="text-[10px] uppercase tracking-wider text-brand-400 font-mono mb-1">Social Post</p>
-              <p class="text-sm text-white/45 leading-relaxed">Shipped: payment webhooks now auto-retry on failures. No more missed events. #buildinpublic</p>
+              <p class="text-[10px] uppercase tracking-wider text-brand-400 font-mono mb-1 typewriter-line" data-delay="600">Social Post</p>
+              <p class="text-sm text-white/45 leading-relaxed typewriter-line" data-delay="800">Shipped: payment webhooks now auto-retry on failures. No more missed events.</p>
             </div>
           </div>
         </div>
@@ -986,7 +1077,7 @@
       <div class="glass-card-glow p-8 sm:p-10 reveal-scale">
         <div class="text-center mb-8">
           <div class="flex items-baseline justify-center gap-1 mb-2">
-            <span class="text-5xl font-bold text-white">$19</span>
+            <span class="text-5xl font-bold text-white">$<span class="price-counter" data-target="19">0</span></span>
             <span class="text-lg text-white/40">/product/mo</span>
           </div>
           <p class="text-sm text-white/40">Your first 10 recaps are free. No credit card required.</p>
@@ -1109,6 +1200,60 @@
     });
 
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .section-divider').forEach(el => observer.observe(el));
+
+    // Typewriter effect on before/after card
+    const twObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.typewriter-line').forEach(line => {
+            const delay = parseInt(line.dataset.delay || '0');
+            setTimeout(() => line.classList.add('typed'), delay);
+          });
+          twObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const twCard = document.getElementById('typewriter-card');
+    if (twCard) twObserver.observe(twCard);
+
+    // Animated price counter
+    const priceObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          let current = 0;
+          const step = Math.ceil(target / 12);
+          const interval = setInterval(() => {
+            current = Math.min(current + step, target);
+            el.textContent = current;
+            if (current >= target) clearInterval(interval);
+          }, 40);
+          priceObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.price-counter').forEach(el => priceObserver.observe(el));
+
+    // Subtle parallax on scroll
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          document.querySelectorAll('.parallax-card').forEach(el => {
+            const speed = parseFloat(el.dataset.speed || '0.03');
+            const rect = el.getBoundingClientRect();
+            const offset = (rect.top - window.innerHeight / 2) * speed;
+            el.style.transform = `translateY(${offset}px)`;
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
   </script>
 
 </body>
