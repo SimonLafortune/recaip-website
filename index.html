@@ -100,9 +100,9 @@
       inset: 0;
       background: linear-gradient(
         to top,
-        rgba(0, 0, 0, 0.7) 0%,
-        rgba(0, 0, 0, 0.2) 40%,
-        rgba(0, 0, 0, 0.1) 60%,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.5) 30%,
+        rgba(0, 0, 0, 0.15) 60%,
         rgba(0, 0, 0, 0.25) 100%
       );
     }
@@ -474,50 +474,68 @@
     <section class="hero-fullscreen">
       <div class="hero-overlay"></div>
 
-      <!-- Top bar: logo left, CTA right -->
-      <div class="absolute top-0 left-0 right-0 z-20 px-6 sm:px-10 py-6 flex items-center justify-between">
+      <!-- Top bar: logo left, nav right -->
+      <div class="absolute top-0 left-0 right-0 z-30 px-5 sm:px-10 py-5 sm:py-6 flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center">
-          <img src="logo.svg" alt="recaip" class="h-7 sm:h-8" />
+          <img src="logo.svg" alt="recaip" class="h-6 sm:h-8" />
         </div>
 
-        <!-- Top-right CTAs -->
-        <div class="flex items-center gap-4">
-          <a href="/features.html" class="hidden sm:inline text-white/60 hover:text-white text-sm font-medium transition-colors">Features</a>
-          <a href="/pricing.html" class="hidden sm:inline text-white/60 hover:text-white text-sm font-medium transition-colors">Pricing</a>
-          <a href="/about.html" class="hidden sm:inline text-white/60 hover:text-white text-sm font-medium transition-colors">About</a>
-          <a href="https://app.recaip.com" class="btn-primary px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg text-white text-sm font-medium">
+        <!-- Desktop nav -->
+        <div class="hidden sm:flex items-center gap-4">
+          <a href="/features.html" class="text-white/60 hover:text-white text-sm font-medium transition-colors">Features</a>
+          <a href="/pricing.html" class="text-white/60 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+          <a href="/about.html" class="text-white/60 hover:text-white text-sm font-medium transition-colors">About</a>
+          <a href="https://app.recaip.com" class="btn-primary px-5 py-2.5 rounded-lg text-white text-sm font-medium">
             Start free
           </a>
         </div>
+
+        <!-- Mobile hamburger -->
+        <button id="menu-toggle" class="sm:hidden flex flex-col gap-1.5 p-2 -mr-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+          <span class="w-5 h-0.5 bg-white/70 rounded-full"></span>
+          <span class="w-5 h-0.5 bg-white/70 rounded-full"></span>
+          <span class="w-3.5 h-0.5 bg-white/70 rounded-full"></span>
+        </button>
       </div>
 
-      <!-- Bottom-left: headline + waitlist form -->
-      <div class="absolute bottom-0 left-0 right-0 z-20 px-5 sm:px-10 pb-8 sm:pb-14">
+      <!-- Mobile menu dropdown -->
+      <div id="mobile-menu" class="hidden absolute top-16 left-0 right-0 z-30 px-5 sm:hidden">
+        <div class="rounded-2xl border border-white/10 bg-surface-0/95 backdrop-blur-xl p-4 flex flex-col gap-1">
+          <a href="/features.html" class="px-4 py-2.5 rounded-xl text-white/70 text-sm font-medium hover:bg-white/5 transition-colors">Features</a>
+          <a href="/pricing.html" class="px-4 py-2.5 rounded-xl text-white/70 text-sm font-medium hover:bg-white/5 transition-colors">Pricing</a>
+          <a href="/about.html" class="px-4 py-2.5 rounded-xl text-white/70 text-sm font-medium hover:bg-white/5 transition-colors">About</a>
+          <div class="border-t border-white/8 my-1"></div>
+          <a href="https://app.recaip.com" class="btn-primary px-4 py-2.5 rounded-xl text-white text-sm font-semibold text-center">Start free</a>
+        </div>
+      </div>
+
+      <!-- Hero content — flex centered on mobile, bottom-anchored on desktop -->
+      <div class="absolute inset-0 z-20 flex items-end sm:items-end px-5 sm:px-10 pb-20 sm:pb-14">
         <div class="max-w-2xl">
-          <h1 class="text-2xl sm:text-4xl md:text-5xl font-semibold text-white leading-[1.15] tracking-tight mb-2 sm:mb-3 animate-in">
+          <h1 class="text-[26px] sm:text-4xl md:text-5xl font-semibold text-white leading-[1.15] tracking-tight mb-2 sm:mb-3 animate-in">
             Never write a product update&nbsp;again.
           </h1>
-          <p class="text-sm sm:text-lg text-white/70 mb-4 sm:mb-6 max-w-lg leading-relaxed animate-in animate-delay-1">
-            Recaip is an autonomous agent that listens to your dev tools 24/7. Every time you ship, it writes the update and publishes it. You never have to open Recaip again.
+          <p class="text-[14px] sm:text-lg text-white/70 mb-5 sm:mb-6 max-w-lg leading-relaxed animate-in animate-delay-1">
+            Recaip is an autonomous agent that listens to your dev tools 24/7. Every time you ship, it writes the update and publishes it.
           </p>
 
           <!-- Hero CTAs -->
           <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3 max-w-md animate-in animate-delay-2">
-            <a href="https://app.recaip.com" class="btn-primary h-11 sm:h-12 px-6 sm:px-8 rounded-lg text-white font-semibold text-sm flex items-center justify-center">
+            <a href="https://app.recaip.com" class="btn-primary h-11 sm:h-12 px-6 sm:px-8 rounded-xl text-white font-semibold text-[14px] flex items-center justify-center">
               Start free
             </a>
-            <a href="https://app.recaip.com/changelog/recaip-bb6480" target="_blank" class="btn-glass h-11 sm:h-12 px-5 sm:px-6 rounded-lg text-white font-medium text-sm flex items-center justify-center gap-2">
+            <a href="https://app.recaip.com/changelog/recaip-bb6480" target="_blank" class="btn-glass h-11 sm:h-12 px-5 sm:px-6 rounded-xl text-white font-medium text-[14px] flex items-center justify-center gap-2">
               See a live changelog
               <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
           </div>
-          <p class="text-sm text-white/40 mt-3 animate-in animate-delay-3">First 10 changelogs are free. No credit card required.</p>
+          <p class="text-xs sm:text-sm text-white/40 mt-2.5 sm:mt-3 animate-in animate-delay-3">First 10 changelogs are free. No credit card.</p>
         </div>
       </div>
 
-      <!-- Scroll indicator -->
-      <div class="absolute bottom-6 right-6 sm:right-10 z-20 animate-in animate-delay-3 hidden sm:block">
+      <!-- Scroll indicator — desktop only -->
+      <div class="absolute bottom-6 right-10 z-20 animate-in animate-delay-3 hidden sm:block">
         <a href="#how-it-works" class="flex flex-col items-center gap-1 text-white/30 hover:text-white/60 transition-colors">
           <span class="text-[10px] uppercase tracking-widest font-medium">Scroll</span>
           <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
