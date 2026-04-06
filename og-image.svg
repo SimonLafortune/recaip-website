@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1a18"/>
+      <stop offset="35%" stop-color="#163d38"/>
+      <stop offset="50%" stop-color="#1a4a3e"/>
+      <stop offset="65%" stop-color="#163d38"/>
+      <stop offset="100%" stop-color="#0b1a18"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#3d8b80" stop-opacity="0.15"/>
+      <stop offset="70%" stop-color="#3d8b80" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6bbfae"/>
+      <stop offset="40%" stop-color="#99d7cb"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <ellipse cx="600" cy="315" rx="400" ry="300" fill="url(#glow)"/>
+  <text x="600" y="260" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="300" font-size="72" fill="white" opacity="0.9" letter-spacing="-2">recaip</text>
+  <line x1="500" y1="290" x2="700" y2="290" stroke="#4da895" stroke-width="1" opacity="0.5"/>
+  <text x="600" y="340" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="28" fill="white" opacity="0.6">AI-generated release notes</text>
+  <text x="600" y="380" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="22" fill="white" opacity="0.35">from your dev tools</text>
+  <text x="600" y="540" text-anchor="middle" font-family="monospace" font-size="14" fill="#4da895" opacity="0.5" letter-spacing="4">RECAIP.COM</text>
+</svg>

@@ -4,7 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recaip - Pricing</title>
-  <meta name="description" content="One plan, everything included. $19 per product per month. Your first 10 recaps are free, no credit card required." />
+  <meta name="description" content="One plan, everything included. $19 per month. Unlimited products, 100 recaps per month. No credit card required." />
+  <meta property="og:title" content="Recaip Pricing — $19/mo, everything included." />
+  <meta property="og:description" content="One plan. Everything included. $19/mo for unlimited products and 100 recaps per month." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://recaip.com/pricing" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Recaip Pricing — $19/mo, everything included." />
+  <meta name="twitter:description" content="One plan. Everything included. $19/mo for unlimited products and 100 recaps per month." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com/pricing" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Recaip",
+    "url": "https://recaip.com",
+    "logo": "https://recaip.com/logo.svg",
+    "description": "AI-generated release notes, changelogs, and product updates from your dev tools.",
+    "founder": { "@type": "Person", "name": "Simon Lafortune", "url": "https://x.com/simonlafortune" },
+    "sameAs": ["https://x.com/simonlafortune"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What counts as a \"product\"?", "acceptedAnswer": { "@type": "Answer", "text": "A product is one thing you ship that has its own changelog. For example, your web app is one product. Your mobile app is another. Most small teams need one product." } },
+      { "@type": "Question", "name": "Can I connect multiple repos to one product?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A product can pull from multiple GitHub repos, Linear projects, or Jira boards. All events feed into the same changelog." } },
+      { "@type": "Question", "name": "How does pricing work?", "acceptedAnswer": { "@type": "Answer", "text": "Recaip costs $19 per month for unlimited products and 100 recaps. Need more? Stack additional packs at $19 each for 100 more recaps. 5 packs = 500 recaps per month." } },
+      { "@type": "Question", "name": "What AI model does Recaip use?", "acceptedAnswer": { "@type": "Answer", "text": "Recaip uses Claude by Anthropic for all text generation. The model reads your code diffs, PR descriptions, and linked tickets to produce each draft." } },
+      { "@type": "Question", "name": "Can I edit drafts before they go live?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every draft starts in approve mode. You can edit the text, then approve or reject it. You can also set individual channels to auto-publish once you trust the output." } },
+      { "@type": "Question", "name": "What happens if I cancel?", "acceptedAnswer": { "@type": "Answer", "text": "Your existing changelog page stays live. You keep all published entries. New PRs will no longer generate drafts. You can export your data at any time." } },
+      { "@type": "Question", "name": "Do you support GitLab or Bitbucket?", "acceptedAnswer": { "@type": "Answer", "text": "GitHub is supported today. GitLab support is in development. Bitbucket is on the roadmap." } },
+      { "@type": "Question", "name": "Where is my data stored?", "acceptedAnswer": { "@type": "Answer", "text": "All data is stored in Supabase (hosted on AWS). Code diffs are processed in memory and not permanently stored. Only the generated text and metadata are saved." } },
+      { "@type": "Question", "name": "Is Recaip free?", "acceptedAnswer": { "@type": "Answer", "text": "Recaip costs $19 per month for unlimited products and 100 recaps. All features are included with no tiers or gates. Need more recaps? Stack additional packs at $19 each." } },
+      { "@type": "Question", "name": "How is Recaip different from other changelog tools?", "acceptedAnswer": { "@type": "Answer", "text": "Most changelog tools help you write faster. Recaip eliminates writing entirely. It operates as an autonomous agent that listens to webhooks 24/7, reads your code diffs and tickets, and publishes to every channel without any human action." } },
+      { "@type": "Question", "name": "Does Recaip work with monorepos?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can connect multiple repositories to a single product, or set up multiple products from different paths in the same repo. All events feed into the appropriate changelog." } }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -44,24 +89,26 @@
 <body class="font-sans text-white/50 antialiased">
   <div class="page-wrapper">
 
-    <!-- Fixed nav -->
+    <header>
     <nav class="nav-fixed">
-      <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="max-w-[1400px] mx-auto flex items-center justify-between">
         <a href="/" class="flex items-center"><img src="logo.svg" alt="recaip" class="h-7" /></a>
         <div class="flex items-center gap-6">
-          <a href="/features.html" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
-          <a href="/pricing.html" class="text-white/90 text-sm font-medium">Pricing</a>
-          <a href="/about.html" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
-          <a href="/app" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Start free</a>
+          <a href="/features" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
+          <a href="/pricing" class="text-white/90 text-sm font-medium">Pricing</a>
+          <a href="/blog" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Blog</a>
+          <a href="/about" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
+          <a href="https://app.recaip.com" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Start free</a>
         </div>
       </div>
     </nav>
+    </header>
 
-    <!-- Page hero -->
-    <section class="page-hero text-center px-6">
-      <div class="max-w-3xl mx-auto">
+    <main>
+    <section class="page-hero text-center px-6 lg:px-16">
+      <div class="max-w-[1200px] mx-auto">
         <h1 class="text-4xl sm:text-5xl font-semibold gradient-text mb-6 reveal">Simple, transparent pricing</h1>
-        <p class="text-lg text-white/40 max-w-2xl mx-auto reveal reveal-delay-1">One plan. Everything included. Per product, not per user.</p>
+        <p class="text-lg text-white/40 max-w-[800px] mx-auto reveal reveal-delay-1">One plan. Everything included. Unlimited products.</p>
       </div>
     </section>
 
@@ -70,15 +117,15 @@
     <div class="ambient-glow" style="width: 400px; height: 400px; background: radial-gradient(circle, rgba(77,168,149,0.06) 0%, transparent 70%); top: 600px; right: -80px;"></div>
 
     <!-- Single pricing card -->
-    <section class="py-16 px-6">
-      <div class="max-w-xl mx-auto">
+    <section class="py-16 px-6 lg:px-16">
+      <div class="max-w-[800px] mx-auto">
 
         <div class="glass-card-glow p-10 text-center reveal-scale reveal-delay-1">
           <div class="mb-2">
             <span class="text-5xl font-bold text-white">$19</span>
-            <span class="text-lg text-white/40 ml-1">/product/mo</span>
+            <span class="text-lg text-white/40 ml-1">/mo</span>
           </div>
-          <p class="text-sm text-white/40 mb-8">Your first 10 recaps are free. No credit card required.</p>
+          <p class="text-sm text-white/40 mb-8">Unlimited products. 100 recaps per month. Need more? Stack packs.</p>
 
           <div class="grid grid-cols-2 gap-x-6 gap-y-3 text-left mb-8">
             <div class="flex items-start gap-3 text-sm text-white/50">
@@ -115,7 +162,7 @@
             </div>
             <div class="flex items-start gap-3 text-sm text-white/50">
               <svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              Unlimited connected repos
+              Unlimited products &amp; repos
             </div>
             <div class="flex items-start gap-3 text-sm text-white/50">
               <svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -123,134 +170,170 @@
             </div>
           </div>
 
-          <a href="/app" class="btn-primary glow-pulse block text-center py-3.5 px-6 rounded-lg text-white text-sm font-medium w-full">Start free</a>
+          <a href="https://app.recaip.com" class="btn-primary glow-pulse block text-center py-3.5 px-6 rounded-lg text-white text-sm font-medium w-full">Start free</a>
         </div>
 
-        <p class="text-sm text-white/30 text-center mt-6">A "product" is one thing you ship that has its own changelog. Most teams need one.</p>
+        <p class="text-sm text-white/30 text-center mt-6">Need more than 100 recaps? Add packs at $19/mo each. 5 packs = 500 recaps/mo.</p>
 
       </div>
     </section>
 
-    <div class="section-divider max-w-5xl mx-auto"></div>
+    <div class="section-divider max-w-[1400px] mx-auto"></div>
 
     <!-- What counts as a product? -->
-    <section class="py-20 px-6">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl sm:text-4xl font-semibold text-white/90 text-center mb-12 reveal">What counts as a product?</h2>
+    <section class="py-20 px-6 lg:px-16">
+      <div class="max-w-[1200px] mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-semibold text-white/90 text-center mb-12 reveal">How packs work</h2>
         <div class="glass-card p-8 reveal reveal-delay-1">
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
             <div class="text-center">
-              <p class="text-sm text-white/70 font-medium mb-1">Your web app</p>
-              <p class="text-sm text-white/30">= 1 product</p>
+              <p class="font-mono text-2xl font-bold text-white/80 mb-1">1x</p>
+              <p class="text-sm text-white/50">$19/mo</p>
+              <p class="text-sm text-white/30">100 recaps</p>
             </div>
             <div class="text-center">
-              <p class="text-sm text-white/70 font-medium mb-1">Your mobile app</p>
-              <p class="text-sm text-white/30">= 1 product</p>
+              <p class="font-mono text-2xl font-bold text-white/80 mb-1">3x</p>
+              <p class="text-sm text-white/50">$57/mo</p>
+              <p class="text-sm text-white/30">300 recaps</p>
             </div>
             <div class="text-center">
-              <p class="text-sm text-white/70 font-medium mb-1">Your API</p>
-              <p class="text-sm text-white/30">= 1 product</p>
+              <p class="font-mono text-2xl font-bold text-white/80 mb-1">5x</p>
+              <p class="text-sm text-white/50">$95/mo</p>
+              <p class="text-sm text-white/30">500 recaps</p>
             </div>
           </div>
-          <p class="text-sm text-white/40 text-center">Each product gets its own changelog, its own webhook listeners, and its own set of output channels. Add more products at $19/mo each.</p>
+          <p class="text-sm text-white/40 text-center">Every pack includes unlimited products, all 6 output formats, and every feature. A recap is one product update generated from a merged PR or closed ticket.</p>
         </div>
       </div>
     </section>
 
-    <div class="section-divider max-w-5xl mx-auto"></div>
+    <div class="section-divider max-w-[1400px] mx-auto"></div>
 
     <!-- FAQ section -->
-    <section class="py-20 px-6">
-      <div class="max-w-3xl mx-auto">
+    <section class="py-20 px-6 lg:px-16">
+      <div class="max-w-[1200px] mx-auto">
         <h2 class="text-3xl sm:text-4xl font-semibold text-white/90 text-center mb-12 reveal">Frequently asked questions</h2>
 
         <div class="space-y-3">
 
           <!-- FAQ 1 -->
           <div class="glass-card overflow-hidden reveal reveal-delay-1">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
               <span class="text-sm font-medium text-white/90">What counts as a "product"?</span>
               <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="hidden px-6 pb-5">
-              <p class="text-sm text-white/40">A product is one thing you ship that has its own changelog. For example, your web app is one product. Your mobile app is another. Most small teams need one product.</p>
+            <div class="hidden px-6 lg:px-16 pb-5">
+              <p class="text-sm text-white/40">A product is one thing you ship that has its own changelog. For example, your web app is one product. Your mobile app is another. All products are included in every plan — there is no per-product charge.</p>
             </div>
           </div>
 
           <!-- FAQ 2 -->
           <div class="glass-card overflow-hidden reveal reveal-delay-2">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
               <span class="text-sm font-medium text-white/90">Can I connect multiple repos to one product?</span>
               <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="hidden px-6 pb-5">
+            <div class="hidden px-6 lg:px-16 pb-5">
               <p class="text-sm text-white/40">Yes. A product can pull from multiple GitHub repos, Linear projects, or Jira boards. All events feed into the same changelog.</p>
             </div>
           </div>
 
           <!-- FAQ 3 -->
           <div class="glass-card overflow-hidden reveal reveal-delay-3">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
               <span class="text-sm font-medium text-white/90">How does the free trial work?</span>
               <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="hidden px-6 pb-5">
-              <p class="text-sm text-white/40">Your first 10 recaps are completely free, with no credit card required. You get full access to every feature. Once you've used your 10 free recaps, you can subscribe at $19/product/mo to keep going.</p>
+            <div class="hidden px-6 lg:px-16 pb-5">
+              <p class="text-sm text-white/40">Recaip costs $19/mo for 100 recaps and unlimited products. All features are included. Need more recaps? Stack additional packs at $19 each for 100 more.</p>
             </div>
           </div>
 
           <!-- FAQ 4 -->
           <div class="glass-card overflow-hidden reveal reveal-delay-4">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
               <span class="text-sm font-medium text-white/90">What AI model does Recaip use?</span>
               <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="hidden px-6 pb-5">
+            <div class="hidden px-6 lg:px-16 pb-5">
               <p class="text-sm text-white/40">Recaip uses Claude by Anthropic for all text generation. The model reads your code diffs, PR descriptions, and linked tickets to produce each draft.</p>
             </div>
           </div>
 
           <!-- FAQ 5 -->
           <div class="glass-card overflow-hidden reveal reveal-delay-5">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
               <span class="text-sm font-medium text-white/90">Can I edit drafts before they go live?</span>
               <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="hidden px-6 pb-5">
+            <div class="hidden px-6 lg:px-16 pb-5">
               <p class="text-sm text-white/40">Yes. Every draft starts in approve mode. You can edit the text, then approve or reject it. You can also set individual channels to auto-publish once you trust the output.</p>
             </div>
           </div>
 
           <!-- FAQ 6 -->
           <div class="glass-card overflow-hidden reveal reveal-delay-6">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
               <span class="text-sm font-medium text-white/90">What happens if I cancel?</span>
               <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="hidden px-6 pb-5">
+            <div class="hidden px-6 lg:px-16 pb-5">
               <p class="text-sm text-white/40">Your existing changelog page stays live. You keep all published entries. New PRs will no longer generate drafts. You can export your data at any time.</p>
             </div>
           </div>
 
           <!-- FAQ 7 -->
           <div class="glass-card overflow-hidden reveal reveal-delay-7">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
               <span class="text-sm font-medium text-white/90">Do you support GitLab or Bitbucket?</span>
               <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="hidden px-6 pb-5">
+            <div class="hidden px-6 lg:px-16 pb-5">
               <p class="text-sm text-white/40">GitHub is supported today. GitLab support is in development. Bitbucket is on the roadmap. Join the waitlist for updates.</p>
             </div>
           </div>
 
           <!-- FAQ 8 -->
           <div class="glass-card overflow-hidden reveal reveal-delay-8">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+            <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
               <span class="text-sm font-medium text-white/90">Where is my data stored?</span>
               <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="hidden px-6 pb-5">
+            <div class="hidden px-6 lg:px-16 pb-5">
               <p class="text-sm text-white/40">All data is stored in Supabase (hosted on AWS). Code diffs are processed in memory and not permanently stored. Only the generated text and metadata are saved.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 9 -->
+          <div class="glass-card overflow-hidden reveal">
+            <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
+              <span class="text-sm font-medium text-white/90">Is Recaip free?</span>
+              <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="hidden px-6 lg:px-16 pb-5">
+              <p class="text-sm text-white/40">Recaip costs $19 per month for unlimited products and 100 recaps. All features are included with no tiers or gates. Need more capacity? Stack packs at $19 each.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 10 -->
+          <div class="glass-card overflow-hidden reveal">
+            <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
+              <span class="text-sm font-medium text-white/90">How is Recaip different from other changelog tools?</span>
+              <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="hidden px-6 lg:px-16 pb-5">
+              <p class="text-sm text-white/40">Most changelog tools help you write faster. Recaip eliminates writing entirely. It operates as an autonomous agent that listens to webhooks 24/7, reads your code diffs and tickets, and publishes to every channel without any human action. Configure once, it runs forever.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 11 -->
+          <div class="glass-card overflow-hidden reveal">
+            <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
+              <span class="text-sm font-medium text-white/90">Does Recaip work with monorepos?</span>
+              <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="hidden px-6 lg:px-16 pb-5">
+              <p class="text-sm text-white/40">Yes. You can connect multiple repositories to a single product, or set up multiple products from different paths in the same repo. All events feed into the appropriate changelog.</p>
             </div>
           </div>
 
@@ -258,28 +341,30 @@
       </div>
     </section>
 
-    <div class="section-divider max-w-5xl mx-auto"></div>
+    <div class="section-divider max-w-[1400px] mx-auto"></div>
 
     <!-- CTA section -->
-    <section class="py-24 px-6 text-center relative">
+    <section class="py-24 px-6 lg:px-16 text-center relative">
       <div class="ambient-glow" style="width: 600px; height: 600px; background: radial-gradient(circle, rgba(61,139,128,0.10) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
-      <div class="max-w-2xl mx-auto relative z-10">
-        <h2 class="text-3xl sm:text-4xl font-semibold text-white/90 mb-4 reveal">Start free. Your first 10 recaps are on us.</h2>
-        <p class="text-lg text-white/40 mb-10 reveal reveal-delay-1">Connect your first repo and see Recaip generate a draft on your next merge. No credit card, no time limit.</p>
-        <a href="/app" class="btn-primary glow-pulse inline-flex items-center justify-center h-14 px-10 rounded-xl text-white font-semibold text-base reveal reveal-delay-2">Start free</a>
-        <p class="text-sm text-white/30 mt-4 reveal reveal-delay-3">10 free recaps, then $19/product/mo.</p>
+      <div class="max-w-[800px] mx-auto relative z-10">
+        <h2 class="text-3xl sm:text-4xl font-semibold text-white/90 mb-4 reveal">Start for $19/mo. Ship updates on autopilot.</h2>
+        <p class="text-lg text-white/40 mb-10 reveal reveal-delay-1">Connect your first repo and see Recaip generate a draft on your next merge. Unlimited products, 100 recaps included.</p>
+        <a href="https://app.recaip.com" class="btn-primary glow-pulse inline-flex items-center justify-center h-14 px-10 rounded-xl text-white font-semibold text-base reveal reveal-delay-2">Start free</a>
+        <p class="text-sm text-white/30 mt-4 reveal reveal-delay-3">$19/mo. Unlimited products. 100 recaps.</p>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-8 px-6">
+    </main>
+
+    <footer class="py-8 px-6 lg:px-16">
       <div class="section-divider mb-8"></div>
-      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <a href="/"><img src="logo.svg" alt="recaip" class="h-5 opacity-40" /></a>
         <div class="flex items-center gap-6 text-sm text-white/30">
-          <a href="/features.html" class="hover:text-white/50 transition-colors">Features</a>
-          <a href="/pricing.html" class="hover:text-white/50 transition-colors">Pricing</a>
-          <a href="/about.html" class="hover:text-white/50 transition-colors">About</a>
+          <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+          <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+          <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+          <a href="/about" class="hover:text-white/50 transition-colors">About</a>
         </div>
         <div class="flex items-center gap-4 text-sm text-white/30">
           <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>

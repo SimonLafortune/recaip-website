@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog - Recaip</title>
+  <meta name="description" content="Articles on release communication, changelog automation, and shipping better product updates. By Simon Lafortune." />
+  <meta property="og:title" content="Recaip Blog — Thoughts on shipping and release communication" />
+  <meta property="og:description" content="Articles on release communication, changelog automation, and shipping better product updates." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://recaip.com/blog" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Recaip Blog — Thoughts on shipping and release communication" />
+  <meta name="twitter:description" content="Articles on release communication, changelog automation, and shipping better product updates." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com/blog" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Recaip Blog",
+    "url": "https://recaip.com/blog",
+    "description": "Articles on release communication, changelog automation, and shipping better product updates.",
+    "publisher": { "@type": "Organization", "name": "Recaip", "url": "https://recaip.com" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#e6f5f2', 100: '#ccebe5', 200: '#99d7cb', 300: '#6bbfae',
+              400: '#4da895', 500: '#3d8b80', 600: '#2d6b63', 700: '#1f524c',
+              800: '#163d38', 900: '#0e2a26',
+            },
+            surface: {
+              0: '#0b1a18', 1: '#0f2420', 2: '#142e2a', 3: '#1a3935', 4: '#21453f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <svg class="hidden">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+</head>
+<body class="font-sans text-white/50 antialiased">
+<div class="page-wrapper">
+
+  <header>
+  <nav class="nav-fixed">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center"><img src="../logo.svg" alt="recaip" class="h-7" /></a>
+      <div class="flex items-center gap-6">
+        <a href="/features" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
+        <a href="/pricing" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+        <a href="/blog" class="text-white/90 text-sm font-medium">Blog</a>
+        <a href="/about" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="https://app.recaip.com" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+  <section class="page-hero px-6 lg:px-16 text-center">
+    <div class="max-w-[1200px] mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-bold text-white/90 mb-6 leading-tight animate-in">Blog</h1>
+      <p class="text-lg text-white/45 max-w-[800px] mx-auto animate-in animate-delay-1">
+        Thoughts on shipping, communicating, and automating the gap between code and users.
+      </p>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <section class="py-16 sm:py-24 px-6 lg:px-16">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <a href="/blog/why-your-changelog-is-costing-you-users" class="glass-card p-6 blog-card block reveal">
+          <span class="inline-block px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-[11px] text-brand-400 font-mono uppercase tracking-wider mb-4">Product</span>
+          <h2 class="text-lg font-semibold text-white/90 mb-2 blog-card-title transition-colors">Why Your Changelog Is Costing You Users</h2>
+          <p class="text-sm text-white/45 leading-relaxed mb-4">Most teams ship great features that nobody discovers. The missing link is not code quality — it's communication.</p>
+          <div class="flex items-center gap-3 text-xs text-white/30">
+            <span>April 6, 2026</span>
+            <span class="w-1 h-1 rounded-full bg-white/20"></span>
+            <span>7 min read</span>
+          </div>
+        </a>
+
+        <a href="/blog/how-to-automate-release-notes-with-ai" class="glass-card p-6 blog-card block reveal reveal-delay-1">
+          <span class="inline-block px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-[11px] text-brand-400 font-mono uppercase tracking-wider mb-4">How-to</span>
+          <h2 class="text-lg font-semibold text-white/90 mb-2 blog-card-title transition-colors">How to Automate Release Notes with AI</h2>
+          <p class="text-sm text-white/45 leading-relaxed mb-4">A practical guide to eliminating manual changelog writing with AI tools that read your code and generate publish-ready updates.</p>
+          <div class="flex items-center gap-3 text-xs text-white/30">
+            <span>April 6, 2026</span>
+            <span class="w-1 h-1 rounded-full bg-white/20"></span>
+            <span>8 min read</span>
+          </div>
+        </a>
+
+        <a href="/blog/true-cost-of-not-communicating-product-updates" class="glass-card p-6 blog-card block reveal reveal-delay-2">
+          <span class="inline-block px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-[11px] text-brand-400 font-mono uppercase tracking-wider mb-4">Thought Leadership</span>
+          <h2 class="text-lg font-semibold text-white/90 mb-2 blog-card-title transition-colors">The True Cost of Not Communicating Product Updates</h2>
+          <p class="text-sm text-white/45 leading-relaxed mb-4">Feature discovery, support tickets, churn, and team morale — the hidden costs of skipping release notes add up fast.</p>
+          <div class="flex items-center gap-3 text-xs text-white/30">
+            <span>April 6, 2026</span>
+            <span class="w-1 h-1 rounded-full bg-white/20"></span>
+            <span>6 min read</span>
+          </div>
+        </a>
+
+        <a href="/blog/recaip-vs-manual-changelogs" class="glass-card p-6 blog-card block reveal reveal-delay-3">
+          <span class="inline-block px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-[11px] text-brand-400 font-mono uppercase tracking-wider mb-4">Comparison</span>
+          <h2 class="text-lg font-semibold text-white/90 mb-2 blog-card-title transition-colors">Recaip vs Manual Changelogs: A Comparison</h2>
+          <p class="text-sm text-white/45 leading-relaxed mb-4">A side-by-side look at the manual changelog process versus letting an AI agent handle it autonomously.</p>
+          <div class="flex items-center gap-3 text-xs text-white/30">
+            <span>April 6, 2026</span>
+            <span class="w-1 h-1 rounded-full bg-white/20"></span>
+            <span>7 min read</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="py-8 px-6 lg:px-16">
+    <div class="section-divider mb-8"></div>
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/"><img src="../logo.svg" alt="recaip" class="h-5 opacity-40" /></a>
+      <div class="flex items-center gap-6 text-sm text-white/30">
+        <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+        <a href="/about" class="hover:text-white/50 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-white/30">
+        <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .section-divider').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

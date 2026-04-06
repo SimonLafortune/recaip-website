@@ -9,6 +9,28 @@
   <meta property="og:description" content="One merged PR produces six output formats. Changelog, social post, email, in-app announcement, stakeholder digest, and status page update." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://recaip.com/features" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Recaip Features. AI-generated release notes from your code." />
+  <meta name="twitter:description" content="One merged PR produces six output formats. Changelog, social post, email, in-app announcement, stakeholder digest, and status page update." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com/features" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Recaip",
+    "url": "https://recaip.com",
+    "logo": "https://recaip.com/logo.svg",
+    "description": "AI-generated release notes, changelogs, and product updates from your dev tools.",
+    "founder": { "@type": "Person", "name": "Simon Lafortune", "url": "https://x.com/simonlafortune" },
+    "sameAs": ["https://x.com/simonlafortune"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -48,47 +70,45 @@
 <body class="font-sans text-white/50 antialiased">
 <div class="page-wrapper">
 
-  <!-- ============================================ -->
-  <!-- NAV                                          -->
-  <!-- ============================================ -->
+  <header>
   <nav class="nav-fixed">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between">
       <a href="/" class="flex items-center"><img src="logo.svg" alt="recaip" class="h-7" /></a>
       <div class="flex items-center gap-6">
-        <a href="/features.html" class="text-white/90 text-sm font-medium">Features</a>
-        <a href="/pricing.html" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
-        <a href="/about.html" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
-        <a href="/app" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
+        <a href="/features" class="text-white/90 text-sm font-medium">Features</a>
+        <a href="/pricing" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+        <a href="/blog" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Blog</a>
+        <a href="/about" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="https://app.recaip.com" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
       </div>
     </div>
   </nav>
+  </header>
 
-  <!-- ============================================ -->
-  <!-- PAGE HERO                                    -->
-  <!-- ============================================ -->
-  <section class="page-hero px-6 text-center">
-    <div class="max-w-3xl mx-auto">
+  <main>
+  <section class="page-hero px-6 lg:px-16 text-center">
+    <div class="max-w-[1200px] mx-auto">
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white/90 mb-6 leading-tight animate-in">
         Everything Recaip does <span class="gradient-text">for you</span>
       </h1>
-      <p class="text-lg text-white/45 max-w-2xl mx-auto animate-in animate-delay-1">
+      <p class="text-lg text-white/45 max-w-[800px] mx-auto animate-in animate-delay-1">
         From code diff to published update. Recaip reads what you shipped, writes the recap, and delivers it to every channel.
       </p>
     </div>
   </section>
 
-  <div class="section-divider max-w-4xl mx-auto"></div>
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
 
   <!-- ============================================ -->
   <!-- OUTPUT FORMATS - Bento grid                   -->
   <!-- ============================================ -->
-  <section class="py-24 px-6 relative overflow-hidden">
+  <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
     <div class="ambient-glow w-[500px] h-[500px] bg-brand-700/15 top-[50px] right-[-150px]" style="position:absolute;"></div>
 
-    <div class="max-w-5xl mx-auto relative z-10">
+    <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white/90 text-center mb-4">One event. <span class="gradient-text">Every format.</span></h2>
-        <p class="text-white/50 text-center mb-16 max-w-xl mx-auto">You ship once. Recaip writes the recap for every audience and every channel.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white/90 text-center mb-4">One event. Every format.</h2>
+        <p class="text-white/50 text-center mb-16 max-w-[800px] mx-auto">You ship once. Recaip writes the recap for every audience and every channel.</p>
       </div>
 
       <!-- Bento grid: 2 large + 4 small -->
@@ -152,18 +172,18 @@
     </div>
   </section>
 
-  <div class="section-divider max-w-4xl mx-auto"></div>
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
 
   <!-- ============================================ -->
   <!-- HOW AI WORKS                                 -->
   <!-- ============================================ -->
-  <section class="py-24 px-6 relative overflow-hidden">
+  <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
     <div class="ambient-glow w-[500px] h-[500px] bg-brand-800/20 bottom-[-100px] left-[-100px]" style="position:absolute;"></div>
 
-    <div class="max-w-5xl mx-auto relative z-10">
+    <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white/90 text-center mb-4">How the AI <span class="gradient-text">reads your code</span></h2>
-        <p class="text-white/50 text-center mb-16 max-w-2xl mx-auto">Recaip does not rely on commit messages alone. It reads multiple data sources to produce accurate, context-aware output.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white/90 text-center mb-4">How the AI reads your code</h2>
+        <p class="text-white/50 text-center mb-16 max-w-[800px] mx-auto">Recaip does not rely on commit messages alone. It reads multiple data sources to produce accurate, context-aware output.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -199,19 +219,19 @@
     </div>
   </section>
 
-  <div class="section-divider max-w-4xl mx-auto"></div>
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
 
   <!-- ============================================ -->
   <!-- FEATURE DEEP-DIVE - Bento grid                -->
   <!-- ============================================ -->
-  <section class="py-24 px-6 relative overflow-hidden">
+  <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
     <div class="ambient-glow w-[500px] h-[500px] bg-brand-700/15 top-[100px] right-[-200px]" style="position:absolute;"></div>
     <div class="ambient-glow w-[400px] h-[400px] bg-brand-800/15 bottom-[-50px] left-[-150px]" style="position:absolute;"></div>
 
-    <div class="max-w-5xl mx-auto relative z-10">
+    <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white/90 text-center mb-4">Built for teams that <span class="gradient-text">ship fast</span></h2>
-        <p class="text-white/50 text-center mb-16 max-w-xl mx-auto">Every feature exists to remove manual work between your merge and your users.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white/90 text-center mb-4">Built for teams that ship fast</h2>
+        <p class="text-white/50 text-center mb-16 max-w-[800px] mx-auto">Every feature exists to remove manual work between your merge and your users.</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -276,38 +296,38 @@
     </div>
   </section>
 
-  <div class="section-divider max-w-4xl mx-auto"></div>
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
 
   <!-- ============================================ -->
   <!-- FINAL CTA                                    -->
   <!-- ============================================ -->
-  <section class="py-28 px-6 relative overflow-hidden">
+  <section class="py-28 px-6 lg:px-16 relative overflow-hidden">
     <div class="ambient-glow w-[600px] h-[600px] bg-brand-700/15 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="position:absolute;"></div>
 
-    <div class="max-w-2xl mx-auto text-center relative z-10 reveal">
+    <div class="max-w-[800px] mx-auto text-center relative z-10 reveal">
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/90 mb-4 leading-tight">Try Recaip on your <span class="gradient-text">next merge.</span></h2>
       <p class="text-white/45 mb-10 text-lg">Connect your GitHub repo. Your first AI-generated recap arrives in under 2 minutes.</p>
 
       <div class="flex flex-col sm:flex-row gap-3 justify-center mb-4">
-        <a href="/app" class="btn-primary h-14 px-10 rounded-xl text-white font-semibold text-base flex items-center justify-center glow-pulse">
+        <a href="https://app.recaip.com" class="btn-primary h-14 px-10 rounded-xl text-white font-semibold text-base flex items-center justify-center glow-pulse">
           Get started free
         </a>
       </div>
-      <p class="text-sm text-white/35">Free forever for 1 product. No credit card required.</p>
+      <p class="text-sm text-white/35">$19/mo. Unlimited products. 100 recaps.</p>
     </div>
   </section>
 
-  <!-- ============================================ -->
-  <!-- FOOTER                                       -->
-  <!-- ============================================ -->
-  <footer class="py-8 px-6">
+  </main>
+
+  <footer class="py-8 px-6 lg:px-16">
     <div class="section-divider mb-8"></div>
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <a href="/"><img src="logo.svg" alt="recaip" class="h-5 opacity-40" /></a>
       <div class="flex items-center gap-6 text-sm text-white/30">
-        <a href="/features.html" class="hover:text-white/50 transition-colors">Features</a>
-        <a href="/pricing.html" class="hover:text-white/50 transition-colors">Pricing</a>
-        <a href="/about.html" class="hover:text-white/50 transition-colors">About</a>
+        <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+        <a href="/about" class="hover:text-white/50 transition-colors">About</a>
       </div>
       <div class="flex items-center gap-4 text-sm text-white/30">
         <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>

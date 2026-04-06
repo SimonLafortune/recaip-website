@@ -30,7 +30,7 @@ body::before {
 .hero-fullscreen {
   position: relative;
   height: 100%;
-  background-image: url('hero-bg.png');
+  background-image: url('hero-bg.webp');
   background-size: cover;
   background-position: center;
 }
@@ -89,6 +89,9 @@ body::before {
 @media (min-width: 640px) {
   .nav-fixed { padding: 1rem 2.5rem; }
 }
+@media (min-width: 1024px) {
+  .nav-fixed { padding: 1rem 4rem; }
+}
 
 .gradient-text {
   background: linear-gradient(135deg, #6bbfae 0%, #99d7cb 40%, #ffffff 100%);
@@ -97,19 +100,46 @@ body::before {
   background-clip: text;
 }
 
-/* Glass card */
+/* Glass card with animated gradient border */
 .glass-card {
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
-  transition: all 0.3s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent 40%, rgba(77, 168, 149, 0.4) 50%, rgba(107, 191, 174, 0.3) 60%, transparent 70%);
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 .glass-card:hover {
-  border-color: rgba(77, 168, 149, 0.35);
-  box-shadow: 0 0 30px rgba(61, 139, 128, 0.1);
-  transform: translateY(-2px);
+  border-color: rgba(77, 168, 149, 0.25);
+  box-shadow: 0 8px 40px rgba(61, 139, 128, 0.12);
+  transform: translateY(-3px);
+}
+.glass-card:hover::before {
+  opacity: 1;
+  animation: borderGlow 2s linear infinite;
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Brighter glass variant */
@@ -119,12 +149,33 @@ body::before {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 16px;
-  transition: all 0.3s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+.glass-card-bright::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent 40%, rgba(77, 168, 149, 0.4) 50%, rgba(107, 191, 174, 0.3) 60%, transparent 70%);
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 .glass-card-bright:hover {
-  border-color: rgba(77, 168, 149, 0.35);
-  box-shadow: 0 0 30px rgba(61, 139, 128, 0.1);
-  transform: translateY(-2px);
+  border-color: rgba(77, 168, 149, 0.25);
+  box-shadow: 0 8px 40px rgba(61, 139, 128, 0.12);
+  transform: translateY(-3px);
+}
+.glass-card-bright:hover::before {
+  opacity: 1;
+  animation: borderGlow 2s linear infinite;
 }
 
 /* Glowing card */
@@ -389,4 +440,76 @@ body::before {
 .page-hero {
   padding-top: 120px;
   padding-bottom: 60px;
+}
+
+/* Blog prose */
+.prose-blog { max-width: 56rem; margin: 0 auto; }
+.prose-blog p { color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.0625rem; }
+.prose-blog h2 { color: rgba(255,255,255,0.9); font-size: 1.5rem; font-weight: 600; margin-top: 3rem; margin-bottom: 1rem; }
+.prose-blog h3 { color: rgba(255,255,255,0.85); font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; }
+.prose-blog ul, .prose-blog ol { color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; padding-left: 1.5rem; }
+.prose-blog li { margin-bottom: 0.5rem; line-height: 1.7; }
+.prose-blog blockquote { border-left: 3px solid rgba(61,139,128,0.5); padding-left: 1.25rem; margin: 2rem 0; }
+.prose-blog blockquote p { color: rgba(255,255,255,0.55); font-style: italic; }
+.prose-blog code { font-family: 'JetBrains Mono', monospace; font-size: 0.875em; background: rgba(255,255,255,0.06); padding: 0.15em 0.4em; border-radius: 4px; color: rgba(255,255,255,0.7); }
+.prose-blog pre { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; overflow-x: auto; margin: 2rem 0; }
+.prose-blog pre code { background: none; padding: 0; font-size: 0.85rem; line-height: 1.6; }
+.prose-blog a { color: #6bbfae; text-decoration: underline; text-underline-offset: 3px; }
+.prose-blog a:hover { color: #99d7cb; }
+.prose-blog img { border-radius: 12px; margin: 2rem 0; }
+.prose-blog strong { color: rgba(255,255,255,0.8); }
+
+/* Blog card */
+.blog-card { transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+.blog-card:hover { transform: translateY(-4px); }
+.blog-card:hover .blog-card-title { color: rgba(255,255,255,1); }
+
+/* Scroll progress bar (blog) */
+/* Typewriter animation (homepage) */
+.typewriter { overflow: hidden; }
+.typewriter-line {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.typewriter-line.typed { opacity: 1; transform: translateY(0); }
+
+/* Floating hero card (homepage) */
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0) rotate(1deg); }
+  50% { transform: translateY(-8px) rotate(0.5deg); }
+}
+.hero-floating-card { animation: heroFloat 4s ease-in-out infinite; }
+
+/* Price counter (homepage) */
+.price-counter { display: inline-block; }
+
+/* Parallax cards (homepage) */
+.parallax-card { will-change: transform; }
+
+/* FAQ smooth accordion */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.faq-answer.open {
+  max-height: 200px;
+  padding-bottom: 1.25rem;
+}
+
+/* Scroll progress bar (blog) */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3d8b80, #6bbfae);
+  z-index: 200;
+  width: 0%;
+  transition: width 0.1s ease-out;
 }

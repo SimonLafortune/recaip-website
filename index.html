@@ -9,6 +9,59 @@
   <meta property="og:description" content="AI-generated release notes, changelogs, and product updates from your dev tools. Stop writing. Start shipping." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://recaip.com" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Recaip — Ship it. Recaip it." />
+  <meta name="twitter:description" content="AI-generated release notes, changelogs, and product updates from your dev tools. Stop writing. Start shipping." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Recaip",
+    "url": "https://recaip.com",
+    "logo": "https://recaip.com/logo.svg",
+    "description": "AI-generated release notes, changelogs, and product updates from your dev tools.",
+    "founder": { "@type": "Person", "name": "Simon Lafortune", "url": "https://x.com/simonlafortune" },
+    "sameAs": ["https://x.com/simonlafortune"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Recaip",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "description": "Recaip connects to GitHub, Linear, and Jira. Every time you ship, it writes the recap: changelog, announcement, social post, status update. Automatically.",
+    "url": "https://recaip.com",
+    "offers": {
+      "@type": "Offer",
+      "price": "19",
+      "priceCurrency": "USD",
+      "description": "$19/month for unlimited products and 100 recaps. Stack packs for more."
+    },
+    "featureList": ["AI-generated changelogs", "Social post generation", "Email drafts", "In-app announcements", "Stakeholder digests", "Status page updates"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How much does Recaip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Recaip costs $19 per month for unlimited products and 100 recaps. Need more? Stack additional packs at $19 each for 100 more recaps per month." } },
+      { "@type": "Question", "name": "What integrations does Recaip support?", "acceptedAnswer": { "@type": "Answer", "text": "GitHub is fully supported today. Linear and Jira integrations are in development. Slack delivery, GitLab, Notion, Statuspal, Betterstack, and Instatus are on the roadmap." } },
+      { "@type": "Question", "name": "How is Recaip different from other changelog tools?", "acceptedAnswer": { "@type": "Answer", "text": "Most changelog tools help you write faster. Recaip eliminates writing entirely. It is an autonomous agent that listens to webhooks 24/7, reads your code diffs, and publishes to every channel without any human action." } },
+      { "@type": "Question", "name": "Can I use Recaip with a monorepo?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can connect multiple repositories to a single product, or set up multiple products from different paths in the same repo." } },
+      { "@type": "Question", "name": "What AI model powers Recaip?", "acceptedAnswer": { "@type": "Answer", "text": "Recaip uses Claude by Anthropic. It reads code diffs, PR descriptions, and linked tickets to generate each draft. Over time it learns your writing style from edits you make." } }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -57,468 +110,9 @@
   </svg>
 
   <style>
-    /* Rich gradient body */
-    body {
-      background: linear-gradient(160deg, #0b1a18 0%, #0e2a26 15%, #163d38 35%, #1a4a3e 50%, #163d38 65%, #0e2a26 85%, #0b1a18 100%);
-      background-attachment: fixed;
-    }
-
-    /* Noise overlay — sits above everything visually but doesn't block */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      z-index: 9998;
-      pointer-events: none;
-      opacity: 0.035;
-      filter: url(#noise);
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Ensure content sits above noise (except hero wrapper) */
-    #preloader { position: relative; z-index: 9999; }
-
-    /* Fullscreen hero — sticky so content scrolls over it */
-    .hero-wrapper {
-      position: sticky;
-      top: 0;
-      z-index: 0;
-      height: 100vh;
-      height: 100svh;
-      min-height: 500px;
-    }
+    /* Homepage-only: hero uses inline bg-image reference */
     .hero-fullscreen {
-      position: relative;
-      height: 100%;
-      background-image: url('hero-bg.png');
-      background-size: cover;
-      background-position: center;
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.75) 0%,
-        rgba(0, 0, 0, 0.5) 30%,
-        rgba(0, 0, 0, 0.15) 60%,
-        rgba(0, 0, 0, 0.25) 100%
-      );
-    }
-
-    /* Content wrapper that scrolls over the hero */
-    .content-wrapper {
-      position: relative;
-      z-index: 2;
-    }
-    /* Rounded leading edge that slides over the hero */
-    .content-wrapper::before {
-      content: '';
-      display: block;
-      height: 80px;
-      border-radius: 40px 40px 0 0;
-      background: linear-gradient(160deg, #0b1a18 0%, #0e2a26 15%, #163d38 35%, #1a4a3e 50%, #163d38 65%, #0e2a26 85%, #0b1a18 100%);
-      background-attachment: fixed;
-      box-shadow: 0 -20px 60px rgba(11, 26, 24, 0.5);
-    }
-    /* Sections inside need their own bg so the hero doesn't show through */
-    .content-wrapper > section,
-    .content-wrapper > footer,
-    .content-wrapper > .section-divider {
-      background-color: transparent;
-      position: relative;
-      z-index: 2;
-    }
-    .content-sections-bg {
-      background: linear-gradient(160deg, #0b1a18 0%, #0e2a26 15%, #163d38 35%, #1a4a3e 50%, #163d38 65%, #0e2a26 85%, #0b1a18 100%);
-      background-attachment: fixed;
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg, #6bbfae 0%, #99d7cb 40%, #ffffff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* Glass card with animated gradient border */
-    .glass-card {
-      background: rgba(255, 255, 255, 0.04);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
-    }
-    .glass-card::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: 17px;
-      padding: 1px;
-      background: linear-gradient(135deg, transparent 40%, rgba(77, 168, 149, 0.4) 50%, rgba(107, 191, 174, 0.3) 60%, transparent 70%);
-      background-size: 300% 300%;
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-    .glass-card:hover {
-      border-color: rgba(77, 168, 149, 0.25);
-      box-shadow: 0 8px 40px rgba(61, 139, 128, 0.12);
-      transform: translateY(-3px);
-    }
-    .glass-card:hover::before {
-      opacity: 1;
-      animation: borderGlow 2s linear infinite;
-    }
-
-    @keyframes borderGlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* Typewriter animation */
-    .typewriter { overflow: hidden; }
-    .typewriter-line {
-      opacity: 0;
-      transform: translateY(4px);
-      transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-    .typewriter-line.typed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Floating hero card */
-    @keyframes heroFloat {
-      0%, 100% { transform: translateY(0) rotate(1deg); }
-      50% { transform: translateY(-8px) rotate(0.5deg); }
-    }
-    .hero-floating-card {
-      animation: heroFloat 4s ease-in-out infinite;
-    }
-
-    /* Price counter */
-    .price-counter { display: inline-block; }
-
-    /* Parallax cards */
-    .parallax-card { will-change: transform; }
-
-    /* Brighter glass variant */
-    .glass-card-bright {
-      background: rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      border-radius: 16px;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
-    }
-    .glass-card-bright::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: 17px;
-      padding: 1px;
-      background: linear-gradient(135deg, transparent 40%, rgba(77, 168, 149, 0.4) 50%, rgba(107, 191, 174, 0.3) 60%, transparent 70%);
-      background-size: 300% 300%;
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-    .glass-card-bright:hover {
-      border-color: rgba(77, 168, 149, 0.25);
-      box-shadow: 0 8px 40px rgba(61, 139, 128, 0.12);
-      transform: translateY(-3px);
-    }
-    .glass-card-bright:hover::before {
-      opacity: 1;
-      animation: borderGlow 2s linear infinite;
-    }
-
-    /* Glowing card (for Pro tier) */
-    .glass-card-glow {
-      background: linear-gradient(135deg, rgba(61, 139, 128, 0.12) 0%, rgba(45, 107, 99, 0.06) 100%);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(77, 168, 149, 0.30);
-      border-radius: 16px;
-      box-shadow: 0 0 40px rgba(61, 139, 128, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-      transition: all 0.3s ease;
-    }
-    .glass-card-glow:hover {
-      border-color: rgba(77, 168, 149, 0.50);
-      box-shadow: 0 0 60px rgba(61, 139, 128, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-      transform: translateY(-2px);
-    }
-
-    /* Ambient glow blobs */
-    .ambient-glow {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-      filter: blur(120px);
-      z-index: 0;
-    }
-
-    /* Section divider */
-    .section-divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 30%, rgba(77,168,149,0.12) 50%, rgba(255,255,255,0.06) 70%, transparent 100%);
-    }
-
-    /* Buttons */
-    .btn-primary {
-      background: linear-gradient(135deg, #3d8b80 0%, #2d6b63 100%);
-      transition: all 0.2s ease;
-    }
-    .btn-primary:hover {
-      background: linear-gradient(135deg, #4da895 0%, #3d8b80 100%);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(61, 139, 128, 0.3);
-    }
-    .btn-glass {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: all 0.2s ease;
-    }
-    .btn-glass:hover {
-      background: rgba(255, 255, 255, 0.18);
-      border-color: rgba(255, 255, 255, 0.3);
-    }
-
-    .input-glow:focus {
-      box-shadow: 0 0 0 2px rgba(61, 139, 128, 0.3);
-    }
-
-    /* Icon box */
-    .icon-box {
-      background: rgba(61, 139, 128, 0.10);
-      border: 1px solid rgba(61, 139, 128, 0.15);
-      transition: all 0.3s ease;
-    }
-    .glass-card:hover .icon-box,
-    .glass-card-bright:hover .icon-box {
-      background: rgba(61, 139, 128, 0.20);
-      border-color: rgba(61, 139, 128, 0.30);
-      transform: scale(1.1);
-    }
-
-    /* Integration icons hover */
-    .integration-icon {
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .integration-icon:hover {
-      transform: translateY(-4px) scale(1.1);
-    }
-    .integration-icon:hover svg {
-      color: rgba(255, 255, 255, 0.9) !important;
-    }
-
-    /* Glass pills hover */
-    .glass-pill {
-      transition: all 0.25s ease;
-    }
-    .glass-pill:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(77, 168, 149, 0.3);
-      color: rgba(255, 255, 255, 0.6) !important;
-      transform: translateY(-1px);
-    }
-
-    /* Accent bar animate on reveal */
-    .accent-bar {
-      transform-origin: top;
-      transform: scaleY(0);
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal.visible .accent-bar {
-      transform: scaleY(1);
-    }
-
-    /* Gradient shimmer on key headings */
-    @keyframes shimmer {
-      0% { background-position: -200% center; }
-      100% { background-position: 200% center; }
-    }
-    .gradient-text-shimmer {
-      background: linear-gradient(90deg, #6bbfae 0%, #99d7cb 25%, #ffffff 50%, #99d7cb 75%, #6bbfae 100%);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: shimmer 4s linear infinite;
-    }
-
-    /* Ambient glow drift */
-    @keyframes glowDrift {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(15px, -10px) scale(1.05); }
-      66% { transform: translate(-10px, 8px) scale(0.97); }
-    }
-    .ambient-glow { animation: glowDrift 12s ease-in-out infinite; }
-
-    /* Section divider animate */
-    .section-divider {
-      transform: scaleX(0);
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .section-divider.visible { transform: scaleX(1); }
-
-    /* ===== CORE ANIMATIONS ===== */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-in { animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    .animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
-    .animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
-    .animate-delay-3 { animation-delay: 0.35s; opacity: 0; }
-
-    /* Scroll reveal — fast and snappy */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-delay-1 { transition-delay: 0.06s; }
-    .reveal-delay-2 { transition-delay: 0.12s; }
-    .reveal-delay-3 { transition-delay: 0.18s; }
-    .reveal-delay-4 { transition-delay: 0.24s; }
-    .reveal-delay-5 { transition-delay: 0.30s; }
-    .reveal-delay-6 { transition-delay: 0.36s; }
-    .reveal-delay-7 { transition-delay: 0.42s; }
-    .reveal-delay-8 { transition-delay: 0.48s; }
-
-    /* Reveal from left/right variants */
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-30px);
-      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal-left.visible { opacity: 1; transform: translateX(0); }
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(30px);
-      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal-right.visible { opacity: 1; transform: translateX(0); }
-
-    /* Reveal with scale pop */
-    .reveal-scale {
-      opacity: 0;
-      transform: scale(0.92);
-      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal-scale.visible { opacity: 1; transform: scale(1); }
-
-    /* Slow CTA glow pulse */
-    @keyframes glowPulse {
-      0%, 100% { box-shadow: 0 0 30px rgba(61, 139, 128, 0.15); }
-      50% { box-shadow: 0 0 50px rgba(61, 139, 128, 0.30); }
-    }
-    .glow-pulse { animation: glowPulse 3s ease-in-out infinite; }
-
-    /* ===== PRELOADER ===== */
-    #preloader {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: #0b1a18;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-    #preloader.done {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    /* Logo letters stagger in */
-    .preloader-letter {
-      display: inline-block;
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      font-size: 3.5rem;
-      color: rgba(255, 255, 255, 0);
-      letter-spacing: -0.02em;
-      animation: letterIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-    @keyframes letterIn {
-      0% {
-        color: rgba(255, 255, 255, 0);
-        transform: translateY(12px) scale(0.95);
-        filter: blur(6px);
-      }
-      100% {
-        color: rgba(255, 255, 255, 0.9);
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-      }
-    }
-
-    /* Sweeping line under the logo */
-    .preloader-line {
-      width: 0;
-      height: 1px;
-      margin-top: 16px;
-      background: linear-gradient(90deg, transparent, rgba(77, 168, 149, 0.6), rgba(107, 191, 174, 0.8), rgba(77, 168, 149, 0.6), transparent);
-      animation: lineSweep 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
-    }
-    @keyframes lineSweep {
-      0% { width: 0; opacity: 0; }
-      30% { opacity: 1; }
-      100% { width: 120px; opacity: 1; }
-    }
-
-    /* Ambient glow behind logo */
-    .preloader-glow {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(61, 139, 128, 0.20) 0%, transparent 70%);
-      animation: glowIn 1s ease 0.2s forwards;
-      opacity: 0;
-    }
-    @keyframes glowIn {
-      0% { opacity: 0; transform: scale(0.5); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
-    /* Tagline fade-in */
-    .preloader-tagline {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0);
-      margin-top: 20px;
-      animation: tagIn 0.5s ease 0.7s forwards;
-    }
-    @keyframes tagIn {
-      0% { color: rgba(255, 255, 255, 0); transform: translateY(6px); }
-      100% { color: rgba(255, 255, 255, 0.3); transform: translateY(0); }
+      background-image: url('hero-bg.webp');
     }
   </style>
 </head>
@@ -558,9 +152,10 @@
 
         <!-- Desktop nav -->
         <div class="hidden sm:flex items-center gap-4">
-          <a href="/features.html" class="text-white/60 hover:text-white text-sm font-medium transition-colors">Features</a>
-          <a href="/pricing.html" class="text-white/60 hover:text-white text-sm font-medium transition-colors">Pricing</a>
-          <a href="/about.html" class="text-white/60 hover:text-white text-sm font-medium transition-colors">About</a>
+          <a href="/features" class="text-white/60 hover:text-white text-sm font-medium transition-colors">Features</a>
+          <a href="/pricing" class="text-white/60 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+          <a href="/blog" class="text-white/60 hover:text-white text-sm font-medium transition-colors">Blog</a>
+          <a href="/about" class="text-white/60 hover:text-white text-sm font-medium transition-colors">About</a>
           <a href="https://app.recaip.com" class="btn-primary px-5 py-2.5 rounded-lg text-white text-sm font-medium">
             Start free
           </a>
@@ -577,41 +172,42 @@
       <!-- Mobile menu dropdown -->
       <div id="mobile-menu" class="hidden absolute top-16 left-0 right-0 z-30 px-5 sm:hidden">
         <div class="rounded-2xl border border-white/10 bg-surface-0/95 backdrop-blur-xl p-4 flex flex-col gap-1">
-          <a href="/features.html" class="px-4 py-2.5 rounded-xl text-white/70 text-sm font-medium hover:bg-white/5 transition-colors">Features</a>
-          <a href="/pricing.html" class="px-4 py-2.5 rounded-xl text-white/70 text-sm font-medium hover:bg-white/5 transition-colors">Pricing</a>
-          <a href="/about.html" class="px-4 py-2.5 rounded-xl text-white/70 text-sm font-medium hover:bg-white/5 transition-colors">About</a>
+          <a href="/features" class="px-4 py-2.5 rounded-xl text-white/70 text-sm font-medium hover:bg-white/5 transition-colors">Features</a>
+          <a href="/pricing" class="px-4 py-2.5 rounded-xl text-white/70 text-sm font-medium hover:bg-white/5 transition-colors">Pricing</a>
+          <a href="/blog" class="px-4 py-2.5 rounded-xl text-white/70 text-sm font-medium hover:bg-white/5 transition-colors">Blog</a>
+          <a href="/about" class="px-4 py-2.5 rounded-xl text-white/70 text-sm font-medium hover:bg-white/5 transition-colors">About</a>
           <div class="border-t border-white/8 my-1"></div>
           <a href="https://app.recaip.com" class="btn-primary px-4 py-2.5 rounded-xl text-white text-sm font-semibold text-center">Start free</a>
         </div>
       </div>
 
       <!-- Hero content — flex centered on mobile, bottom-anchored on desktop -->
-      <div class="absolute inset-0 z-20 flex items-end sm:items-end px-5 sm:px-10 pb-20 sm:pb-14">
-        <div class="max-w-2xl">
-          <h1 class="text-[26px] sm:text-4xl md:text-5xl font-semibold text-white leading-[1.15] tracking-tight mb-2 sm:mb-3 animate-in">
-            Never write a product update&nbsp;again.
+      <div class="absolute inset-0 z-20 flex items-end sm:items-end px-6 sm:px-10 lg:px-16 pb-20 sm:pb-14">
+        <div class="max-w-[1000px]">
+          <h1 class="text-[32px] sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] tracking-tight mb-2 sm:mb-3 animate-in">
+            Release communication on&nbsp;autopilot.
           </h1>
-          <p class="text-base sm:text-xl md:text-2xl font-light text-white/60 mb-5 sm:mb-6 max-w-xl leading-relaxed animate-in animate-delay-1">
-            Recaip turns every code merge into a published product update across all your channels — automatically.
+          <p class="text-base sm:text-xl md:text-2xl font-light text-white/60 mb-5 sm:mb-6 max-w-[800px] leading-relaxed animate-in animate-delay-1">
+            Your users never miss a release again. Recaip broadcasts every release the moment it goes to production across all your channels, automatically.
           </p>
 
           <!-- Hero CTAs -->
-          <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3 max-w-md animate-in animate-delay-2">
-            <a href="https://app.recaip.com" class="btn-primary h-11 sm:h-12 px-6 sm:px-8 rounded-xl text-white font-semibold text-[14px] flex items-center justify-center">
+          <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3 animate-in animate-delay-2">
+            <a href="https://app.recaip.com" class="btn-primary h-11 sm:h-12 px-6 sm:px-8 rounded-xl text-white font-semibold text-[14px] flex items-center justify-center whitespace-nowrap">
               Start free
             </a>
-            <a href="https://app.recaip.com/changelog/recaip-bb6480" target="_blank" class="btn-glass h-11 sm:h-12 px-5 sm:px-6 rounded-xl text-white font-medium text-[14px] flex items-center justify-center gap-2">
+            <a href="https://app.recaip.com/changelog/recaip-bb6480" target="_blank" class="btn-glass h-11 sm:h-12 px-5 sm:px-6 rounded-xl text-white font-medium text-[14px] flex items-center justify-center gap-2 whitespace-nowrap">
               See a live changelog
               <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
           </div>
-          <p class="text-xs sm:text-sm text-white/40 mt-2.5 sm:mt-3 animate-in animate-delay-3">First 10 changelogs are free. No credit card.</p>
+          <p class="text-xs sm:text-sm text-white/40 mt-2.5 sm:mt-3 animate-in animate-delay-3">$19/mo. Unlimited products. 100 recaps included.</p>
         </div>
       </div>
 
       <!-- Floating changelog card — desktop only -->
-      <div class="absolute bottom-24 right-10 lg:right-20 z-20 hidden md:block hero-floating-card animate-in animate-delay-3">
-        <div class="w-72 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl p-4 shadow-2xl">
+      <div class="absolute bottom-28 right-10 lg:right-24 xl:right-32 z-20 hidden lg:block hero-floating-card animate-in animate-delay-3">
+        <div class="w-80 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl p-5 shadow-2xl">
           <div class="flex items-center gap-2 mb-3">
             <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
             <span class="text-[10px] font-mono text-emerald-400/80 uppercase tracking-wider">Auto-published</span>
@@ -641,73 +237,207 @@
   <div class="content-wrapper content-sections-bg">
 
   <!-- ============================================ -->
-  <!-- INTEGRATIONS                                 -->
+  <!-- PIPELINE FLOW: Intake → Recaip → Distribution -->
   <!-- ============================================ -->
-  <section class="py-14 sm:py-24 px-5 sm:px-6 relative overflow-hidden">
-    <div class="ambient-glow w-[500px] h-[500px] bg-brand-700/20 top-[-150px] left-1/2 -translate-x-1/2" style="position:absolute;"></div>
-    <div class="max-w-5xl mx-auto text-center relative z-10">
-      <div class="reveal">
-        <h2 class="text-2xl sm:text-4xl font-bold text-white/90 mb-3">Connects to your <span class="gradient-text-shimmer">entire dev stack</span></h2>
-        <p class="text-white/50 mb-8 sm:mb-14 max-w-lg mx-auto">One product, multiple sources. Recaip pulls from everything and writes one unified recap.</p>
+  <section class="py-14 sm:py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[600px] h-[600px] bg-brand-700/15 top-[-100px] left-1/2 -translate-x-1/2" style="position:absolute;"></div>
+    <div class="max-w-[1400px] mx-auto relative z-10">
+      <div class="text-center reveal mb-10 sm:mb-16">
+        <h2 class="text-2xl sm:text-4xl font-bold text-white/90 mb-3">From code to every channel, <span class="gradient-text-shimmer">automatically</span></h2>
+        <p class="text-white/50 max-w-[800px] mx-auto">Recaip listens to your dev tools, writes the update, and publishes it everywhere your users are.</p>
       </div>
 
-      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 sm:gap-8 mb-8 reveal">
-        <div class="flex flex-col items-center gap-2.5 integration-icon">
-          <svg class="w-9 h-9 text-white/70 transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          <span class="text-xs text-white/50 font-medium">GitHub</span>
-        </div>
-        <div class="flex flex-col items-center gap-2.5 integration-icon">
-          <svg class="w-9 h-9 text-white/70 transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M2.886 10.34a10.14 10.14 0 0 0-.525 2.163l9.136 9.136a10.14 10.14 0 0 0 2.163-.525L2.886 10.34zm-.81 3.477a10.14 10.14 0 0 0 .284 1.708l8.575 8.575a10.14 10.14 0 0 0 1.708.284L2.076 13.817zm1.335 3.07a10.16 10.16 0 0 0 3.702 3.702l-3.702-3.702zm12.048-14.1a10.14 10.14 0 0 0-2.163.526l10.774 10.774a10.14 10.14 0 0 0 .525-2.163L15.459 2.787zm2.687-.525a10.14 10.14 0 0 0-1.708-.284l10.566 10.566a10.14 10.14 0 0 0-.284-1.708L18.146 2.262zm1.335 3.07a10.16 10.16 0 0 0-3.702-3.702l3.702 3.702zM2.34 7.674l13.986 13.986a10.12 10.12 0 0 0 1.772-.937L3.277 5.902a10.12 10.12 0 0 0-.937 1.772zm1.607-2.88L18.206 19.053a10.12 10.12 0 0 0 1.282-1.282L4.229 3.512a10.12 10.12 0 0 0-1.282 1.282zm2.88-1.607L21.086 17.446a10.12 10.12 0 0 0 .937-1.772L7.674 2.34a10.12 10.12 0 0 0-1.847.847z"/></svg>
-          <span class="text-xs text-white/50 font-medium">Linear</span>
-        </div>
-        <div class="flex flex-col items-center gap-2.5 integration-icon">
-          <svg class="w-9 h-9 text-white/70 transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 11.513H0a5.218 5.218 0 005.232 5.215h2.13v2.057A5.215 5.215 0 0012.575 24V12.518a1.005 1.005 0 00-1.005-1.005zm5.723-5.756H5.736a5.215 5.215 0 005.215 5.214h2.129v2.058a5.218 5.218 0 005.215 5.214V6.758a1.001 1.001 0 00-1.001-1.001zM23.013 0H11.455a5.215 5.215 0 005.215 5.215h2.129v2.057A5.215 5.215 0 0024.013 12.487V1.005A1.005 1.005 0 0023.013 0z"/></svg>
-          <span class="text-xs text-white/50 font-medium">Jira</span>
-        </div>
-        <div class="flex flex-col items-center gap-2.5 integration-icon">
-          <svg class="w-9 h-9 text-white/70 transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
-          <span class="text-xs text-white/50 font-medium">Slack</span>
-        </div>
-        <div class="flex flex-col items-center gap-2.5 integration-icon">
-          <svg class="w-9 h-9 text-white/70 transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M22.951 7.553v-.027L15.271.212a.726.726 0 00-1.024 0l-1.972 1.972 2.5 2.5a.862.862 0 011.091 1.099l2.409 2.409a.863.863 0 11-.517.496l-2.251-2.251v5.925a.863.863 0 11-.711-.014V6.322a.863.863 0 01-.468-1.131l-2.464-2.464-6.506 6.506a.726.726 0 000 1.025l7.68 7.68a.726.726 0 001.024 0l7.644-7.644a.726.726 0 000-1.025zM7.2 16.339l-5.863-5.863a.726.726 0 010-1.025L7.71 3.088l2.492 2.492-5.37 5.37a.726.726 0 000 1.024l4.86 4.86z"/></svg>
-          <span class="text-xs text-white/50 font-medium">GitLab</span>
-        </div>
-        <div class="flex flex-col items-center gap-2.5 integration-icon">
-          <svg class="w-9 h-9 text-white/70 transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M4.5 2.5C4.5 1.12 5.62 0 7 0h10c1.38 0 2.5 1.12 2.5 2.5v19c0 1.38-1.12 2.5-2.5 2.5H7c-1.38 0-2.5-1.12-2.5-2.5v-19zM7 1.5c-.55 0-1 .45-1 1v19c0 .55.45 1 1 1h10c.55 0 1-.45 1-1v-19c0-.55-.45-1-1-1H7zm1.75 2h6.5c.41 0 .75.34.75.75s-.34.75-.75.75h-6.5C8.34 5 8 4.66 8 4.25s.34-.75.75-.75zm0 3h6.5c.41 0 .75.34.75.75s-.34.75-.75.75h-6.5C8.34 8 8 7.66 8 7.25s.34-.75.75-.75zm0 3h3.5c.41 0 .75.34.75.75s-.34.75-.75.75h-3.5c-.41 0-.75-.34-.75-.75s.34-.75.75-.75z"/></svg>
-          <span class="text-xs text-white/50 font-medium">Notion</span>
-        </div>
-      </div>
+      <!-- Pipeline flow: 3 columns -->
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 lg:gap-0 items-center reveal reveal-delay-1">
 
-      <div class="flex flex-wrap items-center justify-center gap-3 mt-6 reveal">
-        <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white/40 font-medium glass-pill cursor-default">Statuspal</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white/40 font-medium glass-pill cursor-default">Betterstack</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white/40 font-medium glass-pill cursor-default">Instatus</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white/40 font-medium glass-pill cursor-default">Azure DevOps</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white/40 font-medium glass-pill cursor-default">Shortcut</span>
-        <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white/30 font-medium glass-pill cursor-default">+ more coming</span>
+        <!-- LEFT: Intake sources -->
+        <div class="flex flex-col gap-3">
+          <p class="font-mono text-xs text-white/30 uppercase tracking-widest mb-2 text-center lg:text-right">Intake</p>
+          <div class="flex flex-wrap lg:flex-col gap-3 justify-center lg:items-end">
+            <div class="glass-card px-5 py-3.5 flex items-center gap-3 w-auto lg:w-64">
+              <svg class="w-6 h-6 text-white/70 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              <div>
+                <p class="text-sm text-white/80 font-medium">GitHub</p>
+                <p class="text-xs text-white/35">PRs, commits, releases</p>
+              </div>
+            </div>
+            <div class="glass-card px-5 py-3.5 flex items-center gap-3 w-auto lg:w-64">
+              <svg class="w-6 h-6 text-white/70 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M2.886 10.34a10.14 10.14 0 0 0-.525 2.163l9.136 9.136a10.14 10.14 0 0 0 2.163-.525L2.886 10.34zm-.81 3.477a10.14 10.14 0 0 0 .284 1.708l8.575 8.575a10.14 10.14 0 0 0 1.708.284L2.076 13.817zm1.335 3.07a10.16 10.16 0 0 0 3.702 3.702l-3.702-3.702zm12.048-14.1a10.14 10.14 0 0 0-2.163.526l10.774 10.774a10.14 10.14 0 0 0 .525-2.163L15.459 2.787zm2.687-.525a10.14 10.14 0 0 0-1.708-.284l10.566 10.566a10.14 10.14 0 0 0-.284-1.708L18.146 2.262zm1.335 3.07a10.16 10.16 0 0 0-3.702-3.702l3.702 3.702zM2.34 7.674l13.986 13.986a10.12 10.12 0 0 0 1.772-.937L3.277 5.902a10.12 10.12 0 0 0-.937 1.772zm1.607-2.88L18.206 19.053a10.12 10.12 0 0 0 1.282-1.282L4.229 3.512a10.12 10.12 0 0 0-1.282 1.282zm2.88-1.607L21.086 17.446a10.12 10.12 0 0 0 .937-1.772L7.674 2.34a10.12 10.12 0 0 0-1.847.847z"/></svg>
+              <div>
+                <p class="text-sm text-white/80 font-medium">Linear</p>
+                <p class="text-xs text-white/35">Issues, cycles, projects</p>
+              </div>
+            </div>
+            <div class="glass-card px-5 py-3.5 flex items-center gap-3 w-auto lg:w-64">
+              <svg class="w-6 h-6 text-white/70 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 11.513H0a5.218 5.218 0 005.232 5.215h2.13v2.057A5.215 5.215 0 0012.575 24V12.518a1.005 1.005 0 00-1.005-1.005zm5.723-5.756H5.736a5.215 5.215 0 005.215 5.214h2.129v2.058a5.218 5.218 0 005.215 5.214V6.758a1.001 1.001 0 00-1.001-1.001zM23.013 0H11.455a5.215 5.215 0 005.215 5.215h2.129v2.057A5.215 5.215 0 0024.013 12.487V1.005A1.005 1.005 0 0023.013 0z"/></svg>
+              <div>
+                <p class="text-sm text-white/80 font-medium">Jira</p>
+                <p class="text-xs text-white/35">Tickets, sprints, boards</p>
+              </div>
+            </div>
+            <div class="glass-card px-5 py-3.5 flex items-center gap-3 w-auto lg:w-64">
+              <svg class="w-6 h-6 text-white/70 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M22.951 7.553v-.027L15.271.212a.726.726 0 00-1.024 0l-1.972 1.972 2.5 2.5a.862.862 0 011.091 1.099l2.409 2.409a.863.863 0 11-.517.496l-2.251-2.251v5.925a.863.863 0 11-.711-.014V6.322a.863.863 0 01-.468-1.131l-2.464-2.464-6.506 6.506a.726.726 0 000 1.025l7.68 7.68a.726.726 0 001.024 0l7.644-7.644a.726.726 0 000-1.025zM7.2 16.339l-5.863-5.863a.726.726 0 010-1.025L7.71 3.088l2.492 2.492-5.37 5.37a.726.726 0 000 1.024l4.86 4.86z"/></svg>
+              <div>
+                <p class="text-sm text-white/80 font-medium">GitLab</p>
+                <p class="text-xs text-white/35">Merge requests, pipelines</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CENTER: Recaip node with flow arrows -->
+        <div class="hidden lg:flex flex-col items-center justify-center px-8">
+          <div class="flex items-center gap-3">
+            <!-- Left arrow -->
+            <div class="w-12 h-px bg-gradient-to-r from-white/10 to-brand-400/50"></div>
+            <svg class="w-4 h-4 text-brand-400/50" fill="currentColor" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+
+            <!-- Recaip hub -->
+            <div class="glass-card-glow px-8 py-6 text-center">
+              <img src="logo.svg" alt="recaip" class="h-6 mx-auto mb-2 opacity-90" />
+              <p class="font-mono text-[10px] text-brand-400 uppercase tracking-widest">AI Agent</p>
+            </div>
+
+            <!-- Right arrow -->
+            <svg class="w-4 h-4 text-brand-400/50" fill="currentColor" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+            <div class="w-12 h-px bg-gradient-to-r from-brand-400/50 to-white/10"></div>
+          </div>
+        </div>
+
+        <!-- Mobile: center arrow -->
+        <div class="flex lg:hidden justify-center py-2">
+          <div class="flex flex-col items-center gap-2">
+            <svg class="w-5 h-5 text-brand-400/50 rotate-90" fill="currentColor" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+            <div class="glass-card-glow px-6 py-4 text-center">
+              <img src="logo.svg" alt="recaip" class="h-5 mx-auto mb-1.5 opacity-90" />
+              <p class="font-mono text-[10px] text-brand-400 uppercase tracking-widest">AI Agent</p>
+            </div>
+            <svg class="w-5 h-5 text-brand-400/50 rotate-90" fill="currentColor" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+          </div>
+        </div>
+
+        <!-- RIGHT: Distribution channels -->
+        <div class="flex flex-col gap-3">
+          <p class="font-mono text-xs text-white/30 uppercase tracking-widest mb-2 text-center lg:text-left">Distribution</p>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="glass-card px-4 py-3 flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-brand-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <span class="text-sm text-white/70">Changelog</span>
+            </div>
+            <div class="glass-card px-4 py-3 flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-brand-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span class="text-sm text-white/70">Email</span>
+            </div>
+            <div class="glass-card px-4 py-3 flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-brand-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V9a2 2 0 012-2h2a2 2 0 012 2v9a2 2 0 01-2 2h-2z"/></svg>
+              <span class="text-sm text-white/70">Newsletter</span>
+            </div>
+            <div class="glass-card px-4 py-3 flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-brand-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
+              <span class="text-sm text-white/70">Social Post</span>
+            </div>
+            <div class="glass-card px-4 py-3 flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-brand-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <span class="text-sm text-white/70">Weekly Digest</span>
+            </div>
+            <div class="glass-card px-4 py-3 flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-brand-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+              <span class="text-sm text-white/70">In-App & Widget</span>
+            </div>
+            <div class="glass-card px-4 py-3 flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-brand-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+              <span class="text-sm text-white/70">Slack Internal</span>
+            </div>
+            <div class="glass-card px-4 py-3 flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-brand-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span class="text-sm text-white/70">Slide Deck</span>
+            </div>
+            <div class="glass-card px-4 py-3 flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-brand-400 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M4.5 2.5C4.5 1.12 5.62 0 7 0h10c1.38 0 2.5 1.12 2.5 2.5v19c0 1.38-1.12 2.5-2.5 2.5H7c-1.38 0-2.5-1.12-2.5-2.5v-19zM7 1.5c-.55 0-1 .45-1 1v19c0 .55.45 1 1 1h10c.55 0 1-.45 1-1v-19c0-.55-.45-1-1-1H7zm1.75 2h6.5c.41 0 .75.34.75.75s-.34.75-.75.75h-6.5C8.34 5 8 4.66 8 4.25s.34-.75.75-.75zm0 3h6.5c.41 0 .75.34.75.75s-.34.75-.75.75h-6.5C8.34 8 8 7.66 8 7.25s.34-.75.75-.75z"/></svg>
+              <span class="text-sm text-white/70">Notion</span>
+            </div>
+            <div class="glass-card px-4 py-3 flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-brand-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              <span class="text-sm text-white/70">Status Page</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <div class="section-divider max-w-4xl mx-auto"></div>
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- ============================================ -->
+  <!-- WHAT IS RECAIP — GEO-rich split layout        -->
+  <!-- ============================================ -->
+  <section class="py-14 sm:py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[500px] h-[500px] bg-brand-700/10 top-[-50px] right-[-150px]" style="position:absolute;"></div>
+
+    <div class="max-w-[1400px] mx-auto relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+
+        <!-- Left: headline + prose (GEO-optimized) -->
+        <div class="reveal">
+          <p class="font-mono text-xs text-brand-400 uppercase tracking-widest mb-4">What is Recaip?</p>
+          <h2 class="text-2xl sm:text-4xl font-bold text-white/90 mb-6 leading-tight">An autonomous agent that writes your product updates.</h2>
+          <p class="text-white/55 text-base sm:text-lg leading-relaxed mb-4">
+            Recaip is an AI-powered tool that automatically generates release notes, changelogs, and product updates every time you ship code. It connects to your GitHub, Linear, or Jira, reads the code diff and linked tickets, and writes publish-ready recaps in six formats: changelog entry, social post, email draft, in-app announcement, stakeholder digest, and status page update.
+          </p>
+          <p class="text-white/45 text-sm sm:text-base leading-relaxed">
+            Designed for CTO-founders at startups, solo developers, and product managers. $19/mo for unlimited products and 100 recaps. Unlike traditional changelog tools, Recaip operates as an autonomous agent that runs 24/7 without being prompted.
+          </p>
+        </div>
+
+        <!-- Right: key numbers + highlights -->
+        <div class="space-y-4 reveal reveal-delay-2">
+          <div class="glass-card p-5 flex items-start gap-4">
+            <span class="font-mono text-3xl sm:text-4xl font-bold text-brand-400 leading-none shrink-0">6</span>
+            <div>
+              <p class="text-white/90 font-semibold text-sm mb-1">Output formats per event</p>
+              <p class="text-white/40 text-sm">Changelog, social post, email, in-app, stakeholder digest, status page — all from one webhook.</p>
+            </div>
+          </div>
+          <div class="glass-card p-5 flex items-start gap-4">
+            <span class="font-mono text-3xl sm:text-4xl font-bold text-brand-400 leading-none shrink-0">0</span>
+            <div>
+              <p class="text-white/90 font-semibold text-sm mb-1">Minutes of manual work</p>
+              <p class="text-white/40 text-sm">After a 2-minute setup, Recaip runs fully autonomously. You never need to open it again.</p>
+            </div>
+          </div>
+          <div class="glass-card p-5 flex items-start gap-4">
+            <span class="font-mono text-3xl sm:text-4xl font-bold text-brand-400 leading-none shrink-0">24/7</span>
+            <div>
+              <p class="text-white/90 font-semibold text-sm mb-1">Always listening</p>
+              <p class="text-white/40 text-sm">Merge a PR at 3am on a Sunday. Recaip detects it, writes the recap, and publishes it. No human required.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
 
   <!-- ============================================ -->
   <!-- PAIN POINTS                                  -->
   <!-- ============================================ -->
-  <section class="py-14 sm:py-24 px-5 sm:px-6 relative overflow-hidden">
+  <section class="py-14 sm:py-24 px-6 lg:px-16 relative overflow-hidden">
     <div class="ambient-glow w-[400px] h-[400px] bg-red-900/10 top-[100px] left-[-100px]" style="position:absolute;"></div>
     <div class="ambient-glow w-[400px] h-[400px] bg-brand-700/15 top-[200px] right-[-100px]" style="position:absolute;"></div>
 
-    <div class="max-w-4xl mx-auto relative z-10">
+    <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
         <p class="font-mono text-xs text-brand-400 text-center uppercase tracking-widest mb-4">The problem</p>
         <h2 class="text-2xl sm:text-4xl font-bold text-white/90 text-center mb-4">You ship every day.<br/>Your users have no idea.</h2>
-        <p class="text-white/50 text-center mb-10 sm:mb-16 max-w-xl mx-auto">60% of users never discover new features. Release notes fall between roles. Nobody owns it. Recaip does.</p>
+        <p class="text-white/50 text-center mb-10 sm:mb-16 max-w-[800px] mx-auto">60% of users never discover new features. Release notes fall between roles. Nobody owns it. Recaip does.</p>
       </div>
 
       <div class="space-y-6">
         <!-- Pain 1 -->
-        <div class="glass-card p-6 md:p-8 reveal reveal-delay-1">
+        <div class="glass-card p-6 md:p-8 reveal-left">
           <div class="flex flex-col md:flex-row md:items-start gap-6">
             <div class="md:w-1/2">
               <div class="flex items-center gap-2 mb-3">
@@ -728,7 +458,7 @@
         </div>
 
         <!-- Pain 2 -->
-        <div class="glass-card p-6 md:p-8 reveal reveal-delay-2">
+        <div class="glass-card p-6 md:p-8 reveal-right">
           <div class="flex flex-col md:flex-row md:items-start gap-6">
             <div class="md:w-1/2">
               <div class="flex items-center gap-2 mb-3">
@@ -749,7 +479,7 @@
         </div>
 
         <!-- Pain 3 -->
-        <div class="glass-card p-6 md:p-8 reveal reveal-delay-3">
+        <div class="glass-card p-6 md:p-8 reveal-left">
           <div class="flex flex-col md:flex-row md:items-start gap-6">
             <div class="md:w-1/2">
               <div class="flex items-center gap-2 mb-3">
@@ -772,22 +502,22 @@
     </div>
   </section>
 
-  <div class="section-divider max-w-4xl mx-auto"></div>
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
 
   <!-- ============================================ -->
   <!-- HOW IT WORKS                                 -->
   <!-- ============================================ -->
-  <section id="how-it-works" class="py-14 sm:py-24 px-5 sm:px-6 relative overflow-hidden">
+  <section id="how-it-works" class="py-14 sm:py-24 px-6 lg:px-16 relative overflow-hidden">
     <div class="ambient-glow w-[600px] h-[400px] bg-brand-700/15 bottom-[-100px] left-1/2 -translate-x-1/2" style="position:absolute;"></div>
 
-    <div class="max-w-4xl mx-auto relative z-10">
+    <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
         <h2 class="text-2xl sm:text-4xl font-bold text-white/90 text-center mb-4">How it works</h2>
         <p class="text-white/50 text-center mb-10 sm:mb-16">2 minutes of setup. Then Recaip runs forever, without you.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="glass-card p-8 text-center reveal reveal-delay-1 parallax-card" data-speed="0.02">
+        <div class="glass-card p-8 text-center reveal-scale parallax-card" data-speed="0.02">
           <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mx-auto mb-5">
             <svg class="w-7 h-7 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
           </div>
@@ -796,7 +526,7 @@
           <p class="text-sm text-white/45 leading-relaxed">Sign in. Connect your repo or project board. Recaip registers a webhook and starts listening. Done in 2 minutes.</p>
         </div>
 
-        <div class="glass-card p-8 text-center reveal reveal-delay-2 parallax-card" data-speed="0.04">
+        <div class="glass-card p-8 text-center reveal-scale parallax-card" data-speed="0.04">
           <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mx-auto mb-5">
             <svg class="w-7 h-7 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
           </div>
@@ -805,7 +535,7 @@
           <p class="text-sm text-white/45 leading-relaxed">Merge a PR at 3am. Close a ticket on Friday. Recaip detects it instantly, reads the context, and drafts every output format. You do nothing.</p>
         </div>
 
-        <div class="glass-card p-8 text-center reveal reveal-delay-3 parallax-card" data-speed="0.02">
+        <div class="glass-card p-8 text-center reveal-scale parallax-card" data-speed="0.02">
           <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mx-auto mb-5">
             <svg class="w-7 h-7 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
@@ -817,15 +547,15 @@
     </div>
   </section>
 
-  <div class="section-divider max-w-4xl mx-auto"></div>
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
 
   <!-- ============================================ -->
   <!-- BEFORE / AFTER                               -->
   <!-- ============================================ -->
-  <section class="py-14 sm:py-24 px-5 sm:px-6 relative overflow-hidden">
-    <div class="max-w-3xl mx-auto relative z-10">
+  <section class="py-14 sm:py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="max-w-[1200px] mx-auto relative z-10">
       <div class="reveal">
-        <h2 class="text-2xl sm:text-4xl font-bold text-white/90 text-center mb-4">From webhook to <span class="gradient-text">published update</span></h2>
+        <h2 class="text-2xl sm:text-4xl font-bold text-white/90 text-center mb-4">From webhook to published update</h2>
         <p class="text-white/50 text-center mb-12">Recaip detects the event, reads the context, writes every format, and publishes. In seconds. Fully autonomous.</p>
       </div>
 
@@ -862,15 +592,15 @@
     </div>
   </section>
 
-  <div class="section-divider max-w-4xl mx-auto"></div>
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
 
   <!-- ============================================ -->
   <!-- SEE IT IN ACTION — Screenshots + live proof  -->
   <!-- ============================================ -->
-  <section class="py-14 sm:py-24 px-5 sm:px-6 relative overflow-hidden">
+  <section class="py-14 sm:py-24 px-6 lg:px-16 relative overflow-hidden">
     <div class="ambient-glow w-[500px] h-[500px] bg-brand-700/15 top-[0px] left-[-150px]" style="position:absolute;"></div>
 
-    <div class="max-w-5xl mx-auto relative z-10">
+    <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
         <p class="font-mono text-xs text-brand-400 text-center uppercase tracking-widest mb-4">Live product</p>
         <h2 class="text-2xl sm:text-4xl font-bold text-white/90 text-center mb-4">See it in action</h2>
@@ -912,18 +642,18 @@
     </div>
   </section>
 
-  <div class="section-divider max-w-4xl mx-auto"></div>
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
 
   <!-- ============================================ -->
   <!-- OUTPUT FORMATS — Bento grid                  -->
   <!-- ============================================ -->
-  <section class="py-14 sm:py-24 px-5 sm:px-6 relative overflow-hidden">
+  <section class="py-14 sm:py-24 px-6 lg:px-16 relative overflow-hidden">
     <div class="ambient-glow w-[500px] h-[500px] bg-brand-700/15 top-[50px] right-[-150px]" style="position:absolute;"></div>
 
-    <div class="max-w-5xl mx-auto relative z-10">
+    <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
-        <h2 class="text-2xl sm:text-4xl font-bold text-white/90 text-center mb-4">One event. <span class="gradient-text">Every channel. Automatic.</span></h2>
-        <p class="text-white/50 text-center mb-10 sm:mb-16 max-w-xl mx-auto">A single webhook triggers six output formats. Each is written, formatted, and delivered to its channel without any action from you.</p>
+        <h2 class="text-2xl sm:text-4xl font-bold text-white/90 text-center mb-4">One event. Every channel. Automatic.</h2>
+        <p class="text-white/50 text-center mb-10 sm:mb-16 max-w-[800px] mx-auto">A single webhook triggers six output formats. Each is written, formatted, and delivered to its channel without any action from you.</p>
       </div>
 
       <!-- Bento grid: 2 hero cards + 4 smaller -->
@@ -985,18 +715,18 @@
     </div>
   </section>
 
-  <div class="section-divider max-w-4xl mx-auto"></div>
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
 
   <!-- ============================================ -->
   <!-- FEATURES — Bento grid                        -->
   <!-- ============================================ -->
-  <section class="py-14 sm:py-24 px-5 sm:px-6 relative overflow-hidden">
+  <section class="py-14 sm:py-24 px-6 lg:px-16 relative overflow-hidden">
     <div class="ambient-glow w-[500px] h-[500px] bg-brand-800/20 bottom-[-100px] left-[-100px]" style="position:absolute;"></div>
 
-    <div class="max-w-5xl mx-auto relative z-10">
+    <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
         <h2 class="text-2xl sm:text-4xl font-bold text-white/90 text-center mb-4">Not a tool. An <span class="gradient-text">always-on agent.</span></h2>
-        <p class="text-white/50 text-center mb-10 sm:mb-16 max-w-xl mx-auto">Other tools help you write changelogs faster. Recaip eliminates the task entirely. It listens, writes, publishes, and delivers. You configure it once and it runs forever.</p>
+        <p class="text-white/50 text-center mb-10 sm:mb-16 max-w-[800px] mx-auto">Other tools help you write changelogs faster. Recaip eliminates the task entirely. It listens, writes, publishes, and delivers. You configure it once and it runs forever.</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -1059,18 +789,18 @@
     </div>
   </section>
 
-  <div class="section-divider max-w-4xl mx-auto"></div>
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
 
   <!-- ============================================ -->
   <!-- PRICING                                      -->
   <!-- ============================================ -->
-  <section id="pricing" class="py-14 sm:py-24 px-5 sm:px-6 relative overflow-hidden">
+  <section id="pricing" class="py-14 sm:py-24 px-6 lg:px-16 relative overflow-hidden">
     <div class="ambient-glow w-[400px] h-[400px] bg-brand-700/10 top-[50px] left-1/2 -translate-x-1/2" style="position:absolute;"></div>
 
-    <div class="max-w-xl mx-auto relative z-10">
+    <div class="max-w-[800px] mx-auto relative z-10">
       <div class="reveal">
         <h2 class="text-2xl sm:text-4xl font-bold text-white/90 text-center mb-4">One plan. Everything included.</h2>
-        <p class="text-white/50 text-center mb-10 sm:mb-16">Per product, not per user. No tiers, no feature gates, no surprises.</p>
+        <p class="text-white/50 text-center mb-10 sm:mb-16">Unlimited products. 100 recaps/mo. No tiers, no feature gates, no surprises.</p>
       </div>
 
       <!-- Single plan card -->
@@ -1078,9 +808,9 @@
         <div class="text-center mb-8">
           <div class="flex items-baseline justify-center gap-1 mb-2">
             <span class="text-5xl font-bold text-white">$<span class="price-counter" data-target="19">0</span></span>
-            <span class="text-lg text-white/40">/product/mo</span>
+            <span class="text-lg text-white/40">/mo</span>
           </div>
-          <p class="text-sm text-white/40">Your first 10 recaps are free. No credit card required.</p>
+          <p class="text-sm text-white/40">Unlimited products. 100 recaps per month. Stack packs for more.</p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-8">
@@ -1118,7 +848,7 @@
           </div>
           <div class="flex items-start gap-2.5 text-sm text-white/60">
             <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Unlimited connected repos
+            Unlimited products &amp; repos
           </div>
           <div class="flex items-start gap-2.5 text-sm text-white/60">
             <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -1129,19 +859,159 @@
         <a href="https://app.recaip.com" class="btn-primary block w-full text-center py-3.5 rounded-xl text-white font-semibold text-base glow-pulse">Start free</a>
       </div>
 
-      <p class="text-center text-white/30 text-sm mt-6 reveal">A "product" is one thing you ship that has its own changelog. Most teams need one.</p>
+      <p class="text-center text-white/30 text-sm mt-6 reveal">Need more than 100 recaps? Stack packs at $19/mo each. 5 packs = 500 recaps/mo.</p>
     </div>
   </section>
 
-  <div class="section-divider max-w-4xl mx-auto"></div>
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- ============================================ -->
+  <!-- MANUAL VS RECAIP — Process comparison        -->
+  <!-- ============================================ -->
+  <section class="py-14 sm:py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[400px] h-[400px] bg-brand-700/10 top-[50px] right-[-100px]" style="position:absolute;"></div>
+    <div class="max-w-[1400px] mx-auto relative z-10">
+      <div class="reveal">
+        <h2 class="text-2xl sm:text-4xl font-bold text-white/90 text-center mb-4">The old way vs. Recaip</h2>
+        <p class="text-white/50 text-center mb-10 sm:mb-14">See what changes when release communication runs on autopilot.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 reveal reveal-delay-1">
+        <!-- Manual process -->
+        <div class="glass-card p-6 sm:p-8">
+          <div class="flex items-center gap-2 mb-6">
+            <div class="w-2.5 h-2.5 rounded-full bg-red-400/60"></div>
+            <span class="font-mono text-xs text-red-400/80 uppercase tracking-wider">Without Recaip</span>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3"><span class="font-mono text-xs text-white/25 mt-0.5 shrink-0">01</span><p class="text-sm text-white/45">Go back through merged PRs manually</p></div>
+            <div class="flex items-start gap-3"><span class="font-mono text-xs text-white/25 mt-0.5 shrink-0">02</span><p class="text-sm text-white/45">Skim commit messages and diffs</p></div>
+            <div class="flex items-start gap-3"><span class="font-mono text-xs text-white/25 mt-0.5 shrink-0">03</span><p class="text-sm text-white/45">Write changelog for technical audience</p></div>
+            <div class="flex items-start gap-3"><span class="font-mono text-xs text-white/25 mt-0.5 shrink-0">04</span><p class="text-sm text-white/45">Rewrite for email, social, in-app</p></div>
+            <div class="flex items-start gap-3"><span class="font-mono text-xs text-white/25 mt-0.5 shrink-0">05</span><p class="text-sm text-white/45">Copy-paste into 4 different tools</p></div>
+            <div class="flex items-start gap-3"><span class="font-mono text-xs text-white/25 mt-0.5 shrink-0">06</span><p class="text-sm text-white/45">Send stakeholder update separately</p></div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/[0.06]">
+            <p class="font-mono text-sm text-red-400/70">~60 min per release. Often skipped.</p>
+          </div>
+        </div>
+
+        <!-- Recaip process -->
+        <div class="glass-card-glow p-6 sm:p-8">
+          <div class="flex items-center gap-2 mb-6">
+            <div class="w-2.5 h-2.5 rounded-full bg-brand-400"></div>
+            <span class="font-mono text-xs text-brand-400 uppercase tracking-wider">With Recaip</span>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <p class="text-sm text-white/55">Merge your PR like you always do</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <p class="text-sm text-white/55">Recaip detects the event instantly</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <p class="text-sm text-white/55">AI reads diffs, tickets, and context</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <p class="text-sm text-white/55">6 formats generated and published</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <p class="text-sm text-white/55">Stakeholder digest sent every Friday</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-400/20">
+            <p class="font-mono text-sm text-brand-400">0 min per release. Never skipped.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- ============================================ -->
+  <!-- FAQ — Homepage condensed (GEO)               -->
+  <!-- ============================================ -->
+  <section class="py-14 sm:py-24 px-6 lg:px-16">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="reveal">
+        <h2 class="text-2xl sm:text-4xl font-bold text-white/90 text-center mb-10 sm:mb-14">Frequently asked questions</h2>
+      </div>
+      <div class="space-y-3">
+        <div class="glass-card overflow-hidden reveal reveal-delay-1">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
+            <span class="text-sm font-medium text-white/90">How much does Recaip cost?</span>
+            <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="hidden px-6 lg:px-16 pb-5">
+            <p class="text-sm text-white/40">Recaip costs $19 per month for unlimited products and 100 recaps. Need more? Stack additional packs at $19 each for 100 more recaps.</p>
+          </div>
+        </div>
+        <div class="glass-card overflow-hidden reveal reveal-delay-2">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
+            <span class="text-sm font-medium text-white/90">What integrations does Recaip support?</span>
+            <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="hidden px-6 lg:px-16 pb-5">
+            <p class="text-sm text-white/40">GitHub is fully supported today. Linear and Jira integrations are in development. Slack delivery, GitLab, Notion, Statuspal, Betterstack, and Instatus are on the roadmap.</p>
+          </div>
+        </div>
+        <div class="glass-card overflow-hidden reveal reveal-delay-3">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
+            <span class="text-sm font-medium text-white/90">How is Recaip different from other changelog tools?</span>
+            <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="hidden px-6 lg:px-16 pb-5">
+            <p class="text-sm text-white/40">Most changelog tools help you write faster. Recaip eliminates writing entirely. It is an autonomous agent that listens to webhooks 24/7, reads your code diffs, and publishes to every channel without any human action. You configure it once and never need to open it again.</p>
+          </div>
+        </div>
+        <div class="glass-card overflow-hidden reveal reveal-delay-4">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
+            <span class="text-sm font-medium text-white/90">Can I use Recaip with a monorepo?</span>
+            <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="hidden px-6 lg:px-16 pb-5">
+            <p class="text-sm text-white/40">Yes. You can connect multiple repositories to a single product, or set up multiple products from different paths in the same repo. All events feed into the appropriate changelog.</p>
+          </div>
+        </div>
+        <div class="glass-card overflow-hidden reveal reveal-delay-5">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
+            <span class="text-sm font-medium text-white/90">What AI model powers Recaip?</span>
+            <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="hidden px-6 lg:px-16 pb-5">
+            <p class="text-sm text-white/40">Recaip uses Claude by Anthropic. It reads code diffs, PR descriptions, and linked tickets to generate each draft. Over time it learns your writing style from edits you make.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const chevron = btn.querySelector('.faq-chevron');
+        answer.classList.toggle('hidden');
+        chevron.classList.toggle('rotate-180');
+      });
+    });
+  </script>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
 
   <!-- ============================================ -->
   <!-- FINAL CTA                                    -->
   <!-- ============================================ -->
-  <section id="cta" class="py-16 sm:py-28 px-5 sm:px-6 relative overflow-hidden">
+  <section id="cta" class="py-16 sm:py-28 px-6 lg:px-16 relative overflow-hidden">
     <div class="ambient-glow w-[600px] h-[600px] bg-brand-700/15 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="position:absolute;"></div>
 
-    <div class="max-w-2xl mx-auto text-center relative z-10 reveal">
+    <div class="max-w-[800px] mx-auto text-center relative z-10 reveal">
       <h2 class="text-2xl sm:text-4xl md:text-5xl font-bold text-white/90 mb-3 sm:mb-4 leading-tight">Stop writing changelogs.<br/><span class="gradient-text">Start shipping.</span></h2>
       <p class="text-white/45 mb-10 text-lg">2 minutes to set up. Then it runs on its own, forever.</p>
 
@@ -1154,21 +1024,22 @@
           <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </a>
       </div>
-      <p class="text-sm text-white/35">First 10 changelogs are free. No credit card required.</p>
+      <p class="text-sm text-white/35">$19/mo. Unlimited products. 100 recaps included.</p>
     </div>
   </section>
 
   <!-- ============================================ -->
   <!-- FOOTER                                       -->
   <!-- ============================================ -->
-  <footer class="py-6 sm:py-8 px-5 sm:px-6">
+  <footer class="py-6 sm:py-8 px-6 lg:px-16">
     <div class="section-divider mb-8"></div>
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <a href="/"><img src="logo.svg" alt="recaip" class="h-5 opacity-40" /></a>
       <div class="flex items-center gap-6 text-sm text-white/30">
-        <a href="/features.html" class="hover:text-white/50 transition-colors">Features</a>
-        <a href="/pricing.html" class="hover:text-white/50 transition-colors">Pricing</a>
-        <a href="/about.html" class="hover:text-white/50 transition-colors">About</a>
+        <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+        <a href="/about" class="hover:text-white/50 transition-colors">About</a>
       </div>
       <div class="flex items-center gap-4 text-sm text-white/30">
         <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>

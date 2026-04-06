@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Your Changelog Is Costing You Users - Recaip Blog</title>
+  <meta name="description" content="Most teams ship great features that users never discover. Learn why missing changelogs cause churn, support overload, and how to fix the feature discovery gap." />
+  <meta property="og:title" content="Why Your Changelog Is Costing You Users" />
+  <meta property="og:description" content="Most teams ship great features that users never discover. Learn why missing changelogs cause churn, support overload, and how to fix the feature discovery gap." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://recaip.com/blog/why-your-changelog-is-costing-you-users" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-04-06" />
+  <meta property="article:author" content="Simon Lafortune" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Why Your Changelog Is Costing You Users" />
+  <meta name="twitter:description" content="Most teams ship great features that users never discover. Learn why missing changelogs cause churn, support overload, and how to fix the feature discovery gap." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com/blog/why-your-changelog-is-costing-you-users" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why Your Changelog Is Costing You Users",
+    "author": { "@type": "Person", "name": "Simon Lafortune" },
+    "publisher": { "@type": "Organization", "name": "Recaip", "url": "https://recaip.com" },
+    "datePublished": "2026-04-06",
+    "description": "Most teams ship great features that users never discover. Learn why missing changelogs cause churn, support overload, and how to fix the feature discovery gap.",
+    "url": "https://recaip.com/blog/why-your-changelog-is-costing-you-users"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#e6f5f2', 100: '#ccebe5', 200: '#99d7cb', 300: '#6bbfae',
+              400: '#4da895', 500: '#3d8b80', 600: '#2d6b63', 700: '#1f524c',
+              800: '#163d38', 900: '#0e2a26',
+            },
+            surface: {
+              0: '#0b1a18', 1: '#0f2420', 2: '#142e2a', 3: '#1a3935', 4: '#21453f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <svg class="hidden">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+</head>
+<body class="font-sans text-white/50 antialiased">
+<div class="scroll-progress" id="scroll-progress"></div>
+<div class="page-wrapper">
+
+  <header>
+  <nav class="nav-fixed">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center"><img src="../logo.svg" alt="recaip" class="h-7" /></a>
+      <div class="flex items-center gap-6">
+        <a href="/features" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
+        <a href="/pricing" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+        <a href="/blog" class="text-white/90 text-sm font-medium">Blog</a>
+        <a href="/about" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="https://app.recaip.com" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+  <!-- Article hero -->
+  <section class="page-hero px-6 lg:px-16">
+    <div class="max-w-[1000px] mx-auto">
+      <a href="/blog" class="text-brand-400 text-sm font-medium hover:text-brand-300 transition-colors mb-6 inline-block">&larr; Back to blog</a>
+      <span class="inline-block px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-[11px] text-brand-400 font-mono uppercase tracking-wider mb-4">Product</span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/90 mb-4 leading-tight">Why Your Changelog Is Costing You Users</h1>
+      <div class="flex items-center gap-3 text-sm text-white/40">
+        <span>Simon Lafortune</span>
+        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+        <span>April 6, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+        <span>7 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1000px] mx-auto"></div>
+
+  <!-- Article body -->
+  <section class="py-12 sm:py-16 px-6 lg:px-16">
+    <div class="prose-blog">
+
+      <p>Your engineering team just shipped a feature that took three sprints to build. The pull request was reviewed, the tests passed, the deploy went clean. Somewhere in your codebase, a real problem got solved. And then... nothing. No announcement. No changelog entry. No email. No Slack message. The feature exists, but as far as your users are concerned, it doesn't.</p>
+
+      <p>This happens everywhere. I've led product at companies where we shipped genuinely impressive work, week after week, and users kept asking for features we'd already built. It wasn't a product problem. It was a communication problem. And it's one of the most expensive, invisible failures in modern software teams.</p>
+
+      <h2>The Feature Discovery Gap</h2>
+
+      <p>Pendo's research has consistently shown that <strong>roughly 60% of software features go largely undiscovered or unused</strong> by the customer base. That number isn't about bad product decisions. Much of it is about bad communication. Users simply don't know the feature exists.</p>
+
+      <p>Think about that for a moment. Your team spent months building, testing, and deploying capabilities that the majority of your users will never encounter. Not because the work was poor, but because nobody told them about it in a way that mattered.</p>
+
+      <p>The gap between "shipped" and "discovered" is where enormous value gets destroyed. A study from the Harvard Business Review found that increasing feature adoption by just 10% can reduce churn by up to 15% in SaaS products. The ROI of feature communication isn't theoretical. It's one of the highest-leverage things a product team can do, and almost nobody prioritizes it.</p>
+
+      <p>This is the feature discovery gap: the distance between what your product can do and what your users believe it can do. Every day that gap exists, you are funding engineering work that delivers zero user value. Not because it's bad work. Because it's invisible work.</p>
+
+      <h2>The Downstream Damage</h2>
+
+      <p>A missing changelog isn't just a missed marketing opportunity. It triggers a chain reaction of problems that compound over time.</p>
+
+      <h3>Support ticket overload</h3>
+
+      <p>When users don't know about improvements, they keep filing tickets for problems you've already solved. I've watched support teams spend hours per week answering questions like "Can you add dark mode?" when dark mode shipped two months ago. That's not a support problem. That's a communication failure wearing a support costume.</p>
+
+      <p>Worse, it erodes trust. When a user asks for something that already exists, they feel ignored. When support has to explain that the feature launched weeks ago, the user wonders what else they've missed. The perception shifts from "this product is improving" to "this product doesn't listen to me." Both are wrong, but the second one causes churn.</p>
+
+      <h3>User churn that looks like product failure</h3>
+
+      <p>Here's something that should keep product leaders up at night: users are leaving your product because of problems you've already fixed. They churned over a missing integration, a clunky workflow, a performance issue. And you shipped the fix. But they never found out, because nobody told them.</p>
+
+      <p>Churn analysis almost never catches this. When a user leaves and cites "missing features" in their exit survey, the product team adds it to the roadmap backlog. Nobody checks whether it was already shipped. The feedback loop is broken, and broken feedback loops create ghost problems that haunt your roadmap for quarters.</p>
+
+      <h3>Engineering morale takes the hit</h3>
+
+      <p>This one is underrated. Engineers can see the deployment logs. They know what shipped. When a feature goes live and nobody mentions it, not even internally, it sends a clear signal: <em>this work didn't matter enough to talk about</em>. That's demoralizing, even if it's not intentional.</p>
+
+      <p>Over time, teams stop caring about polish. Why add that extra touch if nobody will notice? Why go the extra mile on the UX if the feature is going to land silently? The connection between building something and seeing it appreciated is one of the most powerful motivators in software. Release communication is the bridge that makes it visible.</p>
+
+      <h2>The Ownership Vacuum</h2>
+
+      <p>If release communication is so important, why does almost nobody do it well? The answer is structural. Changelogs and release notes live in an uncomfortable gap between three teams, and none of them fully own it.</p>
+
+      <p><strong>Engineering</strong> knows exactly what changed in the code, but they write for other engineers. A merge commit message like <code>fix: resolve race condition in webhook retry logic</code> is accurate and completely useless to an end user. Engineers shouldn't have to be marketers. That's not the job they signed up for.</p>
+
+      <p><strong>Product management</strong> understands the user impact, but they're already stretched across roadmap planning, stakeholder management, sprint rituals, and customer calls. Writing release notes for every deploy is the task that perpetually sits at the bottom of the to-do list. It's important but never urgent, which means it never happens.</p>
+
+      <p><strong>Marketing</strong> has the communication skills but not the technical context. They don't know what shipped, when it shipped, or why it matters. By the time engineering tells them about a feature, two more releases have gone out. The information lag makes timely communication nearly impossible.</p>
+
+      <p>The result is a predictable pattern. Someone writes a changelog entry for the big quarterly release. The 47 smaller improvements that shipped in between go unannounced. Users experience a product that appears to update in rare, dramatic bursts separated by long stretches of silence. The reality is continuous improvement. The perception is neglect.</p>
+
+      <h2>What Good Release Communication Actually Looks Like</h2>
+
+      <p>The teams that do this well share a few characteristics. None of them involve heroic individual effort. They all involve <strong>systems</strong>.</p>
+
+      <h3>It's multi-channel</h3>
+
+      <p>A changelog page on your website is a good start, but it's not enough. Users consume information in different places. Some check the changelog. Some read emails. Some see the in-app notification. Some notice the social media post. The most effective release communication meets users where they already are, not where you wish they'd look.</p>
+
+      <p>This means a single update should generate multiple outputs: a changelog entry, a tweet or LinkedIn post, an email digest for power users, an in-app banner, a Slack message to your customer community. Each of these serves a different audience at a different moment. None of them is sufficient on its own.</p>
+
+      <h3>It's audience-aware</h3>
+
+      <p>A CTO reading your changelog wants different information than an end user seeing an in-app notification. The CTO cares about the technical approach, the API changes, the infrastructure improvements. The end user cares about what they can do now that they couldn't do before.</p>
+
+      <p>Good release notes translate the same underlying change into multiple registers. "Migrated webhook processing to a queue-based architecture with exponential backoff" becomes "Webhooks are now more reliable, with automatic retries when your endpoint is temporarily unavailable." Same change. Different audience. Different words.</p>
+
+      <h3>It's consistent</h3>
+
+      <p>Sporadic changelogs are almost worse than no changelogs. When users learn that your changelog is updated unpredictably, they stop checking it. When they stop checking it, you lose the one proactive communication channel you had. Consistency builds the habit. If users know that every week (or every deploy, or every sprint), there's a clear summary of what changed, they start looking for it. That attention is incredibly valuable and incredibly fragile.</p>
+
+      <h3>It's timely</h3>
+
+      <p>The value of a release note decays fast. Announcing a feature two weeks after it shipped is better than not announcing it at all, but the impact is a fraction of what it could have been. Users who already found the feature through trial and error don't need the announcement. Users who needed it and didn't know it existed may have already found a workaround, or worse, a competitor. The window between "shipped" and "communicated" should be as small as possible. Ideally, zero.</p>
+
+      <h2>The Automation Imperative</h2>
+
+      <p>Here's the uncomfortable truth: you already know all of this. Product leaders have understood the importance of release communication for years. The problem isn't awareness. The problem is that doing it manually, consistently, across multiple channels, for every single deploy, is genuinely unsustainable for a team that also has to build the product.</p>
+
+      <p>The math doesn't work. If you ship 40 pull requests in a month and each changelog entry takes 15 minutes to write, format, and publish across channels, that's 10 hours per month of pure communication overhead. For a small team, that's a part-time job that nobody signed up for. So it gets skipped. And the feature discovery gap widens.</p>
+
+      <p>This is why the teams that do release communication well in 2026 are the ones who've automated it. Not with templates and reminders, which just add another task to ignore, but with systems that observe what shipped and generate the communication automatically.</p>
+
+      <p>The information needed to write a good changelog already exists. It's in your pull request descriptions, your commit messages, your Linear or Jira tickets, your design docs. The problem was never a lack of information. It was the labor of transforming that information into user-facing communication, in multiple formats, for multiple channels, on a consistent schedule. That's exactly the kind of work that AI does well.</p>
+
+      <h2>Closing the Gap</h2>
+
+      <p>The feature discovery gap is not a new problem. But for the first time, the solution doesn't require hiring a dedicated person or adding another process to your already overloaded sprint cycle. Tools like <a href="https://recaip.com">Recaip</a> now connect directly to your development workflow and generate publish-ready release notes every time you merge code. The changelog, the social post, the email draft, the in-app notification. All of it, automatically, from the context that already exists in your tools.</p>
+
+      <p>If you're leading a product team and you know your release communication is inconsistent, you're not alone. Almost everyone's is. The difference between the teams that fix it and the teams that don't isn't discipline or process. It's whether the system runs on human willpower or on automation.</p>
+
+      <p>Your users deserve to know what you're building for them. Your engineers deserve to see their work acknowledged. And you deserve to stop losing users to features they never knew existed.</p>
+
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1000px] mx-auto"></div>
+
+  <!-- Prev/Next navigation -->
+  <section class="py-12 px-6 lg:px-16">
+    <div class="max-w-[1000px] mx-auto flex justify-between">
+      <div></div>
+      <a href="/blog/how-to-automate-release-notes-with-ai" class="glass-card p-4 max-w-xs text-right hover:border-brand-400/30">
+        <span class="text-xs text-white/30 block mb-1">Next article &rarr;</span>
+        <span class="text-sm text-white/70 font-medium">How to Automate Release Notes with AI</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[500px] h-[500px] bg-brand-700/15 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="position:absolute;"></div>
+    <div class="max-w-[1000px] mx-auto text-center relative z-10">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white/90 mb-3">Stop losing users to silence.</h2>
+      <p class="text-white/45 mb-8">Recaip turns every code merge into a published product update. Automatically.</p>
+      <a href="https://app.recaip.com" class="btn-primary glow-pulse h-12 px-8 rounded-xl text-white font-semibold text-sm inline-flex items-center justify-center">Start free</a>
+      <p class="text-xs text-white/30 mt-3">$19/mo. Unlimited products. 100 recaps.</p>
+    </div>
+  </section>
+  </main>
+
+  <footer class="py-8 px-6 lg:px-16">
+    <div class="section-divider mb-8"></div>
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/"><img src="../logo.svg" alt="recaip" class="h-5 opacity-40" /></a>
+      <div class="flex items-center gap-6 text-sm text-white/30">
+        <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+        <a href="/about" class="hover:text-white/50 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-white/30">
+        <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .section-divider').forEach(el => observer.observe(el));
+
+  // Scroll progress bar
+  window.addEventListener('scroll', () => {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / docHeight) * 100;
+    document.getElementById('scroll-progress').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Automate Release Notes with AI - Recaip Blog</title>
+  <meta name="description" content="A practical guide to automating release notes with AI. Learn what tools need to write good changelogs, the spectrum of automation, and how to set up a fully autonomous workflow." />
+  <meta property="og:title" content="How to Automate Release Notes with AI - Recaip Blog" />
+  <meta property="og:description" content="A practical guide to automating release notes with AI. Learn what tools need to write good changelogs and how to set up a fully autonomous workflow." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://recaip.com/blog/how-to-automate-release-notes-with-ai" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-04-06T00:00:00Z" />
+  <meta property="article:author" content="Simon Lafortune" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Automate Release Notes with AI - Recaip Blog" />
+  <meta name="twitter:description" content="A practical guide to automating release notes with AI. Learn what tools need to write good changelogs and how to set up a fully autonomous workflow." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com/blog/how-to-automate-release-notes-with-ai" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Automate Release Notes with AI",
+    "description": "A practical guide to automating release notes with AI. Learn what tools need to write good changelogs, the spectrum of automation, and how to set up a fully autonomous workflow.",
+    "datePublished": "2026-04-06T00:00:00Z",
+    "author": {
+      "@type": "Person",
+      "name": "Simon Lafortune",
+      "url": "https://x.com/simonlafortune"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Recaip",
+      "url": "https://recaip.com",
+      "logo": { "@type": "ImageObject", "url": "https://recaip.com/logo.svg" }
+    },
+    "mainEntityOfPage": "https://recaip.com/blog/how-to-automate-release-notes-with-ai",
+    "image": "https://recaip.com/og-image.svg"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#e6f5f2', 100: '#ccebe5', 200: '#99d7cb', 300: '#6bbfae',
+              400: '#4da895', 500: '#3d8b80', 600: '#2d6b63', 700: '#1f524c',
+              800: '#163d38', 900: '#0e2a26',
+            },
+            surface: {
+              0: '#0b1a18', 1: '#0f2420', 2: '#142e2a', 3: '#1a3935', 4: '#21453f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <svg class="hidden">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+</head>
+<body class="font-sans text-white/50 antialiased">
+
+<div class="scroll-progress"></div>
+
+<div class="page-wrapper">
+
+  <header>
+  <nav class="nav-fixed">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center"><img src="../logo.svg" alt="recaip" class="h-7" /></a>
+      <div class="flex items-center gap-6">
+        <a href="/features" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
+        <a href="/pricing" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+        <a href="/blog" class="text-white/90 text-sm font-medium">Blog</a>
+        <a href="/about" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="https://app.recaip.com" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+
+  <!-- Article Hero -->
+  <article>
+  <section class="page-hero px-6 lg:px-16">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="/blog" class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/60 transition-colors mb-8 animate-in">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        Back to blog
+      </a>
+      <span class="inline-block px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-[11px] text-brand-400 font-mono uppercase tracking-wider mb-4 animate-in animate-delay-1">How-to</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white/90 mb-6 leading-tight animate-in animate-delay-1">How to Automate Release Notes with AI</h1>
+      <div class="flex items-center gap-3 text-sm text-white/35 animate-in animate-delay-2">
+        <span>Simon Lafortune</span>
+        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+        <span>April 6, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+        <span>8 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- Article Body -->
+  <section class="py-16 sm:py-24 px-6 lg:px-16">
+    <div class="prose-blog">
+
+      <p>Every software team ships code. But most teams treat release notes as an afterthought -- a chore squeezed between sprint planning and the next deploy. The result: changelogs that are weeks late, inconsistent in tone, and missing the context that would actually help users understand what changed.</p>
+
+      <p>The good news is that AI has gotten remarkably good at solving this exact problem. Not as a novelty, but as a practical workflow that removes manual effort while improving output quality. This guide walks through how to automate release notes with AI, from understanding why manual approaches break down to setting up a fully autonomous pipeline.</p>
+
+      <h2>Why Manual Release Notes Do Not Scale</h2>
+
+      <p>If you have ever been responsible for writing release notes, you already know the pain. But the numbers make the case even more clearly.</p>
+
+      <p>A typical engineering team merging 15 to 30 pull requests per week spends <strong>30 to 60 minutes per release</strong> writing and formatting changelog entries. That is if someone actually does it. In practice, release notes often get deferred, batched together weeks later, or skipped entirely when the workload gets heavy.</p>
+
+      <p>The quality problem is just as bad as the time cost. When different team members take turns writing changelogs, the result is a Frankenstein document: sometimes written for developers, sometimes for end users, sometimes just a list of Jira ticket IDs. There is no consistent voice, no consistent level of detail, and no consistent structure.</p>
+
+      <p>Worst of all, the person writing the release notes is rarely the person who wrote the code. They are reconstructing context from commit messages, PR descriptions, and Slack threads -- or worse, from memory. By the time they sit down to write, the details have already faded.</p>
+
+      <blockquote><p>The irony of manual release notes: the moment you have the most context about a change is the moment you merge it. But the moment you write about it is days or weeks later, when all that context is gone.</p></blockquote>
+
+      <h2>What AI Needs to Write Good Release Notes</h2>
+
+      <p>AI is not magic. A language model writing release notes from nothing will produce vague, generic output. The quality of automated changelogs depends entirely on the <strong>inputs</strong> you give the model. Here is what makes the difference:</p>
+
+      <h3>Code Diffs</h3>
+
+      <p>The actual changes in the codebase are the ground truth. A diff tells the model what files changed, what was added or removed, and whether this was a one-line bug fix or a major refactor. Without the diff, the model is guessing.</p>
+
+      <h3>Pull Request Descriptions</h3>
+
+      <p>Good PR descriptions are gold for automated changelog tools. They contain the <strong>why</strong> behind the change -- the motivation, the user problem being solved, and the approach taken. If your team already writes decent PR descriptions, you are halfway to great automated release notes.</p>
+
+      <h3>Ticket Context</h3>
+
+      <p>If your PRs reference Jira tickets, Linear issues, or GitHub issues, that metadata adds another layer of context. The model can understand whether a change is a bug fix, a new feature, or a performance improvement. It can pull in the original user story or bug report to write release notes that map to what users actually care about.</p>
+
+      <h3>Commit Messages</h3>
+
+      <p>Commit messages provide granular detail about individual changes within a PR. While they are noisier than PR descriptions, they fill gaps -- especially for PRs with lazy or missing descriptions.</p>
+
+      <h3>Product Context</h3>
+
+      <p>This is the often-overlooked ingredient. AI writes much better release notes when it knows <strong>what your product does</strong>, who your users are, and what terminology your team uses. A changelog entry that says "updated the reconciliation engine" means nothing to an end user. But if the model knows your product is an accounting tool used by small business owners, it can write "improved how transactions are matched to bank statements, reducing errors for accounts with high volume."</p>
+
+      <h2>The Spectrum of Automation</h2>
+
+      <p>Automating release notes is not binary. There is a spectrum, and most teams benefit from understanding where they currently sit and where they want to go.</p>
+
+      <h3>Level 0: Fully Manual</h3>
+
+      <p>Someone opens a document or a CMS, reads through merged PRs and commits, and writes the changelog from scratch. This is where most teams start. It works when you ship once a month. It breaks when you ship daily.</p>
+
+      <h3>Level 1: Template-Based</h3>
+
+      <p>Teams adopt a changelog template -- often in Markdown -- with categories like "New Features," "Bug Fixes," and "Improvements." Each PR gets slotted into a category manually, but the structure is consistent. Tools like <code>conventional-changelog</code> or <code>release-please</code> live here. They parse commit messages that follow a convention (like <code>feat:</code> or <code>fix:</code>) and generate structured output. The limitation: they are only as good as your commit discipline, and the output is developer-facing, not user-facing.</p>
+
+      <h3>Level 2: AI-Assisted</h3>
+
+      <p>An AI model reads your PRs and generates a draft changelog that a human reviews and edits before publishing. This is a massive upgrade. The model handles the tedious work of reading diffs, summarizing changes, and formatting the output. The human adds judgment: Is this change worth mentioning? Does this wording make sense to our users? Should we combine these three related PRs into one entry?</p>
+
+      <h3>Level 3: Fully Autonomous</h3>
+
+      <p>The AI generates the changelog <strong>and publishes it</strong> -- to your changelog page, your email list, your Slack channel, your social media, and your status page. A human can review if they choose, but the system works end-to-end without intervention. This is the level where automation truly pays off, because the bottleneck was never the writing -- it was the publishing. Many teams have drafted changelogs sitting in Google Docs that never made it to users.</p>
+
+      <h2>Key Features to Look for in an Automated Changelog Tool</h2>
+
+      <p>If you are evaluating tools to automate your release notes, here are the capabilities that separate good solutions from toys:</p>
+
+      <ul>
+        <li><strong>Diff-aware generation.</strong> The tool should read actual code changes, not just PR titles. A PR titled "misc fixes" is useless as a changelog entry, but the diff tells the full story.</li>
+        <li><strong>Multi-format output.</strong> A changelog entry, a social media post, an email, and an in-app announcement are all different formats that serve different audiences. The best tools generate all of them from a single merge event.</li>
+        <li><strong>Tone and voice learning.</strong> Your release notes should sound like your brand, not like a generic AI summary. Look for tools that learn your product's tone over time or let you configure it upfront.</li>
+        <li><strong>Auto-publish with granular control.</strong> You should be able to set some channels to auto-publish (like your internal Slack) while keeping others in manual review mode (like your public changelog). Trust should be earned per channel.</li>
+        <li><strong>Integration depth.</strong> The tool should connect to where your work already happens: GitHub, GitLab, Linear, Jira, Slack, your email platform. If you have to copy-paste output into another tool, you have not actually automated anything.</li>
+        <li><strong>Product context awareness.</strong> Can you tell the tool about your product so it writes for your users, not for your engineers? This is the difference between "refactored auth middleware" and "fixed an issue that caused some users to be logged out unexpectedly."</li>
+      </ul>
+
+      <h2>Step by Step: How Recaip Works</h2>
+
+      <p>To make this concrete, here is how the workflow looks when you set up <a href="https://recaip.com">Recaip</a> to automate your release notes. The entire setup takes under five minutes.</p>
+
+      <h3>Step 1: Connect Your Repository</h3>
+
+      <p>Sign in with your GitHub account and select the repositories you want Recaip to listen to. Recaip registers a webhook on your repo so it is notified every time a pull request is merged. You can connect multiple repos to a single product if your codebase is split across services.</p>
+
+      <h3>Step 2: Tell Recaip About Your Product</h3>
+
+      <p>This is the step most tools skip. Recaip asks you to describe your product in plain language: what it does, who uses it, and what terminology matters. This product context is fed to the AI every time it generates output, which is why Recaip's changelogs read like they were written by someone on your team instead of a generic summarizer.</p>
+
+      <h3>Step 3: Merge a PR and Watch the Magic</h3>
+
+      <p>The next time you or anyone on your team merges a pull request, Recaip's webhook fires. Within seconds, the AI reads the PR title, description, commit messages, and code diff. It generates a changelog entry, a social media post, an email draft, and a stakeholder summary -- all tailored to your product's voice and audience.</p>
+
+      <h3>Step 4: Review or Auto-Publish</h3>
+
+      <p>By default, Recaip shows you every draft for approval. You can approve, edit, or reject each one. But once you trust the output -- and most teams get there within a few merges -- you can flip individual channels to autopilot. Your changelog page updates automatically. Your Slack channel gets notified. Your users get an in-app announcement. You never have to open Recaip again.</p>
+
+      <h3>Step 5: Walk Away</h3>
+
+      <p>This is the part that feels strange at first. Once your channels are on autopilot, Recaip runs 24/7 in the background. You ship code, Recaip communicates it. There is no dashboard to check, no queue to manage, no weekly changelog writing session to dread. The workflow is: merge code, everything else happens automatically.</p>
+
+      <h2>Common Objections (and Why They Do Not Hold Up)</h2>
+
+      <p><strong>"AI will write something wrong and embarrass us."</strong> This is why every channel starts in manual review mode. You approve every draft until you are comfortable. And even on autopilot, Recaip learns your product context and tone -- it is not hallucinating from zero context.</p>
+
+      <p><strong>"Our PRs are messy. The AI won't have enough to work with."</strong> Recaip reads the diff, not just the PR description. Even a PR with a one-word title produces useful output because the model understands what the code change actually does. That said, better PR descriptions lead to better output -- and automated changelog tools often motivate teams to write better PRs, which is a nice side effect.</p>
+
+      <p><strong>"We don't ship often enough to justify a tool."</strong> If you ship once a month, you probably need release notes even more than teams that ship daily. Monthly releases contain more changes, more context to reconstruct, and more user impact to communicate. Automation makes that monthly burden disappear.</p>
+
+      <h2>Getting Started</h2>
+
+      <p>Automating release notes is one of those rare wins where you save time <strong>and</strong> improve quality. The manual process is slow, inconsistent, and fragile. AI handles the tedious parts -- reading diffs, summarizing changes, formatting output -- while you keep control over what gets published and where.</p>
+
+      <p>If you want to try it, <a href="https://app.recaip.com">Recaip starts at $19/mo for 100 recaps</a> with full access to every feature. Connect a repo, merge a PR, and see what the AI generates. Most teams know within their first three merges whether autonomous release notes are right for them.</p>
+
+      <p>Your users deserve to know what you shipped. You deserve to not write about it manually ever again.</p>
+
+    </div>
+  </section>
+  </article>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- Prev / Next Navigation -->
+  <section class="py-12 px-6 lg:px-16">
+    <div class="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-stretch gap-4">
+      <a href="/blog/why-your-changelog-is-costing-you-users" class="glass-card p-6 flex-1 group block">
+        <span class="text-xs text-white/30 uppercase tracking-wider font-mono mb-2 block">Previous</span>
+        <span class="text-sm text-white/70 group-hover:text-white/90 transition-colors">Why Your Changelog Is Costing You Users</span>
+      </a>
+      <a href="/blog/true-cost-of-not-communicating-product-updates" class="glass-card p-6 flex-1 group block text-right">
+        <span class="text-xs text-white/30 uppercase tracking-wider font-mono mb-2 block">Next</span>
+        <span class="text-sm text-white/70 group-hover:text-white/90 transition-colors">The True Cost of Not Communicating Product Updates</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- CTA -->
+  <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[600px] h-[600px] bg-brand-500/8 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="max-w-[1400px] mx-auto text-center relative z-10">
+      <div class="reveal">
+        <h2 class="text-3xl sm:text-4xl font-semibold text-white mb-4">Try it on your next merge.</h2>
+        <p class="text-white/40 text-lg max-w-xl mx-auto mb-10">
+          Connect your GitHub repo. $19/mo for unlimited products and 100 recaps. All features included.
+        </p>
+        <a href="https://app.recaip.com" class="btn-primary glow-pulse h-14 px-10 rounded-xl text-white font-semibold text-base inline-flex items-center justify-center">
+          Get started free
+        </a>
+        <p class="text-white/30 text-sm mt-5">No credit card required.</p>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="py-8 px-6 lg:px-16">
+    <div class="section-divider mb-8"></div>
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/"><img src="../logo.svg" alt="recaip" class="h-5 opacity-40" /></a>
+      <div class="flex items-center gap-6 text-sm text-white/30">
+        <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+        <a href="/about" class="hover:text-white/50 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-white/30">
+        <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Scroll reveal observer -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .section-divider').forEach(el => observer.observe(el));
+</script>
+
+<!-- Scroll progress bar -->
+<script>
+  const progressBar = document.querySelector('.scroll-progress');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + '%';
+  });
+</script>
+</body>
+</html>
