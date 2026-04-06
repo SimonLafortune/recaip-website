@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-Channel Distribution: Why One Changelog Isn't Enough - Recaip Blog</title>
+  <meta name="description" content="A changelog page alone reaches less than 5% of your users. Learn how to distribute product updates across every channel your audience actually uses." />
+  <meta property="og:title" content="Multi-Channel Distribution: Why One Changelog Isn't Enough" />
+  <meta property="og:description" content="A changelog page alone reaches less than 5% of your users. Learn how to distribute product updates across every channel your audience actually uses." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://recaip.com/blog/multi-channel-distribution-why-one-changelog-isnt-enough" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-04-02" />
+  <meta property="article:author" content="Simon Lafortune" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Multi-Channel Distribution: Why One Changelog Isn't Enough" />
+  <meta name="twitter:description" content="A changelog page alone reaches less than 5% of your users. Learn how to distribute product updates across every channel your audience actually uses." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com/blog/multi-channel-distribution-why-one-changelog-isnt-enough" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Multi-Channel Distribution: Why One Changelog Isn't Enough",
+    "author": { "@type": "Person", "name": "Simon Lafortune" },
+    "publisher": { "@type": "Organization", "name": "Recaip", "url": "https://recaip.com" },
+    "datePublished": "2026-04-02",
+    "description": "A changelog page alone reaches less than 5% of your users. Learn how to distribute product updates across every channel your audience actually uses.",
+    "url": "https://recaip.com/blog/multi-channel-distribution-why-one-changelog-isnt-enough"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#e6f5f2', 100: '#ccebe5', 200: '#99d7cb', 300: '#6bbfae',
+              400: '#4da895', 500: '#3d8b80', 600: '#2d6b63', 700: '#1f524c',
+              800: '#163d38', 900: '#0e2a26',
+            },
+            surface: {
+              0: '#0b1a18', 1: '#0f2420', 2: '#142e2a', 3: '#1a3935', 4: '#21453f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <svg class="hidden">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+</head>
+<body class="font-sans text-white/50 antialiased">
+<div class="scroll-progress" id="scroll-progress"></div>
+<div class="page-wrapper">
+
+  <header>
+  <nav class="nav-fixed">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center"><img src="../logo.svg" alt="recaip" class="h-7" /></a>
+      <div class="flex items-center gap-6">
+        <a href="/features" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
+        <a href="/pricing" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+        <a href="/blog" class="text-white/90 text-sm font-medium">Blog</a>
+        <a href="/about" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="https://app.recaip.com" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+  <!-- Article hero -->
+  <section class="page-hero px-6 lg:px-16">
+    <div class="max-w-[1000px] mx-auto">
+      <a href="/blog" class="text-brand-400 text-sm font-medium hover:text-brand-300 transition-colors mb-6 inline-block">&larr; Back to blog</a>
+      <span class="inline-block px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-[11px] text-brand-400 font-mono uppercase tracking-wider mb-4">Distribution</span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/90 mb-4 leading-tight">Multi-Channel Distribution: Why One Changelog Isn't Enough</h1>
+      <div class="flex items-center gap-3 text-sm text-white/40">
+        <span>Simon Lafortune</span>
+        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+        <span>April 2, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+        <span>8 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1000px] mx-auto"></div>
+
+  <!-- Article body -->
+  <section class="py-12 sm:py-16 px-6 lg:px-16">
+    <div class="prose-blog">
+
+      <p>You shipped a great update. You wrote a changelog entry. You published it to your /changelog page. You even put a little effort into the formatting. And then you waited for the wave of user excitement that never came. Sound familiar?</p>
+
+      <p>Here's the hard truth that most product teams learn too late: publishing a changelog page and expecting users to find it is the release communication equivalent of "build it and they will come." It doesn't work. It has never worked. And the data is brutal.</p>
+
+      <h2>The Changelog Page Illusion</h2>
+
+      <p>Most changelog pages get visited by fewer than 5% of a product's active user base. That's not a guess. Look at your own analytics. Pull up the traffic numbers for your /changelog or /updates page and compare them to your monthly active users. The ratio is almost always shocking.</p>
+
+      <p>The reason is simple. Users don't wake up in the morning and think "I should go check if my project management tool shipped something new." They open your product to do a job. If that job doesn't involve reading a changelog, they won't visit the changelog. This isn't laziness. It's entirely rational behavior. People allocate attention to what serves their immediate needs, and a changelog page serves almost nobody's immediate need.</p>
+
+      <p>Yet changelog pages remain the default (and often the only) release communication strategy for most software companies. Teams invest real engineering time building a beautiful changelog UI, write thoughtful entries about every release, and then wonder why feature adoption stays flat. The content is fine. The distribution strategy is missing entirely.</p>
+
+      <p>A changelog page is a record. It is not a distribution channel. Conflating the two is one of the most common and most expensive mistakes in product communication. You need the record, absolutely. But you also need to push that information to where your users actually spend their attention.</p>
+
+      <h2>Different Audiences, Different Formats</h2>
+
+      <p>The distribution problem isn't just about reaching more people. It's about reaching the <strong>right</strong> people with the <strong>right</strong> format. A single changelog entry cannot serve every audience, because your audiences want fundamentally different things from your product updates.</p>
+
+      <h3>Developers want technical detail</h3>
+
+      <p>Your API consumers and technical integrators want to know what changed at the code level. They care about endpoint changes, parameter additions, deprecation timelines, and migration paths. A vague "We improved the API" is useless to them. They need specifics: <code>POST /webhooks</code> now accepts an optional <code>retry_policy</code> parameter. The more precise the better.</p>
+
+      <h3>End users want plain language</h3>
+
+      <p>The person using your product daily doesn't care about your database migration or the retry logic you refactored. They want to know what they can do now that they couldn't do before. "You can now export reports as PDF" means something to them. "Migrated report generation to serverless functions" means nothing. Same underlying change. Completely different communication.</p>
+
+      <h3>Investors and stakeholders want business impact</h3>
+
+      <p>Your board members and investors are reading your updates through a different lens entirely. They want to understand how this release moves the needle on retention, expansion, or competitive positioning. "Shipped SSO support" is interesting. "Shipped SSO support, which was the #1 blocker cited by enterprise prospects in Q1" is a story that changes how they evaluate your trajectory.</p>
+
+      <h3>Internal teams need operational context</h3>
+
+      <p>Your support team needs to know what shipped so they can answer questions about it. Your sales team needs to know so they can use it in demos. Your marketing team needs to know so they can write about it. Each of these teams needs a different slice of the same information, in a different format, delivered to a different place.</p>
+
+      <p>A single changelog entry posted to a single page cannot serve all of these audiences. It is structurally impossible. You have to choose who it's written for, and everyone else gets a suboptimal version of the message. This is why multi-channel distribution isn't a nice-to-have. It's how product communication actually works when it works at all.</p>
+
+      <h2>The Channel Map</h2>
+
+      <p>When you think about where product updates should actually go, the list is longer than most teams realize. Here's the full picture.</p>
+
+      <p><strong>Changelog page</strong> serves as your permanent record and your SEO play. Power users check it. Prospects evaluate your shipping velocity by scrolling through it. Google indexes it. It's the source of truth, but it's passive. People come to it. It never goes to them.</p>
+
+      <p><strong>Email</strong> reaches your engaged user base directly. Whether it's a per-release notification or a weekly digest, email meets users in a place they already check daily. It's one of the highest-engagement channels for product updates, especially for features that require user action (like enabling a new setting or migrating to a new workflow).</p>
+
+      <p><strong>Social media</strong> builds awareness and compounds your build-in-public narrative. A short post on Twitter or LinkedIn about what you just shipped does double duty: it informs existing users who follow you, and it signals to prospects and the broader market that your product is actively improving. Shipping velocity, made visible, is one of the strongest trust signals a startup can broadcast.</p>
+
+      <p><strong>Slack or Discord</strong> keeps your internal team and community in sync. When your engineering team merges a PR and the #releases channel immediately shows what was shipped and why it matters, everyone stays aligned without a meeting. Customer-facing community channels serve the same function for power users who live in Slack or Discord.</p>
+
+      <p><strong>Newsletter or digest</strong> bundles updates into a periodic summary. Not every user wants a notification for every release. Some prefer a weekly or monthly roundup that summarizes everything that changed. This is especially effective for products with high shipping velocity where individual updates would create notification fatigue.</p>
+
+      <p><strong>In-app notifications</strong> catch users at the moment of highest relevance: when they're already inside your product. A subtle banner or tooltip that says "New: you can now export to PDF" appears exactly when the user is in a context where they might use that feature. This is the highest-conversion channel for feature adoption, and the one most teams neglect entirely.</p>
+
+      <p><strong>Status page</strong> communicates reliability and infrastructure changes. When you ship a performance improvement, a migration to a new region, or a fix for an intermittent issue, the status page is where technical users and ops teams look. It serves a fundamentally different purpose than a changelog, but it draws from the same pool of release events.</p>
+
+      <p><strong>Stakeholder digest or slide deck</strong> packages updates for executives, board members, and investors. This is the "what did the engineering team accomplish this month" artifact that someone on the product team usually assembles manually the night before a board meeting. It pulls from the same release data but reformats it around business outcomes instead of feature details.</p>
+
+      <p>Count them. That's eight distinct channels, each serving a different audience at a different moment. If you're only using one of them, you're leaving seven audiences in the dark.</p>
+
+      <h2>The Consistency Problem</h2>
+
+      <p>At this point, you might be thinking "Great, I'll just start posting to more channels." And you might even do it for the next release. Maybe even the one after that. But here's what actually happens when teams try to manually distribute updates across six or more channels.</p>
+
+      <p>The first release gets the full treatment. Changelog entry, tweet, Slack message, email draft. It takes 45 minutes, which feels fine for a big launch. The second release gets the changelog and a quick tweet. The third release gets just the changelog. By the fourth release, even the changelog is a sentence fragment written at 5pm on a Friday.</p>
+
+      <p>This isn't a discipline problem. It's a math problem. If writing for one channel takes 15 minutes, writing for six channels takes 90 minutes. Per release. For a team that ships twice a week, that's three hours of communication work every single week. For a team shipping daily, it's an entire workday, every week, spent writing about what you built instead of building.</p>
+
+      <p>No product team sustains that. So what actually happens is triage. The team picks one or two channels (almost always the changelog and maybe Slack) and lets the rest go silent. Email gets skipped. Social gets sporadic. In-app notifications never get set up. The stakeholder digest gets assembled once a quarter in a panicked scramble before the board meeting.</p>
+
+      <p>The result is a product that communicates inconsistently across inconsistent channels. Some users hear about some features some of the time. Nobody gets the full picture. And the team feels guilty about the channels they're neglecting, which adds a low-grade anxiety to every release that has nothing to do with the code itself.</p>
+
+      <p>Manual multi-channel distribution at the pace of modern software development is not a sustainable workflow. It's a recipe for burnout and silence.</p>
+
+      <h2>One Event, Six Outputs</h2>
+
+      <p>This is the problem <a href="https://recaip.com">Recaip</a> was built to solve. Not by adding another dashboard to your workflow, but by eliminating the work entirely.</p>
+
+      <p>Here's what happens: your team merges a pull request. That single event triggers Recaip's autonomous pipeline. The AI reads the PR title, description, commit messages, and code diff. It cross-references your product context (who your users are, what your product does, what terminology you use). And then it generates every output format from that single event.</p>
+
+      <p>A changelog entry with the right level of technical detail. A social media post written for Twitter and LinkedIn. An email draft for your user base. A Slack message for your internal team. An in-app notification for active users. A status page update if the change affects reliability or infrastructure. Each one written in the appropriate register for its audience. Each one formatted for its channel. All from one merge.</p>
+
+      <p>The total time you spend? Zero, if you've turned on autopilot. Or thirty seconds per output if you prefer to review before publishing. Either way, the 90-minute manual process collapses to almost nothing. And more importantly, it happens <em>every single time</em>, for <em>every single release</em>. No triage. No guilt. No channels going silent for weeks.</p>
+
+      <p>This consistency is where the real value compounds. When users learn that your product communicates reliably -- when the email always arrives, when the in-app banner always appears, when the changelog is always current -- they start paying attention. They develop the habit of looking for your updates. And that attention is what drives feature adoption, reduces support load, and makes users feel like your product is alive and improving.</p>
+
+      <h2>Distribution Is the Multiplier</h2>
+
+      <p>The features your team builds have a fixed cost. The engineering hours are spent whether ten users discover the feature or ten thousand. Distribution is the multiplier that determines which of those outcomes you get. And multi-channel distribution isn't about broadcasting louder. It's about meeting every segment of your audience in the place and format that actually reaches them.</p>
+
+      <p>If you're relying on a single changelog page as your release communication strategy, you're not communicating. You're archiving. The work deserves better. Your users deserve better. And your team deserves to see the features they built actually get used.</p>
+
+      <p>One merge. Every channel. Every audience. That's what release communication looks like when the distribution problem is actually solved.</p>
+
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1000px] mx-auto"></div>
+
+  <!-- Prev/Next navigation -->
+  <section class="py-12 px-6 lg:px-16">
+    <div class="max-w-[1000px] mx-auto flex justify-between">
+      <a href="/blog/why-your-own-team-needs-release-notes" class="glass-card p-4 max-w-xs hover:border-brand-400/30">
+        <span class="text-xs text-white/30 block mb-1">&larr; Previous article</span>
+        <span class="text-sm text-white/70 font-medium">Why Your Own Team Needs Release Notes More Than Your Users Do</span>
+      </a>
+      <a href="/blog/feature-blindness-why-users-dont-see-what-you-ship" class="glass-card p-4 max-w-xs text-right hover:border-brand-400/30">
+        <span class="text-xs text-white/30 block mb-1">Next article &rarr;</span>
+        <span class="text-sm text-white/70 font-medium">Feature Blindness: Why Users Don't See What You Ship</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[500px] h-[500px] bg-brand-700/15 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="position:absolute;"></div>
+    <div class="max-w-[1000px] mx-auto text-center relative z-10">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white/90 mb-3">Stop losing users to silence.</h2>
+      <p class="text-white/45 mb-8">Recaip turns every code merge into a published product update. Automatically.</p>
+      <a href="https://app.recaip.com" class="btn-primary glow-pulse h-12 px-8 rounded-xl text-white font-semibold text-sm inline-flex items-center justify-center">Start free</a>
+      <p class="text-xs text-white/30 mt-3">$19/mo. Unlimited products. 100 recaps.</p>
+    </div>
+  </section>
+  </main>
+
+  <footer class="py-8 px-6 lg:px-16">
+    <div class="section-divider mb-8"></div>
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/"><img src="../logo.svg" alt="recaip" class="h-5 opacity-40" /></a>
+      <div class="flex items-center gap-6 text-sm text-white/30">
+        <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+        <a href="/about" class="hover:text-white/50 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-white/30">
+        <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .section-divider').forEach(el => observer.observe(el));
+
+  // Scroll progress bar
+  window.addEventListener('scroll', () => {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / docHeight) * 100;
+    document.getElementById('scroll-progress').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>

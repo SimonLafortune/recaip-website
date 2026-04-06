@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feature Blindness: Why Users Don't See What You Ship - Recaip Blog</title>
+  <meta name="description" content="80% of features go unused — not because they lack value, but because users never discover them. Explore the psychology of feature blindness and how to close the adoption gap." />
+  <meta property="og:title" content="Feature Blindness: Why Users Don't See What You Ship" />
+  <meta property="og:description" content="80% of features go unused — not because they lack value, but because users never discover them. Explore the psychology of feature blindness and how to close the adoption gap." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://recaip.com/blog/feature-blindness-why-users-dont-see-what-you-ship" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-04-03" />
+  <meta property="article:author" content="Simon Lafortune" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Feature Blindness: Why Users Don't See What You Ship" />
+  <meta name="twitter:description" content="80% of features go unused — not because they lack value, but because users never discover them. Explore the psychology of feature blindness and how to close the adoption gap." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com/blog/feature-blindness-why-users-dont-see-what-you-ship" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Feature Blindness: Why Users Don't See What You Ship",
+    "author": { "@type": "Person", "name": "Simon Lafortune" },
+    "publisher": { "@type": "Organization", "name": "Recaip", "url": "https://recaip.com" },
+    "datePublished": "2026-04-03",
+    "description": "80% of features go unused — not because they lack value, but because users never discover them. Explore the psychology of feature blindness and how to close the adoption gap.",
+    "url": "https://recaip.com/blog/feature-blindness-why-users-dont-see-what-you-ship"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#e6f5f2', 100: '#ccebe5', 200: '#99d7cb', 300: '#6bbfae',
+              400: '#4da895', 500: '#3d8b80', 600: '#2d6b63', 700: '#1f524c',
+              800: '#163d38', 900: '#0e2a26',
+            },
+            surface: {
+              0: '#0b1a18', 1: '#0f2420', 2: '#142e2a', 3: '#1a3935', 4: '#21453f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <svg class="hidden">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+</head>
+<body class="font-sans text-white/50 antialiased">
+<div class="scroll-progress" id="scroll-progress"></div>
+<div class="page-wrapper">
+
+  <header>
+  <nav class="nav-fixed">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center"><img src="../logo.svg" alt="recaip" class="h-7" /></a>
+      <div class="flex items-center gap-6">
+        <a href="/features" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
+        <a href="/pricing" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+        <a href="/blog" class="text-white/90 text-sm font-medium">Blog</a>
+        <a href="/about" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="https://app.recaip.com" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+  <!-- Article hero -->
+  <section class="page-hero px-6 lg:px-16">
+    <div class="max-w-[1000px] mx-auto">
+      <a href="/blog" class="text-brand-400 text-sm font-medium hover:text-brand-300 transition-colors mb-6 inline-block">&larr; Back to blog</a>
+      <span class="inline-block px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-[11px] text-brand-400 font-mono uppercase tracking-wider mb-4">Product</span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/90 mb-4 leading-tight">Feature Blindness: Why Users Don't See What You Ship</h1>
+      <div class="flex items-center gap-3 text-sm text-white/40">
+        <span>Simon Lafortune</span>
+        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+        <span>April 3, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+        <span>6 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1000px] mx-auto"></div>
+
+  <!-- Article body -->
+  <section class="py-12 sm:py-16 px-6 lg:px-16">
+    <div class="prose-blog">
+
+      <p>There is a moment in every product team's life that goes something like this. A user hops on a support call, frustrated. They explain a workflow that's painful, a feature they desperately need. And someone on your team, probably biting their tongue, types into the chat: "Actually, we shipped that three months ago."</p>
+
+      <p>The user didn't know. They weren't ignoring you. They weren't lazy. They simply never saw it. And this isn't an edge case. It's the default experience for most software products. The vast majority of what you build disappears into the void between "deployed" and "discovered." This phenomenon has a name, and understanding it is the first step toward fixing it.</p>
+
+      <h2>The Psychology of Feature Blindness</h2>
+
+      <p>Feature blindness is a cognitive pattern, not a user flaw. It stems from the same mental shortcuts that help us navigate a complex world without being overwhelmed by every stimulus around us.</p>
+
+      <p>When a user first adopts your product, they're in exploration mode. They click around, read tooltips, try things. But once they've built a working routine — the three screens they visit, the five actions they repeat — their brain shifts into autopilot. Psychologists call this <strong>habitual inattention</strong>. Users develop muscle memory for the paths that solve their problems, and they stop scanning for new options. The sidebar they never open might as well not exist. The new menu item you added last Tuesday is invisible to someone whose eyes follow the same trajectory every single session.</p>
+
+      <p>This is a well-documented pattern in UX research. Banner blindness, its more famous cousin, describes how users learn to ignore areas of a page they associate with ads. Feature blindness works the same way, except the thing being ignored is the product itself. Users are not choosing to miss your updates. Their brains are optimized to filter them out.</p>
+
+      <p>And here's the uncomfortable implication: the more habitual and efficient your product becomes for a user, the less likely they are to notice when you improve it. Your best users are the most blind.</p>
+
+      <h2>The Numbers Are Stark</h2>
+
+      <p>Pendo's annual State of Software report has consistently found that <strong>roughly 80% of features in the average SaaS product are rarely or never used</strong>. That number gets cited often as evidence that teams build too many features. But that framing misses the real story. A significant portion of that 80% represents genuine value that users never encounter.</p>
+
+      <p>The distinction matters. Some features are unused because they solve a problem nobody has. That's a product strategy failure. But many features are unused because the people who need them don't know they exist. That's a communication failure. And communication failures are cheaper and faster to fix than product strategy failures, if you recognize them for what they are.</p>
+
+      <p>Internal data from product analytics platforms paints a consistent picture. Features announced through in-app messaging see <strong>2-3x higher adoption rates</strong> in their first month compared to features that are simply released and documented. The feature is the same. The code is the same. The only variable is whether someone told the user it was there.</p>
+
+      <p>When you ship a feature and don't communicate it, you aren't just missing a marketing opportunity. You're actively undermining the ROI of every engineering hour that went into building it. The feature exists in your codebase, but it doesn't exist in your users' mental model of your product. And the mental model is what drives behavior.</p>
+
+      <h2>The "I Didn't Know You Had That" Problem</h2>
+
+      <p>If you've ever sat in on a customer call or scrolled through support conversations, you've heard some version of this phrase. A user describes a gap. Your team explains the gap was filled weeks or months ago. The user is surprised, maybe a little embarrassed, and definitely wondering what else they've been missing.</p>
+
+      <p>This interaction is more damaging than it appears on the surface. When a user discovers that a feature they needed already existed, three things happen simultaneously:</p>
+
+      <p><strong>Trust erodes.</strong> The user thought your product couldn't do something it could. They may have evaluated competitors. They may have told colleagues your product lacked a capability it actually has. Every day they didn't know was a day your product's perceived value was lower than its actual value. That perception gap is where churn lives.</p>
+
+      <p><strong>Support costs inflate.</strong> Your support team is answering questions about features that exist. They're writing walkthroughs for capabilities that should have been announced. They're spending time on discovery that should have been handled by communication. This is a quiet, persistent drain that rarely shows up in a cost analysis, but it compounds across every undiscovered feature and every user who encounters it.</p>
+
+      <p><strong>The feedback loop breaks.</strong> When users request features that already exist, those requests pollute your feedback data. Product teams end up prioritizing work that's already done, or worse, deprioritizing genuine gaps because the signal is drowned in noise from discovery failures. You can't make good roadmap decisions with bad data, and missing feature communication guarantees bad data.</p>
+
+      <h2>Passive vs. Active Communication</h2>
+
+      <p>Most teams think they communicate their releases. They have a changelog page. Maybe it's on their website, maybe it's in the product. They update it when they remember, or when the release feels big enough. And then they wonder why adoption is low.</p>
+
+      <p>The problem is that a changelog page is <strong>passive communication</strong>. It requires the user to seek it out. The user has to know the page exists, remember to check it, navigate to it, and then read through entries to find something relevant to them. That's four friction points, any one of which will kill the interaction for most users.</p>
+
+      <p>Research on information-seeking behavior shows that <strong>fewer than 5% of users regularly visit a changelog or "What's New" page</strong> without prompting. The rest never see it. You could ship the most transformative feature of the year, write a beautiful changelog entry, and 95% of your user base would have no idea.</p>
+
+      <p><strong>Active communication</strong> flips the model. Instead of hoping users come to the information, you push the information to users. An email lands in their inbox. A notification appears in the product. A post shows up in their LinkedIn feed. A message drops into their Slack channel. The update finds the user, wherever they are, without requiring them to do anything.</p>
+
+      <p>The difference in effectiveness is not marginal. It's categorical. Active communication reaches 10-50x more users than passive communication for the same release. And reaching users is a precondition for adoption. You cannot adopt a feature you don't know about.</p>
+
+      <h2>Timing Is Everything</h2>
+
+      <p>Even when teams do communicate releases, they often do it late. The feature ships on Tuesday. Someone writes the announcement on Friday. It goes out the following Monday. By then, a week has passed. And that delay matters far more than most people realize.</p>
+
+      <p>The value of a release announcement <strong>decays exponentially</strong>. On day one, the feature is news. Users who encounter it feel informed and cared for. The announcement reinforces that your product is actively improving. By day fourteen, the same announcement feels like old news at best, or an afterthought at worst. Users who needed the feature may have already built workarounds. Users who were considering churning may have already left.</p>
+
+      <p>There's also a psychological dimension. When a user learns about a feature at the moment it launches, they associate the improvement with your brand's momentum. It creates a narrative of continuous progress. When they learn about it weeks later, the narrative flips to: "Why didn't they tell me sooner?" The same information, delivered at different times, creates opposite emotional responses.</p>
+
+      <p>Day-of communication is roughly <strong>10x more effective</strong> than delayed communication, measured by click-through rate, feature trial, and adoption. The teams that publish release notes within hours of deploying see dramatically better engagement than teams that batch updates into monthly digests. Speed isn't a nice-to-have. It's the primary variable that determines whether your communication actually works.</p>
+
+      <h2>The Retention Connection</h2>
+
+      <p>Feature blindness doesn't just hurt adoption metrics. It directly impacts retention. The logic is straightforward: users who discover more of your product get more value from it, and users who get more value are less likely to leave.</p>
+
+      <p>Data from multiple SaaS benchmarking studies shows that <strong>users who engage with 3+ features in their first 30 days retain at 2-3x the rate of single-feature users</strong>. Feature discovery is one of the strongest predictors of long-term retention, stronger than customer support satisfaction, stronger than NPS, and certainly stronger than whatever onboarding email sequence you're running.</p>
+
+      <p>This creates a compounding dynamic. Users who discover features stay longer. Users who stay longer discover more features. The flywheel spins. But it only starts spinning if users learn about features in the first place. Without proactive communication, the flywheel never gets its initial push. Users plateau at the feature set they discovered during onboarding, and when that set stops feeling sufficient, they leave.</p>
+
+      <p>Reducing feature blindness is, in many cases, the highest-leverage retention strategy a product team can pursue. Not because the product needs to be better, but because users need to know how good it already is.</p>
+
+      <h2>How to Fix It</h2>
+
+      <p>The solution to feature blindness is not complicated in theory. It's three things:</p>
+
+      <p><strong>Proactive, not passive.</strong> Push updates to users instead of waiting for them to come to you. Email, in-app, social, Slack, status page. Meet users in the channels they already inhabit.</p>
+
+      <p><strong>Multi-channel, not single-channel.</strong> Different users consume information in different places. A changelog page reaches the 5% who check it. Adding email reaches a different segment. Adding in-app notifications reaches another. Adding social media reaches prospects who aren't even users yet. No single channel is sufficient. Coverage requires breadth.</p>
+
+      <p><strong>Automatic, not manual.</strong> This is the piece that makes everything else sustainable. If publishing to five channels requires a human to write five different versions and post them individually, it won't happen consistently. The gap between "shipped" and "communicated" exists because the communication step is manual, slow, and nobody's primary job. Automate it, and the gap closes to zero.</p>
+
+      <p>The information needed to generate release communication already exists in your development tools. Your pull request descriptions explain what changed. Your ticket descriptions explain why it matters. Your commit messages trace the work. The raw material is there. What's missing is the system that transforms it into user-facing communication, formats it for each channel, and publishes it at the moment of release.</p>
+
+      <h2>Making Updates Find Your Users</h2>
+
+      <p>Feature blindness is a systemic problem that requires a systemic solution. You can't fix it by asking your PM to "remember to write the changelog." You can't fix it with a quarterly product newsletter that buries 47 updates in a wall of text. You fix it by building a communication pipeline that runs alongside your deployment pipeline — automatically, every single time you ship.</p>
+
+      <p><a href="https://recaip.com">Recaip</a> does exactly this. It connects to your development workflow, watches for merged code, and generates release notes across every channel the moment you deploy. Changelog, social post, email draft, in-app announcement, Slack notification. Each formatted for its audience, each published without anyone on your team lifting a finger.</p>
+
+      <p>Your users aren't blind because they don't care. They're blind because nobody told them where to look. The fix isn't building better features. It's making sure the features you already build actually reach the people they were built for.</p>
+
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1000px] mx-auto"></div>
+
+  <!-- Prev/Next navigation -->
+  <section class="py-12 px-6 lg:px-16">
+    <div class="max-w-[1000px] mx-auto flex justify-between">
+      <a href="/blog/multi-channel-distribution-why-one-changelog-isnt-enough" class="glass-card p-4 max-w-xs hover:border-brand-400/30">
+        <span class="text-xs text-white/30 block mb-1">&larr; Previous article</span>
+        <span class="text-sm text-white/70 font-medium">Multi-Channel Distribution: Why One Changelog Isn't Enough</span>
+      </a>
+      <a href="/blog/release-communication-as-competitive-advantage" class="glass-card p-4 max-w-xs text-right hover:border-brand-400/30">
+        <span class="text-xs text-white/30 block mb-1">Next article &rarr;</span>
+        <span class="text-sm text-white/70 font-medium">Release Communication as a Competitive Advantage</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[500px] h-[500px] bg-brand-700/15 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="position:absolute;"></div>
+    <div class="max-w-[1000px] mx-auto text-center relative z-10">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white/90 mb-3">Stop losing users to silence.</h2>
+      <p class="text-white/45 mb-8">Recaip turns every code merge into a published product update. Automatically.</p>
+      <a href="https://app.recaip.com" class="btn-primary glow-pulse h-12 px-8 rounded-xl text-white font-semibold text-sm inline-flex items-center justify-center">Start free</a>
+      <p class="text-xs text-white/30 mt-3">$19/mo. Unlimited products. 100 recaps.</p>
+    </div>
+  </section>
+  </main>
+
+  <footer class="py-8 px-6 lg:px-16">
+    <div class="section-divider mb-8"></div>
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/"><img src="../logo.svg" alt="recaip" class="h-5 opacity-40" /></a>
+      <div class="flex items-center gap-6 text-sm text-white/30">
+        <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+        <a href="/about" class="hover:text-white/50 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-white/30">
+        <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .section-divider').forEach(el => observer.observe(el));
+
+  // Scroll progress bar
+  window.addEventListener('scroll', () => {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / docHeight) * 100;
+    document.getElementById('scroll-progress').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>
