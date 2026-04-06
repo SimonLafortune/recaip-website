@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Is a Changelog? — Recaip Glossary</title>
+  <meta name="description" content="A changelog is a chronological record of all notable changes made to a software project. Learn the difference from release notes, formats, standards, and best practices." />
+  <meta property="og:title" content="What Is a Changelog? — Recaip Glossary" />
+  <meta property="og:description" content="A changelog is a chronological record of all notable changes to a software project. Formats, standards, hosting options, and best practices explained." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://recaip.com/glossary/what-is-a-changelog" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What Is a Changelog? — Recaip Glossary" />
+  <meta name="twitter:description" content="A changelog is a chronological record of all notable changes to a software project. Formats, standards, hosting options, and best practices explained." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com/glossary/what-is-a-changelog" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "name": "Changelog",
+    "description": "A changelog is a chronological record of all notable changes made to a software project, serving as a public-facing history of what was added, changed, fixed, or removed in each release.",
+    "url": "https://recaip.com/glossary/what-is-a-changelog",
+    "inDefinedTermSet": {
+      "@type": "DefinedTermSet",
+      "name": "Recaip Glossary",
+      "url": "https://recaip.com/glossary"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Recaip",
+    "url": "https://recaip.com",
+    "logo": "https://recaip.com/logo.svg",
+    "description": "AI-generated release notes, changelogs, and product updates from your dev tools.",
+    "founder": { "@type": "Person", "name": "Simon Lafortune", "url": "https://x.com/simonlafortune" },
+    "sameAs": ["https://x.com/simonlafortune"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#e6f5f2', 100: '#ccebe5', 200: '#99d7cb', 300: '#6bbfae',
+              400: '#4da895', 500: '#3d8b80', 600: '#2d6b63', 700: '#1f524c',
+              800: '#163d38', 900: '#0e2a26',
+            },
+            surface: {
+              0: '#0b1a18', 1: '#0f2420', 2: '#142e2a', 3: '#1a3935', 4: '#21453f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <svg class="hidden">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+</head>
+<body class="font-sans text-white/50 antialiased">
+
+<div class="scroll-progress"></div>
+
+<div class="page-wrapper">
+
+  <header>
+  <nav class="nav-fixed">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center"><img src="../logo.svg" alt="recaip" class="h-7" /></a>
+      <div class="flex items-center gap-6">
+        <a href="/features" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
+        <a href="/pricing" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+        <a href="/blog" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Blog</a>
+        <a href="/about" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="https://app.recaip.com" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+
+  <!-- Page Hero -->
+  <section class="page-hero px-6 lg:px-16">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="/glossary" class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/60 transition-colors mb-8 animate-in">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        Glossary
+      </a>
+      <span class="inline-block px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-[11px] text-brand-400 font-mono uppercase tracking-wider mb-4 animate-in animate-delay-1">Definition</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white/90 mb-6 leading-tight animate-in animate-delay-1">What Is a Changelog?</h1>
+      <p class="text-lg text-white/50 max-w-2xl animate-in animate-delay-2">A chronological record of all notable changes made to a software project.</p>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- Content -->
+  <section class="py-16 sm:py-24 px-6 lg:px-16">
+    <div class="prose-blog">
+
+      <p>A <strong>changelog</strong> is a chronological record of all notable changes made to a software project. It serves as a public-facing history of what was added, changed, fixed, or removed in each release. Unlike commit logs or pull request lists, which are written for developers during the development process, a changelog is curated for a broader audience -- users, customers, stakeholders, and anyone who needs to understand how the software has evolved over time.</p>
+
+      <p>Changelogs have been a convention in open-source software for decades, often maintained as a <code>CHANGELOG.md</code> file in the project root. In the SaaS world, changelogs have expanded beyond a single file to become hosted pages, email digests, and multi-channel communication systems. Regardless of format, the core purpose remains the same: to answer the question "what changed and when?"</p>
+
+      <h2>Changelog vs. Release Notes: What Is the Difference?</h2>
+
+      <p>The terms "changelog" and "<a href="/glossary/what-are-release-notes">release notes</a>" are often used interchangeably, but they refer to subtly different things.</p>
+
+      <p>A <strong>changelog</strong> is the complete, cumulative record. It contains every notable change across every release, ordered by date or version number. Think of it as the full history. When someone visits your changelog page, they can scroll through months or years of product evolution.</p>
+
+      <p><strong>Release notes</strong> refer to the documentation for a single release. They describe what was included in one specific version or deployment. Release notes are a snapshot; the changelog is the collection of all snapshots.</p>
+
+      <p>In practice, the distinction matters less than the outcome. Whether you call it a changelog or release notes, the goal is the same: inform your audience about what changed. What matters is that the content is clear, timely, and reaches the people who need it.</p>
+
+      <h2>Changelog Formats and Standards</h2>
+
+      <h3>The Keep a Changelog Standard</h3>
+
+      <p>The most widely adopted standard for structuring changelogs is <a href="https://keepachangelog.com" target="_blank" rel="noopener">Keep a Changelog</a>, created by Olivier Lacan. It defines a simple, human-readable format with these categories:</p>
+
+      <ul>
+        <li><strong>Added</strong> -- for new features</li>
+        <li><strong>Changed</strong> -- for changes in existing functionality</li>
+        <li><strong>Deprecated</strong> -- for features that will be removed in upcoming releases</li>
+        <li><strong>Removed</strong> -- for features that have been removed</li>
+        <li><strong>Fixed</strong> -- for bug fixes</li>
+        <li><strong>Security</strong> -- for vulnerability patches</li>
+      </ul>
+
+      <p>Each release gets a section with the version number and date, followed by the categorized entries. The format is intentionally simple -- it is a Markdown file that any developer can read, edit, and maintain. The Keep a Changelog standard is widely used in open-source projects and has become the de facto baseline for how changelogs should be structured.</p>
+
+      <h3>Semantic Versioning</h3>
+
+      <p>Changelogs are closely tied to <strong>semantic versioning</strong> (SemVer), the convention where version numbers follow the format <code>MAJOR.MINOR.PATCH</code>. A major version bump signals breaking changes. A minor bump signals new features. A patch bump signals bug fixes. When a changelog follows SemVer, users can quickly gauge the significance of a release by looking at the version number alone.</p>
+
+      <p>For SaaS products that deploy continuously, strict version numbering is less common. Many teams use dates instead of version numbers, or simply list changes in reverse chronological order without formal versioning. The important thing is that each entry is timestamped and clearly delineated from the others.</p>
+
+      <h3>Conventional Commits</h3>
+
+      <p>The <a href="https://www.conventionalcommits.org" target="_blank" rel="noopener">Conventional Commits</a> specification provides a structured format for commit messages: <code>feat: add user export</code>, <code>fix: resolve login timeout</code>, <code>docs: update API reference</code>. Tools like <code>conventional-changelog</code> and <code>release-please</code> parse these prefixes to automatically generate changelog entries. This approach ensures consistency but produces developer-oriented output that often needs rewriting before it is suitable for a user-facing changelog.</p>
+
+      <h2>Where to Host Your Changelog</h2>
+
+      <p>The best location for your changelog depends on your audience and product type.</p>
+
+      <p><strong>A dedicated changelog page on your website</strong> is the most common approach for SaaS products. A page at <code>yourproduct.com/changelog</code> or <code>docs.yourproduct.com/changelog</code> gives users a permanent, searchable URL to check for updates. It also serves as a trust signal -- prospective customers visit the changelog to verify that the product is actively maintained.</p>
+
+      <p><strong>GitHub Releases</strong> are the standard for open-source projects. Each tagged release on GitHub can include release notes in Markdown. The advantage is that the changelog lives where the code lives, and contributors can find it without leaving GitHub. The disadvantage is that non-technical users rarely visit GitHub.</p>
+
+      <p><strong>Documentation sites</strong> sometimes include a changelog section. This makes sense when the changelog is tightly coupled with API documentation or developer docs. Users reading the docs can check what has changed without navigating to a separate site.</p>
+
+      <p><strong>In-app changelog widgets</strong> display recent changes inside the product itself. These have the highest visibility because users encounter them during their normal workflow. Some products use a "what's new" badge or a notification bell that links to recent changelog entries.</p>
+
+      <p><strong>A CHANGELOG.md file</strong> in the repository root remains a staple for libraries, frameworks, and open-source tools. It is the first place a developer looks when evaluating whether to upgrade a dependency.</p>
+
+      <h2>Best Practices</h2>
+
+      <p>Maintaining a useful changelog is not complicated, but it requires discipline. Here are the practices that separate helpful changelogs from abandoned ones.</p>
+
+      <ul>
+        <li><strong>Update it with every release.</strong> The number one reason changelogs fail is inconsistency. If you skip a few releases, the effort to catch up compounds and the changelog gets abandoned. Treat the changelog update as part of your release process, not a separate task to do later.</li>
+        <li><strong>Write for humans, not machines.</strong> A changelog entry that says <code>bump lodash from 4.17.20 to 4.17.21</code> is noise. A changelog should describe changes that matter to the people reading it. Dependency bumps, minor refactors, and internal tooling changes can be omitted unless they affect behavior. For a deeper look at this problem, read <a href="/blog/why-your-changelog-is-costing-you-users">why your changelog is costing you users</a>.</li>
+        <li><strong>Group and categorize consistently.</strong> Use the same categories every time -- whether you follow Keep a Changelog, use your own taxonomy, or simply group by "New," "Improved," and "Fixed." Consistency makes the changelog scannable and predictable.</li>
+        <li><strong>Include dates.</strong> Every changelog entry should be dated. Users need to know when a change was made, especially when troubleshooting issues or deciding whether to upgrade. A changelog without dates is a timeline without a time axis.</li>
+        <li><strong>Link to details when available.</strong> If a changelog entry describes a significant new feature, link to the documentation page, blog post, or help article that explains it in depth. The changelog entry should be concise; the linked resource can be comprehensive.</li>
+        <li><strong>Do not overload it.</strong> Not every commit needs a changelog entry. The goal is to document <em>notable</em> changes -- the ones that users, developers, or stakeholders would want to know about. Internal refactors that do not change behavior should be left out.</li>
+      </ul>
+
+      <h2>Common Mistakes</h2>
+
+      <p>The same patterns derail changelogs across organizations of every size.</p>
+
+      <p><strong>Using commit messages as changelog entries.</strong> Auto-generating a changelog directly from git commits produces output like "fix typo," "WIP," "merge branch main," and "address review feedback." These messages were written for teammates during development, not for an audience reading the changelog weeks later. A changelog needs curation.</p>
+
+      <p><strong>Letting it go stale.</strong> A changelog that has not been updated in three months tells users the product is either dead or the team does not care about communication. Both interpretations are bad. Inconsistency is worse than having no changelog at all, because a stale changelog sets an expectation and then breaks it.</p>
+
+      <p><strong>Making it hard to find.</strong> If users have to dig through your documentation navigation to find the changelog, most of them will not bother. Put it in your main navigation, link to it from your footer, and reference it in your product update emails. A changelog that nobody can find serves nobody.</p>
+
+      <p><strong>Only publishing on one channel.</strong> A changelog page is a pull mechanism -- it only works if users visit it. Most will not. <a href="/blog/multi-channel-distribution-why-one-changelog-isnt-enough">Multi-channel distribution</a> -- email, in-app, social, Slack -- turns your changelog from a passive archive into an active communication tool. This is the difference between "we documented it" and "our users actually know about it."</p>
+
+      <p><strong>Omitting breaking changes.</strong> Breaking changes must always be called out explicitly. If an API endpoint is deprecated, if a behavior changes, if a migration is required -- these need to be prominently flagged. Burying breaking changes in a list of minor fixes is a fast path to angry users and overloaded support queues.</p>
+
+      <h2>Automating Your Changelog</h2>
+
+      <p>Maintaining a changelog manually works when you ship once a month. When you ship daily, it becomes a bottleneck -- either someone spends time writing entries for every merge, or the changelog falls behind. This is why more teams are turning to automation.</p>
+
+      <p>The simplest form of automation is commit-based generation. Tools like <code>release-please</code> parse conventional commit messages and create structured changelog entries. This eliminates the writing step but produces technical output that is best suited for developer audiences.</p>
+
+      <p>AI-powered changelog tools go further. Rather than parsing commit messages into a template, they read the full context of each change -- the code diff, the pull request description, the linked issue -- and generate changelog entries written in natural language, tailored to the intended audience.</p>
+
+      <p><a href="https://recaip.com">Recaip</a> takes this approach to its logical conclusion. It connects to your GitHub repository, listens for merged pull requests, and generates a complete changelog entry within seconds. But it does not stop at the changelog. Recaip also generates a social media post, an email draft, an in-app announcement, and a stakeholder digest -- all from the same merge event. You can review each draft before publishing, or set individual channels to auto-publish once you trust the quality. The result is a changelog that stays current without anyone on your team maintaining it. For a practical walkthrough, see <a href="/blog/how-to-automate-release-notes-with-ai">how to automate release notes with AI</a>.</p>
+
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- Related Glossary -->
+  <section class="py-16 sm:py-24 px-6 lg:px-16">
+    <div class="max-w-[1000px] mx-auto">
+      <h2 class="text-2xl font-semibold text-white/90 mb-8 reveal">Related Glossary Terms</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/glossary/what-are-release-notes" class="glass-card p-6 group block reveal">
+          <span class="text-xs text-brand-400 uppercase tracking-wider font-mono mb-2 block">Glossary</span>
+          <span class="text-base text-white/70 group-hover:text-white/90 transition-colors font-medium">What Are Release Notes?</span>
+          <p class="text-sm text-white/40 mt-2">Documents that describe the changes, improvements, and fixes in a new software version.</p>
+        </a>
+        <a href="/glossary/what-is-release-communication" class="glass-card p-6 group block reveal">
+          <span class="text-xs text-brand-400 uppercase tracking-wider font-mono mb-2 block">Glossary</span>
+          <span class="text-base text-white/70 group-hover:text-white/90 transition-colors font-medium">What Is Release Communication?</span>
+          <p class="text-sm text-white/40 mt-2">The practice of informing users and stakeholders about software changes at the moment they ship.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- CTA -->
+  <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[600px] h-[600px] bg-brand-500/8 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="max-w-[1400px] mx-auto text-center relative z-10">
+      <div class="reveal">
+        <h2 class="text-3xl sm:text-4xl font-semibold text-white mb-4">Your changelog, always up to date.</h2>
+        <p class="text-white/40 text-lg max-w-xl mx-auto mb-10">
+          $19/mo. Unlimited products. 100 recaps.
+        </p>
+        <a href="https://app.recaip.com" class="btn-primary glow-pulse h-14 px-10 rounded-xl text-white font-semibold text-base inline-flex items-center justify-center">
+          Get started free
+        </a>
+        <p class="text-white/30 text-sm mt-5">No credit card required.</p>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="py-8 px-6 lg:px-16">
+    <div class="section-divider mb-8"></div>
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/"><img src="../logo.svg" alt="recaip" class="h-5 opacity-40" /></a>
+      <div class="flex items-center gap-6 text-sm text-white/30">
+        <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+        <a href="/about" class="hover:text-white/50 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-white/30">
+        <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Scroll reveal observer -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .section-divider').forEach(el => observer.observe(el));
+</script>
+
+<!-- Scroll progress bar -->
+<script>
+  const progressBar = document.querySelector('.scroll-progress');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + '%';
+  });
+</script>
+</body>
+</html>

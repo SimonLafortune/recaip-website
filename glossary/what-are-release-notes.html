@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Are Release Notes? — Recaip Glossary</title>
+  <meta name="description" content="Release notes are documents that describe the changes, improvements, and fixes included in a new version of a software product. Learn types, formats, and best practices." />
+  <meta property="og:title" content="What Are Release Notes? — Recaip Glossary" />
+  <meta property="og:description" content="Release notes are documents that describe the changes, improvements, and fixes in a new software version. A complete guide to types, formats, and best practices." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://recaip.com/glossary/what-are-release-notes" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What Are Release Notes? — Recaip Glossary" />
+  <meta name="twitter:description" content="Release notes are documents that describe the changes, improvements, and fixes in a new software version. A complete guide to types, formats, and best practices." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com/glossary/what-are-release-notes" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "name": "Release Notes",
+    "description": "Release notes are documents that describe the changes, improvements, and fixes included in a new version of a software product.",
+    "url": "https://recaip.com/glossary/what-are-release-notes",
+    "inDefinedTermSet": {
+      "@type": "DefinedTermSet",
+      "name": "Recaip Glossary",
+      "url": "https://recaip.com/glossary"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Recaip",
+    "url": "https://recaip.com",
+    "logo": "https://recaip.com/logo.svg",
+    "description": "AI-generated release notes, changelogs, and product updates from your dev tools.",
+    "founder": { "@type": "Person", "name": "Simon Lafortune", "url": "https://x.com/simonlafortune" },
+    "sameAs": ["https://x.com/simonlafortune"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#e6f5f2', 100: '#ccebe5', 200: '#99d7cb', 300: '#6bbfae',
+              400: '#4da895', 500: '#3d8b80', 600: '#2d6b63', 700: '#1f524c',
+              800: '#163d38', 900: '#0e2a26',
+            },
+            surface: {
+              0: '#0b1a18', 1: '#0f2420', 2: '#142e2a', 3: '#1a3935', 4: '#21453f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <svg class="hidden">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+</head>
+<body class="font-sans text-white/50 antialiased">
+
+<div class="scroll-progress"></div>
+
+<div class="page-wrapper">
+
+  <header>
+  <nav class="nav-fixed">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center"><img src="../logo.svg" alt="recaip" class="h-7" /></a>
+      <div class="flex items-center gap-6">
+        <a href="/features" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
+        <a href="/pricing" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+        <a href="/blog" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Blog</a>
+        <a href="/about" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="https://app.recaip.com" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+
+  <!-- Page Hero -->
+  <section class="page-hero px-6 lg:px-16">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="/glossary" class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/60 transition-colors mb-8 animate-in">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        Glossary
+      </a>
+      <span class="inline-block px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-[11px] text-brand-400 font-mono uppercase tracking-wider mb-4 animate-in animate-delay-1">Definition</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white/90 mb-6 leading-tight animate-in animate-delay-1">What Are Release Notes?</h1>
+      <p class="text-lg text-white/50 max-w-2xl animate-in animate-delay-2">Documents that describe the changes, improvements, and fixes included in a new version of a software product.</p>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- Content -->
+  <section class="py-16 sm:py-24 px-6 lg:px-16">
+    <div class="prose-blog">
+
+      <p><strong>Release notes</strong> are documents that describe the changes, improvements, and fixes included in a new version of a software product. They inform users, stakeholders, and internal teams about what was shipped. Release notes typically accompany each software release and serve as the primary communication bridge between the people who build a product and the people who use it. They may be published publicly on a changelog page, sent via email, shared in Slack, posted on social media, or displayed as in-app notifications.</p>
+
+      <p>In modern software development, where teams ship continuously -- sometimes multiple times per day -- release notes have evolved from a quarterly formality into a critical part of the product experience. They shape how users perceive product velocity, how customer-facing teams stay informed, and how trust is maintained between a software company and its audience.</p>
+
+      <h2>Types of Release Notes</h2>
+
+      <p>Not all release notes serve the same purpose. Understanding the different types helps teams decide what to write and who to write it for.</p>
+
+      <h3>User-Facing Release Notes</h3>
+
+      <p>These are written for the people who use the product. They focus on outcomes, not implementation details. A user-facing release note might say "You can now export reports as PDFs" rather than "Added PDF rendering to the reports API endpoint." The language is plain, the tone matches the brand, and technical jargon is avoided. User-facing release notes are typically published on a public changelog page, sent in product update emails, or shown inside the application itself.</p>
+
+      <h3>Internal Release Notes</h3>
+
+      <p>These are written for internal stakeholders: support teams, sales teams, executives, and other engineers. Internal release notes tend to include more technical detail and context about why changes were made. A support team needs to know about a changed behavior so they can handle incoming tickets. A sales team needs to know about a new feature so they can mention it in demos. Internal release notes are usually distributed through Slack, internal wikis, or stakeholder digest emails.</p>
+
+      <h3>Per-Release Notes</h3>
+
+      <p>These document a single release or deployment. Every time the team ships, a new entry is added. Per-release notes work well for teams practicing continuous deployment, where each merged pull request constitutes a release. They provide granular detail and a clear timeline of changes.</p>
+
+      <h3>Digest Release Notes</h3>
+
+      <p>Rather than documenting every individual deployment, digest release notes bundle multiple changes into a periodic summary -- weekly, biweekly, or monthly. This format works better for teams that ship frequently but whose users prefer less frequent, more substantial updates. A weekly product digest is easier to read than 30 individual changelog entries.</p>
+
+      <h2>Common Formats</h2>
+
+      <p>Release notes can take many forms depending on the channel and audience.</p>
+
+      <ul>
+        <li><strong>Changelog page.</strong> A dedicated page on your website or documentation site that lists every release in reverse chronological order. This is the canonical record of product changes. Most SaaS companies maintain one, though many let it fall behind.</li>
+        <li><strong>Email updates.</strong> Product update emails sent to customers or subscribers. These tend to be more curated, highlighting the most impactful changes rather than listing every fix. They are an important channel for re-engaging inactive users who may not visit your changelog.</li>
+        <li><strong>Social media posts.</strong> Short-form announcements on platforms like X (Twitter) or LinkedIn. These need to be punchy and self-contained. A social post about a new feature serves double duty as product marketing and user communication.</li>
+        <li><strong>In-app announcements.</strong> Banners, modals, or tooltips that appear inside the product when a user logs in after a release. In-app announcements have the highest visibility because they reach users exactly where they are -- inside the product.</li>
+        <li><strong>Slack or Teams messages.</strong> Internal notifications posted to team channels when a release happens. These keep customer-facing teams informed in real time without requiring them to check a separate tool.</li>
+        <li><strong>Stakeholder digests.</strong> Summary emails sent to leadership or cross-functional partners. These aggregate multiple releases and frame them in terms of business impact rather than technical detail.</li>
+      </ul>
+
+      <h2>Why Release Notes Matter</h2>
+
+      <p>Release notes are easy to dismiss as administrative overhead. But they serve several critical functions that directly impact product adoption, user retention, and team alignment.</p>
+
+      <p><strong>Feature discovery.</strong> Users cannot adopt features they do not know exist. Research from Pendo and other product analytics platforms consistently shows that the majority of new features go unnoticed by most users. Release notes are the simplest mechanism for closing this awareness gap. Every feature you ship without communicating is a feature that might as well not exist.</p>
+
+      <p><strong>User trust and transparency.</strong> Regular release notes signal that a product is actively maintained and improving. For B2B customers evaluating renewal decisions, a consistent stream of product updates provides tangible evidence of investment. Silence, on the other hand, breeds uncertainty.</p>
+
+      <p><strong>Support deflection.</strong> When users encounter changed behavior, they file support tickets. If the change was documented in release notes that users can find, many of those tickets are avoided. Support teams also benefit from release notes as an internal resource -- they can reference what changed and when.</p>
+
+      <p><strong>Internal alignment.</strong> In growing organizations, the engineering team often ships changes that other teams learn about days or weeks later, if at all. Release notes distributed internally keep sales, support, marketing, and leadership in sync with what is actually happening in the product.</p>
+
+      <h2>Best Practices for Writing Release Notes</h2>
+
+      <p>Good release notes share a few common traits, regardless of format or audience.</p>
+
+      <ul>
+        <li><strong>Write for your audience, not your engineers.</strong> The single most common mistake in release notes is writing them in developer language. "Refactored the auth middleware to use JWT refresh tokens" means nothing to an end user. "Fixed an issue where some users were unexpectedly logged out" tells them exactly what they need to know.</li>
+        <li><strong>Publish them on time.</strong> Release notes that arrive two weeks after a release have already lost most of their value. The ideal time to publish is the same day the change ships, or as close to it as possible. Stale release notes erode trust more than no release notes.</li>
+        <li><strong>Use a consistent structure.</strong> Group changes by type -- new features, improvements, bug fixes, breaking changes. Use the same categories every time. Consistency makes release notes scannable and sets reader expectations.</li>
+        <li><strong>Distribute across multiple channels.</strong> A changelog page that nobody visits is as good as no changelog at all. Push release notes to where your users already are: email, in-app, social media, Slack. Different users prefer different channels, and the most important updates should reach all of them. For more on this, see <a href="/blog/multi-channel-distribution-why-one-changelog-isnt-enough">why one changelog is not enough</a>.</li>
+        <li><strong>Keep it concise but complete.</strong> Each entry should be long enough to explain the change and its impact, but short enough to scan in seconds. One to three sentences per entry is a good default. Link to documentation or blog posts for changes that need deeper explanation.</li>
+      </ul>
+
+      <h2>Common Mistakes</h2>
+
+      <p>Even teams that publish release notes regularly fall into patterns that undermine their effectiveness.</p>
+
+      <p><strong>Writing for developers when the audience is users.</strong> This is the most pervasive problem. If your changelog reads like a commit log, it is not serving its purpose. Users do not care about implementation details. They care about what changed in their experience.</p>
+
+      <p><strong>Batching updates too long.</strong> Waiting until the end of the month to publish release notes means users have been confused about changes for weeks. It also makes the writing task more painful because there is more context to reconstruct. Ship your notes alongside your code.</p>
+
+      <p><strong>Publishing only on one channel.</strong> A changelog page is necessary but not sufficient. If your users are not visiting your changelog (and most are not), you need to push updates to them through other channels. The blog post <a href="/blog/feature-blindness-why-users-dont-see-what-you-ship">on feature blindness</a> explores this problem in depth.</p>
+
+      <p><strong>Forgetting internal stakeholders.</strong> Release notes are not just for users. Your support team, sales team, and leadership all need to know what shipped. Internal release communication is just as important as external, and it often gets neglected entirely. Read more about <a href="/blog/why-your-own-team-needs-release-notes">why your own team needs release notes</a>.</p>
+
+      <p><strong>Treating release notes as optional.</strong> When release notes are someone's side task -- something they do "if they have time" -- they do not get done. Effective teams treat release communication as part of the shipping process, not an afterthought.</p>
+
+      <h2>Tools for Creating Release Notes</h2>
+
+      <p>The tools available for writing and distributing release notes range from fully manual to fully automated.</p>
+
+      <p><strong>Manual approaches</strong> include maintaining a Markdown file in your repository (like CHANGELOG.md), updating a Notion page, or writing emails by hand. These work for small teams with infrequent releases but break down as shipping cadence increases.</p>
+
+      <p><strong>Convention-based generators</strong> like <code>conventional-changelog</code> and <code>release-please</code> parse structured commit messages (following conventions like <code>feat:</code> and <code>fix:</code>) to generate changelog files automatically. They are reliable but produce developer-facing output that rarely works as user-facing communication.</p>
+
+      <p><strong>Changelog platforms</strong> like Changelogfy, Beamer, and LaunchNotes provide hosted changelog pages with some editing and distribution features. They reduce the publishing friction but still require someone to write the content.</p>
+
+      <p><strong>AI-powered tools</strong> represent the newest category. These tools read your code changes, pull request descriptions, and commit messages, then use language models to generate human-readable release notes automatically. The best ones also handle distribution -- publishing to multiple channels without manual intervention.</p>
+
+      <h2>Automating Release Notes with AI</h2>
+
+      <p>The challenge with release notes has always been that they require human effort at the exact moment when teams are busiest -- right after shipping code. AI automation solves this by generating release notes from the artifacts that already exist: pull request descriptions, code diffs, commit messages, and issue tracker context.</p>
+
+      <p><a href="https://recaip.com">Recaip</a> is built around this premise. It connects to your GitHub repository (with Linear and Jira support planned), listens for merged pull requests via webhooks, and uses AI to generate release notes within seconds of each merge. The output includes a changelog entry, a social media post, an email draft, and a stakeholder summary -- all written in your product's voice, informed by the product context you provide during setup.</p>
+
+      <p>What makes this approach different from simple commit-parsing tools is the quality of the output. Because the AI reads the actual code diff alongside the PR description and product context, it can generate user-facing language that explains the impact of a change rather than just describing the technical implementation. Teams can review every draft before publishing, or set channels to auto-publish once they trust the output. The result is release notes that are published consistently, on time, and across every channel -- without anyone on the team writing a word. To learn more about how this works in practice, see the guide on <a href="/blog/how-to-automate-release-notes-with-ai">how to automate release notes with AI</a>.</p>
+
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- Related Glossary -->
+  <section class="py-16 sm:py-24 px-6 lg:px-16">
+    <div class="max-w-[1000px] mx-auto">
+      <h2 class="text-2xl font-semibold text-white/90 mb-8 reveal">Related Glossary Terms</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/glossary/what-is-a-changelog" class="glass-card p-6 group block reveal">
+          <span class="text-xs text-brand-400 uppercase tracking-wider font-mono mb-2 block">Glossary</span>
+          <span class="text-base text-white/70 group-hover:text-white/90 transition-colors font-medium">What Is a Changelog?</span>
+          <p class="text-sm text-white/40 mt-2">A chronological record of all notable changes made to a software project.</p>
+        </a>
+        <a href="/glossary/what-is-release-communication" class="glass-card p-6 group block reveal">
+          <span class="text-xs text-brand-400 uppercase tracking-wider font-mono mb-2 block">Glossary</span>
+          <span class="text-base text-white/70 group-hover:text-white/90 transition-colors font-medium">What Is Release Communication?</span>
+          <p class="text-sm text-white/40 mt-2">The practice of informing users and stakeholders about software changes at the moment they ship.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- CTA -->
+  <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[600px] h-[600px] bg-brand-500/8 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="max-w-[1400px] mx-auto text-center relative z-10">
+      <div class="reveal">
+        <h2 class="text-3xl sm:text-4xl font-semibold text-white mb-4">Stop writing release notes manually.</h2>
+        <p class="text-white/40 text-lg max-w-xl mx-auto mb-10">
+          $19/mo. Unlimited products. 100 recaps.
+        </p>
+        <a href="https://app.recaip.com" class="btn-primary glow-pulse h-14 px-10 rounded-xl text-white font-semibold text-base inline-flex items-center justify-center">
+          Get started free
+        </a>
+        <p class="text-white/30 text-sm mt-5">No credit card required.</p>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="py-8 px-6 lg:px-16">
+    <div class="section-divider mb-8"></div>
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/"><img src="../logo.svg" alt="recaip" class="h-5 opacity-40" /></a>
+      <div class="flex items-center gap-6 text-sm text-white/30">
+        <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+        <a href="/about" class="hover:text-white/50 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-white/30">
+        <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Scroll reveal observer -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .section-divider').forEach(el => observer.observe(el));
+</script>
+
+<!-- Scroll progress bar -->
+<script>
+  const progressBar = document.querySelector('.scroll-progress');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + '%';
+  });
+</script>
+</body>
+</html>

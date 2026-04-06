@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Is Release Communication? — Recaip Glossary</title>
+  <meta name="description" content="Release communication is the practice of informing users, stakeholders, and internal teams about software changes at the moment they ship. Channels, strategies, and automation." />
+  <meta property="og:title" content="What Is Release Communication? — Recaip Glossary" />
+  <meta property="og:description" content="Release communication is the practice of informing users and teams about software changes when they ship. Channels, strategies, ownership, and automation explained." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://recaip.com/glossary/what-is-release-communication" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What Is Release Communication? — Recaip Glossary" />
+  <meta name="twitter:description" content="Release communication is the practice of informing users and teams about software changes when they ship. Channels, strategies, ownership, and automation explained." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com/glossary/what-is-release-communication" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "name": "Release Communication",
+    "description": "Release communication is the practice of informing users, stakeholders, and internal teams about software changes at the moment they ship, encompassing all channels and formats used to distribute product updates.",
+    "url": "https://recaip.com/glossary/what-is-release-communication",
+    "inDefinedTermSet": {
+      "@type": "DefinedTermSet",
+      "name": "Recaip Glossary",
+      "url": "https://recaip.com/glossary"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Recaip",
+    "url": "https://recaip.com",
+    "logo": "https://recaip.com/logo.svg",
+    "description": "AI-generated release notes, changelogs, and product updates from your dev tools.",
+    "founder": { "@type": "Person", "name": "Simon Lafortune", "url": "https://x.com/simonlafortune" },
+    "sameAs": ["https://x.com/simonlafortune"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#e6f5f2', 100: '#ccebe5', 200: '#99d7cb', 300: '#6bbfae',
+              400: '#4da895', 500: '#3d8b80', 600: '#2d6b63', 700: '#1f524c',
+              800: '#163d38', 900: '#0e2a26',
+            },
+            surface: {
+              0: '#0b1a18', 1: '#0f2420', 2: '#142e2a', 3: '#1a3935', 4: '#21453f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <svg class="hidden">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+</head>
+<body class="font-sans text-white/50 antialiased">
+
+<div class="scroll-progress"></div>
+
+<div class="page-wrapper">
+
+  <header>
+  <nav class="nav-fixed">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center"><img src="../logo.svg" alt="recaip" class="h-7" /></a>
+      <div class="flex items-center gap-6">
+        <a href="/features" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
+        <a href="/pricing" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+        <a href="/blog" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Blog</a>
+        <a href="/about" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="https://app.recaip.com" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+
+  <!-- Page Hero -->
+  <section class="page-hero px-6 lg:px-16">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="/glossary" class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/60 transition-colors mb-8 animate-in">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        Glossary
+      </a>
+      <span class="inline-block px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-[11px] text-brand-400 font-mono uppercase tracking-wider mb-4 animate-in animate-delay-1">Definition</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white/90 mb-6 leading-tight animate-in animate-delay-1">What Is Release Communication?</h1>
+      <p class="text-lg text-white/50 max-w-2xl animate-in animate-delay-2">The practice of informing users, stakeholders, and internal teams about software changes at the moment they ship.</p>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- Content -->
+  <section class="py-16 sm:py-24 px-6 lg:px-16">
+    <div class="prose-blog">
+
+      <p><strong>Release communication</strong> is the practice of informing users, stakeholders, and internal teams about software changes at the moment they ship. It encompasses all channels and formats used to distribute product updates -- from <a href="/glossary/what-is-a-changelog">changelogs</a> and <a href="/glossary/what-are-release-notes">release notes</a> to emails, social media posts, in-app announcements, Slack notifications, and stakeholder digests. Release communication sits at the intersection of product management, engineering, and marketing, and its effectiveness determines whether users actually know about the features they are paying for.</p>
+
+      <p>While individual formats like changelogs and release notes have existed for decades, the concept of release communication as a deliberate practice is newer. It emerged from a growing recognition that writing a changelog entry is only half the job. The other half -- distributing that information to every audience through the channels they actually use -- is where most teams fall short.</p>
+
+      <h2>Why Release Communication Matters</h2>
+
+      <p>Software teams invest weeks or months building features. The return on that investment depends entirely on whether users know those features exist and understand how to use them. Release communication is the mechanism that closes this gap.</p>
+
+      <h3>Feature Discovery</h3>
+
+      <p>The most common reason users fail to adopt new features is not that the features are bad -- it is that users never learn about them. Product analytics consistently show that the majority of new features reach only a fraction of the user base. A feature that is not communicated is, from the user's perspective, a feature that does not exist. Release communication is the lowest-cost, highest-leverage way to increase feature adoption without changing the product itself. The problem of <a href="/blog/feature-blindness-why-users-dont-see-what-you-ship">feature blindness</a> is well-documented and almost entirely preventable.</p>
+
+      <h3>User Trust and Retention</h3>
+
+      <p>Regular product updates signal that a product is alive, improving, and worth the investment. For B2B customers, a steady stream of release communication provides concrete evidence that the vendor is delivering value. This matters most at renewal time, when customers evaluate whether the product has improved since they signed. Silence during the year makes that conversation harder.</p>
+
+      <p>For B2C products, regular updates create a sense of momentum. Users feel like the product is on their side, constantly getting better. This emotional connection -- built one update at a time -- is a meaningful driver of long-term retention.</p>
+
+      <h3>Support Deflection</h3>
+
+      <p>When a product change alters user behavior and users have not been informed, support tickets spike. "Why does this look different?" "Where did the old button go?" "Is this a bug?" Proactive release communication prevents these tickets by setting expectations before users encounter the change. It also gives support agents a reference to point to when users do reach out.</p>
+
+      <h3>Internal Alignment</h3>
+
+      <p>In most organizations, the people building the product and the people talking to customers are different teams. Without release communication, sales discovers a new feature from a customer who found it first. Support learns about a breaking change from an angry ticket. Marketing misses the window to promote a capability that engineering shipped weeks ago. Internal release communication -- often overlooked -- is what keeps the entire organization synchronized. For more on this, see <a href="/blog/why-your-own-team-needs-release-notes">why your own team needs release notes</a>.</p>
+
+      <h2>Release Communication Channels</h2>
+
+      <p>Effective release communication is multi-channel. Different audiences consume information through different mediums, and important updates need to reach all of them.</p>
+
+      <h3>Changelog Page</h3>
+
+      <p>The changelog is the canonical record -- the source of truth for what changed and when. It is typically a page on the product's website or documentation site, updated with each release. Changelogs serve users who actively seek out update information, but they are a pull mechanism: they only work if someone visits the page. Most users do not.</p>
+
+      <h3>Email</h3>
+
+      <p>Product update emails are one of the most effective channels for reaching existing users. They land in the inbox, they persist, and they can be formatted to highlight the most impactful changes with context and links to documentation. Emails work particularly well for monthly or biweekly digests that bundle multiple updates into a single, readable summary. The <a href="/blog/true-cost-of-not-communicating-product-updates">true cost of not communicating updates</a> often surfaces in email-driven metrics like reactivation and churn.</p>
+
+      <h3>Social Media</h3>
+
+      <p>Posts on X (Twitter), LinkedIn, and other platforms serve a dual purpose: they inform existing users and attract prospective ones. A well-crafted release announcement on social media functions as both communication and marketing. Social posts need to be concise, self-contained, and visually engaging -- they compete for attention in a crowded feed.</p>
+
+      <h3>In-App Announcements</h3>
+
+      <p>In-app notifications -- banners, modals, tooltips, or "what's new" drawers -- have the highest visibility of any channel. They reach users exactly where they are, at the moment they are using the product. In-app announcements are ideal for feature launches and important changes that require user action. The tradeoff is that they can be intrusive if overused.</p>
+
+      <h3>Slack and Teams</h3>
+
+      <p>For internal release communication, team messaging platforms are the natural home. A dedicated channel that receives automatic notifications when releases ship keeps the entire organization informed in real time. For external communication, some B2B products share updates in shared Slack channels with customers. These messages feel more conversational and immediate than email.</p>
+
+      <h3>Status Page</h3>
+
+      <p>While status pages are primarily for incident communication, they are also relevant for release communication when updates affect availability, performance, or introduce maintenance windows. Users who subscribe to status page notifications expect to be informed about anything that might disrupt their workflow.</p>
+
+      <h3>Newsletter</h3>
+
+      <p>A product newsletter that goes beyond release notes -- combining updates with tips, roadmap previews, and customer stories -- is a powerful retention tool. Newsletters are less transactional than release emails and more likely to be read by users who are not actively looking for update information.</p>
+
+      <h2>Internal vs. External Release Communication</h2>
+
+      <p>Release communication is often framed as a user-facing activity, but the internal dimension is equally important -- and more frequently neglected.</p>
+
+      <p><strong>External release communication</strong> targets users, customers, and the public. It is polished, on-brand, and focused on outcomes. "You can now schedule reports to be emailed weekly" is an external message.</p>
+
+      <p><strong>Internal release communication</strong> targets support, sales, marketing, leadership, and other engineering teams. It includes more context, more technical detail, and more "why." "We shipped scheduled report emails. This was the number two feature request from Enterprise accounts. Support should expect questions about configuration -- here is the help doc. Sales can demo this starting today." That is an internal message.</p>
+
+      <p>The best release communication programs treat internal and external as two distinct workflows with different audiences, different channels, and different content. A single changelog entry cannot serve both purposes. The external message sells the feature. The internal message arms the team to talk about it.</p>
+
+      <h2>The Ownership Problem</h2>
+
+      <p>One of the biggest challenges in release communication is not the writing or the distribution -- it is the ownership. Who is responsible for communicating releases?</p>
+
+      <p><strong>Engineering</strong> has the most context about what changed but rarely has the time or inclination to write user-facing communication. Engineers write commit messages and PR descriptions, not marketing copy.</p>
+
+      <p><strong>Product management</strong> understands the user impact and can write for the right audience, but PMs are already stretched thin between roadmap planning, stakeholder management, and cross-functional coordination. Changelog writing competes with higher-priority work and usually loses.</p>
+
+      <p><strong>Marketing</strong> knows how to communicate effectively but is often disconnected from the shipping cadence. By the time marketing learns about a release, the window for timely communication has already closed.</p>
+
+      <p>The result is a responsibility vacuum. Everyone assumes someone else is handling it. Nobody is. Changes ship without communication, users are left in the dark, and the team discovers the gap only when a customer complains or a feature goes unnoticed.</p>
+
+      <blockquote><p>The ownership problem is not a people problem. It is a workflow problem. When release communication requires a human to notice a release happened, decide it is worth communicating, write the content, format it for each channel, and publish it -- the process has too many points of failure. Any one of those steps can break the chain.</p></blockquote>
+
+      <h2>Automation as the Solution</h2>
+
+      <p>The most effective approach to release communication is to remove the manual steps entirely. Instead of relying on someone to notice a release and write about it, the communication should be triggered automatically by the release itself.</p>
+
+      <p>This is the principle behind autonomous release communication. A tool connects to the source of truth -- the code repository, the issue tracker, the deployment pipeline -- and generates communication the moment a change ships. No waiting for someone to get around to it. No relying on memory. No ownership ambiguity.</p>
+
+      <p>The automation spectrum ranges from simple to comprehensive:</p>
+
+      <ul>
+        <li><strong>Level 1: Notifications.</strong> A Slack bot that posts when a PR is merged. No content generation, just awareness. Better than nothing, but the message is raw and unformatted.</li>
+        <li><strong>Level 2: Generated drafts.</strong> An AI reads the PR and generates a formatted changelog entry that a human reviews and publishes. This eliminates the writing step but still requires someone to take action.</li>
+        <li><strong>Level 3: Autonomous multi-channel publishing.</strong> An AI generates the content -- changelog, email, social post, in-app announcement, internal digest -- and publishes it across every configured channel. A human can review if they choose, but the system works end-to-end without intervention. This level is where the ownership problem is fully solved.</li>
+      </ul>
+
+      <p><a href="https://recaip.com">Recaip</a> operates at Level 3. It connects to your GitHub repository and listens for merged pull requests around the clock. When a PR is merged, Recaip reads the code diff, PR description, commit messages, and your product context, then generates communication for every configured channel. Each channel can be set to auto-publish or manual review independently -- so you might auto-publish to your internal Slack while keeping your public changelog on manual review until you trust the output. The approach is detailed in the guide on <a href="/blog/how-to-automate-release-notes-with-ai">automating release notes with AI</a>.</p>
+
+      <p>The result is release communication that happens consistently, on time, across every channel, without anyone on the team being responsible for it. The engineering team merges code. Recaip handles the rest. Release communication goes from being an aspirational practice to an automated one -- and the <a href="/blog/release-communication-as-competitive-advantage">competitive advantage</a> of consistent communication compounds with every release.</p>
+
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- Related Glossary -->
+  <section class="py-16 sm:py-24 px-6 lg:px-16">
+    <div class="max-w-[1000px] mx-auto">
+      <h2 class="text-2xl font-semibold text-white/90 mb-8 reveal">Related Glossary Terms</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/glossary/what-are-release-notes" class="glass-card p-6 group block reveal">
+          <span class="text-xs text-brand-400 uppercase tracking-wider font-mono mb-2 block">Glossary</span>
+          <span class="text-base text-white/70 group-hover:text-white/90 transition-colors font-medium">What Are Release Notes?</span>
+          <p class="text-sm text-white/40 mt-2">Documents that describe the changes, improvements, and fixes in a new software version.</p>
+        </a>
+        <a href="/glossary/what-is-a-changelog" class="glass-card p-6 group block reveal">
+          <span class="text-xs text-brand-400 uppercase tracking-wider font-mono mb-2 block">Glossary</span>
+          <span class="text-base text-white/70 group-hover:text-white/90 transition-colors font-medium">What Is a Changelog?</span>
+          <p class="text-sm text-white/40 mt-2">A chronological record of all notable changes made to a software project.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- CTA -->
+  <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[600px] h-[600px] bg-brand-500/8 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="max-w-[1400px] mx-auto text-center relative z-10">
+      <div class="reveal">
+        <h2 class="text-3xl sm:text-4xl font-semibold text-white mb-4">Release communication on autopilot.</h2>
+        <p class="text-white/40 text-lg max-w-xl mx-auto mb-10">
+          $19/mo. Unlimited products. 100 recaps.
+        </p>
+        <a href="https://app.recaip.com" class="btn-primary glow-pulse h-14 px-10 rounded-xl text-white font-semibold text-base inline-flex items-center justify-center">
+          Get started free
+        </a>
+        <p class="text-white/30 text-sm mt-5">No credit card required.</p>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="py-8 px-6 lg:px-16">
+    <div class="section-divider mb-8"></div>
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/"><img src="../logo.svg" alt="recaip" class="h-5 opacity-40" /></a>
+      <div class="flex items-center gap-6 text-sm text-white/30">
+        <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+        <a href="/about" class="hover:text-white/50 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-white/30">
+        <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Scroll reveal observer -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .section-divider').forEach(el => observer.observe(el));
+</script>
+
+<!-- Scroll progress bar -->
+<script>
+  const progressBar = document.querySelector('.scroll-progress');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + '%';
+  });
+</script>
+</body>
+</html>

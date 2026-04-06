@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recaip vs Canny: A Comparison — Recaip</title>
+  <meta name="description" content="Recaip vs Canny — a fair, side-by-side comparison. Canny is a feature request tracker with a changelog. Recaip is an autonomous agent that writes and distributes release notes for you." />
+  <meta property="og:title" content="Recaip vs Canny: A Comparison" />
+  <meta property="og:description" content="Recaip vs Canny — a fair, side-by-side comparison. Canny is a feature request tracker with a changelog. Recaip is an autonomous agent that writes and distributes release notes for you." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://recaip.com/compare/recaip-vs-canny" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Recaip vs Canny: A Comparison" />
+  <meta name="twitter:description" content="Recaip vs Canny — a fair, side-by-side comparison. Feature request tracking versus autonomous release communication." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com/compare/recaip-vs-canny" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Recaip vs Canny: A Comparison",
+    "description": "A detailed comparison of Recaip and Canny for product communication, changelogs, and feature request management.",
+    "url": "https://recaip.com/compare/recaip-vs-canny",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Recaip",
+      "url": "https://recaip.com"
+    },
+    "mainEntity": [
+      {
+        "@type": "Product",
+        "name": "Recaip",
+        "description": "Autonomous AI agent that generates and publishes release notes, changelogs, social posts, and more from your dev tools.",
+        "url": "https://recaip.com",
+        "brand": { "@type": "Organization", "name": "Recaip" },
+        "offers": {
+          "@type": "Offer",
+          "price": "19",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          }
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Canny",
+        "description": "Feature request tracking platform with voting, public roadmap, and changelog for product teams.",
+        "url": "https://canny.io",
+        "brand": { "@type": "Organization", "name": "Canny" },
+        "offers": {
+          "@type": "Offer",
+          "price": "79",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#e6f5f2', 100: '#ccebe5', 200: '#99d7cb', 300: '#6bbfae',
+              400: '#4da895', 500: '#3d8b80', 600: '#2d6b63', 700: '#1f524c',
+              800: '#163d38', 900: '#0e2a26',
+            },
+            surface: {
+              0: '#0b1a18', 1: '#0f2420', 2: '#142e2a', 3: '#1a3935', 4: '#21453f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <svg class="hidden">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+</head>
+<body class="font-sans text-white/50 antialiased">
+<div class="scroll-progress" id="scroll-progress"></div>
+<div class="page-wrapper">
+
+  <header>
+  <nav class="nav-fixed">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center"><img src="../logo.svg" alt="recaip" class="h-7" /></a>
+      <div class="flex items-center gap-6">
+        <a href="/features" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
+        <a href="/pricing" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+        <a href="/blog" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Blog</a>
+        <a href="/about" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="https://app.recaip.com" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+  <!-- Page hero -->
+  <section class="page-hero px-6 lg:px-16">
+    <div class="max-w-[1000px] mx-auto">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/90 mb-4 leading-tight">Recaip vs Canny</h1>
+      <p class="text-lg text-white/45 max-w-2xl">Canny helps you collect feature requests and maintain a public roadmap. Recaip writes and distributes your release notes automatically. They solve related but different problems. Here is how they compare.</p>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1000px] mx-auto"></div>
+
+  <!-- Article body -->
+  <section class="py-12 sm:py-16 px-6 lg:px-16">
+    <div class="prose-blog">
+
+      <p>Canny and Recaip both show up in conversations about product communication, but they approach the problem from opposite directions. Canny starts with the input: what do your users want you to build? Recaip starts with the output: what did you just ship, and how do you tell people about it? Understanding this distinction is key to deciding which tool belongs in your stack, or whether you need both.</p>
+
+      <p>This comparison covers both tools honestly. Canny is an established, well-regarded product with real strengths. Recaip is newer and focused on a narrower problem. The right choice depends on which side of the product communication loop you are trying to fix.</p>
+
+      <h2>What Is Canny?</h2>
+
+      <p>Canny is a feature request tracking and product feedback platform. It gives your users a place to submit ideas, vote on requests, and see what is on your roadmap. Product teams use it to prioritize what to build next based on actual user demand rather than guesswork.</p>
+
+      <p>Canny also includes a changelog feature. You can write and publish entries to a branded changelog page, and users who follow your board get notified. The changelog closes the feedback loop: users request a feature, you build it, and you announce it so they know it shipped.</p>
+
+      <p>Pricing starts at $79 per month for the Starter plan (feature tracking, changelog, basic integrations). The Growth plan at $359 per month adds prioritization, segmentation, and analytics. There is also a free tier limited to feature tracking for small teams. Canny is used by companies like Ahrefs, Loom, and ClickUp.</p>
+
+      <h2>What Is Recaip?</h2>
+
+      <p>Recaip is an autonomous AI agent for release communication. It connects to your development tools (GitHub, Linear, Jira) and watches for merged code. Every time you ship, it generates a complete set of release communications: a user-facing changelog entry, a social media post, an email draft, an in-app announcement, a stakeholder digest, and a status page update.</p>
+
+      <p>Recaip does not collect feature requests. It does not manage a public roadmap. It does not handle voting or user feedback. Its entire focus is the moment after you ship: turning the code change into human-readable communication and distributing it to the right channels without anyone on your team having to write a word.</p>
+
+      <p>Recaip costs $19 per month for unlimited products and 100 recaps. There are no feature gates, no per-user pricing, and no tiered plans. The first 10 recaps are free with no credit card required.</p>
+
+      <h2>Side-by-Side Comparison</h2>
+
+      <div class="glass-card p-0 overflow-hidden my-8">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="bg-white/[0.06]">
+              <th class="px-5 py-3.5 text-sm font-semibold text-white/90">Feature</th>
+              <th class="px-5 py-3.5 text-sm font-semibold text-white/90">Canny</th>
+              <th class="px-5 py-3.5 text-sm font-semibold text-brand-400">Recaip</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">Primary focus</td>
+              <td class="px-5 py-3 text-sm text-white/70">Feature request tracking and feedback</td>
+              <td class="px-5 py-3 text-sm text-white/70">Automated release communication</td>
+            </tr>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">Pricing</td>
+              <td class="px-5 py-3 text-sm text-white/70">Free tier / $79/mo Starter / $359/mo Growth</td>
+              <td class="px-5 py-3 text-sm text-white/70">$19/mo (100 recaps, unlimited products)</td>
+            </tr>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">AI generation</td>
+              <td class="px-5 py-3 text-sm text-white/70">AI-assisted drafts (manual editing expected)</td>
+              <td class="px-5 py-3 text-sm text-white/70">Fully AI-generated from code diffs, PRs, and tickets</td>
+            </tr>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">Output formats</td>
+              <td class="px-5 py-3 text-sm text-white/70">1 (changelog page)</td>
+              <td class="px-5 py-3 text-sm text-white/70">6 (changelog, social, email, in-app, digest, status page)</td>
+            </tr>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">Feature requests</td>
+              <td class="px-5 py-3 text-sm text-white/70">Yes (core feature with voting and prioritization)</td>
+              <td class="px-5 py-3 text-sm text-white/70">No</td>
+            </tr>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">Public roadmap</td>
+              <td class="px-5 py-3 text-sm text-white/70">Yes (customizable, status-based)</td>
+              <td class="px-5 py-3 text-sm text-white/70">No</td>
+            </tr>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">Auto-publish</td>
+              <td class="px-5 py-3 text-sm text-white/70">No (manual writing and publishing)</td>
+              <td class="px-5 py-3 text-sm text-white/70">Yes (per-channel auto-publish or review-first)</td>
+            </tr>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">Distribution channels</td>
+              <td class="px-5 py-3 text-sm text-white/70">Changelog page + in-app widget</td>
+              <td class="px-5 py-3 text-sm text-white/70">Changelog, email, social, Slack, in-app, status page</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Where Canny Excels</h2>
+
+      <p>Canny's real strength is not the changelog. It is everything that happens before you write one.</p>
+
+      <p><strong>Feature request collection and voting.</strong> Canny gives your users a structured way to tell you what they want. Instead of feedback scattered across emails, Intercom chats, and Slack threads, everything lives in one place. Users vote, you see patterns, and the roadmap writes itself based on actual demand. This is Canny's core value, and it is genuinely hard to replicate.</p>
+
+      <p><strong>Public roadmap.</strong> Canny's roadmap feature lets you show users what you are working on, what is planned, and what shipped. It builds trust and reduces "when is X coming?" support tickets. For B2B SaaS companies where enterprise customers expect visibility, this is a real differentiator.</p>
+
+      <p><strong>Closing the feedback loop.</strong> When you mark a Canny request as "Complete" and link it to a changelog entry, every user who voted gets notified. Users feel heard, and passive requesters become engaged advocates. No other tool does this feedback-to-announcement loop as well as Canny.</p>
+
+      <p><strong>Established and trusted.</strong> Canny has been around since 2017 and is used by thousands of companies. The product is mature, well-documented, and battle-tested.</p>
+
+      <h2>Where Canny Falls Short for Release Communication</h2>
+
+      <p>Canny's changelog is a secondary feature, not its primary product. This shows in several ways.</p>
+
+      <p><strong>Manual writing.</strong> Every changelog entry in Canny is written by a human. Canny offers some AI assistance to help draft entries, but the process is fundamentally manual. Someone has to write the update, format it, and publish it. For teams shipping frequently, this becomes a bottleneck.</p>
+
+      <p><strong>Limited distribution.</strong> Canny publishes to its changelog page and an in-app widget. There is no automatic social post, email digest, or Slack notification. Distribution beyond the Canny page is your problem.</p>
+
+      <p><strong>No connection to your codebase.</strong> Canny does not watch your GitHub repos or listen to webhooks. The changelog is decoupled from your shipping activity, which means there is always a lag between deploying and announcing. Someone has to remember to write the entry, and that "someone" is often nobody.</p>
+
+      <p><strong>Pricing for changelog alone does not make sense.</strong> At $79 per month, Canny is a great value if you use the full suite. But if you primarily need automated release communication, you are paying for features you will not use.</p>
+
+      <h2>Where Recaip Excels</h2>
+
+      <p><strong>Fully autonomous.</strong> Recaip generates release notes without any human input. It reads your merged PRs, understands the changes, and writes the communication. This is not "AI-assisted" where you still edit and publish manually. It is autonomous, from code merge to published update, with optional human review.</p>
+
+      <p><strong>Six output formats from one event.</strong> A single merged PR produces a changelog entry, a tweet-ready social post, an email draft, an in-app announcement, a stakeholder summary, and a status page update. Each format is tailored for its channel. This is the biggest difference from Canny's changelog-only approach.</p>
+
+      <p><strong>Connected to your dev tools.</strong> Recaip watches your repos via webhooks. When code merges, it knows immediately. There is no lag, no manual trigger, and no forgotten announcements. The connection between shipping and communicating is automatic.</p>
+
+      <p><strong>Four times cheaper.</strong> At $19 per month versus Canny's $79 per month starting price, Recaip costs significantly less. If release communication is the problem you are solving, the pricing reflects that narrower scope.</p>
+
+      <h2>Where Recaip Falls Short</h2>
+
+      <p><strong>No feature request tracking.</strong> Recaip does not collect user feedback, manage votes, or display a public roadmap. If you need the input side of product communication (learning what users want), Recaip does not help with that. It only handles the output side (telling users what you built).</p>
+
+      <p><strong>No feedback loop closing.</strong> Canny's ability to notify voters when their requested feature ships is something Recaip cannot do. Recaip does not know which users asked for which features. It communicates broadly, not to specific request audiences.</p>
+
+      <p><strong>Newer product.</strong> Recaip does not have the years of refinement that Canny has. The product is moving fast and improving, but it does not yet have the breadth of integrations, the community resources, or the enterprise compliance certifications that some teams need.</p>
+
+      <h2>When to Choose Canny</h2>
+
+      <p>Choose Canny when your primary problem is understanding what to build. If you need a structured place for users to submit ideas, vote on priorities, and track your roadmap, Canny is excellent at that. The changelog is a bonus that completes the feedback loop.</p>
+
+      <p>Canny is especially strong for B2B SaaS companies with enterprise customers who expect visibility into your product direction. The voting system and public roadmap build trust and reduce "what are you working on?" conversations. If you have the budget for the Growth plan and want the full suite (feedback, prioritization, segmentation, roadmap, and changelog), Canny delivers significant value as an all-in-one product communication tool.</p>
+
+      <h2>When to Choose Recaip</h2>
+
+      <p>Choose Recaip when your primary problem is the gap between shipping code and telling people about it. If your team merges PRs every day but your changelog gets updated once a month, or if your users keep asking for features you already shipped, Recaip directly solves that problem.</p>
+
+      <p>Recaip is the right tool for teams that do not have a dedicated person writing release notes. If the job of "announce what we shipped" currently belongs to everyone and therefore belongs to no one, Recaip fills the void as an autonomous agent that never forgets, never falls behind, and never skips a deploy.</p>
+
+      <p>It is also the right choice when you need multi-channel distribution. If your users are spread across email, Slack, social media, and your app, writing a single changelog entry on one page is not enough. Recaip pushes the update to every channel in the right format, from a single code merge.</p>
+
+      <h2>Can You Use Both?</h2>
+
+      <p>Yes, and many teams will find that combination valuable. Canny handles the upstream: collecting feedback, managing the roadmap, and prioritizing what to build. Recaip handles the downstream: when you ship, it writes the announcement and distributes it everywhere. The two tools do not overlap. They bookend the product communication cycle.</p>
+
+      <p>If you use both, Canny tells you what users want. Recaip tells users what you built. The gap between those two moments is where most product communication breaks down, and covering both sides ensures nothing falls through the cracks.</p>
+
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1000px] mx-auto"></div>
+
+  <!-- CTA -->
+  <section class="py-16 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[500px] h-[500px] bg-brand-700/15 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="position:absolute;"></div>
+    <div class="max-w-[1000px] mx-auto text-center relative z-10">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white/90 mb-3">Ship it. Recaip it.</h2>
+      <p class="text-white/45 mb-8">Recaip turns every code merge into a published product update. Automatically.</p>
+      <a href="https://app.recaip.com" class="btn-primary glow-pulse h-12 px-8 rounded-xl text-white font-semibold text-sm inline-flex items-center justify-center">Start free</a>
+      <p class="text-xs text-white/30 mt-3">$19/mo. Unlimited products. 100 recaps.</p>
+    </div>
+  </section>
+  </main>
+
+  <footer class="py-8 px-6 lg:px-16">
+    <div class="section-divider mb-8"></div>
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/"><img src="../logo.svg" alt="recaip" class="h-5 opacity-40" /></a>
+      <div class="flex items-center gap-6 text-sm text-white/30">
+        <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+        <a href="/about" class="hover:text-white/50 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-white/30">
+        <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .section-divider').forEach(el => observer.observe(el));
+
+  // Scroll progress bar
+  window.addEventListener('scroll', () => {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / docHeight) * 100;
+    document.getElementById('scroll-progress').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>

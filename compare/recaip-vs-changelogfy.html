@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recaip vs Changelogfy: A Comparison — Recaip</title>
+  <meta name="description" content="An honest comparison of Recaip and Changelogfy for release communication. See how AI-generated changelogs compare to manual changelog widgets — features, pricing, and who each tool is best for." />
+  <meta property="og:title" content="Recaip vs Changelogfy: A Comparison" />
+  <meta property="og:description" content="An honest comparison of Recaip and Changelogfy for release communication. See how AI-generated changelogs compare to manual changelog widgets — features, pricing, and who each tool is best for." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://recaip.com/compare/recaip-vs-changelogfy" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-04-06" />
+  <meta property="article:author" content="Simon Lafortune" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Recaip vs Changelogfy: A Comparison" />
+  <meta name="twitter:description" content="An honest comparison of Recaip and Changelogfy for release communication. See how AI-generated changelogs compare to manual changelog widgets — features, pricing, and who each tool is best for." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com/compare/recaip-vs-changelogfy" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Recaip",
+    "url": "https://recaip.com"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#e6f5f2', 100: '#ccebe5', 200: '#99d7cb', 300: '#6bbfae',
+              400: '#4da895', 500: '#3d8b80', 600: '#2d6b63', 700: '#1f524c',
+              800: '#163d38', 900: '#0e2a26',
+            },
+            surface: {
+              0: '#0b1a18', 1: '#0f2420', 2: '#142e2a', 3: '#1a3935', 4: '#21453f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <svg class="hidden">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+</head>
+<body class="font-sans text-white/50 antialiased">
+<div class="scroll-progress" id="scroll-progress"></div>
+<div class="page-wrapper">
+
+  <header>
+  <nav class="nav-fixed">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center"><img src="../logo.svg" alt="recaip" class="h-7" /></a>
+      <div class="flex items-center gap-6">
+        <a href="/features" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
+        <a href="/pricing" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+        <a href="/blog" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Blog</a>
+        <a href="/about" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="https://app.recaip.com" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+  <!-- Page hero -->
+  <section class="page-hero px-6 lg:px-16">
+    <div class="max-w-[1000px] mx-auto">
+      <span class="inline-block px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-[11px] text-brand-400 font-mono uppercase tracking-wider mb-4">Comparison</span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/90 mb-4 leading-tight">Recaip vs Changelogfy</h1>
+      <p class="text-lg text-white/50 max-w-2xl">Two different approaches to keeping users informed about product updates. Here's an honest look at how they compare.</p>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1000px] mx-auto"></div>
+
+  <!-- Article body -->
+  <section class="py-12 sm:py-16 px-6 lg:px-16">
+    <div class="prose-blog">
+
+      <p>If you're evaluating tools for release communication, you've probably come across both Changelogfy and Recaip. They both help teams communicate product updates to users, but they take fundamentally different approaches to the problem. Changelogfy gives you a polished manual workflow for writing and publishing changelog entries. Recaip eliminates the writing step entirely by generating updates from your development tools using AI.</p>
+
+      <p>This page breaks down both tools across the dimensions that matter most when choosing between them: what they do, how they work, what they cost, and who they're built for. We'll be straightforward about where each tool excels and where it falls short.</p>
+
+      <h2>What Is Changelogfy?</h2>
+
+      <p>Changelogfy is a changelog management platform designed to help product teams create, organize, and publish product updates. It's been around for several years and has built a solid reputation for doing one thing well: giving teams a clean interface to write changelog entries and display them to users.</p>
+
+      <p>At its core, Changelogfy provides a rich text editor where team members write update entries, assign categories and labels (like "New feature," "Improvement," or "Bug fix"), and publish them to a branded changelog page. The standout feature is its embeddable widget — a small notification badge you can place inside your app that alerts users when new updates are available. Users click it and see a timeline of recent changes without leaving your product.</p>
+
+      <p>Changelogfy also supports email notifications, letting you push updates to subscribers who've opted in. You can customize the look and feel of your changelog page to match your brand, organize entries with categories for filtering, and manage multiple projects from one account.</p>
+
+      <p>Pricing starts at approximately $29/month for basic plans, with higher tiers unlocking additional features like custom domains, team collaboration, and advanced analytics on which updates users are reading.</p>
+
+      <h2>What Is Recaip?</h2>
+
+      <p>Recaip is an autonomous AI agent for release communication. Instead of giving you an editor to write updates, Recaip connects directly to your development tools — GitHub, Linear, Jira — and generates release notes automatically every time you merge code or close a ticket.</p>
+
+      <p>The workflow is fundamentally different from any traditional changelog tool. You configure Recaip once: connect your repositories, tell it about your product and audience, and choose which output formats and channels you want. From that point forward, Recaip watches your dev tools 24/7 via webhooks. When it detects a merged pull request or completed issue, it reads the context (commit messages, PR descriptions, ticket details), generates user-facing release notes using AI, and prepares them for publishing.</p>
+
+      <p>Each update is generated in up to six formats: changelog entry, social media post, email draft, in-app announcement, stakeholder digest, and status page update. You can review and approve each draft before it goes live, or configure channels to auto-publish if you trust the output. Over time, Recaip learns your product's tone and terminology, so the generated content gets more accurate with each cycle.</p>
+
+      <p>Recaip costs $19/month flat, which includes 100 recaps per month, unlimited products, all output formats, and all integrations.</p>
+
+      <h2>Who Are They Built For?</h2>
+
+      <p>Changelogfy is built for teams that want editorial control over their release communication. If you have a product marketing manager, a dedicated PM, or a content person who enjoys crafting update copy, Changelogfy gives them a great workspace. It's particularly well-suited for teams where the changelog is a deliberate content marketing asset — each entry is carefully worded, branded, and positioned to reinforce the product narrative.</p>
+
+      <p>Recaip is built for teams that don't want to write release notes at all. The primary user is a CTO-founder at a small startup, a solo developer shipping fast, or a PM at a growing company who's tired of the changelog being the thing that always gets skipped. If your team's biggest problem is that updates never get communicated because nobody has time to write them, Recaip solves that by removing the writing step.</p>
+
+      <h2>Feature Comparison</h2>
+
+    </div>
+
+    <!-- Comparison table -->
+    <div class="max-w-[56rem] mx-auto">
+      <div class="glass-card p-0 overflow-hidden my-8">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="bg-white/[0.06]">
+              <th class="px-5 py-3.5 text-sm font-semibold text-white/90">Feature</th>
+              <th class="px-5 py-3.5 text-sm font-semibold text-white/90">Changelogfy</th>
+              <th class="px-5 py-3.5 text-sm font-semibold text-brand-400">Recaip</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">Primary focus</td>
+              <td class="px-5 py-3 text-sm text-white/65">Changelog widget & page</td>
+              <td class="px-5 py-3 text-sm text-white/65">Autonomous release communication</td>
+            </tr>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">Pricing</td>
+              <td class="px-5 py-3 text-sm text-white/65">From ~$29/mo</td>
+              <td class="px-5 py-3 text-sm text-white/65">$19/mo flat</td>
+            </tr>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">Content creation</td>
+              <td class="px-5 py-3 text-sm text-white/65">Manual (rich text editor)</td>
+              <td class="px-5 py-3 text-sm text-white/65">AI-generated from code diffs</td>
+            </tr>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">AI generation</td>
+              <td class="px-5 py-3 text-sm text-white/65">No</td>
+              <td class="px-5 py-3 text-sm text-white/65">Yes (learns your tone)</td>
+            </tr>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">Output formats</td>
+              <td class="px-5 py-3 text-sm text-white/65">Changelog page + widget</td>
+              <td class="px-5 py-3 text-sm text-white/65">6 formats (changelog, social, email, in-app, digest, status page)</td>
+            </tr>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">Embeddable widget</td>
+              <td class="px-5 py-3 text-sm text-white/65">Yes (core feature)</td>
+              <td class="px-5 py-3 text-sm text-white/65">Yes (iframe embed)</td>
+            </tr>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">Email notifications</td>
+              <td class="px-5 py-3 text-sm text-white/65">Yes (subscriber-based)</td>
+              <td class="px-5 py-3 text-sm text-white/65">Yes (email draft output)</td>
+            </tr>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">Auto-publish</td>
+              <td class="px-5 py-3 text-sm text-white/65">No (manual publish)</td>
+              <td class="px-5 py-3 text-sm text-white/65">Yes (per-channel toggle)</td>
+            </tr>
+            <tr class="border-t border-white/[0.06]">
+              <td class="px-5 py-3 text-sm text-white/55">Integrations</td>
+              <td class="px-5 py-3 text-sm text-white/65">Limited (Slack, Zapier)</td>
+              <td class="px-5 py-3 text-sm text-white/65">GitHub, Linear, Jira, Slack + more</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="prose-blog">
+
+      <h2>Pros and Cons</h2>
+
+      <h3>Changelogfy Strengths</h3>
+
+      <ul>
+        <li><strong>Full editorial control.</strong> Every word that goes out is written by a human. If your brand voice is nuanced or your product updates require careful legal or technical review, this matters.</li>
+        <li><strong>Mature embeddable widget.</strong> Changelogfy's in-app widget is its flagship feature and it works well. The notification badge, slide-out panel, and customization options are polished.</li>
+        <li><strong>Categories and filtering.</strong> Users can filter updates by type (new feature, bug fix, improvement), which is helpful for products with diverse user bases.</li>
+        <li><strong>Simple concept.</strong> There's no AI to trust, no webhook configuration. You write an entry, click publish. The learning curve is minimal.</li>
+      </ul>
+
+      <h3>Changelogfy Weaknesses</h3>
+
+      <ul>
+        <li><strong>Manual effort for every update.</strong> Someone has to write each entry. For teams shipping frequently, this becomes a bottleneck — and the updates that don't get written are effectively invisible to users.</li>
+        <li><strong>Single output format.</strong> Changelogfy produces a changelog page and widget. If you also need a social post, an email, or a stakeholder summary, you're writing those separately.</li>
+        <li><strong>No connection to dev tools.</strong> Changelogfy doesn't know what you shipped. The person writing the entry has to gather context from PRs, tickets, and commit messages themselves.</li>
+        <li><strong>Higher starting price.</strong> At ~$29/month for basic plans, it's more expensive than Recaip for a narrower set of capabilities.</li>
+      </ul>
+
+      <h3>Recaip Strengths</h3>
+
+      <ul>
+        <li><strong>Zero manual writing.</strong> The biggest advantage is that nobody has to write anything. Recaip reads your merged PRs and generates the update automatically. For time-strapped teams, this is transformative.</li>
+        <li><strong>Multi-channel output.</strong> One merge event produces up to six content formats. You get the changelog entry, the tweet, the email draft, and the stakeholder summary from a single source of truth.</li>
+        <li><strong>Dev tool integration.</strong> Because Recaip connects to GitHub, Linear, and Jira via webhooks, it has full context about what changed. The AI doesn't hallucinate features — it reads the actual diffs and ticket descriptions.</li>
+        <li><strong>Simpler pricing.</strong> $19/month with 100 recaps, unlimited products, and no feature gates.</li>
+      </ul>
+
+      <h3>Recaip Weaknesses</h3>
+
+      <ul>
+        <li><strong>Less editorial control.</strong> AI-generated content may not match the exact phrasing a skilled writer would produce. You can review and edit before publishing, but the starting point is machine-generated.</li>
+        <li><strong>Requires dev tool connections.</strong> Recaip needs webhook access to your repositories or project management tools. If your workflow doesn't use GitHub, Linear, or Jira, you'll need to wait for additional integrations.</li>
+        <li><strong>Newer product.</strong> Recaip is earlier in its lifecycle than Changelogfy. The feature set is growing rapidly, but some edge cases may not be covered yet.</li>
+        <li><strong>AI trust factor.</strong> Some teams are uncomfortable with AI-generated external communications, even with a review step. If your organization requires human-written copy for compliance reasons, this could be a blocker.</li>
+      </ul>
+
+      <h2>When to Choose Changelogfy</h2>
+
+      <p>Changelogfy is the better choice if your team values hand-crafted release communication and has the bandwidth to maintain it. Specifically, consider Changelogfy if:</p>
+
+      <ul>
+        <li>You have a dedicated person (PM, PMM, or content writer) who owns release communication and enjoys the craft of writing updates.</li>
+        <li>Your changelog is a key content marketing asset and every entry needs to be carefully positioned and branded.</li>
+        <li>You need a polished in-app notification widget as the primary delivery mechanism and don't need multi-channel distribution.</li>
+        <li>Your team ships infrequently (monthly or quarterly releases) so the manual writing effort is manageable.</li>
+        <li>You prefer a simple, proven tool with no AI involved in your external communications.</li>
+      </ul>
+
+      <h2>When to Choose Recaip</h2>
+
+      <p>Recaip is the better choice if your team ships frequently and release notes are the thing that always gets deprioritized. Specifically, consider Recaip if:</p>
+
+      <ul>
+        <li>Nobody on your team has time to write changelogs, and updates consistently go unannounced as a result.</li>
+        <li>You're a small team or solo founder and you need release communication to happen without adding another task to your plate.</li>
+        <li>You want one system that produces multiple output formats — changelog, social posts, emails, stakeholder digests — from a single merge event.</li>
+        <li>You ship continuously (daily or weekly merges) and need a solution that scales with your deployment frequency without scaling the manual effort.</li>
+        <li>You're comfortable with AI-generated content and want to trade editorial perfection for consistency and coverage.</li>
+      </ul>
+
+      <h2>The Bottom Line</h2>
+
+      <p>Changelogfy and Recaip solve the same underlying problem — keeping users informed about what you're building — but they represent two different philosophies. Changelogfy trusts humans to write the best updates and gives them excellent tools to do so. Recaip trusts that the best update is the one that actually gets published, and uses AI to make sure that happens every single time you ship.</p>
+
+      <p>If your team's release notes are already well-maintained and you want more control over presentation, Changelogfy is a solid, proven option. If your changelogs are inconsistent, late, or nonexistent because nobody has time to write them, Recaip eliminates that bottleneck entirely.</p>
+
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1000px] mx-auto"></div>
+
+  <!-- CTA -->
+  <section class="py-16 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[500px] h-[500px] bg-brand-700/15 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="position:absolute;"></div>
+    <div class="max-w-[1000px] mx-auto text-center relative z-10">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white/90 mb-3">Stop writing changelogs. Start shipping them.</h2>
+      <p class="text-white/45 mb-8">Recaip turns every code merge into a published product update. Automatically.</p>
+      <a href="https://app.recaip.com" class="btn-primary glow-pulse h-12 px-8 rounded-xl text-white font-semibold text-sm inline-flex items-center justify-center">Start free</a>
+      <p class="text-xs text-white/30 mt-3">$19/mo. Unlimited products. 100 recaps.</p>
+    </div>
+  </section>
+  </main>
+
+  <footer class="py-8 px-6 lg:px-16">
+    <div class="section-divider mb-8"></div>
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/"><img src="../logo.svg" alt="recaip" class="h-5 opacity-40" /></a>
+      <div class="flex items-center gap-6 text-sm text-white/30">
+        <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+        <a href="/about" class="hover:text-white/50 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-white/30">
+        <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .section-divider').forEach(el => observer.observe(el));
+
+  // Scroll progress bar
+  window.addEventListener('scroll', () => {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / docHeight) * 100;
+    document.getElementById('scroll-progress').style.width = progress + '%';
+  });
+</script>
+</body>
+</html>
