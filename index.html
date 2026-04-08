@@ -123,19 +123,7 @@
 </head>
 <body class="font-sans text-white/50 antialiased">
 
-  <!-- Sticky nav — slides in after scrolling past hero -->
-  <nav id="sticky-nav" class="nav-sticky">
-    <div class="nav-sticky-inner">
-      <a href="/" class="nav-logo-text">Recaip<span class="dot">.</span></a>
-      <div class="nav-links hidden sm:flex">
-        <a href="/features">Features</a>
-        <a href="/pricing">Pricing</a>
-        <a href="/blog">Blog</a>
-        <a href="/about">About</a>
-      </div>
-      <a href="https://app.recaip.com" class="nav-cta">Start free</a>
-    </div>
-  </nav>
+
 
   <!-- ============================================ -->
   <!-- PRELOADER                                    -->
@@ -1128,8 +1116,22 @@
 
     document.querySelectorAll('.price-counter').forEach(el => priceObserver.observe(el));
 
-    // Sticky nav — show after scrolling past hero
-    const stickyNav = document.getElementById('sticky-nav');
+    // Sticky nav — inject via JS to avoid FOUC
+    let stickyNav = null;
+    let navInjected = false;
+    function injectStickyNav() {
+      if (navInjected) return;
+      navInjected = true;
+      const nav = document.createElement('nav');
+      nav.id = 'sticky-nav';
+      nav.className = 'nav-sticky';
+      nav.innerHTML = '<div class="nav-sticky-inner"><a href="/" class="nav-logo-text">Recaip<span class="dot">.</span></a><div class="nav-links hidden sm:flex"><a href="/features">Features</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/about">About</a></div><a href="https://app.recaip.com" class="nav-cta">Start free</a></div>';
+      document.body.prepend(nav);
+      stickyNav = nav;
+      // Trigger reflow then animate in
+      nav.offsetHeight;
+      requestAnimationFrame(() => nav.classList.add('visible'));
+    }
     let lastScrollY = 0;
     let ticking = false;
     window.addEventListener('scroll', () => {
@@ -1139,8 +1141,9 @@
 
           // Show sticky nav after 500px (past the hero)
           if (scrollY > window.innerHeight) {
-            stickyNav.classList.add('visible');
-          } else {
+            if (!navInjected) injectStickyNav();
+            else if (stickyNav) stickyNav.classList.add('visible');
+          } else if (stickyNav) {
             stickyNav.classList.remove('visible');
           }
 
