@@ -123,6 +123,20 @@
 </head>
 <body class="font-sans text-white/50 antialiased">
 
+  <!-- Sticky nav — slides in after scrolling past hero -->
+  <nav id="sticky-nav" class="nav-sticky">
+    <div class="nav-sticky-inner">
+      <a href="/" class="nav-logo-text">Recaip<span class="dot">.</span></a>
+      <div class="nav-links hidden sm:flex">
+        <a href="/features">Features</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/blog">Blog</a>
+        <a href="/about">About</a>
+      </div>
+      <a href="https://app.recaip.com" class="nav-cta">Start free</a>
+    </div>
+  </nav>
+
   <!-- ============================================ -->
   <!-- PRELOADER                                    -->
   <!-- ============================================ -->
@@ -152,7 +166,7 @@
       <div class="absolute top-0 left-0 right-0 z-30 px-5 sm:px-10 py-5 sm:py-6 flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center">
-          <img src="logo.svg" alt="Recaip" class="h-6 sm:h-8" />
+          <span class="nav-logo-text" style="font-size:22px">Recaip<span class="dot">.</span></span>
         </div>
 
         <!-- Desktop nav -->
@@ -1027,7 +1041,7 @@
   <footer class="py-6 sm:py-8 px-6 lg:px-16">
     <div class="section-divider mb-8"></div>
     <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <a href="/"><img src="logo.svg" alt="Recaip" class="h-5 opacity-40" /></a>
+      <a href="/" class="nav-logo-text" style="font-size:14px; opacity:0.4">Recaip<span class="dot">.</span></a>
       <div class="flex items-center gap-6 text-sm text-white/30">
         <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
         <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
@@ -1114,18 +1128,31 @@
 
     document.querySelectorAll('.price-counter').forEach(el => priceObserver.observe(el));
 
-    // Subtle parallax on scroll
+    // Sticky nav — show after scrolling past hero
+    const stickyNav = document.getElementById('sticky-nav');
+    let lastScrollY = 0;
     let ticking = false;
     window.addEventListener('scroll', () => {
       if (!ticking) {
         requestAnimationFrame(() => {
           const scrollY = window.scrollY;
+
+          // Show sticky nav after 500px (past the hero)
+          if (scrollY > 500) {
+            stickyNav.classList.add('visible');
+          } else {
+            stickyNav.classList.remove('visible');
+          }
+
+          // Parallax
           document.querySelectorAll('.parallax-card').forEach(el => {
             const speed = parseFloat(el.dataset.speed || '0.03');
             const rect = el.getBoundingClientRect();
             const offset = (rect.top - window.innerHeight / 2) * speed;
             el.style.transform = `translateY(${offset}px)`;
           });
+
+          lastScrollY = scrollY;
           ticking = false;
         });
         ticking = true;

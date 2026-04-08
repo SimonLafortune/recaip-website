@@ -72,26 +72,96 @@ body::before {
   z-index: 1;
 }
 
-/* Fixed nav bar for inner pages */
+/* Fixed nav bar */
 .nav-fixed {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 1rem 1.5rem;
-  background: rgba(11, 26, 24, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  padding: 0.875rem 1.5rem;
+  background: rgba(11, 26, 24, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @media (min-width: 640px) {
-  .nav-fixed { padding: 1rem 2.5rem; }
+  .nav-fixed { padding: 0.875rem 2.5rem; }
 }
 @media (min-width: 1024px) {
-  .nav-fixed { padding: 1rem 4rem; }
+  .nav-fixed { padding: 0.875rem 4rem; }
 }
+
+/* Homepage sticky nav — hidden by default, slides in on scroll */
+.nav-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0 1.5rem;
+  background: rgba(11, 26, 24, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+.nav-sticky.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+@media (min-width: 640px) {
+  .nav-sticky { padding: 0 2.5rem; }
+}
+@media (min-width: 1024px) {
+  .nav-sticky { padding: 0 4rem; }
+}
+.nav-sticky-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.nav-logo-text {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+}
+.nav-logo-text .dot { color: #4da895; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.nav-links a:hover { color: rgba(255, 255, 255, 0.9); }
+.nav-cta {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3d8b80, #2d6b63);
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.nav-cta:hover { filter: brightness(1.15); }
 
 .gradient-text {
   background: linear-gradient(135deg, #6bbfae 0%, #99d7cb 40%, #ffffff 100%);
