@@ -481,12 +481,19 @@ body::before {
 }
 .preloader-letter {
   display: inline-block;
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
   font-size: 3.5rem;
   color: rgba(255, 255, 255, 0);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   animation: letterIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.preloader-dot {
+  color: rgba(77, 168, 149, 0) !important;
+  animation: dotIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+@keyframes dotIn {
+  to { color: #4da895; }
 }
 @keyframes letterIn {
   0% { color: rgba(255,255,255,0); transform: translateY(12px) scale(0.95); filter: blur(6px); }
