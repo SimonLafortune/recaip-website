@@ -1138,7 +1138,7 @@
           const scrollY = window.scrollY;
 
           // Show sticky nav after 500px (past the hero)
-          if (scrollY > 500) {
+          if (scrollY > window.innerHeight) {
             stickyNav.classList.add('visible');
           } else {
             stickyNav.classList.remove('visible');
