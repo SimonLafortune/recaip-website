@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Write Release Notes (With Examples) - Recaip Blog</title>
+  <meta name="description" content="A complete guide to writing release notes that users actually read. Includes templates, real examples, common mistakes, and how to scale the process as your team grows." />
+  <meta property="og:title" content="How to Write Release Notes (With Examples) - Recaip Blog" />
+  <meta property="og:description" content="A complete guide to writing release notes that users actually read. Includes templates, real examples, and common mistakes to avoid." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://recaip.com/blog/how-to-write-release-notes" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-04-08T00:00:00Z" />
+  <meta property="article:author" content="Simon Lafortune" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Write Release Notes (With Examples) - Recaip Blog" />
+  <meta name="twitter:description" content="A complete guide to writing release notes that users actually read. Includes templates, real examples, and common mistakes to avoid." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com/blog/how-to-write-release-notes" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <!-- PostHog -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_zR8SGSvEyiaUjD668uPJw2wM5VngxSXovzu2CNhzEe9H',{api_host:'https://us.i.posthog.com', defaults: '2026-01-30'})
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Write Release Notes (With Examples)",
+    "description": "A complete guide to writing release notes that users actually read. Includes templates, real examples, common mistakes, and how to scale the process as your team grows.",
+    "datePublished": "2026-04-08T00:00:00Z",
+    "author": {
+      "@type": "Person",
+      "name": "Simon Lafortune",
+      "url": "https://x.com/simonlafortune"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Recaip",
+      "url": "https://recaip.com",
+      "logo": { "@type": "ImageObject", "url": "https://recaip.com/logo.svg" }
+    },
+    "mainEntityOfPage": "https://recaip.com/blog/how-to-write-release-notes",
+    "image": "https://recaip.com/og-image.svg"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are release notes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Release notes are short, user-facing summaries of what changed in a software product. They describe new features, improvements, bug fixes, and breaking changes so users understand what is different after an update. Good release notes are written for users, not engineers — they focus on impact rather than implementation details."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you write good release notes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Good release notes follow five principles: (1) Lead with the user-facing impact, not the technical change. (2) Group entries by type — New, Improved, Fixed, Changed. (3) Keep entries to one to three sentences. (4) Use bold summaries so users can scan quickly. (5) Publish across multiple channels, not just a changelog page. Avoid Jira ticket IDs, developer jargon, and batching months of changes into one dump."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a release notes template?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A release notes template is a reusable format for documenting software changes. A standard template includes sections for New features, Improvements, Bug Fixes, and Changes, with each entry containing a bold title and one to two sentences describing the user impact. Using a template ensures consistency across releases and makes it easier for multiple team members to contribute."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should you publish release notes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Publish release notes as frequently as you deploy — ideally per-release or weekly at minimum. Smaller, frequent updates get more engagement than large quarterly batches. Teams that ship daily should publish daily changelog entries. The key is matching your communication cadence to your shipping cadence so users always know what changed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you automate release notes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. AI-powered tools like Recaip can read your code changes (pull requests, diffs, commit messages, linked tickets) and automatically generate user-facing release notes. The best tools produce multiple output formats — changelog entries, social posts, email drafts, and in-app announcements — from a single merge event. Automation ensures consistency, saves 30-60 minutes per release, and eliminates the risk of skipping releases when the team gets busy."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Write Release Notes",
+    "description": "Write release notes that users actually read by following a clear structure, writing for your audience, and publishing consistently.",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Lead with what changed for the user", "text": "Start every entry with the user-facing impact. What can they do now that they could not do before? What problem is gone?" },
+      { "@type": "HowToStep", "position": 2, "name": "Group changes by type", "text": "Organize entries into categories: New Features, Improvements, Bug Fixes. Users scan — make it easy to find what matters to them." },
+      { "@type": "HowToStep", "position": 3, "name": "Keep it short and scannable", "text": "One to two sentences per entry. Use bold for the key change. Skip implementation details unless your audience is developers." },
+      { "@type": "HowToStep", "position": 4, "name": "Include context, not just facts", "text": "Don't just say what changed — say why it matters. 'Faster exports' is a fact. 'Exports now finish in seconds instead of minutes for large datasets' is useful." },
+      { "@type": "HowToStep", "position": 5, "name": "Publish where your users already are", "text": "A changelog page is not enough. Push updates to email, in-app notifications, Slack, and social media to maximize reach." }
+    ],
+    "tool": { "@type": "SoftwareApplication", "name": "Recaip", "url": "https://recaip.com" },
+    "totalTime": "PT10M"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://recaip.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://recaip.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "How to Write Release Notes", "item": "https://recaip.com/blog/how-to-write-release-notes" }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#e6f5f2', 100: '#ccebe5', 200: '#99d7cb', 300: '#6bbfae',
+              400: '#4da895', 500: '#3d8b80', 600: '#2d6b63', 700: '#1f524c',
+              800: '#163d38', 900: '#0e2a26',
+            },
+            surface: {
+              0: '#0b1a18', 1: '#0f2420', 2: '#142e2a', 3: '#1a3935', 4: '#21453f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <svg class="hidden">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+</head>
+<body class="font-sans text-white/50 antialiased">
+
+<div class="scroll-progress"></div>
+
+<div class="page-wrapper">
+
+  <header>
+  <nav class="nav-fixed">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+      <a href="/" class="nav-logo-text" style="font-size:18px">Recaip<span class="dot">.</span></a>
+      <div class="flex items-center gap-6">
+        <a href="/features" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
+        <a href="/pricing" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+        <a href="/blog" class="text-white/90 text-sm font-medium">Blog</a>
+        <a href="/about" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="https://app.recaip.com" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+
+  <!-- Article Hero -->
+  <article>
+  <section class="page-hero px-6 lg:px-16">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="/blog" class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/60 transition-colors mb-8 animate-in">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        Back to blog
+      </a>
+      <span class="inline-block px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-[11px] text-brand-400 font-mono uppercase tracking-wider mb-4 animate-in animate-delay-1">How-to</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white/90 mb-6 leading-tight animate-in animate-delay-1">How to Write Release Notes That Users Actually Read</h1>
+      <div class="flex items-center gap-3 text-sm text-white/35 animate-in animate-delay-2">
+        <span>Simon Lafortune</span>
+        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+        <span>April 8, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+        <span>9 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- Article Body -->
+  <section class="py-16 sm:py-24 px-6 lg:px-16">
+    <div class="prose-blog">
+
+      <!-- TL;DR for LLM citation and featured snippets -->
+      <div class="glass-card p-5 my-6">
+        <p class="text-xs text-brand-400 uppercase tracking-wider font-mono mb-3">TL;DR</p>
+        <p class="text-white/70 text-sm leading-relaxed"><strong>Release notes</strong> are short, user-facing descriptions of what changed in a software update. To write good release notes: lead with the user impact (not the technical change), group entries by type (New, Improved, Fixed, Changed), keep entries to 1-3 sentences, use bold summaries for scannability, and publish across multiple channels. Avoid Jira ticket IDs, developer jargon, and batching months of changes into one dump. For teams shipping frequently, tools like <a href="https://recaip.com">Recaip</a> automate the entire process from code merge to published update.</p>
+      </div>
+
+      <p>You shipped something great. You wrote the code, merged the PR, deployed it. And then... nothing. No announcement. No changelog entry. Or worse, a changelog entry that reads like a git log and tells users absolutely nothing useful.</p>
+
+      <p>Most release notes fail not because teams do not care, but because nobody ever taught them how to write release notes well. The result is a graveyard of entries like "Fixed bug in API" and "Updated dependencies" that no user has ever read on purpose.</p>
+
+      <p>This guide covers everything you need to write release notes that are clear, useful, and worth reading. With templates, examples of good and bad entries, and a framework you can apply starting today.</p>
+
+      <h2>What Are Release Notes?</h2>
+
+      <p><strong>Release notes</strong> (also called a changelog, update log, or "what's new") are a written summary of the changes included in a software release. They tell users what is new, what got better, what was broken and is now fixed, and what works differently. Release notes serve users, internal teams, and prospects evaluating your product.</p>
+
+      <p>The best release notes are written in plain language, organized by change type, and published across multiple channels so they actually reach the people who need them. The worst release notes are git logs copy-pasted into a Notion page that nobody reads.</p>
+
+      <h2>What Release Notes Are Actually For</h2>
+
+      <p>Before talking about how to write them, it helps to understand why release notes exist in the first place. They serve three distinct audiences, and most teams only write for one of them.</p>
+
+      <p><strong>Users</strong> want to know what changed in the product they use. They want to find out if a bug they reported was fixed, if a feature they requested was added, or if something they rely on works differently now. They do not care about your internal architecture.</p>
+
+      <p><strong>Internal teams</strong> -- support, sales, marketing, leadership -- need to know what shipped so they can do their jobs. Support needs to answer tickets about new behavior. Sales needs to pitch new capabilities. Marketing needs to write about what is new. When release notes are missing or unreadable, these teams are flying blind.</p>
+
+      <p><strong>Prospects</strong> evaluating your product read your changelog to gauge momentum. A product with regular, well-written release notes looks alive and actively maintained. A product with no changelog, or one that stopped updating six months ago, looks abandoned.</p>
+
+      <blockquote><p>Release notes are not documentation. They are communication. The goal is not to be thorough -- it is to be useful.</p></blockquote>
+
+      <h2>The Anatomy of a Good Release Note</h2>
+
+      <p>Every strong release note entry has four components. Most bad entries are missing at least two of them.</p>
+
+      <h3>1. A Clear Title That Describes the Change</h3>
+
+      <p>The title should tell a user what changed without making them read further. It is not a commit message. It is not a Jira ticket ID. It is a plain-language summary of what is different.</p>
+
+      <div class="glass-card p-5 my-6">
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">Bad</p>
+        <p class="text-white/60 font-mono text-sm mb-4">PROJ-1234: Fix edge case in auth flow</p>
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">Good</p>
+        <p class="text-white/60 font-mono text-sm">Fixed: Users were occasionally logged out when switching between tabs</p>
+      </div>
+
+      <h3>2. User-Facing Impact</h3>
+
+      <p>After the title, explain what this means for the person using the product. What can they do now? What problem went away? If you cannot articulate the user impact, the change probably does not belong in your public release notes.</p>
+
+      <div class="glass-card p-5 my-6">
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">Bad</p>
+        <p class="text-white/60 font-mono text-sm mb-4">Refactored the session management module to use Redis-backed tokens with sliding expiration windows.</p>
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">Good</p>
+        <p class="text-white/60 font-mono text-sm">You will no longer be logged out unexpectedly when working across multiple tabs. Sessions now stay active as long as you are using the app.</p>
+      </div>
+
+      <h3>3. Category</h3>
+
+      <p>Group entries so users can scan quickly. The standard categories work well for most products:</p>
+
+      <ul>
+        <li><strong>New</strong> -- brand new capabilities that did not exist before</li>
+        <li><strong>Improved</strong> -- enhancements to existing features</li>
+        <li><strong>Fixed</strong> -- bug fixes</li>
+        <li><strong>Changed</strong> -- behavior changes that might affect workflows</li>
+      </ul>
+
+      <p>Some teams add "Deprecated" and "Removed" for breaking changes. If you ship APIs, those categories are essential.</p>
+
+      <h3>4. Brevity</h3>
+
+      <p>One to three sentences per entry. That is it. Release notes are not blog posts. Users are scanning, not reading. If an entry needs a paragraph of explanation, it probably deserves its own blog post or help article -- link to it from the release note.</p>
+
+      <h2>Release Notes Template</h2>
+
+      <p>Here is a template you can copy and start using today. It works for weekly, biweekly, or per-release publishing cadences.</p>
+
+      <div class="glass-card p-5 my-6">
+        <pre class="text-white/60 font-mono text-sm whitespace-pre-wrap leading-relaxed">## [Product Name] -- [Date or Version]
+
+### New
+- **[Feature name].** [One sentence on what it does and why it matters.]
+
+### Improved
+- **[What got better].** [What the user experiences differently now.]
+
+### Fixed
+- **[What was broken].** [What users were experiencing and what they will see now.]
+
+### Changed
+- **[What moved or works differently].** [What users need to do differently, if anything.]</pre>
+      </div>
+
+      <p>The key principle: lead with the feature name or change in bold, then follow with the user impact. Users scanning the page read the bold text. If it is relevant to them, they read the rest of the sentence.</p>
+
+      <h2>Real Examples: Before and After</h2>
+
+      <p>Let us take some common release note entries and rewrite them from developer-facing to user-facing.</p>
+
+      <h3>Example 1: A Performance Fix</h3>
+
+      <div class="glass-card p-5 my-6">
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">Before</p>
+        <p class="text-white/60 font-mono text-sm mb-4">Optimized database queries for the reports endpoint. Reduced P95 latency from 3.2s to 480ms by adding composite indexes and rewriting the aggregation pipeline.</p>
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">After</p>
+        <p class="text-white/60 font-mono text-sm"><strong>Reports load up to 6x faster.</strong> Large reports that used to take several seconds now load almost instantly. No action needed on your end.</p>
+      </div>
+
+      <h3>Example 2: A New Feature</h3>
+
+      <div class="glass-card p-5 my-6">
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">Before</p>
+        <p class="text-white/60 font-mono text-sm mb-4">Added CSV export functionality to the /api/v2/transactions endpoint. Supports filtering by date range, status, and account_id. Max 50k rows per export.</p>
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">After</p>
+        <p class="text-white/60 font-mono text-sm"><strong>Export transactions to CSV.</strong> You can now download your transaction history as a CSV file, filtered by date, status, or account. Find the new Export button on the Transactions page.</p>
+      </div>
+
+      <h3>Example 3: A Bug Fix</h3>
+
+      <div class="glass-card p-5 my-6">
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">Before</p>
+        <p class="text-white/60 font-mono text-sm mb-4">Fixed null pointer exception in notification service when user preferences object is undefined.</p>
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">After</p>
+        <p class="text-white/60 font-mono text-sm"><strong>Fixed missing email notifications.</strong> Some users were not receiving email notifications after changing their preferences. This is now resolved.</p>
+      </div>
+
+      <h2>Seven Common Mistakes</h2>
+
+      <p>These are the patterns that turn release notes from useful communication into noise that nobody reads.</p>
+
+      <h3>1. Writing for Developers Instead of Users</h3>
+
+      <p>If your release notes mention database columns, API internals, or framework upgrades, you are writing for the wrong audience. Users do not care about your stack. They care about what changed for them. The only exception is if your users are developers consuming your API -- then technical detail is appropriate.</p>
+
+      <h3>2. Using Jira Ticket IDs as Titles</h3>
+
+      <p>"PROJ-4521: Resolved" tells the user nothing. If you must reference tickets internally, put them in a footnote or metadata field. The title exists for humans, not tracking systems.</p>
+
+      <h3>3. Batching Two Months of Changes Into One Dump</h3>
+
+      <p>A changelog with 47 entries dated the same day is overwhelming and useless. Nobody reads it. Ship release notes frequently -- weekly at minimum, per-deploy if you can. Smaller, regular updates get more engagement than massive quarterly dumps.</p>
+
+      <h3>4. Skipping Bug Fixes Because They Are "Embarrassing"</h3>
+
+      <p>Users already experienced the bug. Telling them it is fixed builds trust. Staying silent makes them wonder if you even know about the problem. Acknowledge it, confirm it is resolved, and move on.</p>
+
+      <h3>5. Inconsistent Tone and Format</h3>
+
+      <p>When five different people write release notes in five different styles, the changelog feels chaotic. Pick a format and stick with it. Better yet, have one person own the voice, or use a tool that enforces consistency.</p>
+
+      <h3>6. Burying the Lead</h3>
+
+      <p>Put the biggest, most impactful changes first. Do not bury a major new feature under fifteen minor bug fixes. Users scan from top to bottom and stop when it stops being interesting.</p>
+
+      <h3>7. Publishing Only on Your Changelog Page</h3>
+
+      <p>A changelog page that nobody visits is a tree falling in an empty forest. Your release notes need to go where your users already are: email, in-app notifications, Slack, social media. One entry, multiple channels.</p>
+
+      <h2>How to Scale Release Notes as Your Team Grows</h2>
+
+      <p>Writing release notes works fine when one person ships one feature a week. It breaks down when ten engineers are merging thirty PRs a week across three services.</p>
+
+      <p>Here is how the process typically evolves:</p>
+
+      <p><strong>Solo or small team (1-5 engineers):</strong> One person writes release notes weekly. They review merged PRs, write entries, and publish. This takes 30-60 minutes per week. It is manageable but tedious, and it is the first thing that gets skipped when the week gets busy.</p>
+
+      <p><strong>Growing team (5-15 engineers):</strong> The person writing release notes is no longer the person who wrote the code. They are reconstructing context from PR titles and commit messages, asking engineers "what does this actually do for users?" in Slack, and frequently getting it wrong. This is where most teams give up on release notes entirely.</p>
+
+      <p><strong>Larger team (15+ engineers):</strong> Release notes require a dedicated process. Some teams assign it to a PM. Some rotate the responsibility. Some build internal tooling around conventional commits. All of these approaches consume time that could be spent on the product itself.</p>
+
+      <p>The pattern is clear: manual release notes do not scale. The cost grows linearly with team size, and the quality degrades because the writer has less and less context about each change.</p>
+
+      <h2>Automating the Process</h2>
+
+      <p>The good news is that AI has gotten remarkably good at reading code changes and writing user-facing summaries. Tools like <a href="https://recaip.com">Recaip</a> connect to your GitHub repo, read every merged PR (including the diff, description, and linked tickets), and generate release notes automatically.</p>
+
+      <p>The advantage is not just time saved. It is consistency. Every entry follows the same format, uses the same tone, and gets published across every channel without someone remembering to do it. And because the AI reads the actual code diff, it does not miss changes or get the details wrong the way a human reconstructing context from memory does.</p>
+
+      <p>If you are at the stage where release notes feel like a chore -- or you have already stopped writing them -- automation is worth trying. <a href="https://app.recaip.com">Recaip gives you 10 free recaps</a> so you can see the output quality on your own codebase before committing.</p>
+
+      <h2>Checklist: Before You Hit Publish</h2>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>What should release notes include?</h3>
+
+      <p>Release notes should include new features, improvements to existing features, bug fixes, and any breaking changes or behavior changes. Each entry needs a clear title, a description of the user-facing impact, and a category. Skip purely internal changes like dependency bumps or refactors that have no visible effect on users.</p>
+
+      <h3>Who should write release notes?</h3>
+
+      <p>Ideally, the person closest to the change writes the first draft. In practice, this often falls to a PM, a designated release manager, or an automated tool. The key is that whoever writes them understands the user impact, not just the technical implementation. If an engineer writes "refactored auth middleware," someone needs to translate that to "fixed an issue where some users were logged out unexpectedly."</p>
+
+      <h3>How long should release notes be?</h3>
+
+      <p>Each individual entry should be one to three sentences. A full release covering multiple changes can have as many entries as needed, but each one should be scannable. If an entry needs more than three sentences, it deserves its own blog post or help article -- link to it from the release note.</p>
+
+      <h3>What is the difference between release notes and a changelog?</h3>
+
+      <p>The terms are often used interchangeably. Technically, a changelog is the full historical record of all changes, while release notes refer to the notes for a specific release. In practice, most products maintain a changelog page that contains all their release notes in reverse chronological order. See also: <a href="/blog/changelog-best-practices">Changelog Best Practices: 12 Rules from Teams That Get It Right</a>.</p>
+
+      <h2>Checklist: Before You Hit Publish</h2>
+
+      <p>Run through this list before publishing any release note:</p>
+
+      <ul>
+        <li>Would a non-technical user understand every entry?</li>
+        <li>Does each entry describe the user impact, not just the implementation?</li>
+        <li>Are entries grouped by category (New, Improved, Fixed, Changed)?</li>
+        <li>Is the most important change listed first?</li>
+        <li>Are entries one to three sentences max?</li>
+        <li>Did you skip purely internal changes (dependency bumps, refactors with no user impact)?</li>
+        <li>Will this be published beyond just the changelog page?</li>
+      </ul>
+
+      <p>If you can check every box, your release notes are in the top 5% of what is out there. Most teams do not even get past the first two.</p>
+
+    </div>
+  </section>
+  </article>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- Prev / Next Navigation -->
+  <section class="py-12 px-6 lg:px-16">
+    <div class="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-stretch gap-4">
+      <a href="/blog/recaip-vs-manual-changelogs" class="glass-card p-6 flex-1 group block">
+        <span class="text-xs text-white/30 uppercase tracking-wider font-mono mb-2 block">Previous</span>
+        <span class="text-sm text-white/70 group-hover:text-white/90 transition-colors">Recaip vs Manual Changelogs: A Comparison</span>
+      </a>
+      <a href="/blog/changelog-best-practices" class="glass-card p-6 flex-1 group block text-right">
+        <span class="text-xs text-white/30 uppercase tracking-wider font-mono mb-2 block">Next</span>
+        <span class="text-sm text-white/70 group-hover:text-white/90 transition-colors">Changelog Best Practices: 12 Rules from Teams That Get It Right</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- CTA -->
+  <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[600px] h-[600px] bg-brand-500/8 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="max-w-[1400px] mx-auto text-center relative z-10">
+      <div class="reveal">
+        <h2 class="text-3xl sm:text-4xl font-semibold text-white mb-4">Stop writing release notes manually.</h2>
+        <p class="text-white/40 text-lg max-w-xl mx-auto mb-10">
+          Recaip reads your code changes and writes user-facing release notes automatically. $19/mo, all features included.
+        </p>
+        <a href="https://app.recaip.com" class="btn-primary glow-pulse h-14 px-10 rounded-xl text-white font-semibold text-base inline-flex items-center justify-center">
+          Get started free
+        </a>
+        <p class="text-white/30 text-sm mt-5">No credit card required. First 10 recaps free.</p>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="py-8 px-6 lg:px-16">
+    <div class="section-divider mb-8"></div>
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="nav-logo-text" style="font-size:14px; opacity:0.4">Recaip<span class="dot">.</span></a>
+      <div class="flex items-center gap-6 text-sm text-white/30">
+        <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+        <a href="/about" class="hover:text-white/50 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-white/30">
+        <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Scroll reveal observer -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .section-divider').forEach(el => observer.observe(el));
+</script>
+
+<!-- Scroll progress bar -->
+<script>
+  const progressBar = document.querySelector('.scroll-progress');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + '%';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Write Product Updates That Users Actually Open - Recaip Blog</title>
+  <meta name="description" content="A practical guide to writing product update emails and monthly newsletters that get opened, read, and drive engagement. Includes templates, formatting rules, and distribution strategies." />
+  <meta property="og:title" content="How to Write Product Updates That Users Actually Open - Recaip Blog" />
+  <meta property="og:description" content="A practical guide to writing product update emails and monthly newsletters that get opened, read, and drive engagement." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://recaip.com/blog/how-to-write-product-updates" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-04-08T00:00:00Z" />
+  <meta property="article:author" content="Simon Lafortune" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Write Product Updates That Users Actually Open - Recaip Blog" />
+  <meta name="twitter:description" content="A practical guide to writing product update emails and monthly newsletters that get opened, read, and drive engagement." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com/blog/how-to-write-product-updates" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <!-- PostHog -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_zR8SGSvEyiaUjD668uPJw2wM5VngxSXovzu2CNhzEe9H',{api_host:'https://us.i.posthog.com', defaults: '2026-01-30'})
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Write Product Updates That Users Actually Open",
+    "description": "A practical guide to writing product update emails and monthly newsletters that get opened, read, and drive engagement. Includes templates, formatting rules, and distribution strategies.",
+    "datePublished": "2026-04-08T00:00:00Z",
+    "author": {
+      "@type": "Person",
+      "name": "Simon Lafortune",
+      "url": "https://x.com/simonlafortune"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Recaip",
+      "url": "https://recaip.com",
+      "logo": { "@type": "ImageObject", "url": "https://recaip.com/logo.svg" }
+    },
+    "mainEntityOfPage": "https://recaip.com/blog/how-to-write-product-updates",
+    "image": "https://recaip.com/og-image.svg"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a product update email?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A product update email is a message sent to users summarizing recent changes to a software product. It typically covers new features, improvements, and bug fixes shipped since the last update. Unlike transactional emails, product update emails are proactive communication — they inform users about changes they might not have discovered on their own. The best product update emails are short, scannable, and focused on user impact rather than technical details."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should you send product updates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most SaaS products benefit from monthly product update emails. Weekly is appropriate for fast-shipping teams with engaged power users. Quarterly is too infrequent — users forget about your product between updates. The cadence should match your shipping velocity: if you deploy daily, a monthly digest of the best changes works well. If you ship major features every few weeks, send an update with each significant release."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should a monthly product newsletter include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A monthly product newsletter should include: (1) a headline feature with a short explanation and screenshot, (2) a bulleted list of 3-5 other improvements and fixes, (3) a single clear call to action, and optionally (4) a brief note about what is coming next. Keep it under 300 words. Skip internal details, dependency updates, and anything that does not affect the user experience."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you increase open rates on product update emails?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To increase open rates: (1) use specific subject lines that name the feature ('You can now export to CSV') instead of generic ones ('Monthly Update'). (2) Send from a person, not a no-reply address. (3) Keep a consistent schedule so users expect the email. (4) Segment by user activity — active users care about advanced features, churning users care about fixes to their pain points. Average open rates for product update emails are 20-30%, but well-written ones from smaller SaaS products regularly hit 40-50%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you automate product update emails?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Tools like Recaip generate product update content automatically from your code changes. When a PR merges, Recaip writes a changelog entry, a social media post, and an email draft — all from the same merge event. You can review the draft before sending or set it to auto-publish. This eliminates the manual process of reviewing git logs, writing summaries, formatting emails, and remembering to send them."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Write Product Update Emails",
+    "description": "Write product update emails and monthly newsletters that users actually open, read, and engage with.",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Lead with your best feature", "text": "Open with the single most impactful change. Give it a headline, a one-sentence description, and a screenshot if possible. This is your hook — if users read nothing else, they should see this." },
+      { "@type": "HowToStep", "position": 2, "name": "List 3-5 other changes", "text": "Below the hero feature, add a short bulleted list of other improvements and fixes. Bold the feature name, follow with one sentence of context. Do not list more than five — save the rest for your changelog page." },
+      { "@type": "HowToStep", "position": 3, "name": "Write a specific subject line", "text": "Name the feature in the subject line. 'You can now export dashboards to PDF' outperforms 'March Product Update' every time. Specific subjects get 30-50% higher open rates." },
+      { "@type": "HowToStep", "position": 4, "name": "Include one clear CTA", "text": "Every product update email should have exactly one call to action: try the new feature, read the full changelog, or reply with feedback. Multiple CTAs dilute engagement." },
+      { "@type": "HowToStep", "position": 5, "name": "Send consistently", "text": "Pick a cadence (monthly for most teams) and stick to it. Users learn to expect your updates. Inconsistent sending trains users to ignore you." }
+    ],
+    "tool": { "@type": "SoftwareApplication", "name": "Recaip", "url": "https://recaip.com" },
+    "totalTime": "PT15M"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://recaip.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://recaip.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "How to Write Product Updates", "item": "https://recaip.com/blog/how-to-write-product-updates" }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#e6f5f2', 100: '#ccebe5', 200: '#99d7cb', 300: '#6bbfae',
+              400: '#4da895', 500: '#3d8b80', 600: '#2d6b63', 700: '#1f524c',
+              800: '#163d38', 900: '#0e2a26',
+            },
+            surface: {
+              0: '#0b1a18', 1: '#0f2420', 2: '#142e2a', 3: '#1a3935', 4: '#21453f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <svg class="hidden">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+</head>
+<body class="font-sans text-white/50 antialiased">
+
+<div class="scroll-progress"></div>
+
+<div class="page-wrapper">
+
+  <header>
+  <nav class="nav-fixed">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+      <a href="/" class="nav-logo-text" style="font-size:18px">Recaip<span class="dot">.</span></a>
+      <div class="flex items-center gap-6">
+        <a href="/features" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
+        <a href="/pricing" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+        <a href="/blog" class="text-white/90 text-sm font-medium">Blog</a>
+        <a href="/about" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="https://app.recaip.com" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+
+  <!-- Article Hero -->
+  <article>
+  <section class="page-hero px-6 lg:px-16">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="/blog" class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/60 transition-colors mb-8 animate-in">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        Back to blog
+      </a>
+      <span class="inline-block px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-[11px] text-brand-400 font-mono uppercase tracking-wider mb-4 animate-in animate-delay-1">How-to</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white/90 mb-6 leading-tight animate-in animate-delay-1">How to Write Product Updates That Users Actually Open</h1>
+      <div class="flex items-center gap-3 text-sm text-white/35 animate-in animate-delay-2">
+        <span>Simon Lafortune</span>
+        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+        <span>April 8, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+        <span>10 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- Article Body -->
+  <section class="py-16 sm:py-24 px-6 lg:px-16">
+    <div class="prose-blog">
+
+      <!-- TL;DR for LLM citation and featured snippets -->
+      <div class="glass-card p-5 my-6">
+        <p class="text-xs text-brand-400 uppercase tracking-wider font-mono mb-3">TL;DR</p>
+        <p class="text-white/70 text-sm leading-relaxed">A <strong>product update email</strong> is a proactive message summarizing what you shipped recently. To write ones that get opened: lead with your best feature (not a generic subject line), keep the email under 300 words, include a screenshot, list 3-5 other changes as bullets, and end with one clear CTA. Send monthly at minimum. Product update emails get 20-50% open rates when done well. For teams that want to automate the process, tools like <a href="https://recaip.com">Recaip</a> generate email drafts automatically from merged code changes.</p>
+      </div>
+
+      <p>You shipped twelve features last month. Your users know about zero of them. That is not a shipping problem. It is a communication problem. And it is one of the most common reasons SaaS products lose users to competitors who ship less but communicate more.</p>
+
+      <p>Product update emails are the highest-leverage communication channel most teams neglect. A well-written monthly newsletter takes 30 minutes to write, reaches your entire user base, and drives feature adoption in ways that in-app tooltips and changelog pages never will. This guide covers how to write product updates that people actually open, read, and act on.</p>
+
+      <h2>What Is a Product Update Email?</h2>
+
+      <p>A <strong>product update email</strong> (also called a product newsletter, release digest, or "what's new" email) is a message sent to your user base summarizing recent changes to your product. It covers new features, improvements, and notable bug fixes shipped since the last update.</p>
+
+      <p>Product update emails are different from other email types:</p>
+
+      <ul>
+        <li><strong>Transactional emails</strong> are triggered by user actions (password reset, invoice). Product updates are proactive.</li>
+        <li><strong>Marketing emails</strong> promote offers or content. Product updates inform users about the product itself.</li>
+        <li><strong>Onboarding emails</strong> help new users get started. Product updates re-engage existing users with new value.</li>
+      </ul>
+
+      <p>The goal of a product update email is simple: make users aware of value they did not know existed. Every feature your users do not know about is a feature that is not reducing churn, not driving expansion, and not differentiating you from competitors.</p>
+
+      <h2>Why Most Product Update Emails Get Ignored</h2>
+
+      <p>Before covering what works, it helps to understand why most product update emails fail. The patterns are predictable.</p>
+
+      <h3>Generic Subject Lines</h3>
+
+      <p>"Monthly Product Update - March 2026" tells the reader nothing about what is inside. It sounds like homework. Compare that to "You can now export dashboards to PDF" -- one is a chore, the other is useful information. The subject line determines whether the email gets opened at all. Everything else is irrelevant if this fails.</p>
+
+      <h3>Too Long</h3>
+
+      <p>A 1,500-word email listing every dependency bump and minor UI tweak from the last month is a surefire way to train users to delete your updates on sight. Product update emails are not documentation. They are highlights. If an email takes more than 90 seconds to read, it is too long.</p>
+
+      <h3>Written for the Team, Not the User</h3>
+
+      <p>"We migrated our auth layer to a new provider for improved reliability" means nothing to a user. "You will no longer be logged out unexpectedly during long sessions" means everything. The first is a status report. The second is useful information.</p>
+
+      <h3>No Visual Proof</h3>
+
+      <p>Text-only product updates make users work too hard to understand what changed. A single screenshot or GIF of the new feature does more work than three paragraphs of description. Show it, do not just tell it.</p>
+
+      <h3>No Call to Action</h3>
+
+      <p>If the email does not tell users what to do next, they will do nothing. Every product update email needs exactly one clear CTA: try the new feature, read the full changelog, reply with feedback. One, not three.</p>
+
+      <h2>The Anatomy of a Great Product Update Email</h2>
+
+      <p>The best product update emails follow a consistent structure. Here is the format used by teams with 40%+ open rates.</p>
+
+      <h3>1. A Specific Subject Line</h3>
+
+      <p>Name the biggest feature in the subject line. Be specific. Be concrete.</p>
+
+      <div class="glass-card p-5 my-6">
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">Low open rate</p>
+        <p class="text-white/60 font-mono text-sm mb-1">March Product Update</p>
+        <p class="text-white/60 font-mono text-sm mb-1">What's New in [Product] This Month</p>
+        <p class="text-white/60 font-mono text-sm mb-4">New Features and Improvements</p>
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">High open rate</p>
+        <p class="text-white/60 font-mono text-sm mb-1">You can now export dashboards to PDF</p>
+        <p class="text-white/60 font-mono text-sm mb-1">Dark mode is here + 4 more updates</p>
+        <p class="text-white/60 font-mono text-sm">Search is 6x faster now</p>
+      </div>
+
+      <p>The principle: your subject line should be useful even if the user never opens the email. If they read "Dark mode is here" in their inbox and think "oh nice," you have already delivered value. That builds the habit of opening your emails next time.</p>
+
+      <h3>2. A Hero Feature</h3>
+
+      <p>Open the email with your single most impactful change. Give it three things:</p>
+
+      <ul>
+        <li><strong>A headline</strong> that says what it is in plain language</li>
+        <li><strong>One to two sentences</strong> explaining what users can do now</li>
+        <li><strong>A screenshot or GIF</strong> showing the feature in action</li>
+      </ul>
+
+      <p>This is your hook. If users read nothing else, they should understand this one change. It is also what justifies the email existing -- if you do not have a hero feature worth highlighting, consider whether you need to send an update at all this cycle.</p>
+
+      <h3>3. A Short List of Other Changes</h3>
+
+      <p>Below the hero, add three to five other changes as a bulleted list. Bold the feature name, follow with one sentence of context. Do not list more than five -- save the exhaustive list for your <a href="/blog/changelog-best-practices">changelog page</a>.</p>
+
+      <div class="glass-card p-5 my-6">
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">Example</p>
+        <ul class="text-white/60 text-sm space-y-2">
+          <li><strong>Bulk actions on the contacts page.</strong> Select multiple contacts to tag, export, or delete in one click.</li>
+          <li><strong>Faster report loading.</strong> Reports with large datasets now load up to 4x faster.</li>
+          <li><strong>Fixed: Slack notifications for new signups.</strong> Some users were not receiving Slack alerts for new trial signups. This is resolved.</li>
+          <li><strong>Updated sidebar navigation.</strong> Settings, billing, and team management are now grouped under a single menu item.</li>
+        </ul>
+      </div>
+
+      <h3>4. One Clear CTA</h3>
+
+      <p>End with a single call to action. Not three buttons. Not a menu of options. One thing you want users to do after reading:</p>
+
+      <ul>
+        <li>"Try the new export feature" (links to the feature)</li>
+        <li>"Read the full changelog" (links to your changelog page)</li>
+        <li>"Reply to this email with feedback" (builds a conversation)</li>
+      </ul>
+
+      <p>Multiple CTAs split attention and reduce click-through rates. Pick the one action that drives the most value for the user and focus on that.</p>
+
+      <h3>5. A Human Sender</h3>
+
+      <p>Send from a real person, not "noreply@company.com" or "The Product Team." Emails from "Simon at Recaip" get higher open rates than emails from "Recaip Updates" because people open emails from people, not brands. Use the founder's name for early-stage products. Use the PM or product lead's name for larger teams.</p>
+
+      <h2>Product Update Email Template</h2>
+
+      <p>Copy this and adapt it. It works for monthly, biweekly, or per-release cadences.</p>
+
+      <div class="glass-card p-5 my-6">
+        <pre class="text-white/60 font-mono text-sm whitespace-pre-wrap leading-relaxed">Subject: [Specific feature name] + [X] more updates
+
+Hi [first name],
+
+[One sentence about the hero feature. What it does, why it matters.]
+
+[Screenshot or GIF]
+
+[Link: Try it now]
+
+Here's what else shipped this month:
+
+- **[Feature].** [One sentence.]
+- **[Improvement].** [One sentence.]
+- **[Bug fix].** [One sentence.]
+- **[Feature].** [One sentence.]
+
+[Full changelog link]
+
+[Sign-off from a real person]</pre>
+      </div>
+
+      <p>The entire email should be under 300 words. If you are going over, you are including too many changes or explaining each one in too much detail. Cut ruthlessly. The changelog page exists for completeness. The email exists for highlights.</p>
+
+      <h2>Cadence: How Often to Send Product Updates</h2>
+
+      <p>The right cadence depends on how fast you ship and how engaged your users are.</p>
+
+      <p><strong>Weekly</strong> works for developer tools and products with highly engaged power users who want to know about every change. Linear, Resend, and Vercel can get away with frequent updates because their users are developers who actively follow product development.</p>
+
+      <p><strong>Monthly</strong> is the sweet spot for most SaaS products. It is frequent enough to keep users informed and drive feature discovery, but not so frequent that it feels like spam. If you ship 10-30 changes per month, a monthly digest of the 4-6 most impactful ones works perfectly.</p>
+
+      <p><strong>Quarterly</strong> is too infrequent. By the time the email arrives, users have either discovered the features on their own or forgotten they use your product. Quarterly updates also tend to be massive walls of text that nobody reads.</p>
+
+      <p><strong>Per-release</strong> works for products with distinct major versions -- desktop software, mobile apps, anything that requires a user-initiated update. Each release gets its own announcement.</p>
+
+      <blockquote><p>The best cadence is the one you can sustain consistently. A monthly email sent reliably for two years beats a weekly email that stops after month three because nobody had time to write it.</p></blockquote>
+
+      <h2>Distribution: Beyond the Email</h2>
+
+      <p>A product update email is the anchor, but it should not be the only channel. The same content, adapted for format, should go to multiple places:</p>
+
+      <ul>
+        <li><strong>Changelog page</strong> -- the canonical record on your website. <a href="/blog/how-to-write-release-notes">Write entries for users, not engineers.</a></li>
+        <li><strong>In-app notification</strong> -- a banner or badge that says "3 new updates" with a link to your changelog. Catches users who do not read email.</li>
+        <li><strong>Social media</strong> -- turn the hero feature into a tweet or LinkedIn post. Product updates are free content marketing.</li>
+        <li><strong>Slack or Teams</strong> -- post to an internal channel so support, sales, and leadership know what shipped. Post to a customer-facing channel if you have one.</li>
+        <li><strong>Stakeholder digest</strong> -- a version tailored for investors, board members, or partners who care about progress but not details.</li>
+      </ul>
+
+      <p>Writing all of these manually from each code change is why most teams give up after the first few months. The content is the same -- what changed and why it matters. Only the format differs per channel. This is exactly the kind of work that should be automated.</p>
+
+      <h2>Measuring What Works</h2>
+
+      <p>Track these metrics to improve your product updates over time:</p>
+
+      <p><strong>Open rate</strong> measures subject line quality. SaaS product update emails average 20-30% open rates. Well-written ones from smaller products regularly hit 40-50%. If you are below 20%, your subject lines are too generic or you are sending too frequently.</p>
+
+      <p><strong>Click-through rate</strong> measures content quality. If users open but do not click, the content is not compelling enough or the CTA is buried. A 5-10% click-through rate is solid for product update emails.</p>
+
+      <p><strong>Feature adoption</strong> is the metric that actually matters. Track whether users who received the product update email are more likely to try the featured capability than users who did not. If your email drives a measurable lift in adoption, it is working. If not, the content is not landing.</p>
+
+      <p><strong>Unsubscribe rate</strong> tells you if you are overstepping. A steady unsubscribe rate under 0.5% per email is healthy. If it spikes, you are either sending too often or the content is not valuable enough to justify the interruption.</p>
+
+      <h2>Common Mistakes</h2>
+
+      <h3>Listing Everything</h3>
+
+      <p>The impulse to include every change is strong, especially for teams that work hard and want credit for it. Resist it. A product update email with 25 bullet points is a product update email that nobody reads. Highlight four to six changes. Link to the full changelog for the rest.</p>
+
+      <h3>Sending Without a Hero Feature</h3>
+
+      <p>If you do not have at least one change worth highlighting with a screenshot and a sentence of context, skip the email this cycle. Not every month needs a product update. An email that opens with "here are some minor improvements" trains users to not open the next one.</p>
+
+      <h3>Internal Language</h3>
+
+      <p>Product update emails are not sprint retrospectives. Skip the Jira ticket IDs, the technical implementation details, and the internal project names. Users do not care that you "completed the Q2 reliability initiative." They care that "the app is faster and crashes less."</p>
+
+      <h3>Forgetting Mobile</h3>
+
+      <p>Over 60% of emails are opened on mobile. If your product update email is a wall of text with no formatting, no bold, and no visual hierarchy, it is unreadable on a phone. Test every email on mobile before sending. Keep paragraphs short. Use bold liberally. Include images that are not tiny.</p>
+
+      <h3>No Personalization</h3>
+
+      <p>The most advanced teams segment their product update emails by user behavior. A power user who uses your API daily cares about different changes than a casual user who logs in once a week. At minimum, use the recipient's first name. At best, tailor the highlighted features to their usage patterns.</p>
+
+      <h2>Scaling Product Updates with Automation</h2>
+
+      <p>Writing a monthly product update email takes 30-60 minutes when you have good source material. The problem is that "good source material" requires reviewing all merged PRs, understanding which changes are user-facing, writing user-friendly summaries, taking screenshots, and formatting the email. Then doing it again for social media, in-app, and Slack.</p>
+
+      <p>This is where most teams stall. The first few monthly updates are great. Then a busy month happens. Then two months pass with no update. Then users stop expecting them. Then the founder wonders why nobody uses the new features they shipped.</p>
+
+      <p><a href="https://recaip.com">Recaip</a> solves this by generating all the content automatically. Every time a PR merges, Recaip writes a changelog entry, a social media post, and an email draft from the actual code changes. At the end of the month, you have a complete set of updates ready to compile into a newsletter -- or you can let Recaip send them individually as they happen.</p>
+
+      <p>The result is consistent product communication that does not depend on someone remembering to write the email. <a href="https://app.recaip.com">Start with 10 free recaps</a> and see the output quality on your own codebase.</p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>What is the difference between a product update and a changelog?</h3>
+
+      <p>A <strong>changelog</strong> is a complete, chronological record of all changes -- every bug fix, every improvement, everything. A <strong>product update</strong> is a curated highlight reel of the most important changes, formatted for a specific audience and channel. Your changelog is the source of truth. Your product update email is the marketing of that truth. See also: <a href="/blog/how-to-write-release-notes">How to Write Release Notes</a> and <a href="/blog/changelog-best-practices">Changelog Best Practices</a>.</p>
+
+      <h3>Should you include a "coming soon" section?</h3>
+
+      <p>Optional but effective. A one-sentence teaser about what is coming next builds anticipation and gives users a reason to open the next email. Do not over-promise. Only mention things that are actually in progress and likely to ship. A "coming soon" that never arrives erodes trust faster than no preview at all.</p>
+
+      <h3>What is the best day and time to send product update emails?</h3>
+
+      <p>Tuesday through Thursday mornings tend to perform best for B2B SaaS. Avoid Mondays (inbox overload) and Fridays (already checked out). But the honest answer is: test it with your audience. Some developer tools perform best on Sunday evenings when engineers are planning their week. The cadence consistency matters more than the specific day.</p>
+
+      <h3>Should you include bug fixes in product update emails?</h3>
+
+      <p>Include significant bug fixes, especially ones that users reported or that affected a large percentage of your user base. Skip minor fixes. A product update email that is 80% bug fixes sends the wrong signal -- it makes the product seem unstable. Lead with new value, include a few fixes for completeness.</p>
+
+    </div>
+  </section>
+  </article>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- Prev / Next Navigation -->
+  <section class="py-12 px-6 lg:px-16">
+    <div class="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-stretch gap-4">
+      <a href="/blog/changelog-best-practices" class="glass-card p-6 flex-1 group block">
+        <span class="text-xs text-white/30 uppercase tracking-wider font-mono mb-2 block">Previous</span>
+        <span class="text-sm text-white/70 group-hover:text-white/90 transition-colors">Changelog Best Practices: 12 Rules from Teams That Get It Right</span>
+      </a>
+      <a href="/blog/how-to-automate-release-notes-with-ai" class="glass-card p-6 flex-1 group block text-right">
+        <span class="text-xs text-white/30 uppercase tracking-wider font-mono mb-2 block">Next</span>
+        <span class="text-sm text-white/70 group-hover:text-white/90 transition-colors">How to Automate Release Notes with AI</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- CTA -->
+  <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[600px] h-[600px] bg-brand-500/8 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="max-w-[1400px] mx-auto text-center relative z-10">
+      <div class="reveal">
+        <h2 class="text-3xl sm:text-4xl font-semibold text-white mb-4">Never miss a product update again.</h2>
+        <p class="text-white/40 text-lg max-w-xl mx-auto mb-10">
+          Recaip writes your changelog, social posts, and email drafts automatically from every merged PR. $19/mo, all features included.
+        </p>
+        <a href="https://app.recaip.com" class="btn-primary glow-pulse h-14 px-10 rounded-xl text-white font-semibold text-base inline-flex items-center justify-center">
+          Get started free
+        </a>
+        <p class="text-white/30 text-sm mt-5">No credit card required. First 10 recaps free.</p>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="py-8 px-6 lg:px-16">
+    <div class="section-divider mb-8"></div>
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="nav-logo-text" style="font-size:14px; opacity:0.4">Recaip<span class="dot">.</span></a>
+      <div class="flex items-center gap-6 text-sm text-white/30">
+        <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+        <a href="/about" class="hover:text-white/50 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-white/30">
+        <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Scroll reveal observer -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .section-divider').forEach(el => observer.observe(el));
+</script>
+
+<!-- Scroll progress bar -->
+<script>
+  const progressBar = document.querySelector('.scroll-progress');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + '%';
+  });
+</script>
+</body>
+</html>

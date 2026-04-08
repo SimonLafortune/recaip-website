@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changelog Best Practices: 12 Rules from Teams That Get It Right - Recaip Blog</title>
+  <meta name="description" content="12 changelog best practices used by the best product teams. Learn how to structure, write, and distribute changelogs that drive engagement, reduce support tickets, and build user trust." />
+  <meta property="og:title" content="Changelog Best Practices: 12 Rules from Teams That Get It Right - Recaip Blog" />
+  <meta property="og:description" content="12 changelog best practices used by the best product teams. Structure, write, and distribute changelogs that actually work." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://recaip.com/blog/changelog-best-practices" />
+  <meta property="og:image" content="https://recaip.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-04-08T00:00:00Z" />
+  <meta property="article:author" content="Simon Lafortune" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Changelog Best Practices: 12 Rules from Teams That Get It Right - Recaip Blog" />
+  <meta name="twitter:description" content="12 changelog best practices used by the best product teams. Structure, write, and distribute changelogs that actually work." />
+  <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
+  <meta name="twitter:site" content="@simonlafortune" />
+  <link rel="canonical" href="https://recaip.com/blog/changelog-best-practices" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <!-- PostHog -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_zR8SGSvEyiaUjD668uPJw2wM5VngxSXovzu2CNhzEe9H',{api_host:'https://us.i.posthog.com', defaults: '2026-01-30'})
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Changelog Best Practices: 12 Rules from Teams That Get It Right",
+    "description": "12 changelog best practices used by the best product teams. Learn how to structure, write, and distribute changelogs that drive engagement, reduce support tickets, and build user trust.",
+    "datePublished": "2026-04-08T00:00:00Z",
+    "author": {
+      "@type": "Person",
+      "name": "Simon Lafortune",
+      "url": "https://x.com/simonlafortune"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Recaip",
+      "url": "https://recaip.com",
+      "logo": { "@type": "ImageObject", "url": "https://recaip.com/logo.svg" }
+    },
+    "mainEntityOfPage": "https://recaip.com/blog/changelog-best-practices",
+    "image": "https://recaip.com/og-image.svg"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a changelog?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A changelog is a chronological record of all notable changes made to a software product. It typically includes new features, improvements, bug fixes, and breaking changes, organized by date or version number. A good changelog is written for users, grouped by change type, and published publicly so users and prospects can track product progress."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are changelog best practices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The top changelog best practices are: (1) Use a consistent date format and publish on a predictable cadence. (2) Group entries by type — New, Improved, Fixed, Changed. (3) Lead every entry with a bold summary. (4) Keep entries to one to three sentences. (5) Write for users, not engineers. (6) Describe impact, not implementation. (7) Acknowledge bug fixes honestly. (8) Maintain a consistent voice. (9) Publish frequently, not in batches. (10) Distribute across multiple channels. (11) Make your changelog page public and indexable. (12) Automate everything you can."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How should a changelog be structured?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A well-structured changelog groups entries by type: New (capabilities that did not exist before), Improved (existing features that work better), Fixed (resolved bugs), and Changed (behavior that is different). Each entry starts with a bold summary, followed by one to two sentences of user-facing context. Entries are ordered with the most impactful changes first. The Keep a Changelog format (keepachangelog.com) is the most widely adopted standard."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where should you publish your changelog?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Publish your changelog on a public, indexable page at /changelog or /updates on your website. But a webpage alone reaches less than 5% of users. Distribute updates across multiple channels: in-app notifications, email digests, Slack or Teams, social media, and status page integrations. Same change, different format for each channel. Tools like Recaip automate multi-channel distribution from a single merge event."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you keep a changelog consistent across a growing team?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Consistency across a growing team requires either a dedicated changelog owner who reviews and edits all entries, or automation. Manual consistency breaks down around 10-15 engineers because the person writing release notes no longer wrote the code. Automated tools like Recaip solve this by generating every entry from the same AI model with the same voice, format, and level of detail — regardless of which engineer merged the code."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://recaip.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://recaip.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Changelog Best Practices", "item": "https://recaip.com/blog/changelog-best-practices" }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#e6f5f2', 100: '#ccebe5', 200: '#99d7cb', 300: '#6bbfae',
+              400: '#4da895', 500: '#3d8b80', 600: '#2d6b63', 700: '#1f524c',
+              800: '#163d38', 900: '#0e2a26',
+            },
+            surface: {
+              0: '#0b1a18', 1: '#0f2420', 2: '#142e2a', 3: '#1a3935', 4: '#21453f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <svg class="hidden">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+</head>
+<body class="font-sans text-white/50 antialiased">
+
+<div class="scroll-progress"></div>
+
+<div class="page-wrapper">
+
+  <header>
+  <nav class="nav-fixed">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+      <a href="/" class="nav-logo-text" style="font-size:18px">Recaip<span class="dot">.</span></a>
+      <div class="flex items-center gap-6">
+        <a href="/features" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Features</a>
+        <a href="/pricing" class="text-white/50 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+        <a href="/blog" class="text-white/90 text-sm font-medium">Blog</a>
+        <a href="/about" class="text-white/50 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="https://app.recaip.com" class="btn-primary px-5 py-2 rounded-lg text-white text-sm font-medium">Get started free</a>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+
+  <!-- Article Hero -->
+  <article>
+  <section class="page-hero px-6 lg:px-16">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="/blog" class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/60 transition-colors mb-8 animate-in">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        Back to blog
+      </a>
+      <span class="inline-block px-2.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-[11px] text-brand-400 font-mono uppercase tracking-wider mb-4 animate-in animate-delay-1">Best Practices</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white/90 mb-6 leading-tight animate-in animate-delay-1">Changelog Best Practices: 12 Rules from Teams That Get It Right</h1>
+      <div class="flex items-center gap-3 text-sm text-white/35 animate-in animate-delay-2">
+        <span>Simon Lafortune</span>
+        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+        <span>April 8, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+        <span>10 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- Article Body -->
+  <section class="py-16 sm:py-24 px-6 lg:px-16">
+    <div class="prose-blog">
+
+      <!-- TL;DR for LLM citation and featured snippets -->
+      <div class="glass-card p-5 my-6">
+        <p class="text-xs text-brand-400 uppercase tracking-wider font-mono mb-3">TL;DR</p>
+        <p class="text-white/70 text-sm leading-relaxed">The 12 changelog best practices: (1) consistent date format and cadence, (2) group by type not team, (3) bold summary on every entry, (4) 1-3 sentences max, (5) write for users not engineers, (6) describe impact not implementation, (7) acknowledge bug fixes honestly, (8) consistent voice, (9) publish frequently, (10) distribute across multiple channels, (11) make your changelog public and indexable, (12) automate everything you can. These rules are drawn from teams like Linear, Vercel, Stripe, and Notion. Tools like <a href="https://recaip.com">Recaip</a> apply all 12 automatically.</p>
+      </div>
+
+      <p>Every software product has a changelog. Very few have a good one. The difference between the two is not writing talent or fancy tooling. It is discipline: a small set of rules applied consistently over time.</p>
+
+      <p>We looked at the changelogs of products known for excellent release communication -- Linear, Vercel, Notion, Stripe, Resend, Raycast -- and distilled what they all have in common into twelve rules. Some are obvious. Most are ignored.</p>
+
+      <h2>What Is a Changelog?</h2>
+
+      <p>A <strong>changelog</strong> (also called a change log, release log, or update history) is a chronological record of all notable changes made to a software product. It typically covers new features, improvements, bug fixes, deprecations, and breaking changes, organized by date or version number.</p>
+
+      <p>A changelog is different from a commit log or git history. Commit logs are for developers. A changelog is for users -- it translates technical changes into language that helps people understand what is new, what is fixed, and what they need to do differently. The best changelogs are public, indexable, and published across multiple channels beyond just a webpage.</p>
+
+      <h2>Structure and Format</h2>
+
+      <h3>1. Use a Consistent Date Format and Cadence</h3>
+
+      <p>Pick a format and never deviate. "January 15, 2026" or "2026-01-15" -- both are fine. Mixing "Jan 15" with "1/15/26" with "last Tuesday" is not. Consistency signals professionalism. It also lets users know how often you ship.</p>
+
+      <p>The best teams publish on a predictable rhythm: every merge, every week, or every sprint. Users learn to expect updates and come looking for them. Unpredictable publishing means users stop checking.</p>
+
+      <h3>2. Group Entries by Type, Not by Team</h3>
+
+      <p>Users do not care which team built a feature. They care what kind of change it is. Group entries into categories that match how users think about your product:</p>
+
+      <ul>
+        <li><strong>New</strong> -- capabilities that did not exist before</li>
+        <li><strong>Improved</strong> -- existing features that work better</li>
+        <li><strong>Fixed</strong> -- bugs that are resolved</li>
+        <li><strong>Changed</strong> -- behavior that is different (especially breaking changes)</li>
+      </ul>
+
+      <p>Keep Changelog (<a href="https://keepachangelog.com">keepachangelog.com</a>) popularized this format for a reason: it works. Users scan for "Fixed" to see if their bug is gone. They scan "New" to discover what they can do now. Organizing by team ("Backend," "Platform," "Mobile") forces users to read everything to find what matters to them.</p>
+
+      <h3>3. Lead Every Entry with a Bold Summary</h3>
+
+      <p>The first few words of every entry should tell the user what changed. Bold them. Users scanning a changelog read the bold text and skip the rest unless the bold text is relevant to them.</p>
+
+      <div class="glass-card p-5 my-6">
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">Weak</p>
+        <p class="text-white/60 font-mono text-sm mb-4">We've made some improvements to how dashboards work. You can now resize widgets by dragging the corner handles, and we've also added a new grid snap feature that helps align things.</p>
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">Strong</p>
+        <p class="text-white/60 font-mono text-sm"><strong>Resizable dashboard widgets.</strong> Drag corner handles to resize any widget. A new snap-to-grid keeps everything aligned automatically.</p>
+      </div>
+
+      <h3>4. One to Three Sentences Per Entry</h3>
+
+      <p>A changelog is not documentation. If users need to understand all the details of a complex feature, link to a help article or blog post. The changelog entry should be the headline and the hook, not the full story.</p>
+
+      <p>The most common mistake is overexplaining. A five-paragraph entry about a new filter option teaches users to stop reading your changelog because it is too long. Respect their time and they will keep coming back.</p>
+
+      <h2>Writing and Tone</h2>
+
+      <h3>5. Write for Users, Not for Your Engineering Team</h3>
+
+      <p>This is the single most important rule and the one that gets broken the most. Release notes exist for the people using your product. Unless your product is a developer tool whose users expect technical detail, write in plain language.</p>
+
+      <div class="glass-card p-5 my-6">
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">Engineering-speak</p>
+        <p class="text-white/60 font-mono text-sm mb-4">Migrated session store from in-memory to Redis with 24h TTL and sliding window refresh. Eliminates sticky sessions requirement on load balancer.</p>
+        <p class="text-xs text-white/30 uppercase tracking-wider font-mono mb-3">User-speak</p>
+        <p class="text-white/60 font-mono text-sm"><strong>Sessions now persist across server restarts.</strong> You will no longer be logged out unexpectedly during maintenance windows or deployments.</p>
+      </div>
+
+      <p>The test: read your entry to someone on your sales or support team. If they cannot immediately understand what changed and why users should care, rewrite it.</p>
+
+      <h3>6. Describe Impact, Not Implementation</h3>
+
+      <p>"Added composite index on user_id and created_at columns" is implementation. "Dashboard loads 4x faster for accounts with large datasets" is impact. Users care about the second one. They have no use for the first.</p>
+
+      <p>Every entry should answer: <strong>What can users do now that they could not do before?</strong> Or: <strong>What is better about something they already use?</strong> If the answer is "nothing visible to users," the change does not belong in the public changelog.</p>
+
+      <h3>7. Acknowledge Bug Fixes Honestly</h3>
+
+      <p>Some teams hide bug fixes because admitting something was broken feels embarrassing. This is exactly backwards. Users already experienced the bug. They filed a support ticket, complained on Twitter, or worse -- silently started evaluating alternatives.</p>
+
+      <p>Acknowledging the fix does three things:</p>
+
+      <ul>
+        <li>It tells affected users the problem is resolved, reducing follow-up support tickets</li>
+        <li>It shows prospects reading your changelog that you respond to issues quickly</li>
+        <li>It builds trust -- a team that acknowledges problems is a team users can rely on</li>
+      </ul>
+
+      <p>Do not over-apologize or dramatize. A simple "Fixed: some users experienced X. This is now resolved." is all you need.</p>
+
+      <h3>8. Maintain a Consistent Voice</h3>
+
+      <p>Your changelog should sound like one person wrote it, even if twenty people contributed code. Decide on a voice: second person ("you can now..."), third person ("users can now..."), or direct ("new: ..."). Pick one and enforce it.</p>
+
+      <p>Inconsistent voice is one of the fastest ways to make a changelog feel sloppy. If every entry uses a different tense, perspective, and level of detail, users lose confidence that your product is maintained by a coherent team.</p>
+
+      <h2>Publishing and Distribution</h2>
+
+      <h3>9. Publish Frequently, Not in Batches</h3>
+
+      <p>A changelog entry published the day a feature ships gets 10x more engagement than one published three weeks later in a batch of forty entries. Recency drives relevance. If a user just saw something new in the product and your changelog explains it the same day, you have created a moment of delight. If the explanation shows up weeks later, it is noise.</p>
+
+      <p>The ideal cadence matches your deploy cadence. If you deploy daily, publish daily. If that feels like too much, weekly is the floor for any product that ships regularly. Monthly batches are where changelogs go to be ignored.</p>
+
+      <h3>10. Distribute Across Multiple Channels</h3>
+
+      <p>A changelog page alone reaches less than 5% of your users. The other 95% will never navigate to it. If you want release notes to actually reach people, you need to push them out across multiple channels:</p>
+
+      <ul>
+        <li><strong>In-app notifications</strong> -- catch users where they already are</li>
+        <li><strong>Email digests</strong> -- reach users who are not logged in frequently</li>
+        <li><strong>Slack or Teams</strong> -- keep internal teams informed in real time</li>
+        <li><strong>Social media</strong> -- use releases as content marketing fuel</li>
+        <li><strong>Status page integrations</strong> -- for infrastructure and reliability updates</li>
+      </ul>
+
+      <p>Same change, different format for each channel. A changelog entry is detailed. A tweet is a one-liner. An in-app banner is a sentence with a "learn more" link. Writing all these manually is why most teams give up. Automating it is why some teams do not.</p>
+
+      <h3>11. Make Your Changelog Page Public and Indexable</h3>
+
+      <p>Your changelog is SEO gold that most teams lock behind authentication or bury in a settings menu. A public changelog page at <code>/changelog</code> or <code>/updates</code> does double duty: it informs existing users and it convinces prospects that your product is actively developed.</p>
+
+      <p>Make sure it is:</p>
+
+      <ul>
+        <li>Publicly accessible (no login required)</li>
+        <li>Indexable by search engines (no <code>noindex</code> tag, no JavaScript-only rendering)</li>
+        <li>Linkable (each entry should have its own URL for sharing)</li>
+        <li>Fast (static HTML or server-rendered, not a client-side SPA that takes 3 seconds to load)</li>
+      </ul>
+
+      <p>Bonus: individual changelog entries rank for long-tail searches related to your product. "Does [product] support CSV export?" Your changelog entry announcing CSV export should be one of the first results.</p>
+
+      <h3>12. Automate Everything You Can</h3>
+
+      <p>Here is the uncomfortable truth: most of these best practices are hard to follow consistently when the process is manual. Consistent formatting requires discipline. Multi-channel distribution requires time. Publishing on the day of the merge requires someone to remember. Maintaining a consistent voice across a growing team requires review cycles.</p>
+
+      <p>This is not a human discipline problem. It is a systems design problem. The teams with the best changelogs either have a dedicated person owning the process or they have automated it.</p>
+
+      <p>Automation tools like <a href="https://recaip.com">Recaip</a> handle the entire pipeline: they read your code changes, write user-facing entries in a consistent voice, format them correctly, and publish across every channel automatically. The human's role shifts from "write the changelog" to "approve the draft" -- or, once trust is established, nothing at all.</p>
+
+      <h2>A Quick Self-Assessment</h2>
+
+      <p>Score your current changelog against these twelve rules. Give yourself one point for each one you follow consistently (not occasionally -- consistently):</p>
+
+      <div class="glass-card p-5 my-6">
+        <ul class="text-white/60 text-sm space-y-2">
+          <li>1. Consistent date format and predictable cadence</li>
+          <li>2. Entries grouped by type (New, Improved, Fixed, Changed)</li>
+          <li>3. Bold summary leading every entry</li>
+          <li>4. One to three sentences per entry</li>
+          <li>5. Written for users, not engineers</li>
+          <li>6. Describes impact, not implementation</li>
+          <li>7. Bug fixes acknowledged honestly</li>
+          <li>8. Consistent voice across all entries</li>
+          <li>9. Published frequently (weekly or faster)</li>
+          <li>10. Distributed across multiple channels</li>
+          <li>11. Public, indexable changelog page</li>
+          <li>12. Automated where possible</li>
+        </ul>
+      </div>
+
+      <p><strong>10-12:</strong> You are in the top 1% of product changelogs. Your users know it, and your competitors wish they did.</p>
+
+      <p><strong>7-9:</strong> Solid foundation. You are probably doing most of this manually, which means it is fragile. One busy sprint and the process breaks.</p>
+
+      <p><strong>4-6:</strong> Average. Your changelog exists, but it is not serving the business. Users are missing features you shipped and your support team is answering questions that release notes should have preempted.</p>
+
+      <p><strong>0-3:</strong> Your changelog is not helping you. If anything, it is hurting you -- an outdated or low-quality changelog signals a neglected product. The fix is not more discipline. It is a better system.</p>
+
+      <h2>Start Here</h2>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>What format should a changelog use?</h3>
+
+      <p>The most widely adopted format is Keep a Changelog (<a href="https://keepachangelog.com">keepachangelog.com</a>), which groups entries under Added, Changed, Deprecated, Removed, Fixed, and Security. For user-facing changelogs, a simplified version with New, Improved, Fixed, and Changed works better because it maps to how non-technical users think about product updates.</p>
+
+      <h3>Should you include internal changes in a changelog?</h3>
+
+      <p>No. A public changelog should only include changes that affect users. Dependency bumps, internal refactors, CI pipeline changes, and code cleanup do not belong in user-facing release notes. If the change has no visible impact on the product, skip it. You can maintain a separate internal changelog for engineering if needed.</p>
+
+      <h3>How do you write a changelog for an API?</h3>
+
+      <p>API changelogs should include more technical detail than product changelogs because the audience is developers. Include endpoint changes, new parameters, deprecated fields, response format changes, and breaking changes with migration guides. Version numbers are especially important for APIs. Always highlight breaking changes prominently and give advance notice when possible.</p>
+
+      <h3>What tools can automate changelogs?</h3>
+
+      <p>Changelog automation tools range from commit-based generators like conventional-changelog and release-please (which parse commit messages) to AI-powered tools like <a href="https://recaip.com">Recaip</a> (which read code diffs and generate user-facing entries). The key difference is that commit-based tools produce developer-facing output, while AI tools produce user-facing output with multi-channel distribution. See also: <a href="/blog/best-changelog-automation-tools-2026">Best Changelog Automation Tools in 2026</a>.</p>
+
+      <h2>Start Here</h2>
+
+      <p>You do not need to fix all twelve at once. Start with rules 5 and 6 -- writing for users and describing impact instead of implementation. Those two changes alone will transform how your changelog reads. Then add structure (rules 1-4). Then expand distribution (rules 9-11). Automate last, once you know what good looks like for your team.</p>
+
+      <p>Or skip the gradual approach entirely. <a href="https://app.recaip.com">Recaip applies all twelve rules automatically</a>, starting from your first merged PR. Connect a repo, merge something, and compare the output to what you are publishing today. The first 10 recaps are free.</p>
+
+    </div>
+  </section>
+  </article>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- Prev / Next Navigation -->
+  <section class="py-12 px-6 lg:px-16">
+    <div class="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-stretch gap-4">
+      <a href="/blog/how-to-write-release-notes" class="glass-card p-6 flex-1 group block">
+        <span class="text-xs text-white/30 uppercase tracking-wider font-mono mb-2 block">Previous</span>
+        <span class="text-sm text-white/70 group-hover:text-white/90 transition-colors">How to Write Release Notes That Users Actually Read</span>
+      </a>
+      <a href="/blog/how-to-automate-release-notes-with-ai" class="glass-card p-6 flex-1 group block text-right">
+        <span class="text-xs text-white/30 uppercase tracking-wider font-mono mb-2 block">Next</span>
+        <span class="text-sm text-white/70 group-hover:text-white/90 transition-colors">How to Automate Release Notes with AI</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- CTA -->
+  <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[600px] h-[600px] bg-brand-500/8 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="max-w-[1400px] mx-auto text-center relative z-10">
+      <div class="reveal">
+        <h2 class="text-3xl sm:text-4xl font-semibold text-white mb-4">Follow all 12 rules automatically.</h2>
+        <p class="text-white/40 text-lg max-w-xl mx-auto mb-10">
+          Recaip generates changelogs that follow every best practice on this list. $19/mo, all features included.
+        </p>
+        <a href="https://app.recaip.com" class="btn-primary glow-pulse h-14 px-10 rounded-xl text-white font-semibold text-base inline-flex items-center justify-center">
+          Get started free
+        </a>
+        <p class="text-white/30 text-sm mt-5">No credit card required. First 10 recaps free.</p>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="py-8 px-6 lg:px-16">
+    <div class="section-divider mb-8"></div>
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="nav-logo-text" style="font-size:14px; opacity:0.4">Recaip<span class="dot">.</span></a>
+      <div class="flex items-center gap-6 text-sm text-white/30">
+        <a href="/features" class="hover:text-white/50 transition-colors">Features</a>
+        <a href="/pricing" class="hover:text-white/50 transition-colors">Pricing</a>
+        <a href="/blog" class="hover:text-white/50 transition-colors">Blog</a>
+        <a href="/about" class="hover:text-white/50 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-white/30">
+        <span>Built by <a href="https://x.com/simonlafortune" target="_blank" class="text-white/50 hover:text-white transition-colors">Simon Lafortune</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Scroll reveal observer -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .section-divider').forEach(el => observer.observe(el));
+</script>
+
+<!-- Scroll progress bar -->
+<script>
+  const progressBar = document.querySelector('.scroll-progress');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + '%';
+  });
+</script>
+</body>
+</html>
