@@ -124,7 +124,7 @@
 <body class="font-sans text-white/50 antialiased">
 
   <!-- Sticky nav — slides in after scrolling past hero -->
-  <nav id="sticky-nav" class="nav-sticky" style="transform:translateY(-100%);opacity:0;visibility:hidden">
+  <nav id="sticky-nav" class="nav-sticky">
     <div class="nav-sticky-inner">
       <a href="/" class="nav-logo-text">Recaip<span class="dot">.</span></a>
       <div class="nav-links hidden sm:flex">
@@ -1139,11 +1139,9 @@
 
           // Show sticky nav after 500px (past the hero)
           if (scrollY > window.innerHeight) {
-            stickyNav.style.visibility = 'visible';
             stickyNav.classList.add('visible');
           } else {
             stickyNav.classList.remove('visible');
-            setTimeout(() => { if (!stickyNav.classList.contains('visible')) stickyNav.style.visibility = 'hidden'; }, 400);
           }
 
           // Parallax
