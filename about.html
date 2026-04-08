@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recaip - About</title>
-  <meta name="description" content="Recaip automates release communication for software teams. Built by Simon Lafortune, a product director in Quebec, Canada." />
-  <meta property="og:title" content="About Recaip — Automated release communication for dev teams." />
-  <meta property="og:description" content="Built by Simon Lafortune, a product director in Quebec. Recaip fills the gap between code merged and user informed." />
+  <title>About Recaip - Automated release communication</title>
+  <meta name="description" content="Recaip is an autonomous AI agent that writes and publishes your release notes. Built by Simon Lafortune, a product director in Quebec, Canada. Bootstrapped. Independent." />
+  <meta property="og:title" content="About Recaip — The gap between code merged and user informed." />
+  <meta property="og:description" content="Built by Simon Lafortune, a product director in Quebec. Recaip is an autonomous agent that writes changelogs, posts to Slack, sends email digests, and more." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://recaip.com/about" />
   <meta property="og:image" content="https://recaip.com/og-image.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About Recaip — Automated release communication for dev teams." />
-  <meta name="twitter:description" content="Built by Simon Lafortune, a product director in Quebec. Recaip fills the gap between code merged and user informed." />
+  <meta name="twitter:title" content="About Recaip — The gap between code merged and user informed." />
+  <meta name="twitter:description" content="Built by Simon Lafortune, a product director in Quebec. Recaip is an autonomous agent that writes changelogs, posts to Slack, sends email digests, and more." />
   <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
   <meta name="twitter:site" content="@simonlafortune" />
   <link rel="canonical" href="https://recaip.com/about" />
@@ -92,89 +92,46 @@
   </header>
 
   <main>
+
+  <!-- ============================================ -->
+  <!-- HERO                                         -->
+  <!-- ============================================ -->
   <section class="page-hero text-center px-6 lg:px-16">
     <div class="max-w-[1400px] mx-auto animate-in">
-      <h1 class="text-4xl sm:text-5xl font-semibold gradient-text mb-4">About Recaip</h1>
-      <p class="text-lg sm:text-xl text-white/40 max-w-[800px] mx-auto">Automated release communication for teams that ship fast.</p>
+      <h1 class="text-4xl sm:text-5xl font-semibold gradient-text mb-4">The gap between code merged and user informed.</h1>
+      <p class="text-lg sm:text-xl text-white/40 max-w-[800px] mx-auto">Recaip exists to close it. Automatically.</p>
     </div>
   </section>
 
   <div class="section-divider max-w-[1400px] mx-auto"></div>
 
-  <!-- Why Recaip exists -->
+  <!-- ============================================ -->
+  <!-- THE PROBLEM                                   -->
+  <!-- ============================================ -->
   <section class="py-20 px-6 lg:px-16 relative overflow-hidden">
     <div class="ambient-glow w-[400px] h-[400px] bg-brand-500/8 top-0 -right-40"></div>
     <div class="max-w-[1400px] mx-auto">
-      <h2 class="text-3xl sm:text-4xl font-semibold text-white text-center mb-12 reveal">Why Recaip exists</h2>
-      <div class="glass-card-bright p-8 sm:p-12 max-w-[1200px] mx-auto reveal reveal-delay-1">
-        <p class="text-white/50 text-base sm:text-lg leading-relaxed mb-6">
-          Most software teams ship code every day. But the people who use that software rarely find out what changed. Changelogs get skipped. Release notes get written weeks late, if at all. Support teams discover breaking changes from customer tickets.
-        </p>
-        <p class="text-white/50 text-base sm:text-lg leading-relaxed mb-6">
-          This is not a tooling problem. It is an ownership problem. Writing release notes falls between roles. Developers focus on code. Product managers focus on roadmaps. Marketing focuses on campaigns. Nobody owns the gap between "code merged" and "user informed."
-        </p>
-        <p class="text-white/50 text-base sm:text-lg leading-relaxed">
-          Recaip fills that gap. It connects to your dev tools, reads what you shipped, and writes the recap automatically. Every PR becomes a changelog entry, a social post, an email draft, and a stakeholder update. No manual work required.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider max-w-[1400px] mx-auto"></div>
-
-  <!-- How it started -->
-  <section class="py-20 px-6 lg:px-16 relative overflow-hidden">
-    <div class="ambient-glow w-[350px] h-[350px] bg-brand-400/8 bottom-0 -left-32"></div>
-    <div class="max-w-[1400px] mx-auto">
-      <h2 class="text-3xl sm:text-4xl font-semibold text-white text-center mb-12 reveal">Built by a product leader who got tired of writing changelogs</h2>
-      <div class="glass-card p-8 sm:p-12 max-w-[1200px] mx-auto reveal reveal-delay-1">
-        <p class="text-white/50 text-base sm:text-lg leading-relaxed mb-6">
-          Recaip is built by Simon Lafortune, a product director based in Quebec, Canada. After years of managing product teams at SaaS companies, Simon noticed the same pattern: teams ship great work, but nobody communicates it to users.
-        </p>
-        <p class="text-white/50 text-base sm:text-lg leading-relaxed mb-6">
-          The idea started as a side project in early 2025. Simon built the first version using Claude Code, shipping the MVP in weeks. Recaip is now dogfooding with its own repository, generating its own changelog from its own PRs.
-        </p>
-        <p class="text-white/50 text-base sm:text-lg leading-relaxed">
-          Recaip is an independent, bootstrapped product. No VC funding. No team of 50. Just one builder solving a real problem.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider max-w-[1400px] mx-auto"></div>
-
-  <!-- What we believe -->
-  <section class="py-20 px-6 lg:px-16 relative overflow-hidden">
-    <div class="ambient-glow w-[500px] h-[500px] bg-brand-500/6 top-20 left-1/2 -translate-x-1/2"></div>
-    <div class="max-w-[1400px] mx-auto">
-      <h2 class="text-3xl sm:text-4xl font-semibold text-white text-center mb-12 reveal">What we believe</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[1400px] mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-white text-center mb-12 reveal">Every team ships code. Almost none communicate it.</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1200px] mx-auto">
 
         <div class="glass-card p-8 reveal reveal-delay-1">
-          <h3 class="text-lg font-semibold text-white mb-3">Ship, then communicate</h3>
-          <p class="text-white/50 text-sm leading-relaxed">
-            Shipping code is only half the job. If users do not know about it, the work is wasted. Recaip makes communication automatic so you can focus on building.
+          <h3 class="text-lg font-semibold text-white mb-3">Users don't know what shipped</h3>
+          <p class="text-white/45 text-[15px] leading-relaxed">
+            Your team merges 20 PRs a week. Your users see none of it. Features go unnoticed. Fixes get no credit. Your users think nothing is happening.
           </p>
         </div>
 
         <div class="glass-card p-8 reveal reveal-delay-2">
-          <h3 class="text-lg font-semibold text-white mb-3">Approve first, automate later</h3>
-          <p class="text-white/50 text-sm leading-relaxed">
-            Trust is earned. Every channel starts in manual review mode. You flip to autopilot only when you are ready. No surprises.
+          <h3 class="text-lg font-semibold text-white mb-3">Nobody owns the update</h3>
+          <p class="text-white/45 text-[15px] leading-relaxed">
+            Developers focus on code. Product managers focus on roadmaps. Marketing focuses on campaigns. Writing the changelog falls between roles and gets skipped.
           </p>
         </div>
 
         <div class="glass-card p-8 reveal reveal-delay-3">
-          <h3 class="text-lg font-semibold text-white mb-3">Simple, stackable pricing</h3>
-          <p class="text-white/50 text-sm leading-relaxed">
-            One price, unlimited products, no per-seat charges. Need more capacity? Stack packs. No surprises.
-          </p>
-        </div>
-
-        <div class="glass-card p-8 reveal reveal-delay-4">
-          <h3 class="text-lg font-semibold text-white mb-3">AI as a teammate, not a toy</h3>
-          <p class="text-white/50 text-sm leading-relaxed">
-            Recaip is not a chatbot you prompt. It is an autonomous agent that runs in the background, reads your code, and does its job without being asked.
+          <h3 class="text-lg font-semibold text-white mb-3">Manual updates don't scale</h3>
+          <p class="text-white/45 text-[15px] leading-relaxed">
+            Even when someone writes the update, it goes to one channel. The changelog gets done, but Slack gets missed. The email never gets sent. Coverage is always incomplete.
           </p>
         </div>
 
@@ -184,7 +141,153 @@
 
   <div class="section-divider max-w-[1400px] mx-auto"></div>
 
-  <!-- Built with -->
+  <!-- ============================================ -->
+  <!-- THE APPROACH                                  -->
+  <!-- ============================================ -->
+  <section class="py-20 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[500px] h-[500px] bg-brand-500/6 top-20 left-1/2 -translate-x-1/2"></div>
+    <div class="max-w-[1200px] mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-white text-center mb-6 reveal">Recaip is not a writing tool. It is an agent.</h2>
+      <p class="text-white/45 text-center max-w-[800px] mx-auto mb-12 reveal reveal-delay-1">Most changelog tools help you write faster. You still have to open them, paste your notes, edit the text, and hit publish. Recaip works differently.</p>
+
+      <div class="glass-card-bright p-8 sm:p-12 max-w-[1000px] mx-auto reveal reveal-delay-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-white font-semibold text-lg mb-3">Other tools</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-[15px] text-white/40">
+                <span class="text-white/20 mt-0.5">&#x2715;</span>
+                You open the tool after every deploy
+              </li>
+              <li class="flex items-start gap-3 text-[15px] text-white/40">
+                <span class="text-white/20 mt-0.5">&#x2715;</span>
+                You write or edit the changelog manually
+              </li>
+              <li class="flex items-start gap-3 text-[15px] text-white/40">
+                <span class="text-white/20 mt-0.5">&#x2715;</span>
+                You copy-paste to Slack, email, social
+              </li>
+              <li class="flex items-start gap-3 text-[15px] text-white/40">
+                <span class="text-white/20 mt-0.5">&#x2715;</span>
+                Updates stop when you get busy
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold text-lg mb-3">Recaip</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-[15px] text-white/60">
+                <svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Listens to your GitHub webhooks 24/7
+              </li>
+              <li class="flex items-start gap-3 text-[15px] text-white/60">
+                <svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Reads the diff and writes the recap automatically
+              </li>
+              <li class="flex items-start gap-3 text-[15px] text-white/60">
+                <svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Publishes to changelog, Slack, and email
+              </li>
+              <li class="flex items-start gap-3 text-[15px] text-white/60">
+                <svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Runs forever, even when you forget about it
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-10 reveal reveal-delay-3">
+        <a href="/features" class="text-brand-400 text-sm font-medium hover:text-brand-300 transition-colors">See all features &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- ============================================ -->
+  <!-- FOUNDER                                       -->
+  <!-- ============================================ -->
+  <section class="py-20 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[350px] h-[350px] bg-brand-400/8 bottom-0 -left-32"></div>
+    <div class="max-w-[1400px] mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-white text-center mb-12 reveal">Built by someone who lived the problem</h2>
+      <div class="glass-card p-8 sm:p-12 max-w-[1000px] mx-auto reveal reveal-delay-1">
+        <p class="text-white/50 text-base sm:text-lg leading-relaxed mb-6">
+          I'm Simon Lafortune, a product director based in Quebec, Canada. I've spent years managing dev teams at SaaS companies. The pattern is always the same: teams ship great work, and nobody tells the users.
+        </p>
+        <p class="text-white/50 text-base sm:text-lg leading-relaxed mb-6">
+          I've written hundreds of changelogs. I've chased developers for release notes. I've built Notion templates, Slack bots, and spreadsheet trackers to solve this. None of them stuck because they all required someone to do the work.
+        </p>
+        <p class="text-white/50 text-base sm:text-lg leading-relaxed mb-6">
+          Recaip is the product I wished existed. An agent that listens to webhooks, reads the code, and handles the entire communication pipeline. I built the first version with Claude Code, and Recaip has been dogfooding on its own repo since day one.
+        </p>
+        <p class="text-white/50 text-base sm:text-lg leading-relaxed">
+          This is a bootstrapped, independent product. No VC funding. No team of 50. Just one builder solving a problem he has dealt with for years.
+        </p>
+        <div class="mt-8 pt-6 border-t border-white/8">
+          <div class="flex items-center gap-4">
+            <div>
+              <p class="text-white font-semibold">Simon Lafortune</p>
+              <p class="text-white/40 text-sm">Founder, Recaip</p>
+            </div>
+            <a href="https://x.com/simonlafortune" target="_blank" class="ml-auto text-white/30 hover:text-white/60 transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- ============================================ -->
+  <!-- PRINCIPLES                                    -->
+  <!-- ============================================ -->
+  <section class="py-20 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[500px] h-[500px] bg-brand-500/6 top-20 left-1/2 -translate-x-1/2"></div>
+    <div class="max-w-[1400px] mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-white text-center mb-12 reveal">How we build</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[1200px] mx-auto">
+
+        <div class="glass-card p-8 reveal reveal-delay-1">
+          <h3 class="text-lg font-semibold text-white mb-3">Configure once, run forever</h3>
+          <p class="text-white/45 text-[15px] leading-relaxed">
+            The best tool is one you forget about. Recaip is designed to need zero ongoing attention. Set it up, let it run. If you never open Recaip again, it is doing its job.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 reveal reveal-delay-2">
+          <h3 class="text-lg font-semibold text-white mb-3">Trust is earned, not assumed</h3>
+          <p class="text-white/45 text-[15px] leading-relaxed">
+            Every channel starts in manual review. You see every draft before it goes live. Autopilot is there when you are ready, not before. No surprises.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 reveal reveal-delay-3">
+          <h3 class="text-lg font-semibold text-white mb-3">One price, everything included</h3>
+          <p class="text-white/45 text-[15px] leading-relaxed">
+            No tiers. No per-seat charges. No feature gates. $19/mo gets you unlimited products, all channels, all AI features. Need more capacity? Stack packs.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 reveal reveal-delay-4">
+          <h3 class="text-lg font-semibold text-white mb-3">Dogfood everything</h3>
+          <p class="text-white/45 text-[15px] leading-relaxed">
+            Recaip generates its own changelog from its own merged PRs. Every feature gets tested on real data before it ships. If it does not work for us, it does not ship.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- ============================================ -->
+  <!-- BUILT WITH                                    -->
+  <!-- ============================================ -->
   <section class="py-20 px-6 lg:px-16 relative">
     <div class="max-w-[1400px] mx-auto text-center">
       <h2 class="text-3xl sm:text-4xl font-semibold text-white mb-12 reveal">Built with</h2>
@@ -195,25 +298,34 @@
         <span class="glass-pill px-5 py-2.5 rounded-full text-sm text-white/40 border border-white/8 bg-white/[0.04]">Vercel</span>
         <span class="glass-pill px-5 py-2.5 rounded-full text-sm text-white/40 border border-white/8 bg-white/[0.04]">Tailwind CSS</span>
         <span class="glass-pill px-5 py-2.5 rounded-full text-sm text-white/40 border border-white/8 bg-white/[0.04]">GitHub API</span>
+        <span class="glass-pill px-5 py-2.5 rounded-full text-sm text-white/40 border border-white/8 bg-white/[0.04]">Slack API</span>
+        <span class="glass-pill px-5 py-2.5 rounded-full text-sm text-white/40 border border-white/8 bg-white/[0.04]">PostHog</span>
       </div>
     </div>
   </section>
 
   <div class="section-divider max-w-[1400px] mx-auto"></div>
 
-  <!-- CTA -->
+  <!-- ============================================ -->
+  <!-- CTA                                           -->
+  <!-- ============================================ -->
   <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
     <div class="ambient-glow w-[600px] h-[600px] bg-brand-500/8 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
     <div class="max-w-[1400px] mx-auto text-center relative z-10">
       <div class="reveal">
-        <h2 class="text-3xl sm:text-4xl font-semibold text-white mb-4">See Recaip in action.</h2>
+        <h2 class="text-3xl sm:text-4xl font-semibold text-white mb-4">Stop writing changelogs. Start shipping them.</h2>
         <p class="text-white/40 text-lg max-w-xl mx-auto mb-10">
-          Connect your GitHub repo. Get your first AI-generated recap on your next merge.
+          Connect your GitHub repo. Get your first AI-generated recap on your next merge. Takes two minutes.
         </p>
-        <a href="https://app.recaip.com" class="btn-primary glow-pulse h-14 px-10 rounded-xl text-white font-semibold text-base inline-flex items-center justify-center">
-          Start free
-        </a>
-        <p class="text-white/30 text-sm mt-5">$19/mo. Unlimited products. 100 recaps.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center mb-4">
+          <a href="https://app.recaip.com" class="btn-primary glow-pulse h-14 px-10 rounded-xl text-white font-semibold text-base inline-flex items-center justify-center">
+            Start free
+          </a>
+          <a href="https://app.recaip.com/changelog/recaip-bb6480" target="_blank" class="btn-glass h-14 px-10 rounded-xl text-white/70 font-medium text-base inline-flex items-center justify-center">
+            See a live changelog
+          </a>
+        </div>
+        <p class="text-white/30 text-sm mt-5">$19/mo. Unlimited products. 100 recaps. All features included.</p>
       </div>
     </div>
   </section>

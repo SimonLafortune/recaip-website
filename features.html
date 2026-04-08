@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Features - Recaip</title>
-  <meta name="description" content="Everything Recaip does for you. From code diff to published update. Six output formats, diff-aware AI, tone learning, and more." />
-  <meta property="og:title" content="Recaip Features. AI-generated release notes from your code." />
-  <meta property="og:description" content="One merged PR produces six output formats. Changelog, social post, email, in-app announcement, stakeholder digest, and status page update." />
+  <meta name="description" content="Recaip reads your code diffs, writes release notes in 6 formats, and delivers them to Slack, email, changelog, and more. Per-channel AI variants, tone learning, dark/light themes." />
+  <meta property="og:title" content="Recaip Features — From merged PR to published update, automatically." />
+  <meta property="og:description" content="Diff-aware AI generates changelogs, social posts, email digests, Slack messages, and more. Per-channel variants, tone learning, embeddable changelog." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://recaip.com/features" />
   <meta property="og:image" content="https://recaip.com/og-image.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Recaip Features. AI-generated release notes from your code." />
-  <meta name="twitter:description" content="One merged PR produces six output formats. Changelog, social post, email, in-app announcement, stakeholder digest, and status page update." />
+  <meta name="twitter:title" content="Recaip Features — From merged PR to published update, automatically." />
+  <meta name="twitter:description" content="Diff-aware AI generates changelogs, social posts, email digests, Slack messages, and more. Per-channel variants, tone learning, embeddable changelog." />
   <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
   <meta name="twitter:site" content="@simonlafortune" />
   <link rel="canonical" href="https://recaip.com/features" />
@@ -91,14 +91,68 @@
   </header>
 
   <main>
+
+  <!-- ============================================ -->
+  <!-- HERO                                         -->
+  <!-- ============================================ -->
   <section class="page-hero px-6 lg:px-16 text-center">
     <div class="max-w-[1200px] mx-auto">
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white/90 mb-6 leading-tight animate-in">
-        Everything Recaip does <span class="gradient-text">for you</span>
+        From merged PR to <span class="gradient-text">published update.</span>
       </h1>
-      <p class="text-lg text-white/45 max-w-[800px] mx-auto animate-in animate-delay-1">
-        From code diff to published update. Recaip reads what you shipped, writes the recap, and delivers it to every channel.
+      <p class="text-lg text-white/45 max-w-[800px] mx-auto mb-8 animate-in animate-delay-1">
+        Recaip reads your code, writes the recap in every format, and delivers it to every channel. You review once, or let it run on autopilot.
       </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center animate-in animate-delay-2">
+        <a href="https://app.recaip.com" class="btn-primary h-12 px-8 rounded-xl text-white font-semibold text-sm inline-flex items-center justify-center">Start free</a>
+        <a href="https://app.recaip.com/changelog/recaip-bb6480" target="_blank" class="btn-glass h-12 px-8 rounded-xl text-white/70 font-medium text-sm inline-flex items-center justify-center">See a live changelog</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- ============================================ -->
+  <!-- HOW IT WORKS - 3 steps                       -->
+  <!-- ============================================ -->
+  <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[400px] h-[400px] bg-brand-800/15 top-[-50px] left-[-100px]" style="position:absolute;"></div>
+
+    <div class="max-w-[1400px] mx-auto relative z-10">
+      <div class="reveal">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white/90 text-center mb-4">Three steps. Then walk away.</h2>
+        <p class="text-white/50 text-center mb-16 max-w-[700px] mx-auto">Setup takes two minutes. After that, Recaip runs on every merge without you lifting a finger.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card-bright p-8 text-center reveal reveal-delay-1">
+          <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mx-auto mb-5">
+            <span class="text-2xl font-bold text-brand-400">1</span>
+          </div>
+          <h3 class="text-xl font-semibold text-white/90 mb-3">Connect your repo</h3>
+          <p class="text-[15px] text-white/45 leading-relaxed">Sign in with GitHub. Pick a repo. Recaip registers a webhook automatically. Tell it about your product so it writes with context.</p>
+        </div>
+
+        <div class="glass-card-bright p-8 text-center reveal reveal-delay-2">
+          <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mx-auto mb-5">
+            <span class="text-2xl font-bold text-brand-400">2</span>
+          </div>
+          <h3 class="text-xl font-semibold text-white/90 mb-3">Ship code</h3>
+          <p class="text-[15px] text-white/45 leading-relaxed">Merge a PR like you always do. Recaip picks it up instantly, reads the diff, pulls context from linked tickets, and writes the recap in every format.</p>
+        </div>
+
+        <div class="glass-card-bright p-8 text-center reveal reveal-delay-3">
+          <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mx-auto mb-5">
+            <span class="text-2xl font-bold text-brand-400">3</span>
+          </div>
+          <h3 class="text-xl font-semibold text-white/90 mb-3">Approve or autopilot</h3>
+          <p class="text-[15px] text-white/45 leading-relaxed">Review the draft and hit approve. Or flip channels to auto-publish and never think about it again. Your changelog, Slack, and email digests update themselves.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-10 reveal reveal-delay-4">
+        <a href="https://app.recaip.com" class="btn-primary h-12 px-8 rounded-xl text-white font-semibold text-sm inline-flex items-center justify-center">Connect your first repo</a>
+      </div>
     </div>
   </section>
 
@@ -112,8 +166,8 @@
 
     <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white/90 text-center mb-4">One event. Every format.</h2>
-        <p class="text-white/50 text-center mb-16 max-w-[800px] mx-auto">You ship once. Recaip writes the recap for every audience and every channel.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white/90 text-center mb-4">One merge. Six formats. Every channel.</h2>
+        <p class="text-white/50 text-center mb-16 max-w-[800px] mx-auto">Each format is written for its audience. Technical detail for the changelog, plain language for the social post, executive summary for stakeholders.</p>
       </div>
 
       <!-- Bento grid: 2 large + 4 small -->
@@ -124,8 +178,8 @@
           <div class="w-10 h-10 rounded-lg icon-box flex items-center justify-center mb-4">
             <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
           </div>
-          <h3 class="text-white/90 font-semibold mb-2">Changelog page</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">A hosted, public changelog at app.recaip.com/your-product. Every approved entry is added automatically. Embed it in your app with a single iframe tag, or link to it from your docs. Supports light mode, dark mode, and custom accent colors.</p>
+          <h3 class="text-white/90 font-semibold mb-2">Public changelog</h3>
+          <p class="text-[15px] text-white/45 leading-relaxed">A hosted changelog page that updates automatically on every approved entry. Supports dark mode, light mode, and custom accent colors. Embed it in your app with a single iframe tag, or link to it from your docs.</p>
         </div>
 
         <!-- Social post - 2-wide -->
@@ -134,43 +188,43 @@
             <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
           </div>
           <h3 class="text-white/90 font-semibold mb-2">Social post</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">A ready-to-post update for LinkedIn and X. Written in your product's voice based on past edits you have made. One click to copy. Includes relevant hashtags.</p>
+          <p class="text-[15px] text-white/45 leading-relaxed">Ready-to-post updates for LinkedIn and X. Written in your product's voice. Each channel gets its own AI variant tailored to the audience, not a copy-paste of the same text. One click to copy.</p>
         </div>
 
-        <!-- In-app -->
+        <!-- Slack -->
         <div class="glass-card p-6 reveal reveal-delay-3">
           <div class="w-10 h-10 rounded-lg icon-box flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+            <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg>
           </div>
-          <h3 class="text-white/90 font-semibold mb-2">In-app announcement</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">A short, user-facing sentence describing what changed. Designed to paste directly into your banner, toast, or modal component.</p>
+          <h3 class="text-white/90 font-semibold mb-2">Slack delivery</h3>
+          <p class="text-[15px] text-white/45 leading-relaxed">Connect your Slack workspace with OAuth. Send recaps to any channel, instantly on merge or on a schedule you set.</p>
         </div>
 
-        <!-- Email -->
+        <!-- Email digest -->
         <div class="glass-card p-6 reveal reveal-delay-4">
           <div class="w-10 h-10 rounded-lg icon-box flex items-center justify-center mb-4">
             <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
           </div>
-          <h3 class="text-white/90 font-semibold mb-2">Email draft</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">A plain-text email summarizing the release for end users. Written for a non-technical audience. Copy it into your email tool and send.</p>
+          <h3 class="text-white/90 font-semibold mb-2">Email digest</h3>
+          <p class="text-[15px] text-white/45 leading-relaxed">Scheduled email summaries with an AI-generated intro. Groups everything shipped since the last digest. Respects your changelog theme.</p>
+        </div>
+
+        <!-- In-app -->
+        <div class="glass-card p-6 reveal reveal-delay-5">
+          <div class="w-10 h-10 rounded-lg icon-box flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+          </div>
+          <h3 class="text-white/90 font-semibold mb-2">In-app announcement</h3>
+          <p class="text-[15px] text-white/45 leading-relaxed">Short, user-facing sentences ready to paste into your banner, toast, or modal component.</p>
         </div>
 
         <!-- Stakeholder digest -->
-        <div class="glass-card p-6 reveal reveal-delay-5">
+        <div class="glass-card p-6 reveal reveal-delay-6">
           <div class="w-10 h-10 rounded-lg icon-box flex items-center justify-center mb-4">
             <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
           </div>
           <h3 class="text-white/90 font-semibold mb-2">Stakeholder digest</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">A weekly summary of everything shipped, grouped by category. Sent automatically every Friday to the recipients you configure: CEO, investors, support lead.</p>
-        </div>
-
-        <!-- Status page -->
-        <div class="glass-card p-6 reveal reveal-delay-6">
-          <div class="w-10 h-10 rounded-lg icon-box flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-          </div>
-          <h3 class="text-white/90 font-semibold mb-2">Status page update</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">Formatted for Statuspal, Betterstack, or Instatus. Includes maintenance window details and resolution notes when applicable.</p>
+          <p class="text-[15px] text-white/45 leading-relaxed">Weekly summary of everything shipped, grouped by category. Sent to the recipients you configure: CEO, investors, support lead.</p>
         </div>
 
       </div>
@@ -180,44 +234,112 @@
   <div class="section-divider max-w-[1400px] mx-auto"></div>
 
   <!-- ============================================ -->
-  <!-- HOW AI WORKS                                 -->
+  <!-- DISTRIBUTION CHANNELS                        -->
   <!-- ============================================ -->
   <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
     <div class="ambient-glow w-[500px] h-[500px] bg-brand-800/20 bottom-[-100px] left-[-100px]" style="position:absolute;"></div>
 
     <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white/90 text-center mb-4">How the AI reads your code</h2>
-        <p class="text-white/50 text-center mb-16 max-w-[800px] mx-auto">Recaip does not rely on commit messages alone. It reads multiple data sources to produce accurate, context-aware output.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white/90 text-center mb-4">Distribution channels you actually use</h2>
+        <p class="text-white/50 text-center mb-16 max-w-[800px] mx-auto">Each channel is independent. Configure audience, tone, and delivery schedule separately. Flip any channel to auto-publish when you trust the output.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1200px] mx-auto">
 
-        <!-- Reads the diff -->
+        <div class="glass-card-bright p-8 reveal reveal-delay-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg icon-box flex items-center justify-center">
+              <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <h3 class="text-lg font-semibold text-white/90">Changelog</h3>
+          </div>
+          <p class="text-[15px] text-white/45 leading-relaxed mb-3">Hosted page with timeline view. Dark mode, light mode, custom accent color. Embeddable via iframe. Show or hide descriptions in grouped views.</p>
+          <a href="https://app.recaip.com/changelog/recaip-bb6480" target="_blank" class="text-brand-400 text-sm font-medium hover:text-brand-300 transition-colors">See Recaip's own changelog &rarr;</a>
+        </div>
+
+        <div class="glass-card-bright p-8 reveal reveal-delay-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg icon-box flex items-center justify-center">
+              <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg>
+            </div>
+            <h3 class="text-lg font-semibold text-white/90">Slack</h3>
+          </div>
+          <p class="text-[15px] text-white/45 leading-relaxed">OAuth integration. Pick the channel, set the delivery mode (instant on merge or scheduled), and Recaip posts directly. No copy-pasting, no Zapier.</p>
+        </div>
+
+        <div class="glass-card-bright p-8 reveal reveal-delay-3">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg icon-box flex items-center justify-center">
+              <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="text-lg font-semibold text-white/90">Email digest</h3>
+          </div>
+          <p class="text-[15px] text-white/45 leading-relaxed">Scheduled summaries with an AI-written intro. Groups features, fixes, and improvements automatically. Respects your changelog's dark or light theme. Sent to the list you configure.</p>
+        </div>
+
+        <div class="glass-card-bright p-8 reveal reveal-delay-4">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg icon-box flex items-center justify-center">
+              <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            </div>
+            <h3 class="text-lg font-semibold text-white/90">Embed</h3>
+          </div>
+          <p class="text-[15px] text-white/45 leading-relaxed">Drop a single iframe tag in your app or docs. Your changelog renders inline, styled to match your brand. Updates automatically as new entries are approved.</p>
+        </div>
+
+      </div>
+
+      <p class="text-center text-white/30 text-sm mt-8 reveal reveal-delay-5">More channels coming: Status page (Statuspal, Betterstack), Notion, custom webhooks.</p>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- ============================================ -->
+  <!-- AI INTELLIGENCE                              -->
+  <!-- ============================================ -->
+  <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[500px] h-[500px] bg-brand-700/15 top-[100px] right-[-200px]" style="position:absolute;"></div>
+
+    <div class="max-w-[1400px] mx-auto relative z-10">
+      <div class="reveal">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white/90 text-center mb-4">AI that actually understands your product</h2>
+        <p class="text-white/50 text-center mb-16 max-w-[800px] mx-auto">Recaip does not rely on commit messages alone. It reads multiple sources, knows your product, and writes differently for every channel.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1200px] mx-auto">
+
         <div class="glass-card p-8 reveal reveal-delay-1">
-          <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mx-auto mb-5">
+          <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mb-5">
             <svg class="w-7 h-7 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
           </div>
-          <h3 class="text-xl font-semibold text-white/90 mb-2 text-center">Reads the diff</h3>
-          <p class="text-sm text-white/45 leading-relaxed text-center">Recaip parses the actual code changes in your PR. It identifies what files changed, what logic was added or removed, and whether the change is user-facing or internal.</p>
+          <h3 class="text-xl font-semibold text-white/90 mb-3">Reads the actual diff</h3>
+          <p class="text-sm text-white/45 leading-relaxed">Recaip parses the code changes in your PR. It identifies what files changed, what logic was added or removed, and whether the change is user-facing or internal. Backend-only refactors get flagged and skipped automatically.</p>
         </div>
 
-        <!-- Pulls context from tickets -->
         <div class="glass-card p-8 reveal reveal-delay-2">
-          <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+          <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
           </div>
-          <h3 class="text-xl font-semibold text-white/90 mb-2 text-center">Pulls context from tickets</h3>
-          <p class="text-sm text-white/45 leading-relaxed text-center">If your PR links to a Linear, Jira, or GitHub issue, Recaip reads the ticket title and description. This adds business context the code alone does not provide.</p>
+          <h3 class="text-xl font-semibold text-white/90 mb-3">Knows your product</h3>
+          <p class="text-sm text-white/45 leading-relaxed">During onboarding, you describe your product, your audience, and your tone. Recaip uses this context in every draft it writes. The AI knows your product is a fintech dashboard, not a generic SaaS app.</p>
         </div>
 
-        <!-- Learns your voice -->
         <div class="glass-card p-8 reveal reveal-delay-3">
-          <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mx-auto mb-5">
+          <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white/90 mb-3">Per-channel AI variants</h3>
+          <p class="text-sm text-white/45 leading-relaxed">Each channel gets its own AI-generated content with the audience and tone you set. Your changelog gets technical detail. Your Slack post gets a casual summary. Your email gets plain language. Not one text pasted everywhere.</p>
+        </div>
+
+        <div class="glass-card p-8 reveal reveal-delay-4">
+          <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center mb-5">
             <svg class="w-7 h-7 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
           </div>
-          <h3 class="text-xl font-semibold text-white/90 mb-2 text-center">Learns your voice</h3>
-          <p class="text-sm text-white/45 leading-relaxed text-center">Every time you edit a draft before approving it, Recaip records the difference. Over time, it adjusts its writing style to match yours. The more you edit, the fewer edits you need.</p>
+          <h3 class="text-xl font-semibold text-white/90 mb-3">Learns your voice</h3>
+          <p class="text-sm text-white/45 leading-relaxed">Every time you edit a draft before approving it, Recaip records the difference. Over time, it adjusts its writing style to match yours. The more you edit early on, the fewer edits you need later.</p>
         </div>
 
       </div>
@@ -230,73 +352,99 @@
   <!-- FEATURE DEEP-DIVE - Bento grid                -->
   <!-- ============================================ -->
   <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
-    <div class="ambient-glow w-[500px] h-[500px] bg-brand-700/15 top-[100px] right-[-200px]" style="position:absolute;"></div>
     <div class="ambient-glow w-[400px] h-[400px] bg-brand-800/15 bottom-[-50px] left-[-150px]" style="position:absolute;"></div>
 
     <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white/90 text-center mb-4">Built for teams that ship fast</h2>
-        <p class="text-white/50 text-center mb-16 max-w-[800px] mx-auto">Every feature exists to remove manual work between your merge and your users.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white/90 text-center mb-4">Everything else you get</h2>
+        <p class="text-white/50 text-center mb-16 max-w-[800px] mx-auto">No feature gates. No paid tiers. Everything below is included for $19/mo.</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
-        <!-- Diff-aware - 2-wide -->
+        <!-- Trust ladder - 2-wide -->
         <div class="glass-card-bright p-6 lg:col-span-2 reveal reveal-delay-1">
           <div class="w-1 h-8 rounded-full bg-brand-500/40 mb-4 accent-bar"></div>
-          <h3 class="text-white/90 font-semibold mb-2">Diff-aware AI generation</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">Recaip reads actual code diffs, PR descriptions, and linked tickets. It identifies user-facing changes, internal refactors, and bug fixes. Each output is written for the right audience: technical for the changelog, plain language for the social post.</p>
+          <h3 class="text-white/90 font-semibold mb-2">Trust ladder: approve to autopilot</h3>
+          <p class="text-[15px] text-white/45 leading-relaxed">Every channel starts in approve mode. You review each draft before it goes live. When you trust the output, flip individual channels to auto-publish. Start with your changelog. Move to Slack and email when ready.</p>
         </div>
 
-        <!-- Trust ladder - 2-wide -->
+        <!-- Multi-repo - 2-wide -->
         <div class="glass-card-bright p-6 lg:col-span-2 reveal reveal-delay-2">
           <div class="w-1 h-8 rounded-full bg-brand-500/40 mb-4 accent-bar"></div>
-          <h3 class="text-white/90 font-semibold mb-2">Trust ladder: approve to autopilot</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">Every channel starts in approve mode. You review each draft before it goes live. When you are confident in the output, flip individual channels to auto-publish. Start with low-stakes channels like your changelog. Move to email and social when ready.</p>
+          <h3 class="text-white/90 font-semibold mb-2">Multiple repos per product</h3>
+          <p class="text-[15px] text-white/45 leading-relaxed">Connect as many GitHub repos as you need to a single product. Frontend, backend, mobile, infrastructure. All merged PRs feed into one unified changelog. Works with monorepos too.</p>
         </div>
 
-        <!-- Multi-format -->
+        <!-- Dark/light mode -->
         <div class="glass-card p-6 reveal reveal-delay-3">
           <div class="w-1 h-6 rounded-full bg-brand-500/40 mb-4 accent-bar"></div>
-          <h3 class="text-white/90 font-semibold mb-1">Multi-format output</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">One merged PR produces six output formats. Each is tailored to its audience and channel.</p>
+          <h3 class="text-white/90 font-semibold mb-1">Dark and light themes</h3>
+          <p class="text-[15px] text-white/45 leading-relaxed">Your public changelog supports both dark mode and light mode. Pick the one that matches your brand. Email digests follow the same setting.</p>
         </div>
 
-        <!-- Breaking change -->
+        <!-- Custom branding -->
         <div class="glass-card p-6 reveal reveal-delay-4">
           <div class="w-1 h-6 rounded-full bg-brand-500/40 mb-4 accent-bar"></div>
-          <h3 class="text-white/90 font-semibold mb-1">Breaking change detection</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">Recaip flags PRs that modify public APIs, remove endpoints, or change database schemas. A warning is automatically added to the draft.</p>
+          <h3 class="text-white/90 font-semibold mb-1">Custom accent color</h3>
+          <p class="text-[15px] text-white/45 leading-relaxed">Set your brand's accent color and font. Your changelog, email, and embed all reflect your brand, not Recaip's.</p>
         </div>
 
-        <!-- Weekly stakeholder digest -->
+        <!-- Internal skip -->
         <div class="glass-card p-6 reveal reveal-delay-5">
           <div class="w-1 h-6 rounded-full bg-brand-500/40 mb-4 accent-bar"></div>
-          <h3 class="text-white/90 font-semibold mb-1">Weekly stakeholder digest</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">Every Friday, Recaip compiles all approved entries from the week into a single summary email. Sent to the recipients you configure.</p>
-        </div>
-
-        <!-- Tone learning -->
-        <div class="glass-card p-6 reveal reveal-delay-6">
-          <div class="w-1 h-6 rounded-full bg-brand-500/40 mb-4 accent-bar"></div>
-          <h3 class="text-white/90 font-semibold mb-1">Tone learning</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">Every edit you make is tracked. Recaip adjusts its writing style over time. Customer-friendly, technical, or executive tone.</p>
+          <h3 class="text-white/90 font-semibold mb-1">Smart skip for internal changes</h3>
+          <p class="text-[15px] text-white/45 leading-relaxed">Backend refactors, CI changes, dependency bumps. Recaip detects them and skips the draft. Only user-facing work gets written up.</p>
         </div>
 
         <!-- Batch catch-up -->
-        <div class="glass-card p-6 reveal reveal-delay-7">
+        <div class="glass-card p-6 reveal reveal-delay-6">
           <div class="w-1 h-6 rounded-full bg-brand-500/40 mb-4 accent-bar"></div>
           <h3 class="text-white/90 font-semibold mb-1">Batch catch-up</h3>
           <p class="text-[15px] text-white/45 leading-relaxed">Missed a month of updates? Recaip scans all merged PRs since the last published entry and generates a backfill digest.</p>
+        </div>
+
+        <!-- Embeddable -->
+        <div class="glass-card p-6 reveal reveal-delay-7">
+          <div class="w-1 h-6 rounded-full bg-brand-500/40 mb-4 accent-bar"></div>
+          <h3 class="text-white/90 font-semibold mb-1">Embeddable iframe</h3>
+          <p class="text-[15px] text-white/45 leading-relaxed">Drop one line of HTML in your app. Your changelog renders inline, branded, always up to date. No API needed.</p>
         </div>
 
         <!-- 2-minute setup -->
         <div class="glass-card p-6 reveal reveal-delay-8">
           <div class="w-1 h-6 rounded-full bg-brand-500/40 mb-4 accent-bar"></div>
           <h3 class="text-white/90 font-semibold mb-1">2-minute setup</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">Sign in with GitHub. Select a repo. Recaip registers a webhook. Your first draft arrives on the next merged PR.</p>
+          <p class="text-[15px] text-white/45 leading-relaxed">Sign in with GitHub. Select a repo. Describe your product. Recaip registers the webhook. Your first draft arrives on the next merge.</p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- ============================================ -->
+  <!-- SEE IT LIVE                                   -->
+  <!-- ============================================ -->
+  <section class="py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[400px] h-[400px] bg-brand-700/12 top-[50px] left-[-100px]" style="position:absolute;"></div>
+
+    <div class="max-w-[1000px] mx-auto text-center relative z-10">
+      <div class="reveal">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white/90 mb-4">Recaip uses Recaip.</h2>
+        <p class="text-white/50 mb-10 max-w-[700px] mx-auto">Every feature on this page was dogfooded on Recaip's own repository. The changelog you see below is generated by Recaip, from Recaip's own merged PRs.</p>
+      </div>
+
+      <div class="glass-card-glow p-6 reveal reveal-delay-1">
+        <div class="rounded-xl overflow-hidden" style="height: 400px;">
+          <iframe src="https://app.recaip.com/embed/recaip-bb6480" style="width: 100%; height: 100%; border: none;" loading="lazy" title="Recaip changelog embed"></iframe>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mt-8 reveal reveal-delay-2">
+        <a href="https://app.recaip.com/changelog/recaip-bb6480" target="_blank" class="btn-glass h-12 px-8 rounded-xl text-white/70 font-medium text-sm inline-flex items-center justify-center">Open full changelog &rarr;</a>
+        <a href="https://app.recaip.com" class="btn-primary h-12 px-8 rounded-xl text-white font-semibold text-sm inline-flex items-center justify-center">Start free</a>
       </div>
     </div>
   </section>
@@ -310,15 +458,15 @@
     <div class="ambient-glow w-[600px] h-[600px] bg-brand-700/15 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="position:absolute;"></div>
 
     <div class="max-w-[800px] mx-auto text-center relative z-10 reveal">
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/90 mb-4 leading-tight">Try Recaip on your <span class="gradient-text">next merge.</span></h2>
-      <p class="text-white/45 mb-10 text-lg">Connect your GitHub repo. Your first AI-generated recap arrives in under 2 minutes.</p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/90 mb-4 leading-tight">Your next merge could write <span class="gradient-text">its own changelog.</span></h2>
+      <p class="text-white/45 mb-10 text-lg">Connect your GitHub repo. First recap in under 2 minutes.</p>
 
       <div class="flex flex-col sm:flex-row gap-3 justify-center mb-4">
         <a href="https://app.recaip.com" class="btn-primary h-14 px-10 rounded-xl text-white font-semibold text-base flex items-center justify-center glow-pulse">
           Start free
         </a>
       </div>
-      <p class="text-sm text-white/35">$19/mo. Unlimited products. 100 recaps.</p>
+      <p class="text-sm text-white/35">$19/mo. Unlimited products. 100 recaps. All features included.</p>
     </div>
   </section>
 
