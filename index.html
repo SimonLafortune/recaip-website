@@ -486,18 +486,13 @@
               <div id="demo-changelog" class="text-[14px] text-white/80 leading-relaxed whitespace-pre-wrap"></div>
             </div>
 
-            <div class="rounded-xl bg-white/[0.02] border border-white/8 p-4 sm:p-5 mb-4">
-              <span class="font-mono text-[10px] text-brand-400 uppercase tracking-wider block mb-3">Social post</span>
-              <div id="demo-social" class="text-[14px] text-white/80 leading-relaxed whitespace-pre-wrap"></div>
-            </div>
-
             <!-- Locked formats teaser -->
             <div class="rounded-xl bg-white/[0.015] border border-dashed border-white/8 p-4 sm:p-5 mb-5">
               <div class="flex items-center gap-2 mb-3">
                 <svg class="w-4 h-4 text-white/30" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
-                <span class="font-mono text-[10px] text-white/40 uppercase tracking-wider">4 more formats, locked</span>
+                <span class="font-mono text-[10px] text-white/40 uppercase tracking-wider">5 more formats, locked</span>
               </div>
-              <p class="text-[13px] text-white/40 leading-relaxed">Email digest (ready to paste into your newsletter tool), in-app announcement, CEO/stakeholder summary, and Slack post. Sign up to unlock the other 4 formats for every update your team ships.</p>
+              <p class="text-[13px] text-white/40 leading-relaxed">Social post, email digest (ready to paste into your newsletter tool), in-app announcement, CEO/stakeholder summary, and Slack post. Sign up to get every format for every update your team ships.</p>
             </div>
 
             <a href="https://app.recaip.com" class="btn-primary block w-full h-12 rounded-xl text-white font-semibold text-sm flex items-center justify-center gap-2 glow-pulse">
@@ -523,7 +518,6 @@
     var resultState = document.getElementById('demo-result');
     var errorEl = document.getElementById('demo-error');
     var changelogEl = document.getElementById('demo-changelog');
-    var socialEl = document.getElementById('demo-social');
     var categoryEl = document.getElementById('demo-category');
 
     if (!btn) return;
@@ -561,7 +555,6 @@
           emptyState.style.display = 'flex';
         } else {
           changelogEl.textContent = data.changelog || '';
-          socialEl.textContent = data.social_post || '';
           categoryEl.textContent = data.category || '';
           loadingState.style.display = 'none';
           resultState.style.display = 'block';
