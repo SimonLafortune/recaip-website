@@ -31,7 +31,7 @@
     "name": "Recaip",
     "url": "https://recaip.com",
     "logo": "https://recaip.com/logo.svg",
-    "description": "AI-generated release notes, changelogs, and product updates from your dev tools.",
+    "description": "Your team ships every week but nobody knows. Recaip connects to GitHub and tells your users, CEO, and support team what you shipped, automatically.",
     "founder": { "@type": "Person", "name": "Simon Lafortune", "url": "https://x.com/simonlafortune" },
     "sameAs": ["https://x.com/simonlafortune"]
   }
@@ -92,6 +92,13 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="font-sans text-white/50 antialiased">
+
+  <!-- Founder banner -->
+  <div id="founder-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-brand-600 text-white text-center py-2.5 px-4 text-sm font-medium transition-transform duration-500 translate-y-full">
+    Founding member pricing: <span class="font-bold">50% off forever</span> for the first 100 customers. Use code <span class="font-mono bg-white/20 px-1.5 py-0.5 rounded text-xs">FOUNDER50</span> at checkout. <a href="https://app.recaip.com" class="inline-block ml-3 bg-white text-brand-700 font-semibold text-xs px-3 py-1 rounded-md hover:bg-white/90 transition-colors">Try Recaip Now</a>
+  </div>
+  <script>setTimeout(function(){document.getElementById('founder-banner').classList.remove('translate-y-full')},10000);</script>
+
   <div class="page-wrapper">
 
     <header>
@@ -125,12 +132,21 @@
     <section class="py-16 px-6 lg:px-16">
       <div class="max-w-[800px] mx-auto">
 
+        <!-- Founder deal callout -->
+        <div class="glass-card-bright p-5 mb-6 text-center reveal-scale">
+          <p class="text-brand-400 font-semibold text-base mb-1">Founding member deal</p>
+          <p class="text-white/50 text-sm">First 10 recaps free. Then <span class="line-through text-white/30">$19/mo</span> <span class="text-white font-bold">$9.50/mo</span> forever with code <span class="font-mono bg-white/10 px-1.5 py-0.5 rounded text-xs text-brand-300">FOUNDER50</span></p>
+          <p class="text-white/30 text-xs mt-1">Limited to the first 100 customers. Locked in for life.</p>
+        </div>
+
         <div class="glass-card-glow p-10 text-center reveal-scale reveal-delay-1">
           <div class="mb-2">
-            <span class="text-5xl font-bold text-white">$19</span>
+            <span class="text-2xl text-white/30 line-through mr-2">$19</span>
+            <span class="text-5xl font-bold text-white">$9.50</span>
             <span class="text-lg text-white/40 ml-1">/mo</span>
           </div>
-          <p class="text-[15px] text-white/40 mb-8">Unlimited products. 100 recaps per month. Need more? Stack packs.</p>
+          <p class="text-[15px] text-white/40 mb-2">Unlimited products. 100 recaps per month. First 10 recaps free.</p>
+          <p class="text-xs text-brand-400 mb-8">Use code <span class="font-mono font-bold">FOUNDER50</span> at checkout for 50% off forever.</p>
 
           <div class="grid grid-cols-2 gap-x-6 gap-y-3 text-left mb-8">
             <div class="flex items-start gap-3 text-sm text-white/50">
@@ -178,7 +194,7 @@
           <a href="https://app.recaip.com" class="btn-primary glow-pulse block text-center py-3.5 px-6 rounded-lg text-white text-sm font-medium w-full">Start free</a>
         </div>
 
-        <p class="text-sm text-white/30 text-center mt-6">Need more than 100 recaps? Add packs at $19/mo each. 5 packs = 500 recaps/mo.</p>
+        <p class="text-sm text-white/30 text-center mt-6">Need more than 100 recaps? Add packs at $9.50/mo each with FOUNDER50. 5 packs = 500 recaps/mo.</p>
 
       </div>
     </section>
@@ -193,21 +209,24 @@
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
             <div class="text-center">
               <p class="font-mono text-2xl font-bold text-white/80 mb-1">1x</p>
-              <p class="text-sm text-white/50">$19/mo</p>
+              <p class="text-sm text-white/30 line-through">$19/mo</p>
+              <p class="text-sm text-brand-400 font-medium">$9.50/mo</p>
               <p class="text-sm text-white/30">100 recaps</p>
             </div>
             <div class="text-center">
               <p class="font-mono text-2xl font-bold text-white/80 mb-1">3x</p>
-              <p class="text-sm text-white/50">$57/mo</p>
+              <p class="text-sm text-white/30 line-through">$57/mo</p>
+              <p class="text-sm text-brand-400 font-medium">$28.50/mo</p>
               <p class="text-sm text-white/30">300 recaps</p>
             </div>
             <div class="text-center">
               <p class="font-mono text-2xl font-bold text-white/80 mb-1">5x</p>
-              <p class="text-sm text-white/50">$95/mo</p>
+              <p class="text-sm text-white/30 line-through">$95/mo</p>
+              <p class="text-sm text-brand-400 font-medium">$47.50/mo</p>
               <p class="text-sm text-white/30">500 recaps</p>
             </div>
           </div>
-          <p class="text-[15px] text-white/40 text-center">Every pack includes unlimited products, all 6 output formats, and every feature. A recap is one product update generated from a merged PR or closed ticket.</p>
+          <p class="text-[15px] text-white/40 text-center">Every pack includes unlimited products, all 6 output formats, and every feature. A recap is one product update generated from a merged PR or closed ticket. Founder pricing with <span class="font-mono text-brand-400">FOUNDER50</span> shown above.</p>
         </div>
       </div>
     </section>
@@ -352,10 +371,10 @@
     <section class="py-24 px-6 lg:px-16 text-center relative">
       <div class="ambient-glow" style="width: 600px; height: 600px; background: radial-gradient(circle, rgba(61,139,128,0.10) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
       <div class="max-w-[800px] mx-auto relative z-10">
-        <h2 class="text-3xl sm:text-4xl font-semibold text-white/90 mb-4 reveal">Start for $19/mo. Ship updates on autopilot.</h2>
-        <p class="text-lg text-white/40 mb-10 reveal reveal-delay-1">Connect your first repo and see Recaip generate a draft on your next merge. Unlimited products, 100 recaps included.</p>
+        <h2 class="text-3xl sm:text-4xl font-semibold text-white/90 mb-4 reveal">What you ship deserves to be seen.</h2>
+        <p class="text-lg text-white/40 mb-10 reveal reveal-delay-1">First 10 recaps free. Then $9.50/mo with code <span class="font-mono text-brand-400">FOUNDER50</span> -- locked in forever.</p>
         <a href="https://app.recaip.com" class="btn-primary glow-pulse inline-flex items-center justify-center h-14 px-10 rounded-xl text-white font-semibold text-base reveal reveal-delay-2">Start free</a>
-        <p class="text-sm text-white/30 mt-4 reveal reveal-delay-3">$19/mo. Unlimited products. 100 recaps.</p>
+        <p class="text-sm text-white/30 mt-4 reveal reveal-delay-3">50% off for life. First 100 customers only.</p>
       </div>
     </section>
 

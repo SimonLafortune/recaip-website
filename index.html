@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recaip - AI-generated release notes from your dev tools</title>
-  <meta name="description" content="Recaip connects to your GitHub, Linear, and Jira. Every time you ship, it writes the recap: changelog, announcement, social post, status update. Automatically." />
-  <meta property="og:title" content="Recaip - Ship it. Recaip it." />
-  <meta property="og:description" content="AI-generated release notes, changelogs, and product updates from your dev tools. Stop writing. Start shipping." />
+  <title>Recaip - Nobody knows what you shipped last week</title>
+  <meta name="description" content="Your team ships every week. Your users, your CEO, your support team have no idea. Recaip turns what they ship into updates every audience actually reads, automatically." />
+  <meta property="og:title" content="Recaip - Nobody knows what you shipped last week" />
+  <meta property="og:description" content="Your team ships every week. Your users, your CEO, your support team have no idea. Recaip turns what they ship into updates everyone understands." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://recaip.com" />
   <meta property="og:image" content="https://recaip.com/og-image.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Recaip — Ship it. Recaip it." />
-  <meta name="twitter:description" content="AI-generated release notes, changelogs, and product updates from your dev tools. Stop writing. Start shipping." />
+  <meta name="twitter:title" content="Recaip — Nobody knows what you shipped last week" />
+  <meta name="twitter:description" content="Your team ships every week. Your users, your CEO, your support team have no idea. Recaip tells everyone what matters." />
   <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
   <meta name="twitter:site" content="@simonlafortune" />
   <link rel="canonical" href="https://recaip.com" />
@@ -31,7 +31,7 @@
     "name": "Recaip",
     "url": "https://recaip.com",
     "logo": "https://recaip.com/logo.svg",
-    "description": "AI-generated release notes, changelogs, and product updates from your dev tools.",
+    "description": "Your team ships every week but nobody knows. Recaip connects to GitHub and tells your users, CEO, and support team what you shipped, automatically.",
     "founder": { "@type": "Person", "name": "Simon Lafortune", "url": "https://x.com/simonlafortune" },
     "sameAs": ["https://x.com/simonlafortune"]
   }
@@ -43,7 +43,7 @@
     "name": "Recaip",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Web",
-    "description": "Recaip connects to GitHub, Linear, and Jira. Every time you ship, it writes the recap: changelog, announcement, social post, status update. Automatically.",
+    "description": "Your team ships every week but your users, CEO, and support team have no idea. Recaip connects to your repo and tells everyone what matters, in the format they need.",
     "url": "https://recaip.com",
     "offers": {
       "@type": "Offer",
@@ -61,7 +61,7 @@
     "mainEntity": [
       { "@type": "Question", "name": "How much does Recaip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Recaip costs $19 per month for unlimited products and 100 recaps. Need more? Stack additional packs at $19 each for 100 more recaps per month." } },
       { "@type": "Question", "name": "What integrations does Recaip support?", "acceptedAnswer": { "@type": "Answer", "text": "GitHub is fully supported today. Linear and Jira integrations are in development. Slack delivery, GitLab, Notion, Statuspal, Betterstack, and Instatus are on the roadmap." } },
-      { "@type": "Question", "name": "How is Recaip different from other changelog tools?", "acceptedAnswer": { "@type": "Answer", "text": "Most changelog tools help you write faster. Recaip eliminates writing entirely. It is an autonomous agent that listens to webhooks 24/7, reads your code diffs, and publishes to every channel without any human action." } },
+      { "@type": "Question", "name": "How is Recaip different from other changelog tools?", "acceptedAnswer": { "@type": "Answer", "text": "Most changelog tools are writing assistants for developers. Recaip is the communication layer between your dev team and everyone else. It generates updates tailored for each audience -- users, CEO, support, sales -- and delivers them automatically." } },
       { "@type": "Question", "name": "Can I use Recaip with a monorepo?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can connect multiple repositories to a single product, or set up multiple products from different paths in the same repo." } },
       { "@type": "Question", "name": "What AI model powers Recaip?", "acceptedAnswer": { "@type": "Answer", "text": "Recaip uses Claude by Anthropic. It reads code diffs, PR descriptions, and linked tickets to generate each draft. Over time it learns your writing style from edits you make." } }
     ]
@@ -123,7 +123,13 @@
 </head>
 <body class="font-sans text-white/50 antialiased">
 
-
+  <!-- ============================================ -->
+  <!-- FOUNDER BANNER                               -->
+  <!-- ============================================ -->
+  <div id="founder-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-brand-600 text-white text-center py-2.5 px-4 text-sm font-medium transition-transform duration-500 translate-y-full">
+    Founding member pricing: <span class="font-bold">50% off forever</span> for the first 100 customers. Use code <span class="font-mono bg-white/20 px-1.5 py-0.5 rounded text-xs">FOUNDER50</span> at checkout. <a href="https://app.recaip.com" class="inline-block ml-3 bg-white text-brand-700 font-semibold text-xs px-3 py-1 rounded-md hover:bg-white/90 transition-colors">Try Recaip Now</a>
+  </div>
+  <script>setTimeout(function(){document.getElementById('founder-banner').classList.remove('translate-y-full')},10000);</script>
 
   <!-- ============================================ -->
   <!-- PRELOADER                                    -->
@@ -192,10 +198,10 @@
       <div class="absolute inset-0 z-20 flex items-end sm:items-end px-6 sm:px-10 lg:px-16 pb-20 sm:pb-14">
         <div class="max-w-[1000px]">
           <h1 class="text-[32px] sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] tracking-tight mb-2 sm:mb-3 animate-in">
-            Release communication on&nbsp;autopilot.
+            Nobody knows what you shipped last&nbsp;week.
           </h1>
           <p class="text-base sm:text-xl md:text-2xl font-light text-white/60 mb-5 sm:mb-6 max-w-[800px] leading-relaxed animate-in animate-delay-1">
-            Your users never miss a release again. Recaip broadcasts every release the moment it goes to production across all your channels, automatically.
+            Your team ships every week. Your users, your CEO, your support team have no idea. Recaip connects to your repo and tells everyone what matters, in the format they need.
           </p>
 
           <!-- Hero CTAs -->
@@ -208,7 +214,7 @@
               <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
           </div>
-          <p class="text-xs sm:text-sm text-white/40 mt-2.5 sm:mt-3 animate-in animate-delay-3">$19/mo. Unlimited products. 100 recaps included.</p>
+          <p class="text-xs sm:text-sm text-white/40 mt-2.5 sm:mt-3 animate-in animate-delay-3">What you ship deserves to be seen.</p>
         </div>
       </div>
 
@@ -250,8 +256,8 @@
     <div class="ambient-glow w-[600px] h-[600px] bg-brand-700/15 top-[-100px] left-1/2 -translate-x-1/2" style="position:absolute;"></div>
     <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="text-center reveal mb-10 sm:mb-16">
-        <h2 class="text-3xl sm:text-5xl md:text-6xl font-bold text-white/90 mb-4">From code to every channel, <span class="gradient-text-shimmer">automatically</span></h2>
-        <p class="text-lg sm:text-xl text-white/50 max-w-[900px] mx-auto">Recaip listens to your dev tools, writes the update, and publishes it everywhere your users are.</p>
+        <h2 class="text-3xl sm:text-5xl md:text-6xl font-bold text-white/90 mb-4">The bridge between what you build and <span class="gradient-text-shimmer">who needs to know</span></h2>
+        <p class="text-lg sm:text-xl text-white/50 max-w-[900px] mx-auto">Recaip listens to your dev tools, writes the update, and delivers it to every audience: users, CEO, support, sales.</p>
       </div>
 
       <!-- Pipeline flow: 3 columns -->
@@ -376,12 +382,12 @@
         <!-- Left: headline + prose (GEO-optimized) -->
         <div class="reveal">
           <p class="font-mono text-xs text-brand-400 uppercase tracking-widest mb-4">What is Recaip?</p>
-          <h2 class="text-3xl sm:text-5xl font-bold text-white/90 mb-6 leading-tight">An autonomous agent that writes your product updates.</h2>
+          <h2 class="text-3xl sm:text-5xl font-bold text-white/90 mb-6 leading-tight">The communication layer between your dev team and everyone else.</h2>
           <p class="text-white/55 text-lg sm:text-xl leading-relaxed mb-4">
-            Recaip is an AI-powered tool that automatically generates release notes, changelogs, and product updates every time you ship code. It connects to your GitHub, Linear, or Jira, reads the code diff and linked tickets, and writes publish-ready recaps in six formats: changelog entry, social post, email draft, in-app announcement, stakeholder digest, and status page update.
+            Recaip connects to your GitHub, Linear, or Jira and automatically tells everyone what your team shipped. Not just a changelog for devs. It writes user-facing announcements, CEO digests, support summaries, and social posts. Each audience gets the format they need.
           </p>
           <p class="text-white/45 text-base sm:text-lg leading-relaxed">
-            Designed for CTO-founders at startups, solo developers, and product managers. $19/mo for unlimited products and 100 recaps. Unlike traditional changelog tools, Recaip operates as an autonomous agent that runs 24/7 without being prompted.
+            Built for teams where release communication falls through the cracks. No more "what did we ship this quarter?" from the CEO. No more users churning over features you already built. $19/mo, runs 24/7, configure once.
           </p>
         </div>
 
@@ -390,8 +396,8 @@
           <div class="glass-card p-5 flex items-start gap-4">
             <span class="font-mono text-3xl sm:text-4xl font-bold text-brand-400 leading-none shrink-0">6</span>
             <div>
-              <p class="text-white/90 font-semibold text-base mb-1">Output formats per event</p>
-              <p class="text-white/40 text-[15px]">Changelog, social post, email, in-app, stakeholder digest, status page — all from one webhook.</p>
+              <p class="text-white/90 font-semibold text-base mb-1">Audiences reached per release</p>
+              <p class="text-white/40 text-[15px]">Users, CEO, support, sales, social followers, and status page subscribers. Each gets the right format.</p>
             </div>
           </div>
           <div class="glass-card p-5 flex items-start gap-4">
@@ -426,8 +432,8 @@
     <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
         <p class="font-mono text-xs text-brand-400 text-center uppercase tracking-widest mb-4">The problem</p>
-        <h2 class="text-3xl sm:text-5xl font-bold text-white/90 text-center mb-4">You ship every day.<br/>Your users have no idea.</h2>
-        <p class="text-base sm:text-lg text-white/50 text-center mb-10 sm:mb-16 max-w-[800px] mx-auto">60% of users never discover new features. Release notes fall between roles. Nobody owns it. Recaip does.</p>
+        <h2 class="text-3xl sm:text-5xl font-bold text-white/90 text-center mb-4">Your team ships. Everyone else<br/>is in the dark.</h2>
+        <p class="text-base sm:text-lg text-white/50 text-center mb-10 sm:mb-16 max-w-[800px] mx-auto">Users churn over features you already built. Your CEO finds out from customers, not from you. Support answers tickets about bugs you fixed weeks ago.</p>
       </div>
 
       <div class="space-y-6">
@@ -439,8 +445,8 @@
                 <div class="w-2 h-2 rounded-full bg-red-400"></div>
                 <span class="font-mono text-xs text-red-400/80 uppercase tracking-wider">The awareness gap</span>
               </div>
-              <h3 class="text-xl font-semibold text-white/90 mb-2">"I shipped 40 features. My customers know about 3."</h3>
-              <p class="text-[15px] text-white/45 leading-relaxed">You invest weeks building features. But if nobody knows they exist, the ROI is cut in half. Support fields "where's my feature?" tickets for things you already shipped. Users churn over problems you already solved.</p>
+              <h3 class="text-xl font-semibold text-white/90 mb-2">"We shipped 40 features. Our users know about 3."</h3>
+              <p class="text-[15px] text-white/45 leading-relaxed">You invest weeks building features. But if nobody knows they exist, the ROI is zero. Users churn over problems you already solved. They request features you already shipped. Your best work becomes invisible.</p>
             </div>
             <div class="md:w-1/2 rounded-xl bg-white/[0.03] border border-white/[0.06] p-5">
               <div class="flex items-center gap-2 mb-3">
@@ -458,17 +464,17 @@
             <div class="md:w-1/2">
               <div class="flex items-center gap-2 mb-3">
                 <div class="w-2 h-2 rounded-full bg-red-400"></div>
-                <span class="font-mono text-xs text-red-400/80 uppercase tracking-wider">The tedium tax</span>
+                <span class="font-mono text-xs text-red-400/80 uppercase tracking-wider">The information gap</span>
               </div>
-              <h3 class="text-xl font-semibold text-white/90 mb-2">"Changelogs are always last on my list."</h3>
-              <p class="text-[15px] text-white/45 leading-relaxed">Go back through PRs. Skim commits. Understand intent. Decide what matters. Rewrite for a non-technical audience. Every. Single. Release. Most teams just skip it. 11% of dev work hours go to documentation nobody wants to write.</p>
+              <h3 class="text-xl font-semibold text-white/90 mb-2">"My CEO found out about our biggest feature from a customer."</h3>
+              <p class="text-[15px] text-white/45 leading-relaxed">Your CEO asks "what did the team ship this quarter?" and you spend 2 hours digging through GitHub. Your support team doesn't know what changed. Sales can't talk about new features. Everyone is out of the loop except engineering.</p>
             </div>
             <div class="md:w-1/2 rounded-xl bg-white/[0.03] border border-white/[0.06] p-5">
               <div class="flex items-center gap-2 mb-3">
                 <div class="w-2 h-2 rounded-full bg-brand-400"></div>
                 <span class="font-mono text-xs text-brand-400 uppercase tracking-wider">Recaip fixes this</span>
               </div>
-              <p class="text-[15px] text-white/50 leading-relaxed">You never write a word. Recaip reads code diffs, PR descriptions, and linked tickets, then generates publish-ready recaps in seconds. Enable auto-publish and it handles the entire pipeline, from webhook to published update.</p>
+              <p class="text-[15px] text-white/50 leading-relaxed">Recaip sends a weekly stakeholder digest to your CEO, internal release notes to support and sales, user-facing announcements to customers, and social posts for public channels. Everyone gets what they need, automatically.</p>
             </div>
           </div>
         </div>
@@ -481,15 +487,15 @@
                 <div class="w-2 h-2 rounded-full bg-red-400"></div>
                 <span class="font-mono text-xs text-red-400/80 uppercase tracking-wider">The ownership vacuum</span>
               </div>
-              <h3 class="text-xl font-semibold text-white/90 mb-2">"Release notes fall between roles. No one owns it."</h3>
-              <p class="text-[15px] text-white/45 leading-relaxed">It's not the dev's job. Not the PM's job (if there even is one). Not marketing's job. So nobody does it. Support discovers breaking changes through customer tickets. Engineering ships meaningful work that goes unacknowledged.</p>
+              <h3 class="text-xl font-semibold text-white/90 mb-2">"Release communication falls between roles. Nobody owns it."</h3>
+              <p class="text-[15px] text-white/45 leading-relaxed">It's not the dev's job. Not the PM's job (if there even is one). Not marketing's job. So nobody does it. The result: users, stakeholders, and internal teams are all out of sync with what engineering actually ships.</p>
             </div>
             <div class="md:w-1/2 rounded-xl bg-white/[0.03] border border-white/[0.06] p-5">
               <div class="flex items-center gap-2 mb-3">
                 <div class="w-2 h-2 rounded-full bg-brand-400"></div>
                 <span class="font-mono text-xs text-brand-400 uppercase tracking-wider">Recaip fixes this</span>
               </div>
-              <p class="text-[15px] text-white/50 leading-relaxed">Recaip fills the role permanently. It runs 24/7, drafts without being asked, flags breaking changes, and sends a weekly stakeholder digest. Once configured, it operates fully autonomously. No prompts, no reminders, no human in the loop.</p>
+              <p class="text-[15px] text-white/50 leading-relaxed">Recaip becomes your release communication layer. It runs 24/7, generates updates for every audience, flags breaking changes, and delivers stakeholder digests. The bridge between what you build and who needs to know.</p>
             </div>
           </div>
         </div>
@@ -550,8 +556,8 @@
   <section class="py-14 sm:py-24 px-6 lg:px-16 relative overflow-hidden">
     <div class="max-w-[1200px] mx-auto relative z-10">
       <div class="reveal">
-        <h2 class="text-3xl sm:text-5xl font-bold text-white/90 text-center mb-4">From webhook to published update</h2>
-        <p class="text-white/50 text-center mb-12">Recaip detects the event, reads the context, writes every format, and publishes. In seconds. Fully autonomous.</p>
+        <h2 class="text-3xl sm:text-5xl font-bold text-white/90 text-center mb-4">From code change to everyone knowing</h2>
+        <p class="text-white/50 text-center mb-12">Recaip detects the merge, reads the context, writes for every audience, and delivers. In seconds.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -655,8 +661,8 @@
 
     <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
-        <h2 class="text-3xl sm:text-5xl font-bold text-white/90 text-center mb-4">One event. Every channel. Automatic.</h2>
-        <p class="text-base sm:text-lg text-white/50 text-center mb-10 sm:mb-16 max-w-[800px] mx-auto">A single webhook triggers six output formats. Each is written, formatted, and delivered to its channel without any action from you.</p>
+        <h2 class="text-3xl sm:text-5xl font-bold text-white/90 text-center mb-4">One merge. Every audience. Instantly.</h2>
+        <p class="text-base sm:text-lg text-white/50 text-center mb-10 sm:mb-16 max-w-[800px] mx-auto">Each audience gets what they need in the format they expect. Users get plain language. Your CEO gets a summary. Support gets the details. All from a single webhook.</p>
       </div>
 
       <!-- Bento grid: 2 hero cards + 4 smaller -->
@@ -728,8 +734,8 @@
 
     <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
-        <h2 class="text-3xl sm:text-5xl font-bold text-white/90 text-center mb-4">Not a tool. An <span class="gradient-text">always-on agent.</span></h2>
-        <p class="text-base sm:text-lg text-white/50 text-center mb-10 sm:mb-16 max-w-[800px] mx-auto">Other tools help you write changelogs faster. Recaip eliminates the task entirely. It listens, writes, publishes, and delivers. You configure it once and it runs forever.</p>
+        <h2 class="text-3xl sm:text-5xl font-bold text-white/90 text-center mb-4">Not a changelog tool. A <span class="gradient-text">communication layer.</span></h2>
+        <p class="text-base sm:text-lg text-white/50 text-center mb-10 sm:mb-16 max-w-[800px] mx-auto">Other tools help you write changelogs faster. Recaip closes the gap between your dev team and everyone who needs to know what shipped. Configure once, it runs forever.</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -803,7 +809,8 @@
     <div class="max-w-[800px] mx-auto relative z-10">
       <div class="reveal">
         <h2 class="text-3xl sm:text-5xl font-bold text-white/90 text-center mb-4">One plan. Everything included.</h2>
-        <p class="text-base sm:text-lg text-white/50 text-center mb-10 sm:mb-16">Unlimited products. 100 recaps/mo. No tiers, no feature gates, no surprises.</p>
+        <p class="text-base sm:text-lg text-white/50 text-center mb-4">Unlimited products. 100 recaps/mo. No tiers, no feature gates, no surprises.</p>
+        <p class="text-base text-brand-400 text-center mb-10 sm:mb-16 font-medium">Founding members: <span class="line-through text-white/30">$19/mo</span> $9.50/mo forever with code <span class="font-mono bg-white/10 px-1.5 py-0.5 rounded text-xs">FOUNDER50</span></p>
       </div>
 
       <!-- Single plan card -->
@@ -862,7 +869,7 @@
         <a href="https://app.recaip.com" class="btn-primary block w-full text-center py-3.5 rounded-xl text-white font-semibold text-base glow-pulse">Start free</a>
       </div>
 
-      <p class="text-center text-white/30 text-sm mt-6 reveal">Need more than 100 recaps? Stack packs at $19/mo each. 5 packs = 500 recaps/mo.</p>
+      <p class="text-center text-white/30 text-sm mt-6 reveal">First 10 recaps free. Use code <span class="font-mono text-brand-400">FOUNDER50</span> for 50% off forever. First 100 customers only.</p>
     </div>
   </section>
 
@@ -876,7 +883,7 @@
     <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
         <h2 class="text-3xl sm:text-5xl font-bold text-white/90 text-center mb-4">The old way vs. Recaip</h2>
-        <p class="text-white/50 text-center mb-10 sm:mb-14">See what changes when release communication runs on autopilot.</p>
+        <p class="text-white/50 text-center mb-10 sm:mb-14">See what changes when everyone actually knows what your team shipped.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 reveal reveal-delay-1">
@@ -970,7 +977,7 @@
             <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="hidden px-6 lg:px-16 pb-5">
-            <p class="text-sm text-white/40">Most changelog tools help you write faster. Recaip eliminates writing entirely. It is an autonomous agent that listens to webhooks 24/7, reads your code diffs, and publishes to every channel without any human action. You configure it once and never need to open it again.</p>
+            <p class="text-sm text-white/40">Most changelog tools are writing assistants for developers. Recaip is different: it's the communication layer between your dev team and everyone else. It generates updates tailored for each audience (users, CEO, support, sales) and delivers them automatically. Not a changelog tool. A release communication agent.</p>
           </div>
         </div>
         <div class="glass-card overflow-hidden reveal reveal-delay-4">
@@ -1015,8 +1022,8 @@
     <div class="ambient-glow w-[600px] h-[600px] bg-brand-700/15 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="position:absolute;"></div>
 
     <div class="max-w-[800px] mx-auto text-center relative z-10 reveal">
-      <h2 class="text-2xl sm:text-4xl md:text-5xl font-bold text-white/90 mb-3 sm:mb-4 leading-tight">Stop writing changelogs.<br/><span class="gradient-text">Start shipping.</span></h2>
-      <p class="text-white/45 mb-10 text-lg">2 minutes to set up. Then it runs on its own, forever.</p>
+      <h2 class="text-2xl sm:text-4xl md:text-5xl font-bold text-white/90 mb-3 sm:mb-4 leading-tight">What you ship<br/><span class="gradient-text">deserves to be seen.</span></h2>
+      <p class="text-white/45 mb-10 text-lg">2 minutes to set up. Then everyone knows what you shipped, every time.</p>
 
       <div class="flex flex-col sm:flex-row gap-3 justify-center mb-4">
         <a href="https://app.recaip.com" class="btn-primary h-12 sm:h-14 px-8 sm:px-10 rounded-xl text-white font-semibold text-sm sm:text-base flex items-center justify-center glow-pulse">

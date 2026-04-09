@@ -141,25 +141,43 @@ All-dark design. No white sections. Glass cards (`glass-card`, `glass-card-brigh
 
 ## Key Messaging
 
-- **Title:** "Configure once. Never write a changelog again."
-- **Subtitle:** "Recaip is an autonomous agent that listens to your dev tools 24/7. Every time you ship, it writes the update and publishes it. You never have to open Recaip again."
-- **Tagline:** "Ship it. Recaip it."
-- **Primary ICP:** CTO-founders at small startups (5-30 people) with no PM
-- **Secondary ICP:** Solo vibe coders shipping fast with zero comms workflow
-- **Tertiary ICP:** PMs at scaleups automating manual changelog writing
-- **Core positioning:** Recaip is an always-on autonomous agent, not a tool you use. Configure once, it runs forever. Users never need to open Recaip again after setup.
+- **Headline:** "Nobody knows what you shipped last week."
+- **Subtitle:** "Your team ships every week. Your users, your CEO, your support team have no idea. Recaip connects to your repo and tells everyone what matters, in the format they need."
+- **Tagline:** "What you ship deserves to be seen."
+- **Secondary tagline:** "Ship it. Recaip it."
+- **Primary ICP 1 — Solo PM at 10-50 person B2B SaaS.** Owns release comms, writes the "what's new" newsletter, reports sprint progress up. No dev admin rights. Owns Linear or Jira. Found in: Reforge Slack, Lenny's Newsletter community, Mind the Product, r/ProductManagement.
+- **Primary ICP 2 — B2B SaaS Marketer.** Owns the "what's new" email, social posts, and customer-facing announcements. Needs the raw material but can't see what engineering ships. Found in: Exit Five, Demand Curve, r/SaaS.
+- **Secondary ICP 1 — Non-technical founder with outsourced dev team.** Can't see what's being built. Needs client-facing updates without bothering engineering. Found in: Indie Hackers non-coder crowd, #no-code-founders communities, r/Entrepreneur.
+- **Secondary ICP 2 — Solo founder with a revenue-generating vibe-coded product.** Ships fast with Lovable/Bolt/Cursor/Claude, already has paying users (NOT a side project). Owns GitHub themselves so they can auto-connect. Wants true hands-off autopilot so they can ship and never think about comms. Found in: Indie Hackers revenue section, #buildinpublic on X, r/SaaS.
+- **Core insight (LOCKED):** Devs do not care about notifying clients. The people who care are business-facing folks who inherit the "figure out what to tell everyone" problem. Recaip is built for them, not engineering.
+- **Core positioning:** Recaip is NOT a changelog tool for devs. It's the communication layer for non-technical people who need to turn engineering work into release updates for customers, execs, and teams. Configure once, runs 24/7.
+- **Evolution:** Recaip is becoming a mini-PMM — stakeholder digests, internal release summaries for support/sales, sprint recaps for non-technical people, customer-facing announcements, social posts.
+
+### Product implications of the ICP (drive every decision)
+
+- **Recaip is still an autonomous agent, not a writing assistant.** The core value prop is "set it once, it runs 24/7 from your work-tracking tool." Manual paste is NOT the default path. Don't dilute this.
+- **The fix for non-dev ICP is swapping which tool is the default connection, not removing the connection step.** PMs and marketers don't have admin on GitHub, but they DO have admin on Linear or Jira. Onboarding step 1 should be "What does your team use to track work?" with Linear / Jira / GitHub / Other as options. Linear and Jira shown first, GitHub third.
+- **Integration priority for auto-sync (LOCKED):** Linear first (modern B2B SaaS PMs own it), Jira second (bigger or older companies), GitHub third (dev-founders only). Do NOT build Jira before Linear. Do NOT assume GitHub is the starting point.
+- **Why the 2 drop-offs happened (2026-04):** Onboarding forced GitHub connection at step 1 before the user had any tool choice. A PM with no GitHub admin hits a wall. Adding Linear/Jira as sibling options at step 1 probably converts both.
+- **Manual paste has a smaller role:** it's a "try it without signup" demo on the marketing site (show the magic before committing) and a fallback when the user's tool isn't yet supported. NOT the primary onboarding flow.
+- **Messaging must not be dev-speak.** No "connects to your repo," no "webhook," no "PR." Use "what your team shipped," "release update," "product update."
+
+### Where the ICP hangs out (and where it doesn't)
+
+- **Hang out:** Reforge Slack, Lenny's Newsletter community, Mind the Product, r/ProductManagement, Exit Five, Demand Curve, r/SaaS, Indie Hackers non-technical founder crowd, r/Entrepreneur, LinkedIn (primary for PMs + marketers)
+- **NOT here:** Hacker News, r/programming, Show HN, dev Twitter, r/webdev, r/devops. These reach dev-founders only (tertiary ICP) — use sparingly.
 
 ## Pricing Model
 
-Single plan. One price. Everything included. Per product (not per user, not per repo). A "product" = one thing you ship that users care about.
+Single plan. One price. Everything included. Founding member promo active.
 
 | | Details |
 |---|---|
-| Price | $19/product/mo |
+| Price | $19/mo (Stripe promo `FOUNDER50` = $9.50/mo forever, first 100 customers) |
 | Trial | First 10 recaps free, full access, no credit card required |
 | Includes | All 6 output formats, all integrations, auto-publish, Slack delivery, weekly digest, tone learning, custom domain, status page integrations, no branding, unlimited repos per product |
 
-No free tier. No feature gates. No tiers to compare.
+No free tier. No feature gates. No tiers to compare. Founding member banner appears on all pages after 10s.
 
 ## Planned Tech Stack (for MVP build)
 
