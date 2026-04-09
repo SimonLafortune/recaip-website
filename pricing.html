@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recaip - Pricing</title>
   <meta name="description" content="One plan, everything included. $19 per month. Unlimited products, 100 recaps per month. No credit card required." />
-  <meta property="og:title" content="Recaip Pricing — $19/mo, everything included." />
+  <meta property="og:title" content="Recaip Pricing: $19/mo, everything included." />
   <meta property="og:description" content="One plan. Everything included. $19/mo for unlimited products and 100 recaps per month." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://recaip.com/pricing" />
@@ -13,7 +13,7 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Recaip Pricing — $19/mo, everything included." />
+  <meta name="twitter:title" content="Recaip Pricing: $19/mo, everything included." />
   <meta name="twitter:description" content="One plan. Everything included. $19/mo for unlimited products and 100 recaps per month." />
   <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
   <meta name="twitter:site" content="@simonlafortune" />
@@ -31,7 +31,7 @@
     "name": "Recaip",
     "url": "https://recaip.com",
     "logo": "https://recaip.com/logo.svg",
-    "description": "Your team ships every week but nobody knows. Recaip connects to GitHub and tells your users, CEO, and support team what you shipped, automatically.",
+    "description": "Your team ships every week but nobody knows. Recaip turns what they ship into updates your users, CEO, and support team actually read.",
     "founder": { "@type": "Person", "name": "Simon Lafortune", "url": "https://x.com/simonlafortune" },
     "sameAs": ["https://x.com/simonlafortune"]
   }
@@ -42,16 +42,16 @@
     "@type": "FAQPage",
     "mainEntity": [
       { "@type": "Question", "name": "What counts as a \"product\"?", "acceptedAnswer": { "@type": "Answer", "text": "A product is one thing you ship that has its own changelog. For example, your web app is one product. Your mobile app is another. Most small teams need one product." } },
-      { "@type": "Question", "name": "Can I connect multiple repos to one product?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A product can pull from multiple GitHub repos, Linear projects, or Jira boards. All events feed into the same changelog." } },
+      { "@type": "Question", "name": "Can I connect multiple codebases to one product?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A product can pull from multiple Linear projects, Jira boards, or GitHub codebases. All updates feed into the same changelog." } },
       { "@type": "Question", "name": "How does pricing work?", "acceptedAnswer": { "@type": "Answer", "text": "Recaip costs $19 per month for unlimited products and 100 recaps. Need more? Stack additional packs at $19 each for 100 more recaps. 5 packs = 500 recaps per month." } },
-      { "@type": "Question", "name": "What AI model does Recaip use?", "acceptedAnswer": { "@type": "Answer", "text": "Recaip uses Claude by Anthropic for all text generation. The model reads your code diffs, PR descriptions, and linked tickets to produce each draft." } },
+      { "@type": "Question", "name": "What AI model does Recaip use?", "acceptedAnswer": { "@type": "Answer", "text": "Recaip uses Claude by Anthropic for all text generation. The model reads the actual changes and linked tickets to produce each draft in plain language." } },
       { "@type": "Question", "name": "Can I edit drafts before they go live?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every draft starts in approve mode. You can edit the text, then approve or reject it. You can also set individual channels to auto-publish once you trust the output." } },
       { "@type": "Question", "name": "What happens if I cancel?", "acceptedAnswer": { "@type": "Answer", "text": "Your existing changelog page stays live. You keep all published entries. New PRs will no longer generate drafts. You can export your data at any time." } },
       { "@type": "Question", "name": "Do you support GitLab or Bitbucket?", "acceptedAnswer": { "@type": "Answer", "text": "GitHub is supported today. GitLab support is in development. Bitbucket is on the roadmap." } },
       { "@type": "Question", "name": "Where is my data stored?", "acceptedAnswer": { "@type": "Answer", "text": "All data is stored in Supabase (hosted on AWS). Code diffs are processed in memory and not permanently stored. Only the generated text and metadata are saved." } },
       { "@type": "Question", "name": "Is Recaip free?", "acceptedAnswer": { "@type": "Answer", "text": "Recaip costs $19 per month for unlimited products and 100 recaps. All features are included with no tiers or gates. Need more recaps? Stack additional packs at $19 each." } },
-      { "@type": "Question", "name": "How is Recaip different from other changelog tools?", "acceptedAnswer": { "@type": "Answer", "text": "Most changelog tools help you write faster. Recaip eliminates writing entirely. It operates as an autonomous agent that listens to webhooks 24/7, reads your code diffs and tickets, and publishes to every channel without any human action." } },
-      { "@type": "Question", "name": "Does Recaip work with monorepos?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can connect multiple repositories to a single product, or set up multiple products from different paths in the same repo. All events feed into the appropriate changelog." } }
+      { "@type": "Question", "name": "How is Recaip different from other changelog tools?", "acceptedAnswer": { "@type": "Answer", "text": "Most changelog tools help you write faster. Recaip eliminates writing entirely. It runs as an autonomous agent that watches your work tracker 24/7, reads the context from every update, and publishes to every audience without any human action." } },
+      { "@type": "Question", "name": "Can I use Recaip with multiple codebases?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can connect multiple codebases to a single product, or set up multiple products from different parts of the same codebase. All updates feed into the appropriate changelog." } }
     ]
   }
   </script>
@@ -183,7 +183,7 @@
             </div>
             <div class="flex items-start gap-3 text-sm text-white/50">
               <svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              Unlimited products &amp; repos
+              Unlimited products &amp; codebases
             </div>
             <div class="flex items-start gap-3 text-sm text-white/50">
               <svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -226,7 +226,7 @@
               <p class="text-sm text-white/30">500 recaps</p>
             </div>
           </div>
-          <p class="text-[15px] text-white/40 text-center">Every pack includes unlimited products, all 6 output formats, and every feature. A recap is one product update generated from a merged PR or closed ticket. Founder pricing with <span class="font-mono text-brand-400">FOUNDER50</span> shown above.</p>
+          <p class="text-[15px] text-white/40 text-center">Every pack includes unlimited products, all 6 output formats, and every feature. A recap is one product update generated from something your team shipped. Founder pricing with <span class="font-mono text-brand-400">FOUNDER50</span> shown above.</p>
         </div>
       </div>
     </section>
@@ -247,18 +247,18 @@
               <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <div class="hidden px-6 lg:px-16 pb-5">
-              <p class="text-[15px] text-white/40">A product is one thing you ship that has its own changelog. For example, your web app is one product. Your mobile app is another. All products are included in every plan — there is no per-product charge.</p>
+              <p class="text-[15px] text-white/40">A product is one thing you ship that has its own changelog. For example, your web app is one product. Your mobile app is another. All products are included in every plan, with no per-product charge.</p>
             </div>
           </div>
 
           <!-- FAQ 2 -->
           <div class="glass-card overflow-hidden reveal reveal-delay-2">
             <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
-              <span class="text-sm font-medium text-white/90">Can I connect multiple repos to one product?</span>
+              <span class="text-sm font-medium text-white/90">Can I connect multiple codebases to one product?</span>
               <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <div class="hidden px-6 lg:px-16 pb-5">
-              <p class="text-[15px] text-white/40">Yes. A product can pull from multiple GitHub repos, Linear projects, or Jira boards. All events feed into the same changelog.</p>
+              <p class="text-[15px] text-white/40">Yes. A product can pull from multiple Linear projects, Jira boards, or GitHub codebases. All updates feed into the same changelog.</p>
             </div>
           </div>
 
@@ -280,7 +280,7 @@
               <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <div class="hidden px-6 lg:px-16 pb-5">
-              <p class="text-[15px] text-white/40">Recaip uses Claude by Anthropic for all text generation. The model reads your code diffs, PR descriptions, and linked tickets to produce each draft.</p>
+              <p class="text-[15px] text-white/40">Recaip uses Claude by Anthropic for all text generation. The model reads the actual changes and linked tickets to produce each draft in plain language.</p>
             </div>
           </div>
 
@@ -302,7 +302,7 @@
               <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <div class="hidden px-6 lg:px-16 pb-5">
-              <p class="text-[15px] text-white/40">Your existing changelog page stays live. You keep all published entries. New PRs will no longer generate drafts. You can export your data at any time.</p>
+              <p class="text-[15px] text-white/40">Your existing changelog page stays live. You keep all published entries. New updates will no longer generate drafts. You can export your data at any time.</p>
             </div>
           </div>
 
@@ -324,7 +324,7 @@
               <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <div class="hidden px-6 lg:px-16 pb-5">
-              <p class="text-[15px] text-white/40">All data is stored in Supabase (hosted on AWS). Code diffs are processed in memory and not permanently stored. Only the generated text and metadata are saved.</p>
+              <p class="text-[15px] text-white/40">All data is stored in Supabase (hosted on AWS). Raw changes are processed in memory and not permanently stored. Only the generated text and metadata are saved.</p>
             </div>
           </div>
 
@@ -346,18 +346,18 @@
               <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <div class="hidden px-6 lg:px-16 pb-5">
-              <p class="text-[15px] text-white/40">Most changelog tools help you write faster. Recaip eliminates writing entirely. It operates as an autonomous agent that listens to webhooks 24/7, reads your code diffs and tickets, and publishes to every channel without any human action. Configure once, it runs forever.</p>
+              <p class="text-[15px] text-white/40">Most changelog tools help you write faster. Recaip eliminates writing entirely. It runs as an autonomous agent that watches your work tracker 24/7, reads the context from every update, and publishes to every audience without any human action. Configure once, it runs forever.</p>
             </div>
           </div>
 
           <!-- FAQ 11 -->
           <div class="glass-card overflow-hidden reveal">
             <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
-              <span class="text-sm font-medium text-white/90">Does Recaip work with monorepos?</span>
+              <span class="text-sm font-medium text-white/90">Can I use Recaip with multiple codebases or monorepos?</span>
               <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <div class="hidden px-6 lg:px-16 pb-5">
-              <p class="text-[15px] text-white/40">Yes. You can connect multiple repositories to a single product, or set up multiple products from different paths in the same repo. All events feed into the appropriate changelog.</p>
+              <p class="text-[15px] text-white/40">Yes. You can connect multiple codebases to a single product, or set up multiple products from different parts of the same codebase. All updates feed into the appropriate changelog.</p>
             </div>
           </div>
 

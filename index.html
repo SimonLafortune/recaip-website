@@ -13,7 +13,7 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Recaip — Nobody knows what you shipped last week" />
+  <meta name="twitter:title" content="Recaip: Nobody knows what you shipped last week" />
   <meta name="twitter:description" content="Your team ships every week. Your users, your CEO, your support team have no idea. Recaip tells everyone what matters." />
   <meta name="twitter:image" content="https://recaip.com/og-image.svg" />
   <meta name="twitter:site" content="@simonlafortune" />
@@ -31,7 +31,7 @@
     "name": "Recaip",
     "url": "https://recaip.com",
     "logo": "https://recaip.com/logo.svg",
-    "description": "Your team ships every week but nobody knows. Recaip connects to GitHub and tells your users, CEO, and support team what you shipped, automatically.",
+    "description": "Your team ships every week but nobody knows. Recaip turns what they ship into updates your users, CEO, and support team actually read.",
     "founder": { "@type": "Person", "name": "Simon Lafortune", "url": "https://x.com/simonlafortune" },
     "sameAs": ["https://x.com/simonlafortune"]
   }
@@ -60,7 +60,7 @@
     "@type": "FAQPage",
     "mainEntity": [
       { "@type": "Question", "name": "How much does Recaip cost?", "acceptedAnswer": { "@type": "Answer", "text": "Recaip costs $19 per month for unlimited products and 100 recaps. Need more? Stack additional packs at $19 each for 100 more recaps per month." } },
-      { "@type": "Question", "name": "What integrations does Recaip support?", "acceptedAnswer": { "@type": "Answer", "text": "GitHub is fully supported today. Linear and Jira integrations are in development. Slack delivery, GitLab, Notion, Statuspal, Betterstack, and Instatus are on the roadmap." } },
+      { "@type": "Question", "name": "What integrations does Recaip support?", "acceptedAnswer": { "@type": "Answer", "text": "Linear and Jira integrations are shipping next and you can request early access right from onboarding. GitHub is fully supported today. Slack delivery, GitLab, Notion, Statuspal, Betterstack, and Instatus are on the roadmap." } },
       { "@type": "Question", "name": "How is Recaip different from other changelog tools?", "acceptedAnswer": { "@type": "Answer", "text": "Most changelog tools are writing assistants for developers. Recaip is the communication layer between your dev team and everyone else. It generates updates tailored for each audience -- users, CEO, support, sales -- and delivers them automatically." } },
       { "@type": "Question", "name": "Can I use Recaip with a monorepo?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can connect multiple repositories to a single product, or set up multiple products from different paths in the same repo." } },
       { "@type": "Question", "name": "What AI model powers Recaip?", "acceptedAnswer": { "@type": "Answer", "text": "Recaip uses Claude by Anthropic. It reads code diffs, PR descriptions, and linked tickets to generate each draft. Over time it learns your writing style from edits you make." } }
@@ -209,9 +209,9 @@
             <a href="https://app.recaip.com" class="btn-primary h-11 sm:h-12 px-6 sm:px-8 rounded-xl text-white font-semibold text-[15px] flex items-center justify-center whitespace-nowrap">
               Start free
             </a>
-            <a href="https://app.recaip.com/changelog/recaip-bb6480" target="_blank" class="btn-glass h-11 sm:h-12 px-5 sm:px-6 rounded-xl text-white font-medium text-[14px] flex items-center justify-center gap-2 whitespace-nowrap">
-              See a live changelog
-              <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            <a href="#try-it" class="btn-glass h-11 sm:h-12 px-5 sm:px-6 rounded-xl text-white font-medium text-[14px] flex items-center justify-center gap-2 whitespace-nowrap">
+              Try it live
+              <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
             </a>
           </div>
           <p class="text-xs sm:text-sm text-white/40 mt-2.5 sm:mt-3 animate-in animate-delay-3">What you ship deserves to be seen.</p>
@@ -257,7 +257,7 @@
     <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="text-center reveal mb-10 sm:mb-16">
         <h2 class="text-3xl sm:text-5xl md:text-6xl font-bold text-white/90 mb-4">The bridge between what you build and <span class="gradient-text-shimmer">who needs to know</span></h2>
-        <p class="text-lg sm:text-xl text-white/50 max-w-[900px] mx-auto">Recaip listens to your dev tools, writes the update, and delivers it to every audience: users, CEO, support, sales.</p>
+        <p class="text-lg sm:text-xl text-white/50 max-w-[900px] mx-auto">Recaip watches what your team ships, writes the update, and delivers it to every audience: users, CEO, support, sales.</p>
       </div>
 
       <!-- Pipeline flow: 3 columns -->
@@ -384,7 +384,7 @@
           <p class="font-mono text-xs text-brand-400 uppercase tracking-widest mb-4">What is Recaip?</p>
           <h2 class="text-3xl sm:text-5xl font-bold text-white/90 mb-6 leading-tight">The communication layer between your dev team and everyone else.</h2>
           <p class="text-white/55 text-lg sm:text-xl leading-relaxed mb-4">
-            Recaip connects to your GitHub, Linear, or Jira and automatically tells everyone what your team shipped. Not just a changelog for devs. It writes user-facing announcements, CEO digests, support summaries, and social posts. Each audience gets the format they need.
+            Recaip connects to Linear, Jira, or GitHub and turns every sprint into updates your whole company can actually read. User-facing announcements, CEO digests, support summaries, social posts. Each audience gets the format they need. Not a changelog tool for devs. A release comms layer for the people who have to tell everyone.
           </p>
           <p class="text-white/45 text-base sm:text-lg leading-relaxed">
             Built for teams where release communication falls through the cracks. No more "what did we ship this quarter?" from the CEO. No more users churning over features you already built. $19/mo, runs 24/7, configure once.
@@ -411,7 +411,7 @@
             <span class="font-mono text-3xl sm:text-4xl font-bold text-brand-400 leading-none shrink-0">24/7</span>
             <div>
               <p class="text-white/90 font-semibold text-base mb-1">Always listening</p>
-              <p class="text-white/40 text-[15px]">Merge a PR at 3am on a Sunday. Recaip detects it, writes the recap, and publishes it. No human required.</p>
+              <p class="text-white/40 text-[15px]">Your team ships at 3am on a Sunday. By Monday morning your customers, your CEO, and your support team all know what changed. No human typing.</p>
             </div>
           </div>
         </div>
@@ -419,6 +419,169 @@
       </div>
     </div>
   </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- ============================================ -->
+  <!-- TRY IT LIVE — interactive demo                -->
+  <!-- ============================================ -->
+  <section id="try-it" class="py-14 sm:py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[600px] h-[600px] bg-brand-500/12 top-[50px] left-1/2 -translate-x-1/2" style="position:absolute;"></div>
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="reveal text-center mb-10 sm:mb-14">
+        <p class="font-mono text-xs text-brand-400 uppercase tracking-widest mb-4">Try it live</p>
+        <h2 class="text-3xl sm:text-5xl font-bold text-white/90 mb-4">Paste something you shipped.<br/>See what Recaip writes.</h2>
+        <p class="text-base sm:text-lg text-white/50 max-w-[700px] mx-auto">No signup. Real AI output from your words. A taste of what your team gets on autopilot.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 reveal reveal-delay-1">
+        <!-- Input side -->
+        <div class="glass-card p-6 sm:p-7">
+          <label class="block text-[11px] font-semibold text-white/55 uppercase tracking-wider mb-2">What did you ship?</label>
+          <input id="demo-title" type="text" placeholder="e.g. Added dark mode to the dashboard" maxlength="200"
+            class="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 text-sm focus:outline-none focus:ring-1 focus:ring-brand-500/40 mb-5" />
+
+          <label class="block text-[11px] font-semibold text-white/55 uppercase tracking-wider mb-2">Details (optional)</label>
+          <textarea id="demo-description" placeholder="Paste bullet points, a ticket description, or raw notes about what changed..." rows="7" maxlength="2000"
+            class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 text-sm focus:outline-none focus:ring-1 focus:ring-brand-500/40 mb-5 resize-none"></textarea>
+
+          <button id="demo-generate" type="button" class="btn-primary w-full h-12 rounded-xl text-white font-semibold text-sm flex items-center justify-center gap-2">
+            <span id="demo-generate-label">Generate preview</span>
+            <svg id="demo-generate-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+
+          <div id="demo-error" class="mt-4 rounded-xl bg-red-500/10 border border-red-500/20 px-4 py-3 text-sm text-red-400" style="display:none;"></div>
+          <p class="text-[11px] text-white/25 text-center mt-3">Limited to 3 previews per hour. Sign up to generate all 6 formats unlimited.</p>
+        </div>
+
+        <!-- Output side -->
+        <div class="glass-card p-6 sm:p-7 flex flex-col min-h-[420px]">
+          <!-- Empty state -->
+          <div id="demo-empty" class="flex-1 flex items-center justify-center text-center">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/8 flex items-center justify-center mx-auto mb-4">
+                <svg class="w-6 h-6 text-white/30" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/></svg>
+              </div>
+              <p class="text-sm text-white/50 font-medium mb-1">Your generated update</p>
+              <p class="text-[13px] text-white/30">will appear here</p>
+            </div>
+          </div>
+
+          <!-- Loading state -->
+          <div id="demo-loading" class="flex-1 flex items-center justify-center" style="display:none;">
+            <div class="text-center">
+              <div class="w-10 h-10 rounded-full border-2 border-brand-400/40 border-t-brand-400 animate-spin mx-auto mb-3"></div>
+              <p class="text-sm text-white/50 font-medium">Writing your update...</p>
+              <p class="text-[12px] text-white/30 mt-1">Reading your text, picking the best format, drafting in plain language.</p>
+            </div>
+          </div>
+
+          <!-- Result state -->
+          <div id="demo-result" class="flex-1" style="display:none;">
+            <div class="rounded-xl bg-white/[0.02] border border-white/8 p-4 sm:p-5 mb-4">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[10px] text-brand-400 uppercase tracking-wider">Changelog entry</span>
+                <span id="demo-category" class="font-mono text-[10px] text-white/40 uppercase tracking-wider"></span>
+              </div>
+              <div id="demo-changelog" class="text-[14px] text-white/80 leading-relaxed whitespace-pre-wrap"></div>
+            </div>
+
+            <div class="rounded-xl bg-white/[0.02] border border-white/8 p-4 sm:p-5 mb-4">
+              <span class="font-mono text-[10px] text-brand-400 uppercase tracking-wider block mb-3">Social post</span>
+              <div id="demo-social" class="text-[14px] text-white/80 leading-relaxed whitespace-pre-wrap"></div>
+            </div>
+
+            <!-- Locked formats teaser -->
+            <div class="rounded-xl bg-white/[0.015] border border-dashed border-white/8 p-4 sm:p-5 mb-5">
+              <div class="flex items-center gap-2 mb-3">
+                <svg class="w-4 h-4 text-white/30" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                <span class="font-mono text-[10px] text-white/40 uppercase tracking-wider">4 more formats, locked</span>
+              </div>
+              <p class="text-[13px] text-white/40 leading-relaxed">Email digest (ready to paste into your newsletter tool), in-app announcement, CEO/stakeholder summary, and Slack post. Sign up to unlock the other 4 formats for every update your team ships.</p>
+            </div>
+
+            <a href="https://app.recaip.com" class="btn-primary block w-full h-12 rounded-xl text-white font-semibold text-sm flex items-center justify-center gap-2 glow-pulse">
+              Start free. Get every format.
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function() {
+    var API_URL = 'https://app.recaip.com/api/drafts/public-preview';
+    var titleInput = document.getElementById('demo-title');
+    var descInput = document.getElementById('demo-description');
+    var btn = document.getElementById('demo-generate');
+    var btnLabel = document.getElementById('demo-generate-label');
+    var btnIcon = document.getElementById('demo-generate-icon');
+    var emptyState = document.getElementById('demo-empty');
+    var loadingState = document.getElementById('demo-loading');
+    var resultState = document.getElementById('demo-result');
+    var errorEl = document.getElementById('demo-error');
+    var changelogEl = document.getElementById('demo-changelog');
+    var socialEl = document.getElementById('demo-social');
+    var categoryEl = document.getElementById('demo-category');
+
+    if (!btn) return;
+
+    btn.addEventListener('click', async function() {
+      var title = (titleInput.value || '').trim();
+      var description = (descInput.value || '').trim();
+
+      if (title.length < 3) {
+        errorEl.textContent = 'Tell us what you shipped (at least 3 characters).';
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      errorEl.style.display = 'none';
+      emptyState.style.display = 'none';
+      resultState.style.display = 'none';
+      loadingState.style.display = 'flex';
+      btn.disabled = true;
+      btnLabel.textContent = 'Generating...';
+      btnIcon.style.display = 'none';
+
+      try {
+        var res = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ title: title, description: description })
+        });
+        var data = await res.json();
+
+        if (!res.ok) {
+          errorEl.textContent = data.error || "Couldn't generate a preview. Try again.";
+          errorEl.style.display = 'block';
+          loadingState.style.display = 'none';
+          emptyState.style.display = 'flex';
+        } else {
+          changelogEl.textContent = data.changelog || '';
+          socialEl.textContent = data.social_post || '';
+          categoryEl.textContent = data.category || '';
+          loadingState.style.display = 'none';
+          resultState.style.display = 'block';
+          if (window.posthog) {
+            try { window.posthog.capture('homepage_demo_generated'); } catch (e) {}
+          }
+        }
+      } catch (err) {
+        errorEl.textContent = 'Network error. Try again.';
+        errorEl.style.display = 'block';
+        loadingState.style.display = 'none';
+        emptyState.style.display = 'flex';
+      } finally {
+        btn.disabled = false;
+        btnLabel.textContent = resultState.style.display === 'block' ? 'Generate another' : 'Generate preview';
+        btnIcon.style.display = '';
+      }
+    });
+  })();
+  </script>
 
   <div class="section-divider max-w-[1400px] mx-auto"></div>
 
@@ -453,7 +616,7 @@
                 <div class="w-2 h-2 rounded-full bg-brand-400"></div>
                 <span class="font-mono text-xs text-brand-400 uppercase tracking-wider">Recaip fixes this</span>
               </div>
-              <p class="text-[15px] text-white/50 leading-relaxed">Recaip listens to every merge and ticket close via webhooks. It drafts a changelog entry, social post, email, and in-app announcement automatically. With auto-publish on, it goes live without you doing anything.</p>
+              <p class="text-[15px] text-white/50 leading-relaxed">Recaip watches every update in your work tracker. It drafts a changelog entry, social post, email, and in-app announcement automatically. With auto-publish on, it goes live without you doing anything.</p>
             </div>
           </div>
         </div>
@@ -467,7 +630,7 @@
                 <span class="font-mono text-xs text-red-400/80 uppercase tracking-wider">The information gap</span>
               </div>
               <h3 class="text-xl font-semibold text-white/90 mb-2">"My CEO found out about our biggest feature from a customer."</h3>
-              <p class="text-[15px] text-white/45 leading-relaxed">Your CEO asks "what did the team ship this quarter?" and you spend 2 hours digging through GitHub. Your support team doesn't know what changed. Sales can't talk about new features. Everyone is out of the loop except engineering.</p>
+              <p class="text-[15px] text-white/45 leading-relaxed">Your CEO asks "what did the team ship this quarter?" and you spend 2 hours digging through tickets and Slack. Your support team doesn't know what changed. Sales can't talk about new features. Everyone is out of the loop except engineering.</p>
             </div>
             <div class="md:w-1/2 rounded-xl bg-white/[0.03] border border-white/[0.06] p-5">
               <div class="flex items-center gap-2 mb-3">
@@ -524,7 +687,7 @@
           </div>
           <div class="font-mono text-xs gradient-text mb-2 font-medium">01</div>
           <h3 class="text-xl font-semibold text-white/90 mb-2">Connect your tools</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">Sign in. Connect your repo or project board. Recaip registers a webhook and starts listening. Done in 2 minutes.</p>
+          <p class="text-[15px] text-white/45 leading-relaxed">Sign in. Pick your work tracker: Linear, Jira, or GitHub. Recaip starts watching. Done in 2 minutes.</p>
         </div>
 
         <div class="glass-card p-8 text-center reveal-scale parallax-card" data-speed="0.04">
@@ -533,7 +696,7 @@
           </div>
           <div class="font-mono text-xs gradient-text mb-2 font-medium">02</div>
           <h3 class="text-xl font-semibold text-white/90 mb-2">Ship like you always do</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">Merge a PR at 3am. Close a ticket on Friday. Recaip detects it instantly, reads the context, and drafts every output format. You do nothing.</p>
+          <p class="text-[15px] text-white/45 leading-relaxed">Your team ships at 3am. You close a ticket on Friday. Recaip picks it up instantly, reads the context, and drafts every format. You do nothing.</p>
         </div>
 
         <div class="glass-card p-8 text-center reveal-scale parallax-card" data-speed="0.02">
@@ -556,8 +719,8 @@
   <section class="py-14 sm:py-24 px-6 lg:px-16 relative overflow-hidden">
     <div class="max-w-[1200px] mx-auto relative z-10">
       <div class="reveal">
-        <h2 class="text-3xl sm:text-5xl font-bold text-white/90 text-center mb-4">From code change to everyone knowing</h2>
-        <p class="text-white/50 text-center mb-12">Recaip detects the merge, reads the context, writes for every audience, and delivers. In seconds.</p>
+        <h2 class="text-3xl sm:text-5xl font-bold text-white/90 text-center mb-4">From what you shipped to what everyone knows</h2>
+        <p class="text-white/50 text-center mb-12">Recaip picks up the update, reads the context, writes for every audience, and delivers. In seconds.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -662,7 +825,7 @@
     <div class="max-w-[1400px] mx-auto relative z-10">
       <div class="reveal">
         <h2 class="text-3xl sm:text-5xl font-bold text-white/90 text-center mb-4">One merge. Every audience. Instantly.</h2>
-        <p class="text-base sm:text-lg text-white/50 text-center mb-10 sm:mb-16 max-w-[800px] mx-auto">Each audience gets what they need in the format they expect. Users get plain language. Your CEO gets a summary. Support gets the details. All from a single webhook.</p>
+        <p class="text-base sm:text-lg text-white/50 text-center mb-10 sm:mb-16 max-w-[800px] mx-auto">Each audience gets what they need in the format they expect. Users get plain language. Your CEO gets a summary. Support gets the details. All from a single update.</p>
       </div>
 
       <!-- Bento grid: 2 hero cards + 4 smaller -->
@@ -743,7 +906,7 @@
         <div class="glass-card-bright p-6 lg:col-span-2 reveal reveal-delay-1">
           <div class="w-1 h-8 rounded-full bg-brand-500/40 mb-4 accent-bar"></div>
           <h3 class="text-white/90 font-semibold mb-2">Diff-aware AI generation</h3>
-          <p class="text-[15px] text-white/45 leading-relaxed">Recaip reads actual code diffs, PR descriptions, and linked tickets. Not just commit messages . it understands what you built and why.</p>
+          <p class="text-[15px] text-white/45 leading-relaxed">Recaip reads the actual changes, not just the title. It understands what you built and why, so the update explains the benefit in plain language.</p>
         </div>
 
         <!-- Trust ladder — 2-wide -->
@@ -785,14 +948,14 @@
         <div class="glass-card p-6 reveal reveal-delay-7">
           <div class="w-1 h-6 rounded-full bg-brand-500/40 mb-4 accent-bar"></div>
           <h3 class="text-white/90 font-semibold mb-1">Batch catch-up mode</h3>
-          <p class="text-sm text-white/45">Missed a month? Scan all merged PRs and generate a catch-up digest.</p>
+          <p class="text-sm text-white/45">Missed a month? Scan everything your team shipped and generate a catch-up digest.</p>
         </div>
 
         <!-- Zero setup -->
         <div class="glass-card p-6 reveal reveal-delay-8">
           <div class="w-1 h-6 rounded-full bg-brand-500/40 mb-4 accent-bar"></div>
           <h3 class="text-white/90 font-semibold mb-1">2 minutes to first draft</h3>
-          <p class="text-sm text-white/45">No config, no templates. Sign in, select repo, get your first recap.</p>
+          <p class="text-sm text-white/45">No config, no templates. Sign in, pick your work tracker, get your first recap.</p>
         </div>
       </div>
     </div>
@@ -894,9 +1057,9 @@
             <span class="font-mono text-xs text-red-400/80 uppercase tracking-wider">Without Recaip</span>
           </div>
           <div class="space-y-3">
-            <div class="flex items-start gap-3"><span class="font-mono text-xs text-white/25 mt-0.5 shrink-0">01</span><p class="text-sm text-white/45">Go back through merged PRs manually</p></div>
-            <div class="flex items-start gap-3"><span class="font-mono text-xs text-white/25 mt-0.5 shrink-0">02</span><p class="text-sm text-white/45">Skim commit messages and diffs</p></div>
-            <div class="flex items-start gap-3"><span class="font-mono text-xs text-white/25 mt-0.5 shrink-0">03</span><p class="text-sm text-white/45">Write changelog for technical audience</p></div>
+            <div class="flex items-start gap-3"><span class="font-mono text-xs text-white/25 mt-0.5 shrink-0">01</span><p class="text-sm text-white/45">Ping the dev team to find out what shipped</p></div>
+            <div class="flex items-start gap-3"><span class="font-mono text-xs text-white/25 mt-0.5 shrink-0">02</span><p class="text-sm text-white/45">Dig through tickets, Slack, and commits</p></div>
+            <div class="flex items-start gap-3"><span class="font-mono text-xs text-white/25 mt-0.5 shrink-0">03</span><p class="text-sm text-white/45">Write a draft nobody outside engineering gets</p></div>
             <div class="flex items-start gap-3"><span class="font-mono text-xs text-white/25 mt-0.5 shrink-0">04</span><p class="text-sm text-white/45">Rewrite for email, social, in-app</p></div>
             <div class="flex items-start gap-3"><span class="font-mono text-xs text-white/25 mt-0.5 shrink-0">05</span><p class="text-sm text-white/45">Copy-paste into 4 different tools</p></div>
             <div class="flex items-start gap-3"><span class="font-mono text-xs text-white/25 mt-0.5 shrink-0">06</span><p class="text-sm text-white/45">Send stakeholder update separately</p></div>
@@ -915,15 +1078,15 @@
           <div class="space-y-3">
             <div class="flex items-start gap-3">
               <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <p class="text-sm text-white/55">Merge your PR like you always do</p>
+              <p class="text-sm text-white/55">Your team ships like they always do</p>
             </div>
             <div class="flex items-start gap-3">
               <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <p class="text-sm text-white/55">Recaip detects the event instantly</p>
+              <p class="text-sm text-white/55">Recaip picks it up instantly</p>
             </div>
             <div class="flex items-start gap-3">
               <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <p class="text-sm text-white/55">AI reads diffs, tickets, and context</p>
+              <p class="text-sm text-white/55">AI reads the ticket and the context</p>
             </div>
             <div class="flex items-start gap-3">
               <svg class="w-4 h-4 text-brand-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -968,7 +1131,7 @@
             <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="hidden px-6 lg:px-16 pb-5">
-            <p class="text-sm text-white/40">GitHub is fully supported today. Linear and Jira integrations are in development. Slack delivery, GitLab, Notion, Statuspal, Betterstack, and Instatus are on the roadmap.</p>
+            <p class="text-sm text-white/40">Linear and Jira integrations are shipping next and you can request early access right from onboarding. GitHub is fully supported today. Slack delivery, GitLab, Notion, Statuspal, Betterstack, and Instatus are on the roadmap.</p>
           </div>
         </div>
         <div class="glass-card overflow-hidden reveal reveal-delay-3">
@@ -982,11 +1145,11 @@
         </div>
         <div class="glass-card overflow-hidden reveal reveal-delay-4">
           <button class="faq-toggle w-full flex items-center justify-between px-6 lg:px-16 py-5 text-left">
-            <span class="text-sm font-medium text-white/90">Can I use Recaip with a monorepo?</span>
+            <span class="text-sm font-medium text-white/90">Can I connect multiple codebases to one product?</span>
             <svg class="faq-chevron w-5 h-5 text-white/30 shrink-0 ml-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="hidden px-6 lg:px-16 pb-5">
-            <p class="text-sm text-white/40">Yes. You can connect multiple repositories to a single product, or set up multiple products from different paths in the same repo. All events feed into the appropriate changelog.</p>
+            <p class="text-sm text-white/40">Yes. You can connect multiple codebases to a single product, or set up multiple products from different parts of the same codebase. All updates feed into the appropriate changelog.</p>
           </div>
         </div>
         <div class="glass-card overflow-hidden reveal reveal-delay-5">
