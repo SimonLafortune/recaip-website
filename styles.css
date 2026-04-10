@@ -19,13 +19,13 @@ body::before {
 
 #preloader { position: relative; z-index: 9999; }
 
-/* Fullscreen hero - sticky so content scrolls over it */
+/* Fullscreen hero — normal flow, scrolls away naturally with parallax fade */
 .hero-wrapper {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 0;
   height: 100vh;
-  min-height: 600px;
+  height: 100dvh;
+  min-height: 560px;
 }
 .hero-fullscreen {
   position: relative;
@@ -40,19 +40,25 @@ body::before {
   background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.25) 100%);
 }
 
-/* Content wrapper that scrolls over the hero */
+/* Hero content that fades + drifts up on scroll (set via JS in scroll handler) */
+.hero-parallax {
+  will-change: opacity, transform;
+}
+
+/* Content wrapper sits right after hero with a subtle rounded "drawer" edge */
 .content-wrapper {
   position: relative;
   z-index: 2;
+  margin-top: -40px;
 }
 .content-wrapper::before {
   content: '';
   display: block;
-  height: 80px;
-  border-radius: 40px 40px 0 0;
+  height: 40px;
+  border-radius: 28px 28px 0 0;
   background: linear-gradient(160deg, #0b1a18 0%, #0e2a26 15%, #163d38 35%, #1a4a3e 50%, #163d38 65%, #0e2a26 85%, #0b1a18 100%);
   background-attachment: fixed;
-  box-shadow: 0 -20px 60px rgba(11, 26, 24, 0.5);
+  box-shadow: 0 -16px 48px rgba(11, 26, 24, 0.55);
 }
 .content-wrapper > section,
 .content-wrapper > footer,

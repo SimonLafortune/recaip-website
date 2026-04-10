@@ -196,7 +196,7 @@
 
       <!-- Hero content — flex centered on mobile, bottom-anchored on desktop -->
       <div class="absolute inset-0 z-20 flex items-end sm:items-end px-6 sm:px-10 lg:px-16 pb-20 sm:pb-14">
-        <div class="max-w-[1000px]">
+        <div class="max-w-[1000px] hero-parallax">
           <h1 class="text-[32px] sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] tracking-tight mb-2 sm:mb-3 animate-in">
             Nobody knows what you shipped last&nbsp;week.
           </h1>
@@ -214,7 +214,7 @@
               <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
           </div>
-          <p class="text-xs sm:text-sm text-white/40 mt-2.5 sm:mt-3 animate-in animate-delay-3">What you ship deserves to be seen. <a href="#try-it" class="text-brand-400 hover:text-brand-300 underline underline-offset-2 decoration-white/20 hover:decoration-brand-400 transition-colors">Or try it live</a>.</p>
+          <p class="text-xs sm:text-sm text-white/40 mt-2.5 sm:mt-3 animate-in animate-delay-3">What you ship deserves to be seen. <a href="#try-it" class="text-brand-400 hover:text-brand-300 underline underline-offset-2 decoration-white/20 hover:decoration-brand-400 transition-colors">See it write one below, no signup</a>.</p>
         </div>
       </div>
 
@@ -235,7 +235,7 @@
       </div>
 
       <!-- Scroll indicator — desktop only -->
-      <div class="absolute bottom-6 right-10 z-20 animate-in animate-delay-3 hidden sm:block">
+      <div class="hero-scroll-indicator absolute bottom-6 right-10 z-20 animate-in animate-delay-3 hidden sm:block">
         <a href="#how-it-works" class="flex flex-col items-center gap-1 text-white/30 hover:text-white/60 transition-colors">
           <span class="text-[10px] uppercase tracking-widest font-medium">Scroll</span>
           <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
@@ -814,6 +814,86 @@
   <div class="section-divider max-w-[1400px] mx-auto"></div>
 
   <!-- ============================================ -->
+  <!-- REAL OUTPUT — Where updates actually land     -->
+  <!-- ============================================ -->
+  <section class="py-14 sm:py-24 px-6 lg:px-16 relative overflow-hidden">
+    <div class="ambient-glow w-[550px] h-[550px] bg-brand-500/10 top-[-50px] right-[-120px]" style="position:absolute;"></div>
+    <div class="ambient-glow w-[500px] h-[500px] bg-brand-700/12 bottom-[100px] left-[-150px]" style="position:absolute;"></div>
+
+    <div class="max-w-[1400px] mx-auto relative z-10">
+      <div class="reveal text-center mb-10 sm:mb-16">
+        <p class="font-mono text-xs text-brand-400 uppercase tracking-widest mb-4">Real output</p>
+        <h2 class="text-3xl sm:text-5xl font-bold text-white/90 mb-4">Where your updates actually land</h2>
+        <p class="text-base sm:text-lg text-white/50 max-w-[760px] mx-auto">Every update Recaip writes gets delivered to the places your audiences already check. Not a draft you copy-paste. The real post, in the real place.</p>
+      </div>
+
+      <!-- Row 1: Slack (wide) -->
+      <div class="glass-card-bright p-5 sm:p-8 mb-5 reveal reveal-delay-1">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
+          <div class="lg:w-[340px] lg:shrink-0">
+            <div class="flex items-center gap-2.5 mb-3">
+              <span class="w-8 h-8 rounded-lg icon-box flex items-center justify-center">
+                <svg class="w-4 h-4 text-brand-400" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 01-2.52 2.523A2.528 2.528 0 010 15.165a2.527 2.527 0 012.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 012.521-2.52 2.527 2.527 0 012.521 2.52v6.313A2.528 2.528 0 018.834 24a2.528 2.528 0 01-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 01-2.521-2.52A2.528 2.528 0 018.834 0a2.528 2.528 0 012.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 012.521 2.521 2.528 2.528 0 01-2.521 2.521H2.522A2.528 2.528 0 010 8.834a2.528 2.528 0 012.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 012.522-2.521A2.528 2.528 0 0124 8.834a2.528 2.528 0 01-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 01-2.523 2.521 2.527 2.527 0 01-2.52-2.521V2.522A2.527 2.527 0 0115.165 0a2.528 2.528 0 012.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 012.523 2.522A2.528 2.528 0 0115.165 24a2.527 2.527 0 01-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 01-2.52-2.523 2.526 2.526 0 012.52-2.52h6.313A2.527 2.527 0 0124 15.165a2.528 2.528 0 01-2.522 2.523h-6.313z"/></svg>
+              </span>
+              <p class="font-mono text-[10px] text-brand-400 uppercase tracking-widest">Slack delivery</p>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold text-white/90 mb-2.5 leading-tight">Posted in the channel your team actually reads.</h3>
+            <p class="text-[14px] sm:text-[15px] text-white/50 leading-relaxed">Every new release drops into the Slack channel you pick. Title, summary, label, link back to the full changelog. Your execs, support, and sales see it the moment it ships.</p>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="rounded-xl overflow-hidden border border-white/10 bg-black/30">
+              <img src="output-slack.png" alt="Recaip posting release updates into a Slack channel, auto-formatted with title, description, label, and link" class="block w-full h-auto" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Changelog + Widget side-by-side -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Public changelog -->
+        <div class="glass-card-bright p-5 sm:p-8 reveal reveal-delay-2 flex flex-col">
+          <div class="flex items-center gap-2.5 mb-3">
+            <span class="w-8 h-8 rounded-lg icon-box flex items-center justify-center">
+              <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </span>
+            <p class="font-mono text-[10px] text-brand-400 uppercase tracking-widest">Public changelog</p>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-semibold text-white/90 mb-2.5 leading-tight">A hosted page your users can bookmark.</h3>
+          <p class="text-[14px] sm:text-[15px] text-white/50 leading-relaxed mb-6">Weekly, monthly, or timeline views. Grouped into features, improvements, and fixes. Hosted for you, or on your own domain.</p>
+          <div class="mt-auto rounded-xl overflow-hidden border border-white/10 bg-black/30">
+            <img src="output-changelog.png" alt="Public Recaip changelog page with weekly grouped updates and feature, improvement, and fix categories" class="block w-full h-auto" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- In-app widget -->
+        <div class="glass-card-bright p-5 sm:p-8 reveal reveal-delay-3 flex flex-col">
+          <div class="flex items-center gap-2.5 mb-3">
+            <span class="w-8 h-8 rounded-lg icon-box flex items-center justify-center">
+              <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+            </span>
+            <p class="font-mono text-[10px] text-brand-400 uppercase tracking-widest">In-app widget</p>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-semibold text-white/90 mb-2.5 leading-tight">A "what's new" panel, right inside your app.</h3>
+          <p class="text-[14px] sm:text-[15px] text-white/50 leading-relaxed mb-6">Drop a one-line script tag. A floating icon with an unread badge appears. Users click, read, go back to work. Configure audience and tone per product.</p>
+          <div class="mt-auto relative">
+            <div class="rounded-xl overflow-hidden border border-white/10 bg-black/30">
+              <img src="output-widget-panel.png" alt="Recaip in-app widget slide-out panel showing recent product updates" class="block w-full h-auto" loading="lazy" />
+            </div>
+            <div class="hidden sm:block absolute -bottom-3 -right-3 rounded-xl overflow-hidden border border-white/15 bg-white shadow-2xl max-w-[58%]" style="transform: rotate(-1deg);">
+              <img src="output-widget-icon.png" alt="Recaip notification trigger icon with red unread count badge" class="block w-full h-auto" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footnote -->
+      <p class="text-center text-sm text-white/35 mt-8 reveal reveal-delay-4">Plus email drafts, social posts, stakeholder digests, and status page updates. <a href="/features" class="text-brand-400 hover:text-brand-300 underline underline-offset-2 decoration-white/20 hover:decoration-brand-400 transition-colors">See every format &rarr;</a></p>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-[1400px] mx-auto"></div>
+
+  <!-- ============================================ -->
   <!-- OUTPUT FORMATS — Bento grid                  -->
   <!-- ============================================ -->
   <section class="py-14 sm:py-24 px-6 lg:px-16 relative overflow-hidden">
@@ -969,18 +1049,26 @@
     <div class="max-w-[800px] mx-auto relative z-10">
       <div class="reveal">
         <h2 class="text-3xl sm:text-5xl font-bold text-white/90 text-center mb-4">One plan. Everything included.</h2>
-        <p class="text-base sm:text-lg text-white/50 text-center mb-4">Unlimited products. 100 recaps/mo. No tiers, no feature gates, no surprises.</p>
-        <p class="text-base text-brand-400 text-center mb-10 sm:mb-16 font-medium">Founding members: <span class="line-through text-white/30">$19/mo</span> $9.50/mo forever with code <span class="font-mono bg-white/10 px-1.5 py-0.5 rounded text-xs">FOUNDER50</span></p>
+        <p class="text-base sm:text-lg text-white/50 text-center mb-10 sm:mb-12">Unlimited products. 100 recaps/mo. No tiers, no feature gates, no surprises.</p>
+      </div>
+
+      <!-- Founder deal callout -->
+      <div class="glass-card-bright p-5 mb-6 text-center reveal-scale">
+        <p class="text-brand-400 font-semibold text-base mb-1">Founding member deal</p>
+        <p class="text-white/50 text-sm">First 10 recaps free. Then <span class="line-through text-white/30">$19/mo</span> <span class="text-white font-bold">$9.50/mo</span> forever with code <span class="font-mono bg-white/10 px-1.5 py-0.5 rounded text-xs text-brand-300">FOUNDER50</span></p>
+        <p class="text-white/30 text-xs mt-1">Limited to the first 100 customers. Locked in for life.</p>
       </div>
 
       <!-- Single plan card -->
-      <div class="glass-card-glow p-8 sm:p-10 reveal-scale">
+      <div class="glass-card-glow p-8 sm:p-10 reveal-scale reveal-delay-1">
         <div class="text-center mb-8">
-          <div class="flex items-baseline justify-center gap-1 mb-2">
-            <span class="text-5xl font-bold text-white">$<span class="price-counter" data-target="19">0</span></span>
-            <span class="text-lg text-white/40">/mo</span>
+          <div class="mb-2">
+            <span class="text-2xl text-white/30 line-through mr-2">$19</span>
+            <span class="text-5xl font-bold text-white">$9.50</span>
+            <span class="text-lg text-white/40 ml-1">/mo</span>
           </div>
-          <p class="text-sm text-white/40">Unlimited products. 100 recaps per month. Stack packs for more.</p>
+          <p class="text-sm text-white/40 mb-2">Unlimited products. 100 recaps per month. First 10 recaps free.</p>
+          <p class="text-xs text-brand-400">Use code <span class="font-mono font-bold">FOUNDER50</span> at checkout for 50% off forever.</p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-8">
@@ -1029,7 +1117,7 @@
         <a href="https://app.recaip.com" class="btn-primary block w-full text-center py-3.5 rounded-xl text-white font-semibold text-base glow-pulse">Start free</a>
       </div>
 
-      <p class="text-center text-white/30 text-sm mt-6 reveal">First 10 recaps free. Use code <span class="font-mono text-brand-400">FOUNDER50</span> for 50% off forever. First 100 customers only.</p>
+      <p class="text-sm text-white/30 text-center mt-6 reveal">Need more than 100 recaps? Add packs at $9.50/mo each with FOUNDER50. 5 packs = 500 recaps/mo.</p>
     </div>
   </section>
 
@@ -1307,12 +1395,41 @@
       nav.offsetHeight;
       requestAnimationFrame(() => nav.classList.add('visible'));
     }
+    // Hero parallax fade refs
+    const heroParallax = document.querySelector('.hero-parallax');
+    const heroFloatingCard = document.querySelector('.hero-floating-card');
+    const heroScrollIndicator = document.querySelector('.hero-scroll-indicator');
+
+    function updateHeroParallax(scrollY) {
+      if (!heroParallax) return;
+      const vh = window.innerHeight;
+      // Fully faded by 55% of viewport scroll — feels intentional, not abrupt
+      const progress = Math.min(Math.max(scrollY / (vh * 0.55), 0), 1);
+      // Ease-out so the fade feels natural
+      const eased = 1 - Math.pow(1 - progress, 2);
+      const opacity = 1 - eased;
+      heroParallax.style.opacity = opacity;
+      heroParallax.style.transform = `translate3d(0, ${eased * -48}px, 0)`;
+      if (heroFloatingCard) {
+        heroFloatingCard.style.opacity = opacity;
+        heroFloatingCard.style.transform = `translate3d(0, ${eased * -32}px, 0)`;
+      }
+      if (heroScrollIndicator) {
+        heroScrollIndicator.style.opacity = Math.max(0, 1 - progress * 2);
+      }
+    }
+    // Initial paint
+    updateHeroParallax(window.scrollY);
+
     let lastScrollY = 0;
     let ticking = false;
     window.addEventListener('scroll', () => {
       if (!ticking) {
         requestAnimationFrame(() => {
           const scrollY = window.scrollY;
+
+          // Hero parallax fade
+          updateHeroParallax(scrollY);
 
           // Show sticky nav after 500px (past the hero)
           if (scrollY > window.innerHeight) {
@@ -1335,7 +1452,7 @@
         });
         ticking = true;
       }
-    });
+    }, { passive: true });
   </script>
 
 </body>
