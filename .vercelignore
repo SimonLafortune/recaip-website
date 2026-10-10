@@ -1,0 +1,6 @@
+# Fichiers qui ne doivent pas être servis sur recaip.com (le site se déploie par `vercel --prod` depuis ce dossier)
+webapp
+*.md
+brand
+logo-preview.html
+hero-bg-original.png
